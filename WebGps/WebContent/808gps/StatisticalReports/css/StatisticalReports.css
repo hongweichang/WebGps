@@ -1,0 +1,285 @@
+i {
+	display: inline-block;
+    font-style: normal;
+    vertical-align: middle;
+}
+.flexigrid {
+	margin: 0px 20px;
+}
+.nav{
+	border-right: 1px solid #cdcdcd;
+}
+.menu li .part .part-menu {
+	padding: 7px 0px 7px 0px;
+}
+.menu li .part .part-menu i {
+	background: transparent url("../../images/icon_s.png") no-repeat scroll 0px 0px;
+	background:	url("../../images/icon_s.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-color: rgba(0, 0, 0, 0);
+	width: 20px;
+	height: 20px;
+	margin: 0px 12px 0px 20px;
+}
+#tab-normal-title .part-menu i {
+	background-position: 0px -264px;
+}
+#tab-driving-title .part-menu i{
+	background-position: -569px -337px;
+}
+#tab-login-title .part-menu i{
+	background-position: -31px -264px;
+}
+#tab-alarm-title .part-menu i{
+	background-position: -60px -264px;
+}
+#tab-malfunction-title .part-menu i{
+	background-position: -288px -409px;
+}
+#tab-video-title .part-menu i{
+	background-position: -323px -409px;
+}
+#tab-io-title .part-menu i{
+	background-position: -358px -409px;
+}
+#tab-storage-title .part-menu i{
+	background-position: -94px -264px;
+}
+#tab-equipment-title .part-menu i{
+	background-position: -126px -264px;
+}
+#tab-oil-title .part-menu i{
+	background-position: -158px -264px;
+}
+#tab-licheng-title .part-menu i{
+	background-position: -190px -264px;
+}
+#tab-park-title .part-menu i{
+	background-position: -219px -264px;
+}
+#tab-fence-title .part-menu i{
+	background-position: -241px -264px;
+}
+#tab-log-title .part-menu i{
+	background-position: -265px -264px;
+}
+#tab-media-title .part-menu i{
+	background-position: -392px -409px;
+}
+#tab-data-title .part-menu i{
+	background-position: -429px -409px;
+} 
+#tab-online-title .part-menu i{
+	background-position: -265px -264px;
+}
+#tab-people-title .part-menu i{
+	background-position: -463px -409px;
+}
+#tab-temp-title .part-menu i{
+	background-position: -498px -409px;
+}
+#tab-door-title .part-menu i{
+	background-position: -265px -264px;
+}
+#tab-signin-title .part-menu i{
+	background-position: -532px -409px;
+}
+#tab-invoice-title .part-menu i{
+	background-position: -567px -409px;
+}
+#tab-tripmonth-title .part-menu i{
+	background-position: -429px -337px;
+}
+#tab-tripdaily-title .part-menu i{
+	background-position: -465px -337px;
+}
+#tab-tripdetail-title .part-menu i{
+	background-position: -499px -337px;
+}
+#tab-trip-title .part-menu i{
+	background-position: -536px -337px;
+}
+#tab-tpms-title .part-menu i{
+	background-position: -288px -477px;
+}
+#tab-obd-title .part-menu i{
+	background-position: -333px -477px;
+}
+.menu .report .part .part-menu {
+	background: #fff none repeat scroll 0 0;
+    border-bottom: 1px solid #f1f1f1;
+    color: #000;
+}
+.menu .report .part .active,.menu .report .part .part-menu:hover {
+	background: #e5f4ff none repeat scroll 0 0;
+	background-color: #e5f4ff;
+    border-bottom: 1px solid #c3e1ff;
+}
+.menu li .part .gdiv p {
+	padding: 0;
+	position: relative;
+	border-bottom: medium none;
+/* 	width: 229px; */
+}
+.menu .report .part .gdiv p .icon {
+	background: rgba(0, 0, 0, 0) url("../../images/icon_s.png") no-repeat scroll -301px -264px;
+	background:	url("../../images/icon_s.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: -301px -264px;
+	background-color: rgba(0, 0, 0, 0);
+    height: 4px;
+    margin: 0 8px 0 36px;
+    width: 4px;
+}
+.menu li .part .gdiv p:hover, .nav .menu li .part .gdiv p.current {
+	background: #0b83dc none repeat scroll 0 0;
+	background-color: #0b83dc;
+}
+.menu li .part .gdiv p:hover a, .nav .menu li .part .gdiv p.current a{
+    color: #fff;
+}
+.menu li .part .gdiv p:hover .icon, .nav .menu li .part .gdiv p.current .icon{
+    background-position: -301px -289px;
+}
+.menu li .part .gdiv p:hover .bg, .nav .menu li .part .gdiv p.current .bg{
+    border-bottom: 6px solid transparent;
+    border-right: 7px solid #fff;
+    border-top: 6px solid transparent;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    position: absolute;
+    right: -1px;
+    top: 9px;
+    width: 0;
+}
+
+.switch {
+    display: inline;
+    float: left;
+    margin-left: 10px;
+}
+.switch ul.show {
+    display: block;
+}
+.switch div.switch-div{
+	border: 1px solid #BBCBDF;
+    color: #536083;
+    background-color: #fff;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    height: 22px;
+	line-height: 22px;
+}
+.switch span.switch-span{
+    padding: 0px 10px;
+    width: 82px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+}
+.switch i.switch-icon{
+	position: absolute;
+    background:	url("../../images/icon_s.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: -316px -258px;
+	background-color: rgba(0, 0, 0, 0);
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	float: right;
+    margin: 4px 0px 4px -16px;
+}
+.switch div.switch-div:hover {
+    background-color: #3083EB;
+    color: #FFF;
+}
+.switch .language {
+    position: absolute;
+    border: 1px solid #fff;
+}
+.switch ul {
+    background-color: #FFF;
+    border: 1px solid #BBCBDF;
+    color: #536083;
+    border-radius: 2px;
+    box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.3);
+    left: -1px;
+    position: absolute;
+    display: none;
+    top: -1px;
+    vertical-align: top;
+    width: 120px;
+    z-index: 100;
+}
+.switch ul li {
+    height: 30px;
+    overflow: hidden;
+}
+.switch ul a,.switch .language span{
+    color: #536083;
+    display: block;
+    font-family: simsun;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    cursor: pointer;
+}
+.switch ul a:hover span {
+    background-color: #3083EB;
+    color: #FFF;
+}
+.Wdate, .setdatetext {
+	float: left;
+}
+.setdatetext {
+	width:7em;
+	text-align:right;
+	margin-left: 10px;
+}
+
+#combox-vehiIdnos,#combox-userId {
+	width:143px;
+}
+.slinput .inputdis{
+	margin-right: 0px;
+}
+.btn-group .item{
+	margin-right: 0px;
+}
+#graph {
+	display:none;
+	float:left;
+	margin-left:20px;
+}
+#label-distance,#label-time,#label-speed,#label-type,#label-handleStatus,#label-status,#label-oilType,#label-completion {
+	width: 128px;
+}
+#selecttime .btn-group .item .label {
+	width: 128px;
+}
+#toolbar-btn .item .label {
+	width: 68px;
+}
+.slinput {
+	margin-top: -10px;	
+}
+.slinput div.ttxinput{
+	height: 24px;
+	line-height: 24px;
+	margin-top: 10px;
+}
+.slinput .inputdis {
+	margin-top: 0px;	
+}
+.slinput input {
+	padding: 1px 0px;
+}
+#toolbar-graph .btn-group .item {
+	margin: 0 9px 0 0;
+}

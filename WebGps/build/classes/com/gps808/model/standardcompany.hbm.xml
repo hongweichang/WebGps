@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardCompany" table="jt808_company_info">
+		<!-- ����������������?? -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ������������identity������������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ����������?������? -->
+		<property name="name" column="Name"	type="string" length="64"/>
+		<property name="level" column="Level" type="java.lang.Integer"/>
+		<property name="code" column="Code"	type="string" length="64"/>
+		<property name="abbreviation" column="Abbreviation" type="string" length="64"/>
+		<property name="legal" column="Legal"	type="string" length="64"/>
+		<property name="linkMan" column="Linkman" type="string" length="64"/>
+		<property name="linkPhone" column="LinkPhone" type="string" length="64"/>
+		<property name="industryType" column="IndustryType" type="java.lang.Integer"/>
+ 		<property name="parentId" column="ParentCompanyID" type="java.lang.Integer"/>
+		<property name="businessLicenseNum" column="BusinessLicenseNum" type="string" length="64"/>
+		<property name="registeredCapital" column="RegisteredCapital"	type="string" length="64"/>
+		<property name="address" column="Address"	type="string" length="200"/>
+		<property name="introduction" column="Introduction"	type="string" length="300"/>
+		<property name="remark" column="Remark"	type="string" length="500"/>
+		<property name="updateTime" column="UpdateTime"	type="java.util.Date"/>
+		<property name="companyId" column="CompanyID" type="java.lang.Integer"/>
+		<property name="customerID" column="CustomerID"	type="string" length="64"/>
+		<property name="accountID" column="AccountID" type="java.lang.Integer"/>
+<!-- 		<many-to-one name="parentCompany" column="ParentCompanyID" class="com.gps.standardModel.StandardCompany" unique="true" lazy="false" cascade="all"/> -->
+	</class>
+</hibernate-mapping>

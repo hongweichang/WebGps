@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC 
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+     "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- Struts2的转向配置 -->
+	<!--
+		使用struts2的JSON插件所要做的配置是Struts2的配置文件的package要继承json-default，
+		而不是struts-default。json-default已经继承了struts-default的。
+	-->
+	<package name="struts2" extends="json-default">
+		<result-types>
+            <result-type name="customjson" class="com.framework.web.result.CustomJsonResult"/>
+        </result-types>
+		
+		<!-- 定义一个拦截器 -->      
+      <interceptors>      
+          <interceptor name="sessionOut" class="com.gps.filter.SessionIterceptor"></interceptor>    
+            <!-- 拦截器栈 -->      
+            <interceptor-stack name="gps">      
+                <interceptor-ref name="defaultStack" />      
+        <interceptor-ref name="sessionOut"/>      
+            </interceptor-stack>      
+        </interceptors>     
+        <default-interceptor-ref name="gps"/>   
+        
+       	<global-results>   
+		    <result name="customException" type="customjson" />
+		</global-results>     
+		<global-exception-mappings>   
+		   <exception-mapping name="appException" exception="com.framework.exception.AppException" result="customException"/> 
+		   <exception-mapping name="exception" exception="java.lang.Exception" result="customException"/>
+		</global-exception-mappings> 
+		
+	    <action name="rand" class="com.framework.web.action.RandomPictureAction">  
+            <result name="success" type="stream">  
+                <param name="contentType">image/jpeg</param>  
+                <param name="inputName">inputStream</param>  
+            </result>  
+        </action>
+       
+		<!-- =========通用配置========== -->
+		<action name="*_*" class="{1}" method="{2}">
+			<result type="customjson" />
+            <result name="input" type="customjson" />
+            <result name="excel" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">attachment;filename="${excelFile}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+             <result name="csv" type="stream">
+                <param name="contentType">application/csv</param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">attachment;filename="${excelFile}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+            <result name="pdf" type="stream">
+                <param name="contentType">application/pdf</param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">attachment;filename="${excelFile}"</param>
+                <param name="bufferSize">2048</param>
+            </result>
+            <result name="image" type="stream">
+                <param name="contentType">image/jpeg</param>
+                <param name="inputName">inputStream</param>
+            </result>
+            <result name="media" type="stream">
+                <param name="contentType">application/*</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename="${excelFile}"</param>
+                <param name="bufferSize">2048</param>
+            </result>
+		</action>
+	</package>
+</struts>

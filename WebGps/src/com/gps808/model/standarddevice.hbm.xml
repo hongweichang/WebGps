@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardDevice" table="jt808_device_info">
+		<!-- ����������������??-->
+		<id	name="devIDNO" column="DevIDNO" type="string" length="64">
+			 <generator class="assigned" />
+		</id>
+		<!-- ����������?������? -->
+		<property name="id" column="ID"	type="java.lang.Integer" unique="true" insert="false" update="false"/>
+		<property name="devType" column="DevType" type="java.lang.Integer"/>
+		<property name="serialID" column="SerialID" type="string" length="64"/>
+		<property name="brand" column="Brand" type="string" length="64"/>
+		<property name="model" column="Model"	type="string" length="64"/>
+		<property name="softwareVer" column="SoftwareVer" type="string" length="64"/>
+		<property name="hardwareVer" column="HardwareVer" type="string" length="64"/>
+		<property name="factory" column="Factory" type="string" length="64"/>
+		<property name="remark" column="Remark" type="string" length="500"/>
+		<property name="updateTime" column="UpdateTime"	type="java.util.Date"/>
+		<property name="install" column="Install"	type="java.lang.Integer"/>
+		<property name="devSubType" column="DevSubType"	type="java.lang.Integer"/>
+		<property name="protocol" column="Protocol"	type="java.lang.Integer"/>
+		<property name="diskType" column="DiskType"	type="java.lang.Integer"/>
+		<property name="audioCodec" column="AudioCodec"	type="java.lang.Integer"/>
+		<property name="stlTm" column="InstallTime"	type="java.util.Date"/>
+		<property name="nflt" column="nFlowLimitType"	type="java.lang.Integer"/>
+		<property name="netAddrType" column="NetAddrType"	type="java.lang.Integer"/>
+		
+		<many-to-one name="simInfo" column="SimCard" class="com.gps808.model.StandardSIMCardInfo" unique="true" lazy="false" not-found="ignore"/>
+		<many-to-one name="company" column="CompanyID" class="com.gps808.model.StandardCompany" unique="true" lazy="false" not-found="ignore"/> 
+	</class>
+</hibernate-mapping>

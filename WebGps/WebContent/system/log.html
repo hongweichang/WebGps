@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/public.css?v150825" rel="stylesheet" type="text/css" />
+<link href="css/log.css?v150825" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js?v150825"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js?v150825"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js?v150825"></script>
+<script type="text/javascript" src="../js/myajax.js?v150825"></script>
+<script type="text/javascript" src="../js/public.js?v150825"></script>
+<script type="text/javascript" src="../js/date.js?v150825"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js?v150825"></script>
+<script type="text/javascript" src="js/logquery.js?v150825"></script>
+<script type="text/javascript" src="js/log.js?v150825"></script>
+</head>
+<body>
+<!--内容start-->
+<div class="comt">
+	<h2 class="title"> <span class="more"></span> <span class="icon icon5"></span> <span id="logQueryTitle"></span> > <span id="logQueryType"></span> </h2>
+	<div class="cont">
+	  <div class="submenu">
+	    <ul>
+	      <li><a href="javascript:" name="logMenuItem" onclick="javascript:switchLogPage('sysuser')" class="befor"><span id="liSysUsrLog"></span></a></li>
+	      <li><a href="javascript:" name="logMenuItem" onclick="javascript:switchLogPage('server')" ><span id="liServerLog"></span></a></li>
+	    </ul>
+	  </div>
+	  <div class="contright">
+		<div id = "sysuserLogDate" class="setdate">
+			<span id="sysuserLabelBegintime" class="setdatetext"></span>
+			<label class="setdateinput">
+				<input type="text" id="sysuserBegintime" name="beginTime" size="15" readonly class="Wdate" style="width:160px;"/>
+			</label> 
+			<span id="sysuserLabelEndtime" class="setdatetext"></span>
+			<label class="setdateinput">
+				<input type="text" id="sysuserEndtime" name="endtime" size="15" readonly class="Wdate" style="width:160px;"/>
+			</label>		
+			<label class="searchbtn">
+				<button id="sysuserBtnQuery" type="submit"></button>
+			</label>
+		</div>
+		<table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="sysuserTable">
+			<tr class="heard">
+			  <th class="tableft"><span></span></th>
+			  <th width="10%"><span id="tdSysuserIndex"></span></th>
+			  <th width="10%"><span id="tdSysuserUserName"></span></th>
+			  <th width="56%"><span id="tdSysuserContent"></span></th>
+			  <th width="20%"><span id="tdSysuserTime"></span></th>
+			  <th class="tabright"><span></span></th>
+			</tr>
+			<tr id="sysuserTableTemplate" class="tabdata" style="display:none">
+			 <td class="tableft"">&nbsp;</td>
+			    <td><span id="tdIndex"></span></td>
+			    <td class="blue"><span id="tdUserName"></span></td>
+			    <td class="blue"><span id="tdContent"></span></td>
+			    <td class="blue"><span id="tdTime"></span></td>
+			    <td class="tabright">&nbsp;</td>
+			</tr>        
+		</table>
+		<div id="sysuserPagination" class="pagination" style="margin:10px 10px 10px 10px;"></div>
+		<div id = "serverLogDate" class="setdate" style="display:none">
+			<span id="serverLabelBegintime" class="setdatetext"></span>
+			<label class="setdateinput">
+				<input type="text" id="serverBegintime" name="serverBeginTime" size="15" readonly class="Wdate" style="width:160px;"/>
+			</label> 
+			<span id="serverLabelEndtime" class="setdatetext"></span>
+			<label class="setdateinput">
+				<input type="text" id="serverEndtime" name="serverEndtime" size="15" readonly class="Wdate" style="width:160px;"/>
+			</label>		
+			<label class="searchbtn">
+				<button id="serverBtnQuery" type="submit"></button>
+			</label>
+		</div>
+		<table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="serverTable" style="display:none">
+			<tr class="heard">
+			  <th class="tableft"><span></span></th>
+			  <th width="10%"><span id="tdServerIndex"></span></th>
+			  <th width="10%"><span id="tdServerName"></span></th>
+			  <th width="56%"><span id="tdServerContent"></span></th>
+			  <th width="20%"><span id="tdServerTime"></span></th>
+			  <th class="tabright"><span></span></th>
+			</tr>
+			<tr id="serverTableTemplate" class="tabdata" style="display:none">
+			 <td class="tableft"">&nbsp;</td>
+			    <td><span id="tdIndex"></span></td>
+			    <td class="blue"><span id="tdUserName"></span></td>
+			    <td class="blue"><span id="tdContent"></span></td>
+			    <td class="blue"><span id="tdTime"></span></td>
+			    <td class="tabright">&nbsp;</td>
+			</tr>        
+		</table>
+		<div id="serverPagination" class="pagination" style="margin:10px 10px 10px 10px;display:none"></div>
+	  </div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardAlarmMotion" table="jt808_alarm_motion">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->	
+		<property name="uid" column="UserId" type="java.lang.Integer"/>
+		<property name="vid" column="VehiIDNO" type="string" length="64"/>
+		<property name="scp" column="Scope" type="java.lang.Integer"/>
+		<property name="atp" column="ArmType" type="java.lang.Integer"/>
+		<property name="stp" column="ArmSubType" type="string" length="256"/>
+		<property name="ismsd" column="IsSMSSend" type="java.lang.Integer"/>
+		<property name="smad" column="SMSAddress" type="string" length="256"/>
+		<property name="smcd" column="SMSContent" type="string" length="64"/>
+		<property name="iemsd" column="IsEMailSend" type="java.lang.Integer"/>
+		<property name="emad" column="EMailAddress" type="string" length="256"/>
+		<property name="emcd" column="EMailContent" type="string" length="64"/>
+		<property name="ird" column="IsRecord" type="java.lang.Integer"/>
+		<property name="rdy" column="RecordDelay" type="java.lang.Integer"/>
+		<property name="rch" column="RecordChannel" type="java.lang.Integer"/>
+		<property name="rtm" column="RecordingTime" type="java.lang.Integer"/>
+		<property name="cp" column="IsCapture" type="java.lang.Integer"/>
+		<property name="cpch" column="CaptureChannel" type="java.lang.Integer"/>
+		<property name="sd" column="IsSound" type="java.lang.Integer"/>
+		<property name="sds" column="AlarmSound" type="string" length="128"/>
+		<property name="btm" column="BeginTime" type="string" length="128"/>
+		<property name="etm" column="EndTime" type="string" length="128"/>
+		<property name="enb" column="IsEnable" type="java.lang.Integer"/>
+		<property name="sam" column="ShowAlarm" type="java.lang.Integer"/>
+		<property name="uptm" column="UpdateTime" type="java.util.Date"/>
+	</class>
+</hibernate-mapping>

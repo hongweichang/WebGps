@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps.model">
+	<class name="ServerSession" table="server_session">
+		<!-- ����������������?? -->
+		<id	name="svridno" type="string" >
+			<column name="SvrIDNO" />  
+			<generator class="foreign" >  
+            <param name="property">svrInfo</param>  
+            </generator>
+		</id>
+		<!-- ����������?������? -->
+		<!--<property name="svrid" column="SvrID" type="java.lang.Integer" unique="true"/>-->
+		<!--<property name="svridno" column="SvrIDNO" type="string" not-null="true" length="256" unique="true"/>-->
+		<property name="session" column="Session" type="string" not-null="true" length="40"/>
+		<property name="status" column="Status" type="java.lang.Integer"/>
+		<property name="updatetime" column="UpdateTime" type="java.util.Date"/>
+		<!-- <one-to-one name="svrInfo" class="ServerInfo"></one-to-one> --> 
+	</class>
+</hibernate-mapping>

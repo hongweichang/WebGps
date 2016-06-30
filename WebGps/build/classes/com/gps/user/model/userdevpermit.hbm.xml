@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.user.model">
+	<class name="UserDevPermit" table="user_dev_permit">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ��������identity������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->
+		<!-- 
+		<property name="userId" column="UserID" type="java.lang.Integer" not-null="true" />
+		 -->
+		<property name="accountId" column="AccountID" type="java.lang.Integer" not-null="true" />
+		<property name="devIdno" column="DevIDNO"	type="string" length="32" not-null="true"/>
+	</class>
+</hibernate-mapping>

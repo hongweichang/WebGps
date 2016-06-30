@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps.model">
+	<class name="LiveVideoSession" table="live_video_session">
+		<id	name="id" column="ID" type="java.lang.Integer">
+			 <generator class="identity" />
+		</id>
+		<!-- ����������?������? -->
+		<property name="userId" column="UserId" type="java.lang.Integer" not-null="true"/>
+		<property name="status" column="Status" type="java.lang.Integer" not-null="true"/>
+		<property name="randParam" column="RandomParam" type="java.lang.String" not-null="true"/>
+	</class>
+</hibernate-mapping>

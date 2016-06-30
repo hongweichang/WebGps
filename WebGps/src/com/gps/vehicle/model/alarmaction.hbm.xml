@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.vehicle.model">
+	<class name="AlarmAction" table="dev_alarm_action">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<generator class="identity"/>
+		</id>
+		<!--
+		<composite-id>
+      		<key-property name="devIdno" column="DevIDNO" type="string" length="40"/>
+      		<key-property name="armType" column="ArmType" type="java.lang.Integer"/>
+		</composite-id>
+		<property name="id" column="ID" type="java.lang.Integer" unique="true" insert="false" update="false"/>
+		-->
+		<!-- ������������ -->	
+		<property name="devIdno" column="DevIDNO" type="string" length="40"/>
+		<property name="armType" column="ArmType" type="java.lang.Integer"/>
+		<property name="armSubType" column="ArmSubType" type="string" length="256"/>
+		<property name="smsSend" column="SMSSend" type="java.lang.Integer"/>
+		<property name="smsAddress" column="SMSAddress" type="string" length="256"/>
+		<property name="smsContent" column="SMSContent" type="string" length="64"/>
+		<property name="emailSend" column="EMailSend" type="java.lang.Integer"/>
+		<property name="emailAddress" column="EMailAddress" type="string" length="256"/>
+		<property name="emailContent" column="EMailContent" type="string" length="64"/>
+		<!-- 
+		<property name="recSave" column="RECSave" type="java.lang.Integer"/>
+		<property name="recDelay" column="RECDelay" type="java.lang.Integer"/>
+		<property name="recChannel" column="RECChannel" type="java.lang.Integer"/>
+		 -->
+		<property name="beginTime" column="BeginTime" type="java.lang.Integer"/>
+		<property name="endTime" column="EndTime" type="java.lang.Integer"/>
+		<property name="captureChannel" column="CaptureChannel" type="string" length="64"/>
+		<property name="recordingTime" column="RecordingTime" type="string" length="128"/>
+	</class>
+</hibernate-mapping>

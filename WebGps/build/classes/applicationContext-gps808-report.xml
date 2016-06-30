@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+    default-autowire="byName">
+    <bean id="standardVehicleAlarmDao"
+		class="com.gps808.report.dao.impl.StandardVehicleAlarmDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="vehicleDailyDao"
+		class="com.gps808.report.dao.impl.StandardVehicleDailyDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+    <bean id="vehicleGpsService" class="com.gps808.report.service.impl.StandardVehicleGpsServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean id="vehicleAlarmService" class="com.gps808.report.service.impl.StandardVehicleAlarmServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+		<property name="standardVehicleAlarmDao" ref ="standardVehicleAlarmDao" />
+	</bean>
+	 <bean id="vehicleDailyService" class="com.gps808.report.service.impl.StandardVehicleDailyServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+		<property name="vehicleDailyDao" ref ="vehicleDailyDao" />
+	</bean>
+	<bean id="loginService" class="com.gps808.report.service.impl.StandardVehicleLoginServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean id="standardVehicleMediaService" class="com.gps808.report.service.impl.StandardVehicleMediaServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean id="standardVehicleLineService" class="com.gps808.report.service.impl.StandardVehicleLineServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean name="standardReportBaseAction" abstract="true" lazy-init="true" parent="standardUserBaseAction">
+		<property name="vehicleAlarmService" ref ="vehicleAlarmService" />
+		<property name="vehicleGpsService" ref ="vehicleGpsService" />
+		<property name="loginService" ref ="loginService" />
+		<property name="vehicleDailyService" ref ="vehicleDailyService" />
+	</bean>
+	<bean name="StandardReportAlarmAction" class="com.gps808.report.action.StandardReportAlarmAction" scope="prototype" parent="standardReportBaseAction"/>
+	<bean name="StandardReportTempAction" class="com.gps808.report.action.StandardReportTempAction" scope="prototype" parent="standardReportBaseAction"/>
+	<bean name="StandardReportLoginAction" class="com.gps808.report.action.StandardReportLoginAction" scope="prototype" parent="standardReportBaseAction"/>
+	<bean name="StandardReportLiChengAction" class="com.gps808.report.action.StandardReportLiChengAction" scope="prototype" parent="standardReportBaseAction"/>
+	<bean name="StandardReportParkAction" class="com.gps808.report.action.StandardReportParkAction" scope="prototype" parent="standardReportBaseAction"/>
+	<bean name="StandardReportFenceAction" class="com.gps808.report.action.StandardReportFenceAction" scope="prototype" parent="standardReportBaseAction"/>
+	<bean name="StandardReportOnlineAction" class="com.gps808.report.action.StandardReportOnlineAction" scope="prototype" parent="standardReportBaseAction">
+		<property name="vehicleDailyService" ref ="vehicleDailyService" />
+	</bean>
+	<bean name="StandardReportOilAction" class="com.gps808.report.action.StandardReportOilAction" scope="prototype" parent="standardReportBaseAction"/>
+	<bean name="StandardReportHardwareStatusAction" class="com.gps808.report.action.StandardReportHardwareStatusAction" scope="prototype" parent="standardReportBaseAction">
+		<property name="deviceHardwareStatusService" ref ="deviceHardwareStatusService" />
+	</bean>
+	<bean name="StandardReportDeviceOflTaskLogAction" class="com.gps808.report.action.StandardReportDeviceOflTaskLogAction" scope="prototype" parent="standardReportBaseAction">
+		<property name="deviceOflTaskLogService" ref ="deviceOflTaskLogService" />
+		<property name="deviceHardwareStatusService" ref ="deviceHardwareStatusService" />
+	</bean>
+	<bean name="StandardReportMediaAction" class="com.gps808.report.action.StandardReportMediaAction" scope="prototype" parent="standardReportBaseAction">
+		<property name="standardVehicleMediaService" ref ="standardVehicleMediaService" />
+	</bean>
+	<bean name="StandardReportUserOnlineAction" class="com.gps808.report.action.StandardReportUserOnlineAction" scope="prototype" parent="standardReportBaseAction">
+		<property name="userLogService" ref="userLogService" />
+	</bean>
+	<bean name="StandardReportPeopleAction" class="com.gps808.report.action.StandardReportPeopleAction" scope="prototype" parent="standardReportBaseAction">
+		<property name="vehicleDailyService" ref ="vehicleDailyService" />
+	</bean>
+	<bean name="StandardReportSigninAction" class="com.gps808.report.action.StandardReportSigninAction" scope="prototype" parent="standardReportBaseAction">
+		<property name="standardVehicleMediaService" ref ="standardVehicleMediaService" />
+	</bean>
+	<bean name="StandardReportInvoiceAction" class="com.gps808.report.action.StandardReportInvoiceAction" scope="prototype" parent="standardReportBaseAction"/>
+	<bean name="StandardReportLineAction" class="com.gps808.report.action.StandardReportLineAction" scope="prototype" parent="standardReportBaseAction">
+		<property name="standardVehicleLineService" ref ="standardVehicleLineService" />
+	</bean>
+	<bean name="StandardReportLineAlarmAction" class="com.gps808.report.action.StandardReportLineAlarmAction" scope="prototype" parent="standardReportBaseAction">
+		<property name="vehicleGpsService" ref ="vehicleGpsService" />
+	</bean>
+	<bean name="StandardReportSlipStationAction" class="com.gps808.report.action.StandardReportSlipStationAction" scope="prototype" parent="standardReportBaseAction"/>
+	<bean name="StandardReportTpmsAlarmAction" class="com.gps808.report.action.StandardReportTpmsAlarmAction" scope="prototype" parent="standardReportBaseAction"/>
+	<bean name="StandardReportObdAction" class="com.gps808.report.action.StandardReportObdAction" scope="prototype" parent="standardReportBaseAction"/>
+</beans>

@@ -1,0 +1,95 @@
+@charset "utf-8";
+html, body {
+    height: 100%;
+    overflow-y: hidden;
+}
+body {
+    background: none repeat scroll 0 0 #f5f6f7;
+	background-attachment: scroll;
+	background-color:#f5f6f7;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+    color: #333;
+    font: 12px/1.5 tahoma,arial;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+ol, ul {
+    list-style: none outside none;
+}
+a {
+    outline: 0 none;
+    text-decoration: none;
+}
+.flexigrid {
+	margin: 0px 20px;
+}
+.blue {
+	 color: #0068b7;
+}
+.content .tips .tit{ position: relative;/*padding: 25px 80px;*/padding: 10px 20px;}
+.content .tips .arrows {position: absolute;top:70px;background: url('../../images/rule.png') no-repeat;width: 54px;height: 54px;}
+.content .tips .arrows.prev{background-position: 0 -5px;left: 0;}
+.content .tips .arrows.next{background-position: -1090px 0;right: 0;}
+.content .tips .tit .list{margin:0 auto;;overflow: hidden;border-bottom:1px solid #99ccff; /*padding: 0 250px;*/width: 1066px;height: 139px;}
+.content .tips .tit .list ul{width: 100000%;overflow: hidden;}
+.content .tips .tit .list li{float: left;width: 62px;padding:10px;border-bottom:2px solid #fff;cursor: pointer;height:118px; }
+.content .tips .tit .list li:hover,.content .tips .tit .list li.active{border-bottom: 2px solid #0b83dc;}
+.content .tips .tit .list li:hover span,.content .tips .tit .list li.active span{color: #0068b7;}
+.content .tips .list li div a{display: block;background: url('../../images/rule.png') no-repeat;width: 62px;height: 62px; -webkit-transition: all 0s ease-out;-moz-transition: all 0s ease-out;transition: all 0s ease-out;}
+.content .tips .list li p{margin:10px 0 ;text-align: center;line-height: 18px;height: 36px;}
+.content .tips .list li .ico1 a, .content .tips .list li .ico7 a, .content .tips .list li .ico15 a {
+	background: url('../../images/icon_s_for.png') no-repeat;
+}
+.content .tips .list li .ico1 a{background-position: -82px -494px;}
+.content .tips .list li .ico2 a{background-position: -179px -2px;}
+.content .tips .list li .ico3 a{background-position: -260px -2px;}
+.content .tips .list li .ico4 a{background-position: -420px -2px}
+.content .tips .list li .ico5 a{background-position: -340px -2px;}
+.content .tips .list li .ico6 a{background-position: -1236px -2px;}
+.content .tips .list li .ico7 a{background-position:  0px -494px;}
+.content .tips .list li .ico8 a{background-position:  -1162px -2px;}
+.content .tips .list li .ico9 a{background-position: -1387px -2px;;}
+.content .tips .list li .ico10 a{background-position: -1312px -2px;}
+.content .tips .list li .ico11 a{background-position: -903px -2px;}
+.content .tips .list li .ico12 a{background-position: -983px -2px;}
+.content .tips .list li .ico13 a{background-position: -662px -2px;}
+.content .tips .list li .ico14 a{background-position: -742px -2px;}
+.content .tips .list li .ico15 a{background-position: -164px -494px;}
+
+.content .tips .list li .ico1:hover a,.content .tips .list li.active .ico1 a{background-position:-82px -598px; }
+.content .tips .list li .ico2:hover a,.content .tips .list li.active .ico2 a{background-position:-179px -116px; }
+.content .tips .list li .ico3:hover a,.content .tips .list li.active .ico3 a{background-position:-260px -116px; }
+.content .tips .list li .ico4:hover a,.content .tips .list li.active .ico4 a{background-position:-340px -116px; }
+.content .tips .list li .ico5:hover a,.content .tips .list li.active .ico5 a{background-position:-420px -116px; }
+.content .tips .list li .ico6:hover a,.content .tips .list li.active .ico6 a{background-position:-1236px -116px; }
+.content .tips .list li .ico7:hover a,.content .tips .list li.active .ico7 a{background-position:0px -598px; }
+.content .tips .list li .ico8:hover a,.content .tips .list li.active .ico8 a{background-position:-1162px -116px; }
+.content .tips .list li .ico9:hover a,.content .tips .list li.active .ico9 a{background-position:-1387px -116px; }
+.content .tips .list li .ico10:hover a,.content .tips .list li.active .ico10 a{background-position:-1312px -116px; }
+.content .tips .list li .ico11:hover a,.content .tips .list li.active .ico11 a{background-position:-903px -116px; }
+.content .tips .list li .ico12:hover a,.content .tips .list li.active .ico12 a{background-position:-983px -116px; }
+.content .tips .list li .ico13:hover a,.content .tips .list li.active .ico13 a{background-position:-662px -116px; }
+.content .tips .list li .ico14:hover a,.content .tips .list li.active .ico14 a{background-position:-742px -116px; }
+.content .tips .list li .ico15:hover a,.content .tips .list li.active .ico15 a{background-position:-164px -598px; }
+
+#opera-top {
+    border-bottom: 1px solid #cdcdcd;
+    color: #333;
+    font-size: 12px;
+    height: 34px;
+    line-height: 30px;
+    vertical-align: middle;
+    margin: 0px 20px 10px;
+}
+.flexigrid .bDiv a:hover{
+	color: #219bd0;
+}
+#ruleTable a{
+	margin: 0px 15px 0px 15px;
+}
+.btn-group .item .y-btn span{
+	width: 60px;
+}

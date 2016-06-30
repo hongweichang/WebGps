@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.system.model">
+	<class name="DownStation" table="down_station">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ��������identity������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->
+		<property name="name" column="Name" type="string" not-null="true" unique="true"/>
+		<property name="position" column="Position" type="string" length="256"/>
+		<property name="ssid" column="Ssid" type="string" length="256"/>
+		<property name="ip" column="Ip" type="string" length="64"/>
+		<property name="type" column="Type" type="java.lang.Integer" not-null="true"/>
+	</class>
+</hibernate-mapping>

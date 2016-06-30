@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardUserRole" table="jt808_user_role">
+		<!-- ��������������������������? -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ������������identity������������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ����������?������? -->
+		<property name="name" column="Name"	type="string" length="64"/>
+		<property name="privilege" column="Privilege" type="string" length="256"/>
+		<property name="remark" column="Remark" type="string" length="512"/>
+		<property name="updateTime" column="UpdateTime" type="java.util.Date"/>
+		<many-to-one name="company" column="CompanyID" class="com.gps808.model.StandardCompany" unique="true" lazy="false"  not-found="ignore"/>
+	</class>
+</hibernate-mapping>

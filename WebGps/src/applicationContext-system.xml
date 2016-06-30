@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+    default-autowire="byName">
+    
+  	<!-- 后台管理 -->
+  	<bean id="sysUsrInfoDao"
+		class="com.gps.system.dao.impl.SysUsrInfoDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="sysUsrLogDao"
+		class="com.gps.system.dao.impl.SysUsrLogDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="sysUserService"
+		class="com.gps.system.service.impl.SysUserServiceImpl">
+		<property name="usrInfoDao" ref ="sysUsrInfoDao" />
+		<property name="usrLogDao" ref ="sysUsrLogDao" />
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean name="SysLoginAction"
+		class="com.gps.system.action.SysLoginAction"
+		scope="prototype">
+		<property name="sysUserService" ref="sysUserService" />
+	</bean>
+	<bean id="sysStatusService"
+		class="com.gps.system.service.impl.SysStatusServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean name="SysStatusAction"
+		class="com.gps.system.action.SysStatusAction"
+		scope="prototype">
+		<property name="sysStatusService" ref="sysStatusService" />
+		<property name="serverService" ref="serverService" />
+		<property name="deviceService" ref="deviceService" />
+	</bean>
+	<bean id="serverLogDao"
+		class="com.gps.system.dao.impl.ServerLogDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean name="SysStaticsAction"
+		class="com.gps.system.action.SysStaticsAction"
+		scope="prototype">
+		<property name="sysUserService" ref="sysUserService" />
+		<property name="serverService" ref="serverService" />
+		<property name="deviceService" ref="deviceService" />
+		<property name="userService" ref="userService" />
+		<property name="sysStatusService" ref="sysStatusService" />
+	</bean>
+	<bean id="sysLogService"
+		class="com.gps.system.service.impl.SysLogServiceImpl">
+		<property name="sysUsrLogDao" ref ="sysUsrLogDao" />
+		<property name="serverLogDao" ref ="serverLogDao" />
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean name="SysLogAction"
+		class="com.gps.system.action.SysLogAction"
+		scope="prototype">
+		<property name="sysLogService" ref="sysLogService" />
+		<property name="serverService" ref="serverService" />
+	</bean>
+	<bean name="SysServerAction"
+		class="com.gps.system.action.SysServerAction"
+		scope="prototype">
+		<property name="serverService" ref="serverService" />
+		<property name="notifyService" ref="notifyService" />
+		<property name="sysUserService" ref="sysUserService" />
+		<property name="downStationService" ref="downStationService" />
+		<property name="deviceService" ref="deviceService" />
+		<property name="storageRelationService" ref="storageRelationService" />
+	</bean>
+	<bean name="SysDeviceAction"
+		class="com.gps.system.action.SysDeviceAction"
+		scope="prototype">
+		<property name="userService" ref="userService" />
+		<property name="deviceService" ref="deviceService" />
+		<property name="notifyService" ref="notifyService" />
+		<property name="sysUserService" ref="sysUserService" />
+		<property name="accountService" ref ="accountService"/>
+	</bean>
+	<bean name="SysClientAction"
+		class="com.gps.system.action.SysClientAction"
+		scope="prototype">
+		<property name="userService" ref="userService" />
+		<property name="deviceService" ref="deviceService" />
+		<property name="notifyService" ref="notifyService" />
+		<property name="sysUserService" ref="sysUserService" />
+		<property name="accountService" ref ="accountService"/>
+	</bean>
+	<bean id="downStationDao"
+		class="com.gps.system.dao.impl.DownStationDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="downStationService"
+		class="com.gps.system.service.impl.DownStationServiceImpl">
+		<property name="downStationDao" ref ="downStationDao" />
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	
+	<bean id="adAndNewsDao"
+		class="com.gps.system.dao.impl.AdAndNewsDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="adAndNewsService"
+		class="com.gps.system.service.impl.AdAndNewsServiceImpl">
+		<property name="adAndNewsDao" ref ="adAndNewsDao" />
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean name="SysAdAndNewsAction"
+		class="com.gps.system.action.SysAdAndNewsAction"
+		scope="prototype">
+		<property name="adAndNewsService" ref="adAndNewsService" />
+	</bean>
+</beans>

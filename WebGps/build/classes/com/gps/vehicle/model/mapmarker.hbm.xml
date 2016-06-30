@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.vehicle.model">
+	<class name="MapMarker" table="map_marker">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ��������identity������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->
+		<property name="name" column="Name" type="string" length="256"/>
+		<property name="markerType" column="TypeId" type="java.lang.Integer"/>
+		<property name="jingDu" column="Longtude" type="string" length="256"/>
+		<property name="weiDu" column="Latitude" type="string" length="256"/>
+		<property name="color" column="Color" type="string" length="256"/>
+		<property name="type" column="TabType" type="java.lang.Integer"/>
+		<property name="creator" column="Creator" type="java.lang.Integer" length="256"/>
+		<property name="remark" column="Remark" type="string" length="256"/>
+		<property name="userID" column="UserID" type="java.lang.Integer" not-null="true"/>
+		<property name="radius" column="nExtinguisherNum" type="java.lang.Integer"/>
+		<property name="mapType" column="MapType" type="java.lang.Integer" not-null="true"/>
+		<property name="share" column="Share" type="java.lang.Integer" not-null="true"/>
+		<property name="areaId" column="AreaId" type="java.lang.Integer"/>
+		<property name="parentId" column="ParentId" type="java.lang.Integer"/>
+		<property name="areaName" column="AreaName" type="string" length="64"/>
+		<property name="areaType" column="AreaType" type="java.lang.Integer"/>
+		<property name="image" column="Image" type="string" length="255"/>
+	</class>
+</hibernate-mapping>

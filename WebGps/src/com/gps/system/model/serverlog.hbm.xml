@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.system.model">
+	<class name="ServerLog" table="server_log">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ��������identity������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->
+		<property name="svrid" column="SvrID" type="java.lang.Integer" not-null="true" update="false"/>
+		<property name="action" column="Action" type="java.lang.Integer" not-null="true"/>
+		<property name="content" column="Content" type="string" not-null="true" length="256"/>
+		<property name="dtime" column="UpdateTime" type="java.util.Date" not-null="true"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="js/vehi_info.js?140427"></script>
+<style type="text/css">
+.input_none {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+}
+</style>
+</head>
+<body style="background-color:#fff;">
+<div style="width:520px;padding-bottom:30px;">
+	<div class="tab">
+	    <ul id="tabnav">
+			<li id="li_basicParam" class="now_focus"><a href="javascript:switchPage('basicParam');" class="blue"><span id="liBasicParam">&nbsp;</span></a></li>
+			<li id="li_channelParam"><a href="javascript:switchPage('channelParam');" class="blue"><span id="liChannelParam">&nbsp;</span></a></li>
+			<li id="li_ioInParam"><a href="javascript:switchPage('ioInParam');" class="blue"><span id="liIOInParam">&nbsp;</span></a></li>
+			<li id="li_tempSensorParam"><a href="javascript:switchPage('tempSensorParam');" class="blue"><span id="liTempSensorParam">&nbsp;</span></a></li>
+			<li id="li_moduleParam"><a href="javascript:switchPage('moduleParam');" class="blue"><span id="liModuleParam">&nbsp;</span></a></li>
+	    </ul>
+	    <div id="tabcontent">
+		    <div id="basicParam" class="now_focus">
+				<dl class="setingbox">
+					<dt><span id="labelName"></span></dt>
+						<dd>
+							<input id="name" name="name" type="text" class="text" value="" maxlength="30"/>
+							<span id="nameWrong" class="red">*</span></dd>
+					<dt><span id="labelIdno"></span></dt>
+						<dd><input id="idno" name="idno" type="text" class="text" value="" maxlength="32"/></dd>
+					<dt><span id="labelDriverName"></span></dt>
+						<dd><input id="driverName" name="driverName" type="text" class="text" value="" maxlength="12"/></dd>
+					<dt><span id="labelDriverTele"></span></dt>
+						<dd><input id="driverTele" name="driverTele" style="ime-mode:disabled;" type="text" class="text" value="" maxlength="15" onkeydown="onKeyDownDigit(event)"/></dd>
+					<dt><span id="labelSimCard"></span></dt>
+						<dd><input id="simCard" name="simCard" style="ime-mode:disabled;" type="text" class="text" value="" maxlength="22" onkeydown="onKeyDownDigit(event)"/></dd>
+					<dt><span id="labelCompany"></span></dt>
+						<dd><input id="vehiCompany" name="vehiCompany" type="text" class="text" value="" maxlength="32"/></dd>
+					<dt><span id="labelVehiBand"></span></dt>
+						<dd><select id="vehiBand" name="vehiBand" onchange="typeChange()"></select>
+						<a href="javascript:saveDevBand();" id="selectBand" name="selectBand"></a></dd>
+					<dt><span id="labelVehiType"></span></dt>
+						<dd><select id="vehiType" name="vehiType"></select>
+					<dt><span id="labelPlateColor"></span></dt>
+						<dd><select id="plateColorList" name="plateColorList"></select></dd>
+					<dt><span id="labelFactoryCode"></span></dt>
+						<dd><input id="productId" name="productId" type="text" class="text" value="" maxlength="32"/></dd>
+					<dt><span id="labelTerminalType"></span></dt>
+						<dd><input id="terminalModel" name="terminalModel" type="text" class="text" value="" maxlength="32"/></dd>
+					<dt><span id="labelTerminalId"></span></dt>
+						<dd><input id="terminalId" name="terminalId" type="text" class="text" value="" maxlength="32"/></dd>
+					<dt><span id="labelVehiIcon"></span></dt>
+						<dd><input type="radio" value="1" id="icon_1" class="input_none" name="iconType"/>
+							<img src="../images/vehicle/1.png"/>
+							<input type="radio" value="2" id="icon_2" class="input_none" name="iconType"/>
+							<img src="../images/vehicle/2.png"/>
+							<input type="radio" value="3" id="icon_3" class="input_none" name="iconType"/>
+							<img src="../images/vehicle/3.gif"/>
+							<input type="radio" value="4" id="icon_4" class="input_none" name="iconType"/>
+							<img src="../images/vehicle/4.gif"/>
+							<input type="radio" value="5" id="icon_5" class="input_none" name="iconType"/>
+							<img src="../images/vehicle/5.gif"/>
+							<br/>
+							<input type="radio" value="6" id="icon_6" class="input_none" name="iconType"/>
+							<img src="../images/vehicle/6.gif"/>
+							<input type="radio" value="7" id="icon_7" class="input_none" name="iconType"/>
+							<img src="../images/vehicle/7.gif"/>
+							<input type="radio" value="8" id="icon_8" class="input_none" name="iconType"/>
+							<img src="../images/vehicle/8.gif"/>
+						</dd>
+				</dl>
+		    </div>
+		    <div id="ioInParam" style="display:none">
+				<dl class="setingbox">
+					<dt><span id="labelSelIOIn"></span></dt>
+				  		<dd><select id="ioInList" name="ioInList"></select></dd>
+				</dl>
+			</div>
+			<div id="channelParam">
+				<dl class="setingbox">
+					<dt><span id="labelSelChannel"></span></dt>
+				  		<dd><select id="channelList" name="channelList"></select></dd>
+				</dl>
+			</div>
+			<div id="tempSensorParam" style="display:none">
+				<dl class="setingbox">
+					<dt><span id="labelSelTempSensor"></span></dt>
+				  		<dd><select id="tempSensorList" name="tempSensorList"></select></dd>
+				</dl>
+			</div>
+			<div id="moduleParam" style="display:none">
+				<dl class="setingbox">
+					<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module0" value="0"/>
+				  			<span id="spanModuleOilSensor"></span>
+				  		</dd>
+					<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module1" value="1"/>
+				  			<span id="spanModuleOilControl"></span>
+				  		</dd>
+				  	<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module2" value="2"/>
+				  			<span id="spanModuleElecControl"></span>
+				  		</dd>
+				  	<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module3" value="3"/>
+				  			<span id="spanModuleTTSControl"></span>
+				  		</dd>
+				  	<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module4" value="4"/>
+				  			<span id="spanModuleDigitalIntercom"></span>
+				  		</dd>
+				  	<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module5" value="5"/>
+				  			<span id="spanModuleODB"></span>
+				  		</dd>
+				</dl>
+			</div>
+	    </div>
+	</div>
+	<div id="saveParam">
+		<dl class="setingbox">
+			<dt></dt>
+			<dd>
+				<a href="javascript:ajaxSaveVehile();" class="searchbtn">
+			  		<span id="save"></span>
+			    </a>
+			</dd>
+		</dl>
+	</div>
+</div>
+</body>
+</html>

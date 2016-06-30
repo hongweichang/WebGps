@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--<metahttp-equivmetahttp-equiv="x-ua-compatible"content="IE=7"/> -->
+    <title></title>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexigrid.css"/>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/labelIcon.css"/>
+	<link rel="stylesheet" type="text/css" href="css/AllCommonInfo.css"/>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.form.js"></script>
+	<script type="text/javascript" src="../js/myajax.js"></script>
+	<script type="text/javascript" src="../../js/date.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexiManage.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexigrid.js"></script>
+	<script type="text/javascript"  src="../js/hashtable.js"></script>
+	<script type="text/javascript" src="../js/public.js"></script>
+	<script type="text/javascript"  src="../ttxmap/ttxmapapi.js"></script>
+	<script type="text/javascript" src="js/AllStationInfo.js"></script>
+	<style type="text/css">
+		#allStationInfo {
+			left: 0;
+			top: 0;
+			position: absolute;
+			width: 710px;
+		}
+		.dm_map {
+			right: 5px;
+			top: 0;
+			position: absolute;
+			border-right: 1px solid #ddd;
+			width: 270px;
+			height: 593px;
+		}
+		.switchStation {
+			height: 38px;
+			line-height: 38px;
+			border-bottom: #0071c6 solid 1px;
+			margin: 0px 10px;
+		}
+		.switchStation .switch {
+			width: 100px;
+			overflow: hidden;
+			float: left;
+			cursor: pointer;
+		}
+		.switchStation .switch:hover,.switchStation .switch.cur {
+			text-decoration: none;
+			border-bottom: #0071c6 solid 3px;
+			color: #0077ff;
+		}
+		.switchStation .switch a{
+			display: block;
+			height: 35px;
+			line-height: 35px;
+			font-size: 14px;
+			text-align: center;
+			padding: 0px;
+		}
+		#editLinePostion {
+    		float: right;
+    		margin: 4px 0;
+		}
+		#editLinePostion .item {
+			margin: 0 0;
+		}
+		#editLinePostion .item .y-btn{
+			margin: 0 9px 0 0;
+		}
+		.toolbar {
+			height: 30px;
+			line-height: 30px;
+			margin: 10px 10px;
+		}
+		.station-info li {
+			display: none;
+		}
+		.station-info li.cur {
+			display: block;
+		}
+		.station-info .flexigrid {
+    		margin: 0 10px;
+		}
+		.toolbar-search {
+			display:none;
+			float:left;
+		}
+		.toolbar-btn {
+			display:none;
+			float:left;
+			margin-left:10px;
+		}
+		.toolbar-search .real-search-bar {
+			width: 180px;
+		}
+		.toolbar-search .search-bar .search-input-ctn {
+			width: 141px;
+		}
+		.btn-group .item .y-btn.stationRelation span {
+    		width: 80px;
+		}
+	</style>
+</head>
+ <body onresize="loadReportTableWidth();">
+ 	<div id="allStationInfo">
+ 		<div class="switchStation">
+ 			<div class="switch cur"><a id="upStationTitle"></a></div>
+ 			<div class="switch"><a id="downStationTitle"></a></div>
+<!--  			<div id="editLinePostion"></div> -->
+ 		</div>
+ 		<div class="toolbar">
+			<div id="toolbar-search" class="toolbar-search"></div>
+			<div id="toolbar-btn" class="toolbar-btn"></div>
+		</div>
+ 		<ul class="station-info">
+ 			<li class="cur">
+				<table id="upStationInfoTable" style="display:none;"></table>
+			</li>
+			<li>
+				<table id="downStationInfoTable" style="display:none;"></table>
+			</li>
+ 		</ul>
+ 		<form action="" method="post" name="reportForm"></form>
+ 	</div>
+ 	<!--地图位置定位-->
+    <div class="dm_map">
+     	<iframe frameborder="0" scrolling="no" width="100%" height="100%" name="frameMap" id="frameMap" style="background-color: #ffffff;"
+     		src="../ttxmap/ttxmap.html?rectSearch=0&150613">
+		</iframe>
+    </div>
+ </body>
+</html>

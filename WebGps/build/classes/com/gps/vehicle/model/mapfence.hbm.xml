@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.vehicle.model">
+	<class name="MapFence" table="map_fence">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ��������identity������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->
+		<property name="devIdno" column="devIdno" type="string" length="40"/>
+		<property name="markerID" column="MarkerID" type="java.lang.Integer"/>
+		<property name="accessAlarm" column="AccessAlarm" type="java.lang.Integer"/>
+		<property name="speedAlarm" column="SpeedAlarm" type="java.lang.Integer"/>
+		<property name="speedHigh" column="SpeedHigh" type="java.lang.Integer"/>
+		<property name="speedHighTts" column="SpeedHighTts" type="string"/>
+		<property name="speedHighWarn" column="SpeedHighWarn" type="java.lang.Integer"/>
+		<property name="speedHighWarnTts" column="SpeedHighWarnTts" type="string"/>
+		<property name="speedLow" column="SpeedLow" type="java.lang.Integer"/>
+		<property name="speedLowTts" column="SpeedLowTts" type="string"/>
+		<property name="speedLowWarn" column="SpeedLowWarn" type="java.lang.Integer"/>
+		<property name="speedLowWarnTts" column="SpeedLowWarnTts" type="string"/>
+		<property name="parkAlarm" column="ParkAlarm" type="java.lang.Integer"/>
+		<property name="parkTime" column="ParkTime" type="java.lang.Integer"/>
+		<property name="doorAlarm" column="DoorAlarm" type="java.lang.Integer"/>
+		<property name="beginTime" column="BeginTime" type="java.lang.Integer"/>
+		<property name="endTime" column="EndTime" type="java.lang.Integer"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,63 @@
+@charset "utf-8";
+* { margin: 0; padding: 0; }
+body { font-size: 12px; line-height: 1.8em; background-color: #f5f6f7 }
+ul, li, dl, dd, dt, ol, h1, h2, h3{ list-style: none;}
+a { text-decoration: none; }
+.blue { color: #2b99dd; }
+.red {color:red}
+
+.submenu { display: block; margin-top: 2px; }
+.submenu dt, .submenu dd { display: block; }
+.subtitle { display: block; background: url(../images/system/sub.png) no-repeat; height: 24px; text-indent: 12px; line-height: 24px; font-weight: bold; color: #fff }
+.subsub { border: solid 1px #cdcdcd; border-top: none; text-indent: 12px; }
+.subsub dt { background: #efefef; border-bottom: solid 1px #cdcdcd }
+.subsub dt a { display: block; background: url(../images/system/sub.png) 143px -71px no-repeat; line-height: 25px; font-weight: bold; color: #333; }
+.subsub dt.viewed a { background-position: 143px -38px; }
+.subsub ul { font-size: 0px; background-color: #fff; padding: 5px 0; }
+.subsub ul li { font-size: 12px; line-height: 25px; }
+.subsub ul li a { color: #333; display: block; }
+.subsub ul li.viewed a { background-color: #c0e5f6; font-weight: bold; color: #2b99dd; }
+ 
+.ent{ width:34px;}
+.checkbox{width:14px;}
+.set a{color:#2b99dd; text-decoration:none; padding:0 5px;}
+.red {color:red}
+
+.setingbox { display: block; overflow: hidden; zoom: 1; }
+.setingbox dl { }
+.setingbox dt { float: left; width:150px; text-align: right; margin-right: 10px; color: #333; padding-top: 10px; clear: both; display: block }
+.setingbox dd { padding-top: 10px; width: 300px; float: left; color: #666 }
+.setingbox dd input.text { width: 160px; height: 20px; border: solid 1px #cdcdcd; line-height: 20px; padding: 0 4px; color: #666; }
+.setingbox dd select { width: 170px; height: 22px; color: #666; }
+
+.downplan { display: block; overflow: hidden; zoom: 1; }
+.downplan dl { }
+.downplan dt { float: left; width:100px; text-align: right; margin-right: 10px; color: #333; padding-top: 10px; clear: both; display: block }
+.downplan dd { padding-top: 10px; width: 80px; float: left; }
+.downplan dd input.text { width: 60px; height: 20px; border: solid 1px #cdcdcd; line-height: 20px; padding: 0 4px; }
+.downplan dd select { width: 160px; height: 22px; }
+
+.mapfence { display: block; overflow: hidden; zoom: 1; }
+.mapfence dl { }
+.mapfence dt { float: left; width:100px; text-align: right; margin-right: 10px; color: #333; padding-top: 10px; clear: both; display: block }
+.mapfence dd { padding-top: 10px; width: 300px; float: left; color: #666 }
+.mapfence .show {display: block;}
+.mapfence .hide {display: none;}
+
+a.searchbtn { float: left; display: block; background: url(../images/public/srchNbtn.png) no-repeat 0 -46px; padding-left: 20px;margin-left:7px; }
+a.searchbtn span { background: url(../images/public/srchNbtn.png) no-repeat right bottom; padding-right: 20px; float: left; line-height: 21px; font-family: Arial, "微软雅黑"; color: #fff; cursor: pointer; padding-bottom: 2px; display: block }
+
+.tab{padding:10px 2px;}
+#tabnav { overflow:hidden; zoom:1;  bottom:-1px; padding-left:10px; position:relative; z-index:20;}
+#tabnav li {float:left; background:url(../images/system/tabbtnbg.png) repeat-x; height:20px; border:solid 1px #cdcdcd; padding:0 10px; cursor:pointer; color:#666; margin:0 2px 0 0; overflow:hidden;}
+#tabnav li.now_focus { background-position:0 -20px; color:#000; font-weight:bold; border-bottom-color:#fff}
+#tabcontent { border:solid 1px #cdcdcd; z-index:19}
+#tabcontent div {display:none; padding:30px 25px; background:#fff;} 
+#tabcontent div.now_focus {display:block;}
+#tabcontent td{padding:5px; color:#666}
+#tabcontent table{margin-bottom:20px;}
+.dataname{width:50px; text-align:right}
+.datainput{width:162px;}
+.datainput input{width:117px; height:20px; border:solid 1px #cdcdcd;}
+
+.b {	FONT-WEIGHT: bold;	}

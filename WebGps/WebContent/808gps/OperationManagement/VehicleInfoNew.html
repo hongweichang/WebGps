@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--<metahttp-equivmetahttp-equiv="x-ua-compatible"content="IE=7"/> -->
+    <title></title>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css?150120"/>
+	<link href="../../js/dxtree/dhtmlxtree.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../css/labelIcon.css"/>
+	<link rel="stylesheet" type="text/css" href="css/CommonInfo.css?150120"/>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../../js/WdatePicker/WdatePicker.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexiManage.js?150120"></script>
+	<script type="text/javascript" src="../../js/dxtree/dhtmlxcommon.js"></script>
+	<script type="text/javascript" src="../../js/dxtree/dhtmlxtree.js"></script>
+	<script type="text/javascript" src="../../js/company_tree.js?150120"></script>
+	<script type="text/javascript" src="../../js/myajax.js"></script>
+	<script type="text/javascript" src="../../js/date.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../js/public.js"></script>
+	<script type="text/javascript" src="js/VehicleInfoNew.js"></script>
+	<style>
+		#info-mid-table	.td-vehicleIcon div {
+			float:left;
+			width:55px;
+		}
+		#info-mid-table .operat {
+			cursor: pointer;
+		}
+		#info-mid-table #device-info .search-input{
+			width: 60px;
+		}
+		#info-mid-table .td-chn .btn-group ,#info-mid-table .td-ioIn .btn-group,#info-mid-table .td-ioOut .btn-group {
+			height:27px;
+			line-height:27px;
+			clear: none;
+		}
+		#info-mid-table .td-temp .btn-group{
+			clear: none;
+		}
+		#info-mid-table .td-chn .chnName input,#info-mid-table .td-ioIn .ioInName input
+		,#info-mid-table .td-temp .tempName input,#info-mid-table .td-ioOut .ioOutName input{
+			width:100px;
+		}
+		#info-mid-table .peripheral {
+			border: 1px solid #d6def1;
+			border-collapse: collapse;
+			text-align: left;
+			margin:0px 4px 2px 4px;
+			float:left;
+			width:100px;
+		}
+		#info-mid-table .td-mediaType .mediaType,#info-mid-table .td-module .module {
+			border: 1px solid #d6def1;
+			border-collapse: collapse;
+			padding: 4px 2px;
+			text-align: left;
+			float:left;
+			width:240px;
+		}
+		.selectInfo {
+			cursor : pointer;
+		}
+	</style>
+ </head>
+ <body id="info-body">
+	<div id="info-mid">
+		<form>
+			<div id="info-mid-table"></div>
+			<div id="toolbar-btn" style="display:none;float:left;margin-top:20px;margin-left:400px;"></div>
+		</form>
+	</div>
+	<div id="company_tree" style="height:200px;background-color:#f5f5f5;border:1px solid Silver;overflow:auto;position: absolute;display:none;background-color: #fff;border: 1px solid rgba(0, 0, 0, 0.1);box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);"></div>
+ </body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model.line">
+	<class name="StandardStationInfo" table="jt808_station_info">
+		<!-- ����������������?? -->
+		<id name="id" column="ID" type="integer">
+			<generator class="identity" />
+		</id>
+		<!-- ����������?������? -->
+		<property name="enable" column="IsEnable" type="java.lang.Integer" />
+		<property name="name" column="Name" type="string" length="64" />
+		<property name="direct" column="Direction" type="java.lang.Integer" />
+		<property name="lngIn" column="In_JingDu" type="java.lang.Integer" />
+		<property name="latIn" column="In_WeiDu" type="java.lang.Integer" />
+		<property name="angleIn" column="In_Angle" type="java.lang.Integer" />
+		<property name="lngOut" column="Out_JingDu" type="java.lang.Integer" />
+		<property name="latOut" column="Out_WeiDu" type="java.lang.Integer" />
+		<property name="angleOut" column="Out_Angle" type="java.lang.Integer" />
+		<property name="abbr" column="Abbreviation" type="string"
+			length="64" />
+		<property name="remark" column="Remark" type="string" length="512" />
+	</class>
+</hibernate-mapping>

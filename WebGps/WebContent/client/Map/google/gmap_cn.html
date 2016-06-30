@@ -1,0 +1,77 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML><HEAD><TITLE></TITLE>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<LINK rel=stylesheet type=text/css href="theme/common.css?v150717">
+<SCRIPT type=text/javascript src="js/common.js?v150717"></SCRIPT>
+<!--
+<SCRIPT type=text/javascript src ="http://j.maxmind.com/app/geoip.js?v150717"></SCRIPT>
+-->
+<script type=text/javascript src="http://ditu.google.cn/maps/api/js?sensor=false"></script>
+<SCRIPT type=text/javascript src="js/json2.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/jquery-1.4.2.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/hashtable.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/vehicle.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/function.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/map-google.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/public.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/popupmarker.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/namemarker.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/mapmarker.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/maptrack.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/mapframe.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/ev-google.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/TextIconOverlay.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/lang.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript>
+var	lang = null;
+var GFRAME = new mapframe();
+
+function initialize() {
+	initCommon("theme/");
+
+	GFRAME.createMap(true);
+	
+	document.getElementById('spanCurMap').innerText = lang.mapGoogle;
+	document.getElementById('liMap0').style.display = "none";
+}
+</SCRIPT>
+
+<META name=GENERATOR content="MSHTML 8.00.6001.19088"></HEAD>
+<BODY oncontextmenu="return false;" onresize=GFRAME.restFrame(); onload=initialize();>
+<DIV id=FrameCanvas>
+	<DIV id=mapbar>
+		<DIV id=maptoolbar style="padding-left:6px;">
+			<img id="addPoint" src="./image/addpoint.gif" style="padding-top:2px;display:none;" onclick="addMarkerPoint()"/>
+			<img id="addRectangle" src="./image/addrectangle.gif" style="padding-top:2px;display:none;" onclick="addMarkerRectangle()"/>
+			<img id="addPolygon" src="./image/addpolygon.gif" style="padding-top:2px;display:none;" onclick="addMarkerPolygon()"/>
+			<img id="addLine" src="./image/addline.gif" style="padding-top:2px;display:none;" onclick="addMarkerLine()"/>
+			<img id="btnSearch" src="./image/search.gif" style="padding-top:2px;display:none;" onclick="searchVehi()"/>
+			<img id="btnFullScreen" src="./image/fullscreen.gif" style="padding-top:2px;display:none;" onclick="fullScreen()"/>
+			<img id="btnCenter" src="./image/savemapconfig.gif" style="padding-top:2px;display:none;" onclick="getCenter()"/>
+		</DIV>
+		<div id="selectMap" class="cat_list_type">
+			<div id="mapMenu" class="h2_cat_type"><h3 id="txt"><span id="spanCurMap"></span></h3>
+				<div class="h3_cat_type">
+					<div class="shadow_border_type">
+						<ul>
+							<li style="display:none;" id="liMap3"><a href="javascript:switchMapTo('3');"><span id="spanMap3"></span></a></li>	<!--百度-->
+							<li style="display:none;" id="liMap9"><a href="javascript:switchMapTo('9');"><span id="spanMap9"></span></a></li>  <!--Mapbar-->
+							<li style="display:none;" id="liMap0"><a href="javascript:switchMapTo('0');"><span id="spanMap0"></span></a></li>  <!--谷歌-->
+							<li style="display:none;" id="liMap8"><a href="javascript:switchMapTo('8');"><span id="spanMap8"></span></a></li>  <!--Arcgis-->
+							<li style="display:none;" id="liMap1"><a href="javascript:switchMapTo('1');"><span id="spanMap1"></span></a></li>  <!--MapInfo-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<DIV id=mapbarRight>
+			<img id="btnExpand" src="./image/expand.jpg" style="padding-top:2px;display:none;" onclick="expand()"/>
+		</DIV>
+		<DIV id="overVehicleAddress"></DIV>
+	</DIV>
+	<DIV id=mapcanvas></DIV>
+</DIV>
+<SPAN id=menu_more onmouseover=clearInterval(_s); onmouseout="hidemore('menu_more',300)"></SPAN>
+<span id="tip" unselectable="on" style="position: absolute; z-index: 10; background:#FBFFD7; border:solid 1px #999999; font-weight: bold; l"></span>
+</BODY>
+</HTML>

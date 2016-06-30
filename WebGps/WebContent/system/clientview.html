@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/public.css?v150825" rel="stylesheet" type="text/css" />
+<link href="css/client.css?v150825" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js?v150825"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js?v150825"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js?v150825"></script>
+<script type="text/javascript" src="../js/myajax.js?v150825"></script>
+<script type="text/javascript" src="../js/public.js?v150825"></script>
+<script type="text/javascript" src="../js/date.js?v150825"></script>
+<script type="text/javascript" src="js/lang.js?v150825"></script>
+<script type="text/javascript" src="js/clientview.js?v150825"></script>
+<script type="text/javascript" src="js/devicefun.js?v150825"></script>
+<script type="text/javascript" src="js/devicepay.js?v150825"></script>
+<script type="text/javascript" src="js/clientfun.js?v150825"></script>
+</head>
+<body>
+<!--内容start-->
+<div class="comt">
+  <h2 class="title"> <span class="more"></span> <span class="icon icon2"></span> <span id="clientTitle"></span> > <span id="clientView"></span> </h2>
+  <div class="cont">
+  	<div class="user">
+    	<div class="pic"><img src="images/temp/userpic.jpg" /></div>
+        <div class="infos">
+        	<p class="userID">
+        		<span id="clientName">&nbsp;</span>&nbsp;
+        		<a href="javascript:" onclick="editClient()"><span id="clientEdit"></span></a>&nbsp;|&nbsp;
+        		<a href="javascript:" onclick="resetPwd()"><span id="clientResetPwd"></span></a>&nbsp;<span id="defaultPwdtip" class="red"></span><span class="red">000000</span>
+        	</p>
+            <p class="userinfo">
+            	<strong><span id="labelClientAccount"></span></strong>&nbsp;<span id="clientAccount">&nbsp;</span>
+            	<strong><span id="labelClientLinkman"></span></strong>&nbsp;<span id="clientLinkMan"></span>
+            	<strong><span id="labelClientTelephone"></span></strong>&nbsp;<span id="clientTelephone"></span>
+            	<strong><span id="labelClientEmail"></span></strong>&nbsp;<span id="clientEmail"></span>
+            	<strong><span id="labelDeviceCount"></span></strong>&nbsp;<span id="deviceCount"></span>
+            	<strong><span id="labelUserCount"></span></strong>&nbsp;<span id="userCount"></span>
+            </p>
+            <p class="userinfo">
+            	<strong ><span id="spanClientOperatorTip" class="red">&nbsp;</span></strong>
+            </p>
+        </div>
+    </div>
+    <div class="submenu">
+	    <ul>
+	      <li><a href="javascript::" name="cliMenuItem" onclick="javascript:switchClientPage('device')" class="befor"><span id="liDeviceList"></span></a></li>
+	      <li><a href="javascript::" name="cliMenuItem" onclick="javascript:switchClientPage('client')" ><span id="liClientList"></span></a></li>
+	    </ul>
+	</div>
+	<div class="contright">
+		<div id="deviceOperator" style="padding-left:25px" class="set">
+		<form method="post" name="reportForm" action="">
+			<a href="javascript:" onclick="delSelDevice()"><span id="deleteSelectedDevice">&nbsp;</span></a>&nbsp;&nbsp;
+			<a href="javascript:" onclick="saleSelDevice()"><span id="saleSelectedDevice">&nbsp;</span></a>&nbsp;&nbsp;
+			<a href="javascript:" onclick="exportAllExcel()"><span id="exportAllExcel">&nbsp;</span></a>&nbsp;&nbsp;
+			<!-- 
+			<a href="javascript:" onclick="exportVehicleExcel()"><span id="exportVehicleExcel">&nbsp;</span></a>&nbsp;&nbsp;
+      		<a href="javascript:" onclick="exportMobileExcel()"><span id="exportMobileExcel">&nbsp;</span></a>&nbsp;&nbsp;
+      		 -->
+      	</form>
+		</div>
+	    <table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="deviceTable">
+	      <tr class="heard">
+	        <th class="tableft"><span></span></th>
+	        <th class="checkbox"><input type="checkbox" name="selectDeviceAll" id="selectDeviceAll" onclick="onSelectedAll('selectDeviceIdList', 'selectDeviceAll')"/></th>
+	        <th class="ent"><span id="thDeviceSelectAll"></span></th>
+	        <th><span id="thDeviceIndex"></span></th>
+	        <th><span id="thDeviceName"></span></th>
+	        <th><span id="thDeviceIDNO"></span></th>
+	        <th><span id="thDeviceDevType"></span></th>
+	        <!-- 
+	        <th><span id="thDeviceChnCount"></span></th>
+	         -->
+	        <th><span id="thDeviceSimCard"></span></th>
+<!-- 	        <th><span id="thDeviceDateProduct"></span></th> -->
+	        <th><span id="thDevicePayEnable"></span></th>
+	        <th><span id="thDevicePayBegin"></span></th>
+	        <th><span id="thDevicePayMonth"></span></th>
+	        <!-- 
+	        <th><span id="thDevicePayPeriod"></span></th>
+	         -->
+	        <th><span id="thDevicePayStatus"></span></th>
+	        <!-- 
+	        <th><span id="thDevicePayOverDay"></span></th>
+	         -->
+	        <th><span id="thDeviceOperator"></span></th>
+	        <th class="tabright"><span></span></th>
+	      </tr>
+	      <tr id="deviceTableTemplate" class="tabdata" style="display:none">
+	        <td class="tableft">&nbsp;</td>
+	        <td><input type="checkbox" id="selectDeviceIdList" name="selectDeviceIdList" onclick="onSelectedItem('selectDeviceIdList', 'selectDeviceAll')" value=""/></td>
+	        <td  class="ent">&nbsp;</td>
+	        <td><span id="tdIndex"></span></td>
+	        <td class="set"><span id="tdName"></span></td>
+	        <td class="set"><span id="tdIDNO"></span></td>
+	        <td><span id="tdDevType"></span></td>
+	        <!-- 
+	        <td><span id="tdChnCount"></span></td>
+	        -->
+	        <td><span id="tdSimCard"></span></td>
+<!-- 	        <td><span id="tdDateProduct"></span></td> -->
+	        <td><span id="tdPayEnable"></span></td>
+	        <td><span id="tdPayBegin"></span></td>
+	        <td><span id="tdPayMonth"></span></td>
+	        <!-- 
+	        <td><span id="tdPayPeriod"></span></td>
+	         -->
+	        <td><span id="tdPayStatus"></span></td>
+	        <!-- 
+	        <td><span id="tdPayOverDay"></span></td>
+	         -->
+	        <td class="set"><span id="tdOperator"><a href="#"></a> <a href="deviceSet.html"></a> <a href="#"></a></span></td>
+	        <td class="tabright">&nbsp;</td>
+	      </tr>
+	    </table>
+	    <div id="devicePagination" class="pagination" style="margin:10px 10px 10px 10px;"></div>
+	    <table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="clientTable">
+	      <tr class="heard">
+	        <th class="tableft"><span></span></th>
+	        <th><span id="thIndex"></span></th>
+	        <th><span id="thName"></span></th>
+	        <th><span id="thAccount"></span></th>
+	        <th><span id="thLinkMan"></span></th>
+	        <th><span id="thTelephone"></span></th>
+	        <th><span id="thEmail"></span></th>
+	        <th><span id="thUrl"></span></th>
+	        <th><span id="thOperator"></span></th>
+	        <th class="tabright"><span></span></th>
+	      </tr>
+	      <tr id="clientTableTemplate" class="tabdata" style="display:none">
+	        <td class="tableft">&nbsp;</td>
+	        <td><span id="tdIndex"></span></td>
+	        <td class="set"><span id="tdName"></span></td>
+	        <td class="set"><span id="tdAccount"></span></td>
+	        <td><span id="tdLinkMan"></span></td>
+	        <td><span id="tdTelephone"></span></td>
+	        <td><span id="tdEMail"></span></td>
+	        <td><span id="tdUrl"></span></td>
+	        <td class="set"><span id="tdOperator"><a href=""></a> <a href=""></a> <a href="#"></a></span></td>
+	        <td class="tabright">&nbsp;</td>
+	      </tr>
+	    </table>
+		<div id="clientPagination" class="pagination" style="margin:10px 10px 10px 10px;"></div>
+	</div>
+  </div>
+</div>
+</body>
+</html>

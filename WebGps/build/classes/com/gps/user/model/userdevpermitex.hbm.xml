@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.user.model">
+	<class name="UserDevPermitEx" table="user_dev_permit">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ��������identity������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->
+		<many-to-one name="userAccount" column="AccountID" class="com.gps.model.UserAccountEx" lazy="false" not-found="ignore" insert="false" update="false"/>
+		<property name="devIdno" column="DevIDNO"	type="string" length="32" not-null="true"/>
+	</class>
+</hibernate-mapping>

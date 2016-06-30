@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.api.model">
+	<class name="AlarmImage" table="dev_alarm">
+		<!-- ������������ -->
+		<id	name="guid" column="Guid" type="string" length="40" >
+			 <generator class="assigned" />
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="devIdno" column="DevIDNO" type="string" length="40"/>
+		<property name="imageUrl" column="ImageUrl" type="string" length="512"/>
+		<property name="imagePath" column="ImagePath" type="string" length="512"/>
+		<property name="imageTime" column="ImageTime" type="java.util.Date"/>
+		<property name="imageSvrIdno" column="ImageSvrIDNO" type="string" length="40"/>	</class>
+</hibernate-mapping>

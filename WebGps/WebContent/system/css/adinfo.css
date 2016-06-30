@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+.setingbox { display: block; overflow: hidden; zoom: 1; }
+.setingbox dl { }
+.setingbox dt { float: left; width:150px; text-align: right; margin-right: 10px; color: #333; padding-top: 10px; clear: both; display: block }
+.setingbox dd { width:400px;padding-top: 10px; float: left; color: #000 }
+.setingbox dd input.text { width: 300px; height: 20px; border: solid 1px #cdcdcd; line-height: 20px; padding: 0 4px; color: #666; }
+.setingbox dd input.selectedImg { width: 200px; height: 20px; border: solid 1px #cdcdcd; line-height: 20px; padding: 0 4px; color: #666; }
+.setingbox dd select { width: 170px; height: 22px; color: #666; }
+.searchbtn div {
+    background: url("../images/public/srchNbtn.png") no-repeat scroll right bottom rgba(0, 0, 0, 0);
+    border: medium none;
+    color: #fff;
+    cursor: pointer;
+    font-family: "微软雅黑";
+    height: 23px;
+/*     padding-bottom: 2px; */
+/*     padding-right: 11px; */
+    width: 80px;
+}
+.searchbtn div span{
+	margin-left:22px;
+}

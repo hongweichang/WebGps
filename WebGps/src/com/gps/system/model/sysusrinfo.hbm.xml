@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.system.model">
+	<class name="SysUsrInfo" table="sys_user">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ��������identity������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->
+		<property name="name" column="Name"	type="string" not-null="true" length="32" unique="true"/>
+		<property name="password" column="Password"	type="string" not-null="true" length="128"/>
+		<property name="role" column="Role" type="short" not-null="true" />
+		<property name="telephone" column="Telephone" type="string" not-null="true" length="128"/>
+		<property name="email" column="EMail" type="string" not-null="true" length="128"/>
+		<property name="lastLoginTime" column="LastLoginTime" type="java.util.Date" length="128"/>
+		<property name="lastLoginAddr" column="LastLoginAddr" type="string" length="128"/>
+	</class>
+</hibernate-mapping>

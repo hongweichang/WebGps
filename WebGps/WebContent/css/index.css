@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+#nav { background: url(../images/public/topNavbg.png) left bottom repeat-x; height: 36px; overflow: hidden; box-shadow: #ccc 0 2px 0; position: relative; }
+.buttonbg { float: left;  height: 36px; overflow: hidden; }
+.buttonbg li { float: left; height: 36px; overflow: hidden; padding-right: 1px;  background: url(../images/public/topNavbg.png) left top repeat-x;}
+.buttonbg li.logo { background: url(../images/public/logo.png) no-repeat; width: 137px; }
+.buttonbg li a { display: block; float: left; background: url(../images/public/globalnav.png) no-repeat; width: 101px; height: 36px; color: #fff; text-align: center; font: bold 14px/36px "微软雅黑", Arial; text-decoration: none }
+.buttonbg li a:hover { background: url(../images/public/globalnav.png) 0 -71px no-repeat; }
+.buttonbg li a:active { background: url(../images/public/globalnav.png) 0 -108px no-repeat; }
+.buttonbg li a.befor { background-position: left bottom; }
+.navright { background: url(../images/public/navright.png) no-repeat; width: 3px; height: 36px; position: absolute; top: 0; right: 0; _right: -1px; }
+#topbutton { color: #666; padding-top: 10px; letter-spacing: 0.1em; overflow: hidden; zoom: 1; }
+#topbutton a { color: #666; text-decoration: none }
+
+#logo { float: left; height: 22px; font: bold 18px/22px Arial, "微软雅黑"; padding-left: 2px; height: 30px; }
+.toptext { float: right; padding-left: 22px; white-space: nowrap;}
+
+#content {
+    margin: 5px 0;
+    overflow: hidden;
+}
+#content:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.reportNav{float: left; width: 167px;}
+.reportCont{margin-left: 172px; border: solid 1px #d1d1d1; border-radius: 6px; background-color: #f1f1f1;}
+
+.set a{color:#2b99dd; text-decoration:none; padding:0 5px;}

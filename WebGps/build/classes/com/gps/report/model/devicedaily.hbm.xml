@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.report.model">
+	<class name="DeviceDaily" table="dev_daily">
+		<!-- ������������ -->
+		<composite-id>
+            <key-property name="devIdno" column="DevIDNO" type="java.lang.String" length="32"/>
+            <key-property name="date" column="GPSDate" type="java.util.Date"/>
+        </composite-id>
+		<!-- ������������ -->
+		<property name="startTime" column="STime" type="java.util.Date"/>
+		<property name="startJingDu" column="SJingDu" type="java.lang.Integer"/>
+		<property name="startWeiDu" column="SWeiDu" type="java.lang.Integer"/>
+		<property name="startGaoDu" column="SGaoDu" type="java.lang.Integer"/>
+		<property name="startLiCheng" column="SLiCheng" type="java.lang.Integer"/>
+		<property name="startYouLiang" column="SYouLiang" type="java.lang.Integer"/>
+		<property name="endTime" column="ETime" type="java.util.Date"/>
+		<property name="endJingDu" column="EJingDu" type="java.lang.Integer"/>
+		<property name="endWeiDu" column="EWeiDu" type="java.lang.Integer"/>
+		<property name="endGaoDu" column="EGaoDu" type="java.lang.Integer"/>
+		<property name="endLiCheng" column="ELiCheng" type="java.lang.Integer"/>
+		<property name="endYouLiang" column="EYouLiang" type="java.lang.Integer"/>
+		<property name="addYouLiang" column="AYouLiang" type="java.lang.Integer"/>
+		<property name="reduceYouLiang" column="RYouLiang" type="java.lang.Integer"/>
+		<property name="liCheng" column="LiCheng" type="java.lang.Integer"/>
+		<property name="youLiang" column="YouHao" type="java.lang.Integer"/>
+		<property name="workTime" column="WorkTime" type="java.lang.Integer"/>
+		<property name="uploadWifiLiuLiang" column="UWifiLiuLiang" type="java.lang.Integer"/>
+		<property name="downWifiLiuLiang" column="DWifiLiuLiang" type="java.lang.Integer"/>
+		<property name="uploadSimLiuLiang" column="USimLiuLiang" type="java.lang.Integer"/>
+		<property name="downSimLiuLiang" column="DSimLiuLiang" type="java.lang.Integer"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps.model">
+	<class name="DeviceStatusLite" table="dev_status">
+		<!-- ����������������?? -->
+		<id	name="id" column="DevIDNO" type="string" length="40">
+			<!-- ������������identity������������������ -->
+			<generator class="assigned"/>
+		</id>
+		<!-- ����������?������? -->
+		 
+		<property name="gw" column="GWSvrIDNO" type="string" length="40"/>
+		<property name="net" column="Network" type="java.lang.Integer"/>
+		<property name="ol" column="Online" type="java.lang.Integer"/>
+		<property name="s1" column="Status1" type="java.lang.Integer"/>
+		<property name="s2" column="Status2" type="java.lang.Integer"/>
+		<property name="s3" column="Status3" type="java.lang.Integer"/>
+		<property name="s4" column="Status4" type="java.lang.Integer"/>
+		<property name="yl" column="YouLiang" type="java.lang.Integer"/>
+		<property name="sp" column="Speed" type="java.lang.Integer"/>
+		<property name="hx" column="HangXiang" type="java.lang.Integer"/>
+		<property name="gd" column="GaoDu" type="java.lang.Integer"/>
+		<property name="lng" column="JingDu" type="java.lang.Integer"/>
+		<property name="lat" column="WeiDu" type="java.lang.Integer"/>
+		<property name="pk" column="ParkTime" type="java.lang.Integer"/>
+		<property name="lc" column="LiCheng" type="java.lang.Integer"/>
+		<property name="t1" column="TempSensor1" type="java.lang.Integer"/>
+		<property name="t2" column="TempSensor2" type="java.lang.Integer"/>
+		<property name="t3" column="TempSensor3" type="java.lang.Integer"/>
+		<property name="t4" column="TempSensor4" type="java.lang.Integer"/>
+		<property name="gt" column="GPSTime" type="string"/>
+		<property name="pt" column="Protocol" type="java.lang.Integer"/>
+		<property name="dt" column="DiskType" type="java.lang.Integer"/>
+		<property name="ac" column="AudioCodec" type="java.lang.Integer"/>
+		<property name="ft" column="FactoryType" type="java.lang.Integer"/>
+		<property name="fdt" column="FactoryDevType" type="java.lang.Integer"/>
+		<property name="imei" column="Imei" type="string" length="64"/>
+		<property name="imsi" column="Imsi" type="string" length="64"/>
+		<property name="hv" column="HardVer" type="string" length="64"/>
+		<property name="sv" column="SoftVer" type="string" length="64"/>
+		<!-- ������������ -->
+		<property name="lid" column="LineID" type="java.lang.Integer"/>
+		<property name="drid" column="DriverID" type="java.lang.Integer"/>
+		<property name="dct" column="LineDirection" type="java.lang.Integer"/>
+		<property name="sfg" column="StationFlag" type="java.lang.Integer"/>
+		<property name="snm" column="StationIndex" type="java.lang.Integer"/>
+		<property name="sst" column="StationStatus" type="java.lang.Integer"/>
+		
+		<property name="or" column="ObdRpm" type="java.lang.Integer"/>
+		<property name="os" column="ObdSpeed" type="java.lang.Integer"/>
+		<property name="ov" column="ObdVotage" type="java.lang.Integer"/>
+		<property name="ojt" column="ObdJQTemp" type="java.lang.Integer"/>
+		<property name="ost" column="ObdStatus" type="java.lang.Integer"/>
+		<property name="ojm" column="ObdJQMPos" type="java.lang.Integer"/>
+
+	</class>
+</hibernate-mapping>

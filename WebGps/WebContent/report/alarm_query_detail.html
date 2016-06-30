@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/report.css" rel="stylesheet" type="text/css" />
+<link href="../js/editselect/jquery.editable-select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/editselect/jquery.editable-select.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/gps_common.js"></script>
+<script type="text/javascript" src="../js/list_map.js"></script>
+<script type="text/javascript" src="js/search_option.js"></script>
+<script type="text/javascript" src="js/alarm_query_detail.js"></script>
+</head>
+<body>
+<div id = "sysuserLogDate" class="setdate">
+<form method="post" name="reportForm" action="">
+	<h2 class="righttitile1"><span id="reportTitle">&nbsp;</span></h2>
+    <div class="slinput">
+<!--     	<div class="radiotype" style="float:left;"> -->
+<!--     		<div style="float:left;"><label style="height:20px;">公司</label></div><input type="radio" name="radio" id="report_company" checked style="float:left;"/> -->
+<!--     		<div style="float:left;"><label style="height:20px;">车辆</label></div><input type="radio" name="radio" id="report_car" style="float:left;"/> -->
+<!--     		<input type="text" id="report_detail_name" maxlength="100"/> -->
+<!--     	</div> -->
+    	<div class="inputdis">
+	    	<span id="labelBegintime" class="setdatetext">&nbsp;</span>
+	    		<input type="text" id="begintime" name="begintime" size="15" readonly class="Wdate" style="width:160px;"/>
+	    	<span id="labelEndtime" class="setdatetext">&nbsp;</span>
+	    		<input type="text" id="endtime" name="endtime" size="15" readonly class="Wdate" style="width:160px;"/>
+	    	<span id="alarmSource">&nbsp;</span>
+	    		<select id="editable-select2" class="alarmSourceList" name="alarmSourceList"></select>
+	    		<input type="text" style="display:none;" id="alarmSourceIdnos" class="alarmSourceIdnos"/>
+	    	<span id="alarmType">&nbsp;</span>
+	    		<select id="editable-select2" class="alarmTypeList" name="alarmTypeList"></select>
+	    		<input type="text" style="display:none;" id="alarmTypeIdnos" class="alarmTypeIdnos"/>
+	    	<span id="handleCondition">&nbsp;</span>
+	    		<select id="editable-select2" class="handleConditionList" name="handleConditionList"></select>
+	    		<input type="text" style="display:none;" id="handleConditionIdnos" class="handleConditionIdnos"/>
+	    	<span id="vehicleColor">&nbsp;</span>
+	    		<input type="text" id="vehicleColorName" class="vehicleColorName"/>
+	    </div>
+	    <div></div>
+    </div>
+    <div class="slinput">
+    	<div class="inputdis">
+    		<span id="labelSelectVehicle" class="setdatetext">&nbsp;</span>
+	    	<select class="editable-select" id="deviceList" name="deviceList"></select>
+	    	<input type="text" style="display:none" id="devIdnos" name="devIdnos" value=""/>
+    	</div>
+	    <a href="#" id="btnSelVehicle" class="pinbtn"><span id="spanBtnSelVehicle">&nbsp;</span></a>
+    	<a href="#" id="btnQuery" class="pinbtn"><span id="spanBtnQuery">&nbsp;</span></a>
+		<a href="#" id="btnExport" class="pinbtn"><span id="spanBtnExport">&nbsp;</span></a>		
+		<a href="#" id="btnExportCsv" class="pinbtn"><span id="spanBtnExportCsv">&nbsp;</span></a>
+		<a href="#" id="btnExportPdf" class="pinbtn"><span id="spanBtnExportPdf">&nbsp;</span></a>
+     </div>
+</form>
+</div>
+<div style="height:550px;overflow: scroll;">
+<table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="alarmDetailTable">
+	<tr class="heard">
+		<th class="tableft"><span></span></th>
+		<th><span id="thIndex">&nbsp;</span></th>
+		<th><span id="thName">&nbsp;</span></th>
+<!-- 		<th><span id="thDate">&nbsp;</span></th> -->
+		<th><span id="thPlateColor"></span></th>
+		<th><span id="thVehiColor"></span></th>
+		<th><span id="thType">&nbsp;</span></th>
+		<th><span id="thAlarmSource"></span></th>
+		<th><span id="thBgDate"></span></th>
+		<th><span id="thEdDate"></span></th>
+		<th><span id="thViolationLength"></span></th>
+		<th><span id="thMinSpeed"></span></th>
+		<th><span id="thAvgSpeed"></span></th>
+		<th><span id="thMaxSpeed"></span></th>
+		<th><span id="thLongitude"></span></th>
+		<th><span id="thLatitude"></span></th>
+		<th><span id="thPosition">&nbsp;</span></th>
+		<th class="tabright"><span></span></th>
+	</tr>
+	<tr id="alarmDetailTableTemplate" class="tabdata" style="display:none">
+		<td class="tableft">&nbsp;</td>
+		<td><span id="tdIndex">&nbsp;</span></td>
+		<td><span id="tdName">&nbsp;</span></td>
+<!-- 		<td><span id="tdDate">&nbsp;</span></td> -->
+		<th><span id="tdPlateColor"></span></th>
+		<th><span id="tdVehiColor"></span></th>
+		<td><span id="tdType">&nbsp;</span></td>
+		<th><span id="tdAlarmSource"></span></th>
+		<th><span id="tdBgDate"></span></th>
+		<th><span id="tdEdDate"></span></th>
+		<th><span id="tdViolationLength"></span></th>
+		<th><span id="tdMinSpeed"></span></th>
+		<th><span id="tdAvgSpeed"></span></th>
+		<th><span id="tdMaxSpeed"></span></th>
+		<th><span id="tdLongitude"></span></th>
+		<th><span id="tdLatitude"></span></th>
+		<td><span id="tdPosition">&nbsp;</span></td>
+		<td class="tabright">&nbsp;</td>
+	</tr>
+</table>
+</div>
+<div id="alarmDetailPagination" class="pagination" style="margin:10px 10px 10px 10px;"></div>
+</body>
+</html>

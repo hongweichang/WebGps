@@ -1,0 +1,61 @@
+@charset "utf-8";
+html {
+	height: 100%;
+	margin: 0 auto;
+}
+
+body {
+	height: 100%;
+	background-color: #f5f6f7;
+}
+
+/*首页部分*/
+#homesub{ float:left; width:220px;overflow:hidden; background-color:#7f8386; border-radius:6px;padding-left:4px;padding-right:4px;}
+#hometabnav { overflow:hidden; zoom:1;  bottom:-1px; position:relative; z-index:20;  width:200px; padding-top:10px; padding-left:12px;}
+#hometabnav li {float:left; background: url(../images/system/homesubtab.png) no-repeat; height:27px; width:97px; line-height:27px; text-align:center; cursor:pointer; color:#666; margin:0 3px 0 0; overflow:hidden; text-decoration:none;}
+#hometabnav li.now_focus { background-position:0 -27px; color:#000; text-decoration:none;}
+#hometabcontent { border:solid 1px #cdcdcd; z-index:19}
+#hometabcontent .tabcont{ background:#f7f7f7;}
+
+.carchack{ border-bottom:solid 1px #cdcdcd;background:url(../images/system/homesubtop.png) no-repeat;  height:71px; overflow:; zoom:1}
+.carchack span{display:block; float:left; width:54px; text-align:center; padding-top:10px; color:#333;}
+.inquiry{overflow:hidden; zoom:1; padding:10px 0 10px 10px;}
+.inquiry a{display:block; float:left; width:58px; height:20px; line-height:20px; color:#fff; background-color:#08c; text-align:center; border-radius:3px; margin-top:1px;}
+.inquiry label{float:left; display:block; margin-right:5px;}
+.inquiry label input{width:130px; height:20px; border:solid 1px #7f9db9; line-height:20px;}
+.carlist{overflow:hide;border-top:solid 1px #cdcdcd; }
+.cartable{overflow:auto;padding-top:8px;}
+.cartable table{width:200px;}
+
+.map{margin-left:231px;border:solid 1px #cdcdcd; border-radius:6px; }
+#mapToolbar {
+	height:25px; background-color: #F4F4F4;overflow:hidden;
+}
+#overVehicleAddress {
+	 float:right;display:inline;line-height: 25px; float: right; height: 25px; padding-right:20px; 
+}
+#mapcanvas{
+	border-top:solid 1px #cdcdcd; 
+}
+#mapTool {
+	float:left;display:inline;
+}
+#statusToolbar {
+	height:25px; background-color: #F4F4F4;overflow:hidden;border-top:solid 1px #cdcdcd;border-bottom:solid 1px #cdcdcd;
+}
+
+.red, td.red { color: red;}
+.maptable{height:130px; overflow:auto;display:block;border-bottom:solid 1px #cdcdcd;}
+.maptable table{ width:100%;_width:98%;}
+
+.devicetable{margin:0 auto;}
+.devicetable .heard { background: url(../images/public/tableheard.png) repeat-x 0 -24px; height: 24px; color: #fff }
+.devicetable .tableft, .devicetable th.tabright { width: 24px; }
+.devicetable .tableft span { background: url(../images/public/tableheard.png) no-repeat 0 0; float: left; width: 4px; height: 24px; }
+.devicetable .tabright span { background: url(../images/public/tableheard.png) no-repeat 0 -48px; float: right; width: 4px; height: 24px; }
+.tabdata .tableft { border-left: solid 1px #cdcdcd; }
+.tabdata .tabright { border-right: solid 1px #cdcdcd; }
+.tabdata td { text-align: center; border-bottom: solid 1px #cdcdcd; height: 30px; color: #666; vertical-align: middle }
+.devicetable tr { background-color: #fff; }
+			tr.bluebg { background-color: #f5f6f7 }
+			tr.focusbg { background-color: #DEF2FF; }

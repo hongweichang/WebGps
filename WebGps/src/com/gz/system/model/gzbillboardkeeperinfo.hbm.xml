@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gz.system.model">
+	<class name="GzBillboardKeeperInfo" table="gz_billboard_keeper_info">
+		<!-- ������������ -->
+        <id	name="id" column="id" type="java.lang.String" length="40" >
+			<!-- ��������identity������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->
+        <property name="name" column="name" type="java.lang.String" length="40"/>
+        <property name="addr" column="addr" type="java.lang.String" length="255"/>
+        <property name="type" column="type" type="java.lang.Integer"/>
+        <property name="flowtype" column="flowtype" type="java.lang.Integer"/>
+	</class>
+</hibernate-mapping>

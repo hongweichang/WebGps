@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardDeviceAlarm" table="jt808_vehicle_alarm">
+		<!-- ����������������?? 
+		<id	name="guid" column="Guid" type="string" length="40" >
+			 <generator class="assigned" />
+		</id>����������?������? -->
+		<!-- ����������������?? -->
+		<composite-id>
+            <key-property name="guid" column="Guid" type="java.lang.String" length="40"/>
+            <key-property name="armTimeStart" column="ArmTimeStart" type="java.util.Date"/>
+        </composite-id>
+		<property name="vehiId" column="VehiID" type="java.lang.Integer"/>
+		<property name="devIdno" column="DevIDNO" type="string" length="40"/>
+		<property name="armTimeEnd" column="ArmTimeEnd" type="java.util.Date"/>
+		<property name="armType" column="ArmType" type="java.lang.Integer"/>
+		<property name="armInfo" column="ArmInfo" type="java.lang.Integer"/>
+		<property name="armDesc" column="ArmDesc" type="string" length="256"/>
+		<property name="param1" column="Param1" type="java.lang.Integer"/>
+		<property name="param2" column="Param2" type="java.lang.Integer"/>
+		<property name="param3" column="Param3" type="java.lang.Integer"/>
+		<property name="param4" column="Param4" type="java.lang.Integer"/>
+		<property name="statusStart" column="StatusStart" type="string" length="256"/>
+		<property name="statusEnd" column="StatusEnd" type="string" length="256"/>
+		<property name="imgInfo" column="ImageInfo" type="string" length="512"/>
+		<property name="handleStatus" column="HandleStatus" type="java.lang.Integer"/>
+		<property name="armTimeStartI" column="ArmTimeStartI" type="java.lang.Integer"/>
+		<property name="armTimeEndI" column="ArmTimeEndI" type="java.lang.Integer"/>
+		<property name="handleInfo" column="HandleInfo" type="string" length="512"/>
+<!-- 		<property name="createTime" column="CreateTime" type="java.util.Date"/> -->
+	</class>
+</hibernate-mapping>

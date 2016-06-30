@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps.model">
+	<class name="UserInfo" table="user_info">
+		<!-- ����������������?? -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ������������identity������������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ����������?������? -->
+		<property name="parentId" column="ParentId" type="java.lang.Integer" not-null="true" />
+		<property name="linkMan" column="Linkman" type="string" length="256"/>
+		<property name="telephone" column="Telephone" type="string" length="256"/>
+		<property name="email" column="Email" type="string" length="128"/>
+		<property name="address" column="Address" type="string" length="256"/>
+		<property name="isAdmin" column="IsAdmin" type="java.lang.Integer" not-null="true"/>
+		<property name="roleId" column="RoleID" type="java.lang.Integer" not-null="true"/>
+		<property name="url" column="Url" type="string" length="64"/>
+		<property name="pwdStatus" column="PwdStatus" type="java.lang.Integer" not-null="true" />
+		<!--
+		<property name="clientMainLogoImage" column="ClientMainLogoImage" type="string" length="256"/>
+		<property name="clientMainLogoPos" column="ClientMainLogoPos" type="java.lang.Integer"/>
+		<property name="clientMainLogoImgMd5" column="ClientMainLogoImgMd5" type="string" length="64"/>
+		<property name="clientMainLogoText" column="ClientMainLogoText" type="string" length="64"/>
+		<property name="clientLoginBgImage" column="ClientLoginBgImage" type="string" length="256"/>
+		<property name="clientLoginBgImgMd5" column="ClientLoginBgImgMd5" type="string" length="64"/>
+		-->
+		<many-to-one name="userAccount" column="AccountID" class="com.gps.model.UserAccount" unique="true" lazy="false" cascade="all"/>
+		<many-to-one name="userRole" column="RoleID" class="UserRole" not-found="ignore" lazy="false" insert="false" update="false"/>
+	</class>
+</hibernate-mapping>

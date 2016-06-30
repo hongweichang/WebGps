@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+    default-autowire="byName">
+    
+	<!-- 通用定义 -->
+    <bean id="universalDao"
+		class="com.framework.web.dao.impl.UniversalDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="universalService"
+		class="com.framework.web.service.impl.UniversalServiceImpl" abstract="true">
+		<property name="universalDao" ref ="universalDao" />
+	</bean>
+    
+    <!-- PaginationDao:分页查询实现 -->
+	<bean id="paginationDao" class="com.framework.web.dao.impl.PaginationDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="FileUploadAction" class="com.framework.web.action.FileUploadAction" scope="prototype" />
+	<!-- 服务器日志功能 -->
+	<bean id="serverInfoDao"
+		class="com.gps.common.dao.impl.ServerInfoDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="serverService"
+		class="com.gps.common.service.impl.ServerServiceImpl">
+		<property name="serverInfoDao" ref ="serverInfoDao" />
+	</bean>
+	<!-- 发登录服务器发送数据通知服务 -->
+	<bean id="notifyService" class="com.gps.common.service.NotifyService">
+		<property name="serverService" ref ="serverService" />
+	</bean>
+	<!-- 用户账号 -->
+	<bean id="userAccountDao"
+		class="com.gps.common.dao.impl.UserAccountDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="accountService" class="com.gps.common.service.impl.AccountServiceImpl">
+		<property name="userAccountDao" ref ="userAccountDao" />
+	</bean>
+	<bean id="userDevPermitService" class="com.gps.user.service.impl.UserDevPermitServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+		<property name="userDevPermitDao" ref ="userDevPermitDao" />
+	</bean>
+	<!-- 设备 -->
+	<bean id="deviceInfoDao"
+		class="com.gps.common.dao.impl.DeviceInfoDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="devRegistDao"
+		class="com.gps.common.dao.impl.DevRegistDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="deviceService" class="com.gps.common.service.impl.DeviceServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+		<property name="devRegistDao" ref ="devRegistDao" />
+		<property name="deviceInfoDao" ref ="deviceInfoDao" />
+	</bean>
+	<bean id="DeviceStatusDao"
+		class="com.gps.common.dao.impl.DeviceStatusDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="devGroupService" class="com.gps.common.service.impl.DevGroupServiceImpl"/>
+	<!-- 客户 -->
+	<bean id="userInfoDao"
+		class="com.gps.common.dao.impl.UserInfoDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="userLogDao"
+		class="com.gps.common.dao.impl.UserLogDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="userSessionDao"
+		class="com.gps.common.dao.impl.UserSessionDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="userService" class="com.gps.common.service.impl.UserServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+		<property name="userInfoDao" ref ="userInfoDao" />
+		<property name="userLogDao" ref ="userLogDao" />
+		<property name="userSessionDao" ref="userSessionDao" />
+	</bean>
+	<bean id="userLogService" class="com.gps.common.service.impl.UserLogServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean id="storageRelationService" class="com.gps.common.service.impl.StorageRelationServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean id="storageRelationServiceEx" class="com.gps.common.service.impl.StorageRelationServiceImplEx">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	
+	<!-- 用户action基类 -->
+	<bean id="userBaseAction" abstract="true" lazy-init="true">
+		<property name="accountService" ref="accountService"/>
+		<property name="notifyService" ref="notifyService"/>
+		<property name="userService" ref="userService"/>
+		<property name="deviceService" ref="deviceService"/>
+		<property name="devGroupService" ref="devGroupService"/>
+		<property name="serverService" ref="serverService"/>
+		<property name="userDevPermitService" ref="userDevPermitService" />
+	</bean>
+	
+	<!-- 开发API  action 基类 -->
+	<bean id="apiBaseAction" abstract="true" lazy-init="true">
+		<property name="accountService" ref="accountService"/>
+		<property name="notifyService" ref="notifyService"/>
+		<property name="userService" ref="userService"/>
+		<property name="deviceService" ref="deviceService"/>
+		<property name="devGroupService" ref="devGroupService"/>
+		<property name="serverService" ref="serverService"/>
+		<property name="deviceGpsService" ref="deviceGpsService" />
+	</bean>
+</beans>

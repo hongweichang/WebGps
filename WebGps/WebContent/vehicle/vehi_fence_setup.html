@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../js/dxtree/dhtmlxtree.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxcommon.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxtree.js"></script>
+<script type="text/javascript" src="../js/vehi_tree.js"></script>
+<script type="text/javascript" src="../js/gps_common.js"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="js/vehi_fence_setup.js?140307"></script>
+</head>
+<body style="background-color:#fff;">
+<div id="content" style="width:660px;position:relative;overflow:hidden; ">
+	<div id="devList" style="padding-left:10px;padding-top:10px;float:left; width:220px;border-right: solid 1px #cdcdcd;">
+		<div>
+			<span id="labelSearch"></span>
+			<input id="name" name="name" type="text" class="text" value="" maxlength="32" style="width:140px;" onkeyup="searchVehicle()"/>
+		</div>
+		<div id="vehicle_tree" style="margin-top:8px;width:210px; height:364px;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto;"></div>
+	</div>
+	<div>
+		<div id="fenceContent" class="serverall" style="padding-bottom:20px;margin-left:231px;">
+			<dl class="mapfence">
+			  <dt><span id="labelMarker"></span></dt>
+			  	<dd>
+				    <select id="markerList" name="markerList" style="width:160px;"></select>
+				</dd>
+			  <dt><span id="labelAccessAlarm"></span></dt>
+				  <dd>
+				    <input type="radio" value="0" id="accessAlarm_0" class="input_none" name="accessAlarm"/><span id="spanAccessNone"></span>
+				    <input type="radio" value="1" id="accessAlarm_1" class="input_none" name="accessAlarm"/><span id="spanAccessIn"></span>
+				    <input type="radio" value="2" id="accessAlarm_2" class="input_none" name="accessAlarm"/><span id="spanAccessOut"></span>
+				  </dd>
+			  <dt><span id="labelSpeedAlarm"></span></dt>
+				  <dd>
+				    <input type="radio" value="0" id="speedAlarm_0" class="input_none" name="speedAlarm" onclick="clickSpeedAlarm()"/><span id="spanSpeedNone"></span>
+				    <input type="radio" value="1" id="speedAlarm_1" class="input_none" name="speedAlarm" onclick="clickSpeedAlarm()"/><span id="spanSpeedIn"></span>
+				    <input type="radio" value="2" id="speedAlarm_2" class="input_none" name="speedAlarm" onclick="clickSpeedAlarm()"/><span id="spanSpeedOut"></span>
+				  </dd>
+			  <dt><span id="labelSpeedHigh"></span></dt>
+				  <dd>
+				    <input id="speedHigh" name="speedHigh" type="text"  style="width:80px;ime-mode:disabled;" maxlength="3" onkeydown="onKeyDownDigit(event)" value="" />
+				    <span id="spanSpeedHighUnit"></span>
+				  </dd>
+			  <dt><span id="labelSpeedHighTts"></span></dt>
+				  <dd>
+				    <input id="speedHighTts" name="speedHighTts" type="text" style="width:220px;" maxlength="64" value="" />
+				  </dd>
+				  
+			  <dt><span id="labelSpeedHighWarn"></span></dt>
+				  <dd>
+				    <input id="speedHighWarn" name="speedHighWarn" type="text"  style="width:80px;ime-mode:disabled;" maxlength="3" onkeydown="onKeyDownDigit(event)" value="" />
+				    <span id="spanSpeedHighWarnUnit"></span>
+				  </dd>
+			  <dt><span id="labelSpeedHighWarnTts"></span></dt>
+				  <dd>
+				    <input id="speedHighWarnTts" name="speedHighWarnTts" type="text" style="width:220px;" maxlength="64" value="" />
+				  </dd>
+			  <dt><span id="labelSpeedLow"></span></dt>
+				  <dd>
+				    <input id="speedLow" name="speedLow" type="text"  style="width:80px;ime-mode:disabled;" maxlength="3" onkeydown="onKeyDownDigit(event)" value=""/>
+				    <span id="spanSpeedLowUnit"></span>
+				  </dd>
+			  <dt><span id="labelSpeedLowTts"></span></dt>
+				  <dd>
+				    <input id="speedLowTts" name="speedLowTts" type="text" style="width:160px;" maxlength="64" value="" />
+				  </dd>
+			  <dt><span id="labelParkAlarm"></span></dt>
+				  <dd>
+				    <input type="radio" value="0" id="speedAlarm_0" class="input_none" name="parkAlarm" onclick="clickParkAlarm()"/><span id="spanParkNone"></span>
+				    <input type="radio" value="1" id="speedAlarm_1" class="input_none" name="parkAlarm" onclick="clickParkAlarm()"/><span id="spanParkIn"></span>
+				    <input type="radio" value="2" id="speedAlarm_2" class="input_none" name="parkAlarm" onclick="clickParkAlarm()"/><span id="spanParkOut"></span>
+				  </dd>
+			  <dt><span id="labelParkTime"></span></dt>
+				  <dd>
+				    <input id="parkTime" name="parkTime" type="text" class="text" style="width:80px;ime-mode:disabled;" maxlength="4" onkeydown="onKeyDownDigit(event)" value=""/>
+				    <span id="parkTimeUnit"></span>
+				  </dd>
+			  <dt><span id="labelTime"></span></dt>
+				  <dd>
+				    <input id="beginTime" name="beginTime" type="text" class="text" value="" maxlength="32" style="width:80px;"/>
+				    <span id="spanTimeTo"></span>
+				    <input id="endTime" name="endTime" type="text" class="text" value="" maxlength="32" style="width:80px;"/>
+				  </dd>
+			 <dt></dt>
+				  <dd><span id="spanTimeTip" class="red"></span></dd>
+			  <dt></dt>
+			  <dd>
+			  	<a href="javascript:ajaxSetupFence();" class="searchbtn">
+			  		<span id="save">&nbsp;</span>
+			    </a>
+			  </dd>
+			</dl>
+		</div>
+	</div>
+</div>
+</body>
+</html>

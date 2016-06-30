@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/report.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="js/dvr_list.js"></script>
+</head>
+<body>
+<div id="search" style="padding-bottom:8px;">
+	<h2 class="righttitile_vehicle"><span id="dvrTitle">&nbsp;</span></h2>
+	<label class="searchinput">
+      <input id="dvrsearch" name="dvrsearch" type="text" value="" maxlength="32"/>
+    </label>
+    <a href="javascript:queryDvrInfo();" class="searchbtn">
+    	<span id="btnSearchDvr">&nbsp;</span>
+    </a>
+<form method="post" name="reportForm" action="">
+    <a href="#" id="btnExport" class="searchbtn"><span id="spanBtnExport">&nbsp;</span></a>
+</form>
+</div>
+<table width="1400" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="dvrTable">
+	<tr class="heard">
+		<th class="tableft"><span></span></th>
+		<th><span id="thOperator"></span></th>
+		<th><span id="thIndex">&nbsp;</span></th>
+		<th><span id="thName">&nbsp;</span></th>
+		<th><span id="thIdno">&nbsp;</span></th>
+		<th><span id="thChannel">&nbsp;</span></th>
+		<th><span id="thSimCard">&nbsp;</span></th>
+		<th><span id="thLinkman">&nbsp;</span></th>
+		<th><span id="thTele">&nbsp;</span></th>
+		<th><span id="thAddress">&nbsp;</span></th>
+		<th><span id="thRemarks">&nbsp;</span></th>
+		<th class="tabright"><span></span></th>
+	</tr>
+	<tr id="dvrTableTemplate" class="tabdata" style="display:none">
+		<td class="tableft">&nbsp;</td>
+		<td class="set"><span id="tdOperator"></span></td>
+		<td><span id="tdIndex">&nbsp;</span></td>
+		<td class="set"><span id="tdName">&nbsp;</span></td>
+		<td class="set"><span id="tdIdno">&nbsp;</span></td>
+		<td><span id="tdChannel">&nbsp;</span></td>
+		<td><span id="tdSimCard">&nbsp;</span></td>
+		<td><span id="tdLinkman">&nbsp;</span></td>
+		<td><span id="tdTele">&nbsp;</span></td>
+		<td><span id="tdAddress">&nbsp;</span></td>
+		<td><span id="tdRemarks">&nbsp;</span></td>
+		<td class="tabright">&nbsp;</td>
+	</tr>
+</table>
+<div id="dvrPagination" class="pagination" style="margin:10px 10px 10px 10px;"></div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.vehicle.model">
+	<class name="SnapshotPlan" table="storage_snapshot_plan">
+		<!-- ������������ -->
+		<id	name="devIdno" column="DevIDNO" type="string" length="40" >
+			 <generator class="assigned" />
+		</id>
+		<!-- ������������ -->
+		<property name="id" column="ID" type="java.lang.Integer" unique="true" insert="false" update="false"/>
+		<property name="day1" column="Day1" type="string" length="256"/>
+		<property name="day2" column="Day2" type="string" length="256"/>
+		<property name="day3" column="Day3" type="string" length="256"/>
+		<property name="day4" column="Day4" type="string" length="256"/>
+		<property name="day5" column="Day5" type="string" length="256"/>
+		<property name="day6" column="Day6" type="string" length="256"/>
+		<property name="day7" column="Day7" type="string" length="256"/>
+		<property name="span" column="Span" type="java.lang.Integer"/>
+		<property name="mode" column="Mode" type="java.lang.Integer"/>
+	</class>
+</hibernate-mapping>

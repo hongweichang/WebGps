@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardDriverDaily" table="jt808_driver_trip_daily">
+		<!-- ������������ -->
+		<composite-id>
+            <key-property name="did" column="DriverID" type="java.lang.Integer"/>
+            <key-property name="dt" column="GPSDate" type="java.util.Date"/>
+        </composite-id>
+		<!-- ������������ -->	
+		<property name="tc" column="TripCount" type="java.lang.Integer"/>
+		<property name="lc" column="LiCheng" type="java.lang.Integer"/>
+		<property name="yh" column="YouHao" type="java.lang.Integer"/>
+		<property name="wt" column="WorkTime" type="java.lang.Integer"/>
+		<property name="as" column="AlarmSum" type="string" length="256"/>
+		<property name="dti" column="GPSDateI" type="java.lang.Integer"/>
+	</class>
+</hibernate-mapping>

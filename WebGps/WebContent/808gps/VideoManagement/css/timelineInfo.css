@@ -1,0 +1,100 @@
+@CHARSET "UTF-8";
+.tl-content{
+	width:100%;
+	position:relative;
+	}
+.tl-content .tl-content-table{
+	width:100%;
+	position:absolute;
+	z-index:6;
+	}
+.tl-content .tl-content-table .tl-content-tr{
+	height: 24px;
+	line-height:24px;
+	border-bottom: 1px solid #d6d6d6;
+	}
+.tl-content .tl-content-table .tl-content-td{
+	/* border-bottom: 1px solid #d6d6d6 \9; */
+	/* -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)"; IE8
+ 	filter:alpha(opacity=20); IE7- 
+	border-bottom: rgba(0,0,0,.2) solid 1px; */
+	background: #FF0000\9;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /*IE8*/
+ 	filter: alpha(opacity=80); /*IE7-  */
+/* 	opacity: .3;  其他 */
+	background-color: rgba(255, 0, 0, 0.5);
+	width: 100%;
+	height: 24px;
+	line-height:24px;
+	position: absolute;
+	text-align: center;
+/* 	background-color: #FF0000; */
+	z-index: 5;
+	}
+.tl-content .tl-content-table .tl-content-tr-chn{
+	width: 100%;
+	height: 24px;
+	line-height:24px;
+	position: absolute;
+	text-align: center;
+	z-index: 5;
+	}
+.tl-content > div{
+	position:absolute;
+	height:25px;
+	top:0;
+	left:0;
+	width:100%;
+}
+.tl-timeline{
+	height:48px;
+	line-height:48px;
+	background:#fff;
+	width:100%;
+	position:absolute;
+	bottom:0px;
+	left:0;
+	z-index: 8;
+	display: none;
+	}
+.tl-timeline .tl-timeline-table{
+	width:100%;
+	color:#999;
+	background:#fff;
+	border-top:#ddd solid 1px;
+	text-align:right;
+	}
+.tl-timeline .tl-timeline-table .tl-timeline-tr{
+	height: 24px;
+	line-height:24px;
+	float: left;
+	}
+.tl-timeline .tl-timeline-table .tl-timeline-tr1{
+	border-left: 1px solid #d6d6d6;
+	}	
+.tl-timeline .tl-timeline-table .tl-timeline-td{
+	height: 24px;
+	line-height:24px;
+	float: left;
+	text-align: left;
+	}
+.tl-timeline .tl-timeline-table .tl-timeline-tr1 .tl-timeline-td{
+	border-right: 1px solid #d6d6d6;
+	}
+.tl-timeline .tl-timeline-table .tl-timeline-tr2 .tl-timeline-td span{
+	margin-left: -15px;
+	}
+.tl-line {
+	width: 1px;
+	position: absolute;
+	top: 0px;
+	z-index: 4;
+	background-color: #0071c6;
+	color: #0071c6;
+}
+.tl_tip {
+	height: 18px;
+	position: absolute;
+	background-color: #0071c6;
+	z-index: 9;
+}

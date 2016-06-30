@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+<!--     <link rel="stylesheet" type="text/css" href="../css/vehicleTeamTree.css"/> -->
+	<link rel="stylesheet" type="text/css" href="../../js/dxtree/dhtmlxtree.css"/>
+	<link rel="stylesheet" type="text/css" href="../../js/dxtree/css/dhtmlxmenu.css"/>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexigrid.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css"/>
+	<link rel="stylesheet" type="text/css" href="../reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../bin.css">
+	<link rel="stylesheet" type="text/css" href="../css/jqueryUITip.css">
+	<link rel="stylesheet" type="text/css" href="../css/labelIcon.css"/>
+	<link rel="stylesheet" type="text/css" href="css/location.css"/>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexiManage.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexigrid.js"></script>
+	<script type="text/javascript" src="../../js/dxtree/dhtmlxcommon.js"></script>
+	<script type="text/javascript" src="../../js/dxtree/dhtmlxtree.js"></script>
+	<script type="text/javascript" src="../../js/dxtree/dhtmlxmenu.js"></script>
+	<script type="text/javascript" src="../../js/company_tree.js"></script>
+	<script type="text/javascript" src="../js/myajax.js"></script>
+	<script type="text/javascript" src="../js/public.js"></script>
+	<script type="text/javascript"  src="../js/hashtable.js"></script>
+	<script type="text/javascript"  src="../js/standardStatus.js"></script>
+	<script type="text/javascript"  src="../js/standardDevice.js"></script>
+	<script type="text/javascript"  src="../js/vehicleDevice.js"></script>
+	<script type="text/javascript"  src="../js/vehicleAlarm.js"></script>
+	<script type="text/javascript"  src="../js/vehicleManager.js"></script>
+	<script type="text/javascript"  src="../js/date.js"></script>
+	<script type="text/javascript"  src="../ttxmap/ttxmapapi.js"></script>
+	<script type="text/javascript"  src="../ttxvideo/ttxvideoapi.js"></script>
+	<script type="text/javascript"  src="../ttxline/ttxlineapi.js"></script>
+	<script type="text/javascript" src="js/monitorStatus.js"></script>
+	<script type="text/javascript" src="js/monitorAlarm.js"></script>
+	<script type="text/javascript" src="js/monitorTreeMenu.js"></script>
+	<script type="text/javascript" src="js/monitorAlarmMotion.js"></script>
+	<script type="text/javascript" src="js/monitorpaneinfo.js"></script>
+	<script type="text/javascript" src="js/monitorMedia.js"></script>
+	<script type="text/javascript" src="js/monitorMapTip.js"></script>
+	<script type="text/javascript" src="js/monitorLine.js"></script>
+	<script type="text/javascript" src="js/location.js"></script>
+</head>
+<body onresize="setPanelWidth(fixHeight);">
+<div class="main">
+  	<!--	左边栏 车辆列表		-->
+    <div class="pro_list">
+    	<a href="javascript:void(0);" class="slider_btn"><i class="icon icon_side"></i></a>
+    	<!-- 车辆列表 	工具栏 -->
+     	<div class="dh"> 
+     		<!-- 操作菜单 -->
+			<span class="pz fl">
+				<a style="padding:10px;" href="#"><i class="icon icon_list"></i></a> 
+				<!--<div>
+					<ul class="tc_box">
+						<li><a href="#">发送拍照指令</a></li>
+						<li><a href="#">发送LCD短信</a></li>
+						<li><a href="#">时间点查车</a></li>
+						<li><a href="#">多地图定位</a></li>
+					</ul>
+				</div> -->
+	  		</span>
+	  		<!-- 搜索车辆 -->
+			<div id="searchTeam" class="so fl">
+				<span>
+					<i class="icon icon_so"></i>
+					<input id="vehiIdnoOnTree" placeholder="" class="so_text" name="" type="text">
+				</span>
+				<div id="so_tree_vehiList" class="tc_box so_box">
+					<ul>
+					</ul>
+				</div>
+			</div>
+			<!-- 提示信息 -->
+      		<span class="dh_tips fr"><i class="icon icon_tips"></i>
+				<div>
+					<ul class="tc_box vehicleMark">
+						<li><a href="#"><i class="icon icon_t1 onlineMark"></i><span class="onlineMarkSpan"></span></a></li>
+						<li><a href="#"><i class="icon icon_t2 alarmMark"></i><span class="alarmMarkSpan"></span></a></li>
+						<li><a href="#"><i class="icon icon_t3 offlineMark"></i><span class="offlineMarkSpan"></span></a></li>
+						<li><a href="#"><i class="icon icon_t4 parkingMark"></i><span class="parkingMarkSpan"></span></a></li>
+						<li><a href="#"><i class="icon icon_t5 parkedMark"></i><span class="parkedMarkSpan"></span></a></li>
+						<li><a href="#"><i class="icon icon_t6 invalidMark"></i><span class="invalidMarkSpan"></span></a></li>
+					</ul>
+				</div>
+			</span>
+			<div class="spacer"></div>
+		</div>	
+		<!-- 车辆列表  -->
+		<div id="vehicle_tree"></div>
+		<div class="tab_state" id="tab_state">
+        	<ul class="tab_state_box">
+            	<li id="state_0"><a href="#tab_state_0"></a></li>
+                <li id="state_1"><a href="#tab_state_1"></a></li>
+                <li id="state_2"><a href="#tab_state_2"></a></li>
+                <li id="state_3"><a href="#tab_state_3"></a></li>
+                <li class="icon_state_box"><i class="icon_down"></i></li>
+            </ul>
+            <div id="tab_state_0" class="tab_state_pane">
+	            <ul class="state_list">
+	                <li id="state_vehi"><b></b><span title=""></span></li>
+	                <li id="state_devId"><b></b><span title=""></span></li>
+	                <li id="state_company"><b></b><span title=""></span></li>
+	                <li id="state_level"><b></b><span title=""></span></li>
+	                <li id="state_status"><b></b><span title=""></span></li>
+	                <li id="state_Gps_time"><b></b><span title=""></span></li>
+	                <li id="state_position"><b style="float: left;"></b><div></div></li>
+	                <li id="state_speed"><b></b><span title=""></span></li>
+	            </ul>
+            </div>
+            <div id="tab_state_1" class="tab_state_pane">
+            	<div class="state_1_yt">
+            		<div class="fl icon_yt_box">
+	                	<a class="icon_yt_0" onmousedown="sendPTZControl(4);" onmouseup="sendPTZControl(19);" title=""></a>
+	                    <a class="icon_yt_1" onmousedown="sendPTZControl(2);" onmouseup="sendPTZControl(19);" title=""></a>
+	                    <a class="icon_yt_2" onmousedown="sendPTZControl(5);" onmouseup="sendPTZControl(19);" title=""></a>
+	                    <a class="icon_yt_3" onmousedown="sendPTZControl(0);" onmouseup="sendPTZControl(19);" title=""></a>
+	                    <a class="icon_yt_4" onmousedown="sendPTZControl(18);" title=""></a>
+	                    <a class="icon_yt_5" onmousedown="sendPTZControl(1);" onmouseup="sendPTZControl(19);" title=""></a>
+	                    <a class="icon_yt_6" onmousedown="sendPTZControl(6);" onmouseup="sendPTZControl(19);" title=""></a>
+	                    <a class="icon_yt_7" onmousedown="sendPTZControl(3);" onmouseup="sendPTZControl(19);" title=""></a>
+	                    <a class="icon_yt_8" onmousedown="sendPTZControl(7);" onmouseup="sendPTZControl(19);" title=""></a>
+                    	<div id="yt_handle" class="yt" style="width:92px; margin:3px;"></div>
+                	</div>
+                	<div class="fr yt_state2">
+	                	<span>
+	                    	<a class="icon_f0_0" onmousedown="sendPTZControl(8);" onmouseup="sendPTZControl(19);" title=""></a><a class="icon_f0_1" onkeydown="sendPTZControl(9);" onmouseup="sendPTZControl(19);" title=""></a>
+	                    </span>	
+	                    <span>
+	                    	<a class="icon_y0_0" onmousedown="sendPTZControl(10);" onmouseup="sendPTZControl(19);" title=""></a><a class="icon_y0_1" onkeydown="sendPTZControl(11);" onmouseup="sendPTZControl(19);" title=""></a>
+	                    </span>	
+	                    <span>
+	                    	<a class="icon_k0_0" onmousedown="sendPTZControl(12);" onmouseup="sendPTZControl(19);" title=""></a><a class="icon_k0_1" onmousedown="sendPTZControl(13);" onmouseup="sendPTZControl(19);" title=""></a>
+	                    </span>	
+	                    <span>
+	                    	<a class="icon_light0_0" onmousedown="sendPTZControl(14);" title=""></a><a class="icon_biao0_1" onmousedown="sendPTZControl(16);" title=""></a>
+	                    </span>			
+                	</div>
+               		<div class="spacer"></div>
+                </div>
+                <div class="yt_footer">
+                	<span class="fl">
+                    	<input id="spinner" name="spinner" value="5">
+                    </span>
+                	<span class="btn_state1"><a id="transfer" href="javascript:sendPTZControl(21)" title="" style="padding:0"></a>
+                    <a id="set_up" href="javascript:sendPTZControl(22)" style="padding:0" title=""></a>
+                    <a id="delete" href="javascript:sendPTZControl(23)" style="padding:0" title=""></a></span>
+                </div>
+            </div>
+            <div id="tab_state_2" class="tab_state_pane" style="padding-top:15px;">
+            	<div class="state_color">
+                	<i class="state_co_0 fl"></i>
+                    <div id="co_0" class="state_color_handle fl"></div>
+                    <div class="fl state_co_value"><input id="state_co_0" value="128" name="" type="text"></div>
+                    <div class="spacer"></div>
+                </div>
+                <div class="state_color">
+                	<i class="state_co_1 fl"></i>
+                    <div id="co_1" class="state_color_handle fl"></div>
+                    <span class="fl state_co_value"><input id="state_co_1" value="0" name="" type="text"></span>
+                    <div class="spacer"></div>
+                </div>
+                <div class="state_color">
+                	<i class="state_co_2 fl"></i>
+                    <div id="co_2" class="state_color_handle fl"></div>
+                    <span class="fl state_co_value"><input id="state_co_2" value="0" name="" type="text"></span>
+                    <div class="spacer"></div>
+                </div>
+                <div class="state_color">
+                	<i class="state_co_3 fl"></i>
+                    <div id="co_3" class="state_color_handle fl"></div>
+                    <span class="fl state_co_value"><input id="state_co_3" value="128" name="" type="text"></span>
+                    <div class="spacer"></div>
+                </div>
+                <div class="state_color">
+                	<i class="state_co_4 fl"></i>
+                    <div id="co_4" class="state_color_handle fl"></div>
+                    <span class="fl state_co_value"><input id="state_co_4" value="128" name="" type="text"></span>
+                    <div class="spacer"></div>
+                </div>
+                <div class="yt_footer" style="text-align:center;">
+                	<span class="btn_state1"><a href="#" id="btnDefault"></a></span>
+                </div>
+            </div>
+            <div id="tab_state_3" class="tab_state_pane">
+            	<div class="listing_choice">
+	                <label><input name="listing" type="radio" value="0" id="chkTalkback"><span id="talkbackTitle"></span></label>
+	                <label><input name="listing" type="radio" value="1" id="chkListen"><span id="listenTitle"></span></label>
+	                <!-- 
+	                <label><input name="listing" type="radio" value="2"><span id="">广播</span></label>
+	                 -->
+                </div>
+                <div class="listing_box">
+                	<i class="icon_dj"></i>
+                	<h5 id="talkbackVehicle"></h5>
+                    <h5 id="talkbackTip"></h5>
+                    <div class="yt_footer" >
+                		<span class="btn_state1"><a href="#" id="btnTalkback"></a></span>
+                    </div>
+                </div>
+                <div class="listing_box" style="display:none;">
+                	<i class="icon_jt"></i>
+                	<h5 id="listenVehicle"></h5>
+                    <h5 id="listenTip"></h5>
+                    <div class="yt_footer" >
+                		<span class="btn_state1"><a href="#" id="btnListen"></a></span>
+                    </div>
+                </div>
+                <!-- 
+                <div class="listing_box" style="display:none;">
+                	<i class="icon_gb"></i>
+                    <h5>请求中</h5>
+                    <div class="yt_footer" style="text-align:center; border:none; margin:0;">
+                		<span class="btn_state1"><a style="padding:0 20px;" href="#">开启</a></span>
+                    </div>
+                </div>
+                 -->
+            </div>
+    	</div>
+    </div>
+    <!-- 左边框结束 -->
+
+	<!-- 主界面  -->
+	<div class="d_main">
+   		<!-- 事件栏 -->
+   	    <div id="mapMoveDiv" class="mapDragMove" style="display: none;"></div>
+   		<div class="d_table map_action">
+        	<div class="map_drag_box">
+        		<i class="icon icon_drag"></i>
+        	</div>
+        	<ul class="map_tab">
+        		<li class="left " id="gps-line" style="display: none;"><a id="gps_line_title"></a></li>
+            	<li class="left" id="gps-monitor"><a id="gps_monitor_title"></a></li>
+                <li class="left" id="gps-alarm"><a id="gps_alarm_title"></a></li>
+                <li class="left" id="gps-mediaFiles" style="width: 95px;display:none;"><a id="gps_mediaFiles_title"></a></li>
+                <li class="left" id="gps-system"><a id="gps_system_title"></a></li>
+                <!-- <li class="left" id="gps-status" style="display:none;">
+                	<span class="dl status-monitor"><span class="status-title"></span><span class="status-val"></span></span>
+                	<span class="dl status-online"><span class="status-title"></span><span class="status-val"></span></span>
+                	<span class="dl status-alarm"><span class="status-title"></span><span class="status-val"></span></span>
+                	<span class="dl status-offline"><span class="status-title"></span><span class="status-val"></span></span>
+                	<span class="dl status-parking"><span class="status-title"></span><span class="status-val"></span></span>
+                	<span class="dl status-parked"><span class="status-title"></span><span class="status-val"></span></span>
+                	<span class="dl status-invalid"><span class="status-title"></span><span class="status-val"></span></span>
+                </li>-->
+                <li class="right" id="gps-export">
+                	<i class="icon icon_alarm_linkage"></i>
+                	<i class="icon icon_alarm_mask"></i>
+<!-- 					<i class="icon icon_excel"></i> -->
+					<i class="icon icon_s_re min_s"></i>
+					<i class="icon icon_big min_big"></i>
+				</li>
+            </ul>
+			<div class="gps_box" style="display: none;">
+               <!-- 报表放这里 -->
+				<ul>
+					<li id="gpsLine">
+						<table id="gpsLineTable" style="display:none;"></table>
+					</li>
+					<li id="gpsMonitor">
+						<table id="gpsMonitorTable" style="display:none;"></table>
+					</li>
+					<li id="gpsAlarm">
+						<table id="alarmTable" style="display:none;"></table>
+					</li>
+					<li id="gpsMediaFiles">
+						<table id="mediaFilesTable" style="display:none;"></table>
+					</li>
+					<li id="gpsServerEvent">
+						<table id="serverEventTable" style="display:none;"></table>
+					</li>
+				</ul>
+			</div>
+			<!-- 存储介质等状态放这里 -->
+			<div id="gps-storage">
+				<span class="dl storage-alarm"><span class="status-title"></span><span class="status-val"></span></span>
+               	<span class="dl storage-online"><span class="status-title"></span><span class="status-val"></span></span>
+               	<span class="dl storage-damage"><span class="status-title"></span><span class="status-val"></span></span>
+               	<span class="dl storage-all"><span class="status-title"></span><span class="status-val"></span></span>
+               	<span class="dl storage-onlinerates"><span class="status-title"></span><span class="status-val"></span></span>
+               	<span class="dl storage-damagerates"><span class="status-title"></span><span class="status-val"></span></span>
+			</div>
+        </div>
+        <!--线路监控-->
+    	<div class="dm_line" id="dm_line">
+    		<iframe frameborder="0" scrolling="no" width="100%" height="100%" name="frameLine" id="frameLine" style="background-color: #ffffff;"
+        		src="../ttxline/ttxline.html?150701">
+			</iframe>
+    	</div>
+        <!--实时视频-->
+    	<div class="dm_video">
+    		<iframe frameborder="0" scrolling="no" width="100%" height="100%" name="framePreview" id="framePreview" style="background-color: #ffffff;"
+        		src="../ttxvideo/ttxvideo.html?150701">
+			</iframe>
+        </div>
+
+		<!--地图位置定位-->
+        <div class="dm_map">
+        	<a class="slider_btn_right hide" href="javascript:void(0);"><i class="icon icon_side_right"></i></a>
+        	<iframe frameborder="0" scrolling="no" width="100%" height="100%" name="frameMap" id="frameMap" style="background-color: #ffffff;"
+        		src="../ttxmap/ttxmap.html?rectSearch=1&150613">
+			</iframe>
+        </div>
+        <div class="spacer"></div>
+    </div>
+    <!-- 主界面结束 -->
+</div>
+</body>
+</html>

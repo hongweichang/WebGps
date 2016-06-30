@@ -1,0 +1,211 @@
+@charset "utf-8";
+a.detail, a.edit, a.authorize, a.delete, a.manage, a.select, a.add, a.downLoad, a.segDownLoad,
+a.playback, a.downTask, a.clear, a.associate, a.assign, a.view, a.all,span.detail, span.edit, 
+span.authorize, span.delete, span.manage, span.select, span.add, span.downLoad, span.segDownLoad,
+span.playback, span.downTask, span.clear, span.associate, span.assign,span.view, span.all,
+a.not-detail, a.not-edit, a.not-authorize, a.not-delete, a.not-manage, a.not-select, a.not-add, 
+a.not-downLoad, a.not-segDownLoad, a.not-playback, a.not-downTask, a.not-clear, a.not-associate, 
+a.not-assign, a.not-view, a.not-all,span.not-detail, span.not-edit, span.not-authorize, span.not-delete, 
+span.not-manage, span.not-select, span.not-add, span.not-downLoad, span.not-segDownLoad,
+span.not-playback, span.not-downTask, span.not-clear, span.not-associate, span.not-assign,span.not-view, 
+span.not-all, a.changePWD, a.changeRole, span.changePWD, span.changeRole, a.not-changePWD, 
+a.not-changeRole, span.not-changePWD, span.not-changeRole, a.sound, span.sound,
+a.video, a.talkback, a.listen, a.capture, a.sendMessage, a.devInfo, a.paramConfig, a.upgrade, a.not-upgrade, a.issued,
+a.more, a.gpsDevice, a.videoDevice, a.CH1, a.CH2, a.CH3, a.CH4, a.CH5, a.CH6, a.CH7, a.CH8, a.CH9, 
+a.CH10, a.CH11, a.CH12, a.tpms{
+	background:url(../images/icon_s_for.png) 0 0 no-repeat;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    display: inline-block;
+    transition: none 0s ease 0s;
+}
+a.not-detail, span.not-detail {
+	background-position: -47px -142px;
+}
+a.detail, span.detail {
+	background-position: -47px -170px;
+}
+a.not-edit, span.not-edit {
+	background-position: -74px -143px;
+}
+a.edit, span.edit {
+	background-position: -74px -170px;
+}
+a.not-authorize, span.not-authorize {
+	background-position: -104px -142px;
+}
+a.authorize, span.authorize {
+	background-position: -104px -169px;
+}
+a.not-delete, span.not-delete {
+	background-position: -134px -142px;
+}
+a.delete, span.delete{
+	background-position: -134px -169px;
+}
+a.not-manage, span.not-manage {
+	background-position: -159px -143px;
+}
+a.manage, span.manage {
+	background-position: -159px -170px;
+}
+a.not-select, span.not-select {
+	background-position: -187px -142px;
+}
+a.select, span.select {
+	background-position: -187px -169px;
+}
+a.not-add, span.not-add {
+	background-position: -214px -142px;
+}
+a.add, span.add {
+	background-position: -214px -168px;
+}
+a.not-downLoad, span.not-downLoad {
+	background-position: -239px -142px;
+}
+a.downLoad, span.downLoad {
+	background-position: -239px -169px;
+}
+a.not-segDownLoad, span.not-segDownLoad {
+	background-position: -267px -142px;
+}
+a.segDownLoad, span.segDownLoad {
+	background-position: -267px -169px;
+}
+a.not-playback, span.not-playback {
+	background-position: -298px -142px;
+}
+a.playback, span.playback {
+	background-position: -298px -169px;
+}
+a.not-downTask, span.not-downTask {
+	background-position: -328px -142px;
+}
+a.downTask, span.downTask {
+	background-position: -328px -170px;
+}
+a.not-clear, span.not-clear {
+	background-position: -412px -142px;
+}
+a.clear, span.clear {
+	background-position: -412px -169px;
+}
+a.not-associate, span.not-associate {
+	background-position: -441px -142px;
+}
+a.associate, span.associate {
+	background-position: -441px -169px;
+}
+a.not-assign, span.not-assign {
+	background-position: -470px -142px;
+}
+a.assign, span.assign {
+	background-position: -470px -170px;
+}
+a.not-view, span.not-view {
+	background-position: -499px -142px;
+}
+a.view, span.view {
+	background-position: -499px -169px;
+}
+a.not-all, span.not-all {
+	background-position: -527px -142px;
+}
+a.all, span.all {
+	background-position: -527px -169px;
+}
+a.not-changePWD, span.not-changePWD {
+	background-position: -25px -142px;
+}
+a.changePWD, span.changePWD {
+	background-position: -25px -170px;
+}
+a.not-changeRole, span.not-changeRole {
+	background-position: -81px -79px;
+}
+a.changeRole, span.changeRole {
+	background-position: -103px -79px;
+}
+a.sound, span.sound {
+	background-position: -256px -366px;
+}
+a.video {
+	background-position: -206px -106px;
+}
+a.talkback {
+	background-position: -204px -50px;
+}
+a.listen {
+	background-position: -298px -51px;
+}
+a.capture {
+	background-position: -423px -51px;
+}
+a.sendMessage {
+	background-position: -482px -104px;
+}
+a.devInfo {
+	background-position: -103px -79px;
+}
+a.paramConfig {
+	background-position: -379px -104px;
+}
+a.upgrade {
+	background-position: -295px -104px;
+}
+a.not-upgrade {
+	background-position: -278px -104px
+}
+a.issued {
+	background-position: -579px -104px;
+}
+a.more {
+	background-position: -556px -51px;
+}
+a.gpsDevice {
+	background-position: -105px -105px;
+}
+a.videoDevice {
+	background-position: -204px -86px;
+}
+a.CH1 {
+	background-position: -23px -227px;
+}
+a.CH2 {
+	background-position: -129px -227px;
+}
+a.CH3 {
+	background-position: -237px -227px;
+}
+a.CH4 {
+	background-position: -356px -227px;
+}
+a.CH5 {
+	background-position: -23px -262px;
+}
+a.CH6 {
+	background-position: -129px -262px;
+}
+a.CH7 {
+	background-position: -237px -262px;
+}
+a.CH8 {
+	background-position: -356px -262px;
+}
+a.CH9 {
+	background-position: -23px -301px;
+}
+a.CH10 {
+	background-position: -129px -301px;
+}
+a.CH11 {
+	background-position: -237px -301px;
+}
+a.CH12 {
+	background-position: -356px -301px;
+}
+a.tpms {
+	background-position: -666px -104px;
+}

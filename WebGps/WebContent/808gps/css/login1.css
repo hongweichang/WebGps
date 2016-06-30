@@ -1,0 +1,676 @@
+/*header*/
+.wy-header{position: relative;top:0px;left:0px;width: 100%;z-index: 999;}
+.wy-mod-top{width: 100%;height:80px;opacity: .9;filter:alpha(opacity=90);background: #fff;position: absolute;left:0px;top:0px;z-index: 1;}
+.wy-mod-top .logo{position: absolute;left:50%;margin-left:-500px;top:5px;}
+.wy-mod-top .logo img {
+	vertical-align:middle;
+}
+.wy-mod-top .logo span {
+	vertical-align:middle;
+    color: black;
+    cursor: pointer;
+    padding-left:10px;
+    display: inline-block;
+    font-family: "Microsoft YaHei";
+    font-size: 28px;
+    font-weight: 500;
+    left: 10px;
+}
+.wy-mod-nav{width:960px;height:80px;margin:0 auto;position: relative;z-index: 2;}
+.wy-mod-nav-main{float:right;font-family: "microsoft yahei"}
+.wy-mod-nav-main li{float:left;height:80px;}
+.wy-mod-nav-main li a{display: block;line-height: 76px;padding:0 15px 4px;font-size: 16px;color:#8d8d8d;}
+.wy-mod-nav-main li a:hover{padding-bottom:0px;color:#000000;text-decoration: none;}
+.wy-mod-nav-main li a.on{padding-bottom:0px;border-bottom:4px solid #3091f2;color:#000000;text-decoration: none;}
+.wy-mod-nav-main li a.on{font-weight: 700;color:#000;}
+.web-link{float:right;margin:20px 0px 0px 40px;}
+.btn-web-link{display: inline-block;*display: inline;width:90px;height:40px;padding-right:20px;background: url(../images/home/btn.png) 0px 0px no-repeat;line-height: 40px;color:#ffffff;font-family: "microsoft yahei";font-size: 14px;text-align: center;zoom:1;}
+.btn-web-link:hover{text-decoration: none;opacity: .9;filter:alpha(opacity=90);}
+.logo-link{display:blcok;width:200px;height:50px;position:absolute;z-index:33;top:8px;left:0px;}
+/*  |xGv00|4ed90b0123f21f291232e97dbd9f51c5 */
+
+.switchMenuItem {
+	margin: 0 auto;
+	position: relative;
+	z-index: 3;
+}
+.switchMenuItem a,.switchMenuItem span{
+	white-space: nowrap;
+	word-break: break-all;
+	text-decoration: none
+ }
+.switchMenuItem h2 {
+	color: #aaa;
+	font-size: 12px;
+	font-weight: 400;
+	display:inline;
+	float:right;
+}
+.switchMenuItem h2 a,.switchMenuItem h2 span{
+	color: #7c87a5;
+	float: left;
+	font-family: simsun;
+	height: 30px;
+	line-height: 30px;
+}
+.switchMenuItem h2 span.text{
+	padding: 0 0 0 10px;
+}
+.switchMenuItem h2 a{
+	padding: 0 10px 0 10px;
+	cursor: pointer;
+}
+.switchMenuItem h2 a span{
+	color: #3083eb;
+}
+.switchMenuItem .switch {
+	display:inline;
+	position: relative;
+	float:right;
+	margin-right: 10px;
+	top: 24px;
+}
+.switchMenuItem .switch ul {
+	background-color: #fff;
+	border: 1px solid #bbcbdf;
+	border-radius: 2px;
+	box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
+	left: -1px;
+/*	position: absolute; */
+	display: none;
+	top: -1px;
+	vertical-align: top;
+	width: 120px;
+	z-index: 100;
+}
+.switchMenuItem .switch ul.show {
+	display: block;
+	margin-top: -6px;
+}
+.switchMenuItem .switch ul li {
+	height: 30px;
+	overflow: hidden;
+}
+.switchMenuItem .switch ul li.current .icon{
+	background: url("../images/index.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background:	url("../images/index.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-color: rgba(0, 0, 0, 0);
+}
+.switchMenuItem .switch ul a,.switchMenuItem .switch span{
+	color: #536083;
+	display: block;
+/* 	font-family: simsun; */
+	height: 30px;
+	line-height: 30px;
+	padding-left: 38px;
+	position: relative;
+	cursor: pointer;
+	font-size: 14px;
+}
+.switchMenuItem .switch .switch-style ul a{
+	padding-left: 0px;
+	text-align: center;
+}
+.switchMenuItem .switch span{
+	padding: 0px 10px;
+}
+.switchMenuItem .switch span.switch-span:hover {
+	color: #000;
+}
+.switchMenuItem .switch ul a:hover{
+	background-color: #3083eb;
+	color: #fff;
+}
+.switchMenuItem .switch ul a:hover span{
+	background-color: #3083eb;
+	color: #fff;
+}
+.switchMenuItem .switch ul a i,.switchMenuItem h2 a i{
+	height: 10px;
+	left: 20px;
+	margin: -5px 0 0;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	width: 10px;
+}
+.switchMenuItem .switch .switchItem {
+	position: absolute;
+	right: -20px;
+}
+.switchMenuItem .carat{
+    position: absolute;
+    right: 0px;
+    margin-top: 0px;
+    border-width: 5px 4px 4px;
+    border-style: solid;
+    border-color: #3091F2 transparent transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    top: 14px;
+}
+.switchMenuItem .switch-div .show {
+	margin-top: -6px;
+	border-top: 4px solid transparent;
+	border-bottom: 5px solid #3091F2;
+}
+.api .switch{
+	top: 0px;
+}
+.api .switch a {
+    color: #8d8d8d;
+    display: block;
+    font-size: 16px;
+    line-height: 76px;
+    padding: 0 10px 4px;
+}
+.api .switch a:hover{
+	padding-bottom:0px;
+	color: #000000;
+	text-decoration: none;
+}
+/*footer*/
+.wy-footer{ background-color:#e6e6e6; }
+.wy-footer .footer-cont{width:960px;margin:0px auto;position: relative;padding:40px 0px;}
+.wy-footer .logo{position: absolute;top:40px;left:0px;}
+.wy-footer .copyright{padding:10px 0px 0px 10px;width:700px;color:#999999;}
+.wy-footer .copyright a{color:#999999;}
+.wy-footer .mod-select-lan{position: absolute;top:60px;right:20px;display:none;}
+.mod-select-lan{width: 100px;height:30px;overflow: hidden;position: relative;cursor: pointer;color:#999999;}
+.mod-select-lan a{cursor: pointer;color:#999999;}
+/*  |xGv00|eff94daecb184b66cbba2caedbf4bd3f */
+/*banner*/
+.wy-mod-banner .banners .banner .z i,
+.wy-mod-banner .banners .banner .z .icon,
+.wy-mod-banner .banners .banner .zem,
+.wy-mod-banner .banners .banner .z ins,
+.wy-mod-banner .banners .banner .z span,
+.wy-mod-banner .banners .banner .z a{
+	display: inline-block;
+	font-style: normal;
+	vertical-align: middle;
+	text-decoration:none;
+}
+.spacer {
+	clear: both;
+	font-size: 0;
+	line-height: 0;
+}
+.z{
+	width:960px;
+	margin:0 auto;
+	}
+.wy-mod-banner{background: #fff;margin-top:-80px;height:580px;position: relative;}
+.wy-mod-banner .banners{width: 100%;height:680px;overflow: hidden;position: absolute;/* left:50%;margin-left:-800px; */}
+.wy-mod-banner .banner{width: 100%;height:600px;overflow: hidden;position: absolute;/* left:50%;margin-left:-800px; */}
+.banner1{
+	background:url(../images/home/banner1_01.jpg) center center no-repeat;
+	}
+.banner2{
+	background:url(../images/home/banner2_03.jpg) center center no-repeat;
+	}
+.banner3{
+	background:url(../images/home/banner3_05.jpg) center center no-repeat;
+	}
+.banner1_box{
+	margin-top:252px;
+	width:460px;
+	}
+.banner1_box span.banner_text{
+	width:138px;
+	height:140px;
+	background:rgba(255,255,255,0.2);
+	margin:5px;
+	padding:0;
+	overflow:hidden;
+	transition:all ease-in 0.2s;
+	}
+/*.banner1_box span.banner_text:hover{
+	background:rgba(0,0,0,0.2);
+	transition:all ease-out 0.2s;
+	}*/
+.banner1_box span.banner_text i{
+	width:113px;
+	height:100px;
+	background:url(../images/home/banner_icon.png) 0 0 no-repeat;
+	margin:10px 0 0 25px;
+	}
+.banner1_box span.banner_text span{
+	font-size:20px;
+	text-align:center;
+	line-height:30px;
+	color:#fff;
+/*	background:rgba(0,0,0,0.2);*/
+	display:block;
+	width:100%;
+	}
+.banner1_box span.banner_text i.icon_1{
+	background-position:0px 0px;
+	}
+.banner1_box span.banner_text i.icon_2{
+	background-position:-140px 0px;
+	}
+.banner1_box span.banner_text i.icon_3{
+	background-position:-280px 0px;
+	}
+.banner1_box span.banner_text i.icon_4{
+	background-position:0px -148px;
+	}
+.banner1_box span.banner_text i.icon_5{
+	background-position:-157px -148px;
+	}
+.banner1_box span.banner_text i.icon_6{
+	background-position:-300px -148px;
+	}
+.banner2_box{
+	margin-top:176px;
+	margin-left:50px;
+	}
+.lbt_1,.lbt_fu_1{
+	color:#fff;
+	font-size:33px;
+	}
+.lbt_fu_1{
+	font-size:18px;
+	}
+.banner3_box{
+	margin-top:174px;
+	margin-left:50px;
+	}
+
+.lbt_2,.lbt_fu_2{
+	color:#333;
+	font-size:33px;
+	}
+.lbt_fu_2{
+	font-size:18px;
+	color:#666;
+	margin:16px 0 0 154px;
+	}
+.wy-mod-banner .focus{width:960px;margin:0px auto;padding-top:560px;text-align: center;}
+.wy-mod-banner .focus a{text-decoration: none;z-index:3;width:24px;height:74px;position:relative;display: inline-block;*display:inline;overflow: hidden;margin:0px 3px;zoom:1;}
+.wy-mod-banner .focus a .bg-m{z-index:4;color:white;line-height:40px;font-size:40px;position:absolute;display: block;left:2px;top:6px;cursor:pointer; display: none;}
+.wy-mod-banner .focus a .bg-b{background-image:url(../images/home/i_dot.32.png);position:absolute;display: block;left:0px;top:0px;cursor:pointer; width: 18px; height: 18px;}
+.wy-mod-banner .focus a .inner{background-image:url(../images/home/i_dot_hover.32.png);position:absolute;left:0px;top:0px;z-index:9;opacity:0;display: none\0;+display: none;*display: none; width: 18px;height: 18px;}
+.wy-mod-banner .focus a.on .inner,.wy-mod-banner .focus a:hover .inner{cursor:pointer;display:block;border:0;-webkit-transition:opacity .3s ease-in-out;-ms-transition:opacity .3s ease-in-out;transition:opacity .3s ease-in-out;opacity:1;}
+.wy-mod-banner .focus .hover .inner{display:block;}
+
+
+.login-panel {
+	background: none repeat scroll 0 0 #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.13), 0 1px 5px rgba(0, 0, 0, 0.36), 0 0 0 1px rgba(255, 255, 255, 0.69) inset;
+	height:290px;
+	padding-left:30px;
+	position:absolute;
+	top:45px;
+	width:265px;
+	z-index:99;
+	right:50%;
+	margin-right:-480px;
+	top: 215px;
+}
+.login-panel h1 {
+    color: #1e71a8;
+    font: 20px/75px "Microsoft Yahei",SimSun,sans-serif;
+    height: 66px;
+    margin-left: 0px;
+    width: 227px;
+}
+#rtt:hover {
+	background-position:0 -68px
+}
+.login-panel .login-item label,#phraseLoginwarp label,.login-panel b,.login-panel .login-loading,.login-panel .login-success {
+	display:none
+}
+.login-panel .tipinput,.login-panel .tipinput1 {
+	background:url("../images/home/slide_btn_bg.gif");
+	border:1px solid #c7c7c7;
+	font-size:16px;
+	height:20px;
+	margin-bottom:10px;
+	padding:7px;
+	width:212px;
+	z-index:20;
+}
+#phraseLogin {
+    float: left;
+    width: 102px;
+}
+.login-panel .input-bg:hover input {
+	border:1px solid #b9b9b9
+}
+#login .input-bg,#login .input-bg-focus {
+	display:block;
+	position:relative
+}
+.login-panel .input-bg-focus input,.login-panel .verify-code-focus .tipinput {
+	border:1px solid #4d90fe
+}
+#tips-loginAccount,#tips-lpassword,#error_tips,#tips-phraseLogin {
+	left:-10000px;
+	position:absolute
+}
+#login .login-wrap {
+	margin-top:8px
+}
+#login .submit {
+	clear:both;
+}
+#login .submit input,#infoPanel .go-my {
+	background:url("../images/home/login_btn.png") no-repeat;
+	color:#fff;
+	cursor:pointer;
+	font-size:18px;
+	height:45px;
+	line-height:42px;
+	width:228px
+}
+#infoPanel .go-my span {
+	color:#fff;
+	font-size:18px;
+	height:45px;
+}
+#login .find {
+	position:absolute;
+	top:125px;
+	width:230px
+}
+#login .submit input {
+	border:0;
+}
+#login .find label {
+	float:left
+}
+#login .find input {
+	vertical-align:middle
+}
+#login .find a {
+	float:right
+}
+#login .show-phrase .find {
+	top:170px
+}
+#login .submit input:hover {
+	background-position:0 -69px
+}
+#login .submit .no-account,#gotoQuickLogin,#login .other,#login .reg-new-account,#refreshCaptchaLogin {
+	display:none
+}
+#phraseLoginwarp .yz {
+	cursor: pointer;
+	padding-left:8px;
+}
+/*download*/
+.wy-content {
+	background-color: #fff;
+}
+/*background sprites*/
+.mod-download .btn-download,
+.mod-download .btn-download .icon-logo,
+.mod-download .btn-web,
+.mod-web .btn-web,
+.pop-download .btn-goto,
+.pop-download .btn-send {
+    cursor: pointer;
+	background: url(../images/home/bg_download_btns.png?v20150106) no-repeat;
+}
+.mod-download .btn-download-disabled{
+	cursor:default;
+	background: url(../images/home/bg_download_btns.png?v20150106) no-repeat 0 -164px;
+}
+.download-content {
+	width: 960px;
+	padding-top: 40px;
+	padding-bottom: 0px;
+	margin: 0 auto;
+	overflow: hidden;
+	font-family: "microsoft yahei";
+}
+.download-content ul {
+	width: 1050px;
+}
+.download-content li {
+	float: left;
+	width: 300px;
+	margin-right: 14px;
+	margin-bottom: 20px;
+}
+.download-content img {display: block;}
+
+.download-content .mod-download {
+	width: 300px;
+	height: 54px;
+	background-color: #f2f2f2;
+	padding: 10px 0 30px 10px;
+	border-radius: 5px;
+}
+.mod-download .link {
+	width: 120px;
+	float: left;
+}
+.mod-download .info {
+	float: left;
+	color: #999;
+	line-height: 22px;
+	margin-top: 6px;
+}
+.mod-download h3 {
+	color: #333;
+	font-size: 24px;
+	line-height: 24px;
+}
+.mod-download .btn-download,
+.mod-download .btn-web,
+.mod-web .btn-web {
+	display: block;
+	border: none;
+	width: 110px;
+	height: 38px;
+	outline: none;
+
+	font-size: 14px;
+	color: #fff;
+	font-family: "microsoft yahei";
+}
+.mod-download .btn-download {
+	margin-top: 10px;
+	position: relative;
+}
+.mod-download .btn-download .icon-logo {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 9px;
+	left: 10px;
+	/* margin-top: -18px\0;
+	*margin-top: 0; */
+}
+/* .ie8 .mod-download .btn-download .icon-logo{
+	margin-top: -18px;
+} */
+.mod-download .btn-download .icon-win {
+	background-position: -112px 0;
+}
+.mod-download .btn-download .icon-andriod {
+	background-position: -112px -21px;
+}
+.mod-download .btn-download .icon-apple {
+	background-position: -112px -42px;
+}
+.mod-download .btn-download .icon-track{
+	background-position: -112px 0;
+}
+.mod-download .btn-download .icon-mapInfo{
+	background-position: -112px 0;
+}
+.mod-download .btn-download-disabled .icon-win {
+    background-position: -133px 0;
+}
+.mod-download .btn-download-disabled .icon-andriod {
+    background-position: -133px -21px;
+}
+.mod-download .btn-download-disabled .icon-apple {
+    background-position: -133px -42px;
+}
+.mod-download .btn-download-disabled .icon-track {
+    background-position: -112px 0;
+}
+.mod-download .btn-download-disabled .icon-mapInfo {
+   background-position: -112px 0;
+}
+.mod-download .btn-download .text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 36px;
+	_line-height: 38px;
+	text-indent: 22px;
+	/* margin-top: -18px\0;
+	*margin-top: 3px;
+	_margin-top: 0px; */
+}
+@media screen and (min-width:0\0) { 
+    .mod-download .btn-download .text{margin-top: 0px; background:none;}/* IE9 , IE10 ,IE11 rule sets go here */
+	.mod-download .btn-download .icon-logo{margin-top: 0px;}
+}
+/* .ie8 .mod-download .btn-download .text {
+	margin-top: -15px;
+} */
+.mod-web .btn-web {
+	background-position: 0 -40px;
+}
+
+.mod-web {
+	position:relative;
+	height:283px;
+	margin-top: 20px;
+	*margin-top: 40px;
+	_margin-top: 20px;
+	border-top: solid 1px #e6e6e6;
+	padding-left: 520px;
+}
+
+.mod-web .web-img {
+	position:absolute;
+	top:75px;
+	left:25px;
+}
+
+.mod-web .link {
+	margin-top: 110px;
+}
+
+.mod-web h3 {
+	color: #333;
+	font-size: 24px;
+	line-height: 24px;
+}
+
+.mod-web .info {
+	margin: 18px 0;
+	color: #999;
+}
+
+.pop-download {
+	padding: 35px 50px 35px 20px;
+	overflow: hidden;
+	_zoom: 1;
+}
+.pop-download .qrcode {
+	width: 221px;
+	text-align: center;
+	float: left;
+	overflow: hidden;
+}
+.pop-download .qrcode p {
+	color: #333;
+	margin-top: 5px;
+}
+.pop-download .info {
+	float: left;
+	padding-left: 50px;
+	width: 240px;
+	border-left: 1px solid #e6e6e6;
+}
+
+.pop-download .way-2,
+.pop-download .way-3 {
+	margin-top: 30px;
+}
+.pop-download .way h4{
+	font-size: 16px;
+	line-height: 16px;
+	color: #333
+}
+.pop-download .way .desc {
+	padding: 5px 0;
+	color: #999;
+}
+.pop-download .btn-goto,
+.pop-download .btn-send {
+	color: #fff;
+	font-family: "microsoft yahei";
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 1px 2px;
+}
+.pop-download .btn-goto {
+	display: block;
+	width: 140px;
+	height: 50px;
+	background-position: 0 -80px;
+	font-size: 16px;
+	margin-top: 24px;
+}
+.pop-download .phonenum {
+	margin-top: 5px;
+}
+.pop-download .ipt-phonenum {
+	float: left;
+	width: 148px;
+	padding: 0 5px;
+	height: 28px;
+	border: 1px solid #b3b3b3;
+	line-height: 28px\9;
+	font-family: "microsoft yahei";
+	font-size: 18px;
+	background-color: #f2f2f2;
+}
+.pop-download .btn-send {
+	float: left;
+	display: block;
+	width: 60px;
+	height: 30px;
+	background-position: 0 -132px;
+	margin-left: 10px;
+}
+
+.pop-download .sms-captcha, .sms-error, .sms-info{
+    margin: 5px 0;
+}
+.pop-download .sms-captcha *{
+    vertical-align: middle;
+}
+.pop-download .sms-captcha input{
+    width: 50px;
+    padding: 0 5px;
+    height: 28px;
+    border: 1px solid #b3b3b3;
+    line-height: 28px\9;
+    font-family: "microsoft yahei";
+    font-size: 18px;
+    background-color: #f2f2f2;
+}
+.pop-download .sms-error{
+    color: red;
+}/*  |xGv00|e39edf14a6facf292854e67466c986cb */

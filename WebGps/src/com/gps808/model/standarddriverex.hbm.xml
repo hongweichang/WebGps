@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardDriverEx" table="jt808_driver_info">
+		<!-- ����������������?? -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ������������identity������������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ����������?������? -->
+		<property name="jn" column="JobNum"	type="string" length="64"/>
+		<property name="dn" column="Name" type="string" length="64"/>
+		<property name="dt" column="Contact"	type="string" length="256"/>
+		<property name="sx" column="Sex" type="java.lang.Integer"/>
+		<property name="cn" column="IDNumber" type="string" length="256"/>
+		<property name="bt" column="DateOfBirth"	type="java.util.Date"/>
+		<property name="ln" column="DriverLicenseNum" type="string" length="256"/>
+		<property name="pid" column="CompanyID" type="java.lang.Integer"/>
+		<property name="rd" column="RushDate" type="java.util.Date"/>
+		<property name="vd" column="Validity" type="java.util.Date"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardDriverSignin" table="jt808_driver_signin">
+		<!-- ������������ -->
+		<composite-id>
+            <key-property name="vehiID" column="VehiID" type="java.lang.Integer"/>
+            <key-property name="sti" column="STimeI" type="java.lang.Integer"/>
+        </composite-id>
+		<!-- ������������ -->
+		<property name="di" column="DriverInfo" type="string" length="128"/>
+		<property name="st" column="STime" type="java.util.Date"/>
+		<property name="sjd" column="SJingDu" type="java.lang.Integer"/>
+		<property name="swd" column="SWeiDu" type="java.lang.Integer"/>
+		<property name="slc" column="SLiCheng" type="java.lang.Integer"/>
+		<property name="et" column="ETime" type="java.util.Date"/>
+		<property name="ejd" column="EJingDu" type="java.lang.Integer"/>
+		<property name="ewd" column="EWeiDu" type="java.lang.Integer"/>
+		<property name="elc" column="ELiCheng" type="java.lang.Integer"/>
+		<property name="ss" column="SignStatus" type="java.lang.Integer"/>
+		<property name="eti" column="ETimeI" type="java.lang.Integer"/>
+		
+	 	<many-to-one name="device" column="DevIDNO" class="com.gps808.model.StandardDevice" unique="true" lazy="false" not-found="ignore"/> 
+		<many-to-one name="driver" column="DriverID" class="com.gps808.model.StandardDriver" unique="true" lazy="false" not-found="ignore"/> 
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+.serverall {border: 1px solid #c8caca;border-radius: 3px;padding: 20px;position: relative;}
+.serverall h3{font: bold 12px/30px Arial, Helvetica, sans-serif; border-bottom:solid 1px #e0e0e0; padding-top:10px; text-indent:1em}
+.serverall h3 .svrmore{float:right; color:#2699dd; text-decoration:none}
+.serverall h3 .svrmore:hover{color: #FF0000;text-decoration:underline;}
+.setingbox{width:700px; overflow:hidden; zoom:1; margin-top:20px;}
+.setingbox dt{float:left; width:160px; text-align:right; margin-right:10px;  color:#333; padding-top:10px; clear:both; display:block}
+.setingbox dd{padding-top:10px; width:500px; float:left; color:#666}
+.setingbox dd input.text{ width:226px; height:20px; border:solid 1px #cdcdcd; line-height:20px; padding:0 4px; color:#666;}
+.setingbox dd select{width:236px; height:22p;idth:850px; }
+.serverinfo{line-height:20px; padding:20px 20px 0; color:#666}

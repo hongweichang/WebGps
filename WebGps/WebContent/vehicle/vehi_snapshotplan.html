@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/report.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/gps_common.js"></script>
+<script type="text/javascript" src="js/vehi_snapshotplan.js"></script>
+</head>
+<body>
+<div id="search" style="padding-bottom:8px;">
+	<h2 class="righttitile_vehicle"><span id="vehiTitle">&nbsp;</span></h2>
+	<label class="searchinput">
+      <input id="vehisearch" name="vehisearch" type="text" value="" maxlength="32"/>
+    </label>
+    <a href="javascript:querySnapshotPlan();" class="searchbtn">
+    	<span id="btnSearchVehi">&nbsp;</span>
+    </a>
+    <a href="javascript:setupSnapshotPlan();" class="searchbtn" style="margin-left:6px;">
+    	<span id="btnSetupSnapshotPlan">&nbsp;</span>
+    </a>
+    <a href="javascript:deleteSelectPlan();" class="searchbtn" style="margin-left:6px;">
+    	<span id="btnDeleteSelectPlan">&nbsp;</span>
+    </a>
+    &nbsp;&nbsp;<span id="spanTipStorage"></span>
+</div>
+<table width="1400" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="vehiTable">
+	<tr class="heard">
+		<th class="tableft"><span></span></th>
+		<th class="checkbox"><input type="checkbox" name="selectAll" id="selectAll" onclick="onSelectedAll('selectIdList', 'selectAll')"/></th>
+		<th id="thOperator"></th>
+		<th id="thIndex">&nbsp;</th>
+		<th id="thName">&nbsp;</th>
+		<th id="thDay1">&nbsp;</th>
+		<th id="thDay2">&nbsp;</th>
+		<th id="thDay3">&nbsp;</th>
+		<th id="thDay4">&nbsp;</th>
+		<th id="thDay5">&nbsp;</th>
+		<th id="thDay6">&nbsp;</th>
+		<th id="thDay7">&nbsp;</th>
+		<th class="tabright"><span></span></th>
+	</tr>
+	<tr id="vehiTableTemplate" class="tabdata" style="display:none">
+		<td class="tableft">&nbsp;</td>
+		<td><input type="checkbox" id="selectIdList" name="selectIdList" onclick="onSelectedItem('selectIdList', 'selectAll')" value=""/></td>
+		<td id="tdOperator" class="set"></td>
+		<td id="tdIndex">&nbsp;</td>
+		<td id="tdName" class="set">&nbsp;</td>
+		<td id="tdDay1">&nbsp;</td>
+		<td id="tdDay2">&nbsp;</td>
+		<td id="tdDay3">&nbsp;</td>
+		<td id="tdDay4">&nbsp;</td>
+		<td id="tdDay5">&nbsp;</td>
+		<td id="tdDay6">&nbsp;</td>
+		<td id="tdDay7">&nbsp;</td>
+		<td class="tabright">&nbsp;</td>
+	</tr>
+</table>
+<div id="vehiPagination" class="pagination" style="margin:10px 10px 10px 10px;"></div>
+</body>
+</html>

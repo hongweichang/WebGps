@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<link href="../../css/public.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/report.css" rel="stylesheet" type="text/css" />
+	<link href="../../js/dxtree/dhtmlxtree.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css?150120"/>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../../js/myajax.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../js/public.js?150120"></script>
+	<script type="text/javascript" src="../../js/date.js"></script>
+	<script type="text/javascript" src="../../js/dxtree/dhtmlxcommon.js"></script>
+	<script type="text/javascript" src="../../js/dxtree/dhtmlxtree.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexiManage.js?150120"></script>
+	<script type="text/javascript" src="../../js/gps_common.js"></script>
+	<script type="text/javascript" src="../../js/date.js"></script>
+	<script type="text/javascript" src="../../js/company_tree.js?150120"></script>
+	<script type="text/javascript" src="js/AssignMaintain.js?150120"></script>
+	<style type="text/css">
+	#left {
+		display:block;
+		float:left;
+		width:420px; 
+		height:480px;
+	}
+	#right {
+		display:block;
+		float:left;
+		width:420px; 
+		height:480px;
+		margin-left:50px;
+	}
+	#vehicle_tree,#rule_tree{
+		width:100%;
+		height:420px;
+		margin:2px;
+		background-color:#f5f5f5;
+		border :1px solid Silver;
+		overflow:auto;
+	}
+	#search .righttitile_rule {
+		background:	url("../images/rule-v3-icon.png");
+		background-attachment: scroll;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-color: rgba(0, 0, 0, 0);
+		border-bottom: 1px solid #cdcdcd;
+	    display: block;
+	    margin: 20px 20px 10px;
+	    padding: 2px 0 8px 33px;
+	}
+	</style>
+</head>
+<body style="min-width:1010px;">
+<div id="search">
+	<h2 class="righttitile_rule"><span id="groupTitle">&nbsp;</span></h2>
+</div>
+<div style="padding-left:20px;">
+	<div style="width:auto;overflow:hidden;margin-bottom:10px;">
+		<div id="left">
+			<label><h2><span id="spanSelectVehicle"></span></h2></label>
+			<div style="margin-top:4px;margin-bottom:4px;">
+				<span id="searchVehicle">&nbsp;</span>
+				<input id="name" name="name" type="text" class="text" value="" maxlength="64" onkeyup="searchVehicle()" style="width:100px;"/>&nbsp;&nbsp;	
+			</div>
+			<div id="vehicle_tree"></div>
+		</div>
+		<div id="right">
+			<label><h2><span id="spanSelectRule"></span></h2></label>
+			<div style="margin-top:4px;margin-bottom:4px;">
+				<span id="searchRule">&nbsp;</span>
+				<input id="ruleName" name="ruleName" type="text" class="text" value="" maxlength="32" onkeyup="searchRule()" style="width:100px;"/>&nbsp;&nbsp;	
+			</div>
+			<div id="rule_tree"></div>
+		</div>
+	</div>
+	<div id="toolbar-btn" style="display:none;padding:0px 410px;"></div>
+	<div style="display:block;margin:10px;">
+		<span id="tipDrag">&nbsp;</span>
+	</div>
+</div>
+</body>
+</html>

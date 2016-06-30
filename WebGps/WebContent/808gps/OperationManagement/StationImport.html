@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../../css/public.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css"/>
+<script type="text/javascript" src="../../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.form.js"></script>
+<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../../js/flexigrid/flexiManage.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../../js/public.js"></script>
+<script type="text/javascript" src="js/StationImport.js"></script>
+<style type="text/css">
+	.fileitem {
+		margin-top: 4px;
+		float: left;
+	}
+	#lableExcel {
+		border: 1px solid #bbcbdf;
+		background-color: #fff;
+		background-image: linear-gradient(to top, #f5f9fc, #fff);
+		padding: 6px 10px;
+		border-radius: 2px;
+	}
+	#lableExcel:hover span{
+		color: #FF0000;
+	}
+</style>
+</head>
+
+<body style="background-color:#fff;">
+<div class="serverall" style="margin: 30px 0 30px 50px;">
+    <form action="StandardVehicleAction_importExcel.action" id="uploadForm" name="uploadForm" method="post" enctype="multipart/form-data">
+		<div class="fileitem">
+			<a class="lableExcel" id="lableExcel" href="javascript:;"><span></span></a>
+	   		<input type="file" style="display:none;" onchange="previewExcel(this)" class="uploadFile" name="uploadFile" id="uploadFile" accept="*.xls"/>
+		</div>
+		<div id="toolbar-btn" style="display:none;float:left;margin-left: 40px;"></div>
+	</form>
+</div>
+</body>
+</html>

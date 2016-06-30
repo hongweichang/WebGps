@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>视频播放</title>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="swfobject.js"></script>
+	<script type="text/javascript" src="jquery.query-2.1.7.js"></script>
+	<script type="text/javascript">
+var isInitFinished = false;
+var jsession = "";
+var vehiIdno = "";
+var devIdno = "";
+var name = "";
+var chnCount = 4;
+var maxChnCount = 4;
+var closeSecond = 0;
+var stopIndex = 0;
+var lang = new langZhCn();
+
+function langZhCn() {
+	this.loginError = "登陆失败";
+	this.jsessionError = "会话号不存在";
+	this.deviceNoExist = "找不到车辆信息";
+	this.errorVideoDevice = "这个设备不是视频设备";
+	this.vehicleNotOperate = "没有车辆或者设备操作权限";
+	this.closeTip = "秒后关闭视频";
+}
+
+function langEn() {
+	this.loginError = "Login failed";
+	this.jsessionError = "Jsession error";
+	this.deviceNoExist = "Can't not find vehicles";
+	this.vehicleNotOperate = "No vehicle or device operating authority";
+	this.errorVideoDevice = "This device is not video device";
+	this.closeTip = " seconds later close video"
+}
+
+$(document).ready(function(){
+    var params = {  
+        allowFullscreen: "true",   
+        allowScriptAccess: "always",   
+        bgcolor: "#FFFFFF"   
+    };
+	swfobject.embedSWF("player.swf", "cmsv6flash", "640", "480", "11.0.0", null, null, params, null);
+	setTimeout(initFlash, 50);
+	$("#closeTip").hide();
+	
+	var channel = getUrlParameter("channel");
+	if (channel) {
+		maxChnCount = parseInt(channel, 10);
+	}
+	var temp = getUrlParameter("close");
+	if (temp) {
+		closeSecond = parseInt(temp, 10);
+	}
+	if (getUrlParameter("lang") == "en") {
+		lang = new langEn();
+	}
+	
+	//设备号
+	devIdno = getUrlParameter("devIdno");
+	//车牌号
+	vehiIdno = decodeURIComponent(getUrlParameter("vehiIdno"));
+	if(!devIdno && !vehiIdno) {//都为空
+		alert(lang.deviceNoExist);
+	}else {
+		if(devIdno) {
+	   		name = devIdno;
+	   	}else {
+	   		name = vehiIdno;
+	   	}
+		document.title = name;
+		
+		//会话号
+		jsession = getUrlParameter("jsession");
+		//如果jsession为空，则登陆获取会话号
+		if(!jsession) {
+			login();
+		}else {
+			//加载设备信息
+			loadDeviceInfo();
+		}
+	}
+});
+
+//如果传入了用户名和密码，则登陆获取会话号
+function login() {
+	var account = getUrlParameter("account");
+	var password = getUrlParameter("password");
+	var param = [];
+    param.push({name: 'account', value: account});
+    param.push({name: 'password', value: password});
+	this.doAjaxSubmit('StandardApiAction_loginEx.action', param, function(json, action, success) {
+		if(success) {
+			jsession = json.jsession;
+			//获取到会话号，则加载设备信息
+			loadDeviceInfo();
+		}else {
+			alert(lang.loginError);
+		}
+	});
+}
+
+//如果传入设备号，则直接判断设备号；
+//如果没传入设备号，则判断传入的车牌号
+//根据设备号或者车牌号获取设备信息，并判断是否有效和是否视频设备
+//获取设备通道
+function loadDeviceInfo() {
+	var param = [];
+   	param.push({name: 'jsession', value: jsession});
+   	param.push({name: 'devIdno', value: devIdno});
+   	param.push({name: 'vehiIdno', value: vehiIdno});
+	
+   	this.doAjaxSubmit('StandardApiAction_getVideoDevice.action', param, function(json, action, success) {
+		if(success) {
+			//不是视频设备
+			if(!json.isVideoDevice) {
+				alert(lang.errorVideoDevice);
+			}else {
+				devIdno = json.devIdno;
+				chnCount = json.chnCount;
+				
+				//加载完成再加载其他信息
+				loadOtherInfo();
+			}
+		}else {
+			//没有操作权限
+			if(json) {
+				if(json.result == 5) {
+					alert(lang.jsessionError);
+				}else if(json.result == 8) {
+					alert(lang.vehicleNotOperate);
+				}else {
+					alert(lang.deviceNoExist);
+				}
+			}else {
+				alert(lang.deviceNoExist);
+			}
+		}
+	});
+}
+
+//加载其他信息
+function loadOtherInfo() {
+	if(!getUrlParameter("channel")) {
+		maxChnCount = chnCount;
+	}
+	//如果设备通道数量大于播放的最大窗口数量，则按播放的窗口数量计算
+	if(maxChnCount > 9) {
+		maxChnCount = 9;
+	}
+	if(chnCount > maxChnCount) {
+		chnCount = maxChnCount;
+	}
+	
+	//播放视频
+	previewVideo();
+}
+
+//设置flash窗口数量
+function loadFlashWindowNum(num) {
+	if (num == 1) {
+		swfobject.getObjectById('cmsv6flash').setWindowNum(1);
+	} else if (num > 1 && num <= 4) {
+		swfobject.getObjectById('cmsv6flash').setWindowNum(4);
+	} else {
+		swfobject.getObjectById('cmsv6flash').setWindowNum(9);
+	}
+}
+
+//初始化视频插件完成
+function initFlash() {
+	if (swfobject.getObjectById('cmsv6flash') == null ||
+		typeof swfobject.getObjectById('cmsv6flash').setWindowNum == "undefined" ) {
+		setTimeout(initFlash, 50);
+	} else {
+		if (getUrlParameter("lang") == "en") {
+			swfobject.getObjectById('cmsv6flash').setLanguage("en.xml");
+		} else {
+			swfobject.getObjectById('cmsv6flash').setLanguage("cn.xml");
+		}
+		loadFlashWindowNum(maxChnCount);
+		var host = window.location.host;
+		var ip = host.split(":")[0];
+		if(!ip || ip == 'localhost') {
+			ip = '127.0.0.1';
+		}
+		swfobject.getObjectById('cmsv6flash').setServerInfo(ip, 6605);
+		isInitFinished = true;
+	}
+}
+
+//开始预览视频
+function previewVideo() {
+	//视频插件初始化完成
+	if (isInitFinished) {
+		//再一次设置flash窗口数量
+		loadFlashWindowNum(maxChnCount);
+		if (closeSecond != 0) {
+			$("#closeTip").show();		
+			setTimeout(closeVideo, 1000);
+		}
+		for (var i = 0; i < chnCount; ++ i) {
+			swfobject.getObjectById('cmsv6flash').setBufferTime(i, 4);
+			swfobject.getObjectById('cmsv6flash').setVideoInfo(i, name + " - CH" + (i + 1));
+			swfobject.getObjectById('cmsv6flash').startVideo(i, jsession, devIdno, i, 1, true);
+		}	
+	} else {
+		setTimeout(previewVideo, 500);
+	}
+}
+
+function closeVideo() {
+//	for (var i = 0; i < 4; ++ i) {
+//		swfobject.getObjectById('cmsv6flash').stopVideo(i);
+//	}
+	if (closeSecond > 0) {
+		closeSecond -- ;
+		$("#spanCloseSecond").text(closeSecond + lang.closeTip);
+		setTimeout(closeVideo, 1000);
+	} else {
+		$("#closeTip").hide();
+		swfobject.getObjectById('cmsv6flash').stopVideo(stopIndex);
+		stopIndex ++ ;
+		if (stopIndex < chnCount) {
+			setTimeout(closeVideo, 50);
+		}
+	}
+}
+
+//获取URL参数信息
+function getUrlParameter(name){
+	if(location.search==''){
+		return '';
+	}
+	
+	var o={};
+	var search=location.search.replace(/\?/,'');//只替换第一个问号,如果参数中带有问号,当作普通文本
+	var s=search.split('&');
+	for(var i=0;i<s.length;i++){
+		o[s[i].split('=')[0]]=s[i].split('=')[1];
+	}
+	return o[name]==undefined?'':o[name];
+}
+
+//提交ajax
+function doAjaxSubmit(action, params, callback) {
+	$.ajax({
+		type: 'POST',
+		url: action,
+		data: params,
+		cache:false,/*禁用浏览器缓存*/
+		dataType: 'json',
+		success: function (json) {
+			if(json.result == 0){
+				callback.call(this, json, action, true);
+			} else {
+				callback.call(this, json, action, false);
+			}
+		},
+		error: function (XMLHttpRequest, textStatus, errorThrown) {
+			try {
+				if (p.onError) p.onError(XMLHttpRequest, textStatus, errorThrown);
+			} catch (e) {}
+			callback.call(this, null, action, false);
+		}
+	});
+}
+</script>
+</head>
+<body bgcolor="#ffffff" width="640" heigth="480">
+<div id="closeTip">
+<p><span id="spanCloseSecond"></span></p>
+</div>
+<div id="cmsv6flash">
+	<h1>Alternative content</h1>
+	<p>
+		<a href="http://www.adobe.com/go/getflashplayer">
+			<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+		</a>
+	</p>
+</div>
+</body>
+</html>

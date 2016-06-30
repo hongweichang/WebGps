@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardSIMCardInfo" table="jt808_SIM_card_information">
+		<!-- ����������������??-->
+		<id	name="cardNum" column="SimCard" type="string" length="64" >
+			 <generator class="assigned" />
+		</id>
+		<!-- ����������?������? -->
+		<property name="id" column="ID"	type="java.lang.Integer" unique="true" insert="false" update="false"/>
+		<property name="status" column="Status" type="java.lang.Integer"/>
+		<property name="registrationTime" column="RegistrationTime"	type="java.util.Date"/>
+		<property name="remark" column="Remark" type="string" length="256"/>
+		<property name="updateTime" column="UpdateTime"	type="java.util.Date"/>
+		<property name="install" column="Install"	type="java.lang.Integer"/>
+		
+		<many-to-one name="company" column="CompanyID" class="com.gps808.model.StandardCompany" unique="true" lazy="false" not-found="ignore"/> 
+	</class>
+</hibernate-mapping>

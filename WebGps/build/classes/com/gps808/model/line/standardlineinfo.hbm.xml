@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model.line">
+	<class name="StandardLineInfo" table="jt808_line_info">
+		<!-- ����������������?? -->
+		<id name="id" column="LineID" type="integer">
+			<generator class="assigned" />
+		</id>
+		<!-- ����������?������? -->
+		<property name="enable" column="IsEnable" type="java.lang.Integer" />
+		<property name="type" column="Type" type="java.lang.Integer" />
+		<property name="ticket" column="TicketMode" type="java.lang.Integer" />
+		<property name="price" column="TicketPrice" type="java.lang.Integer" />
+		<property name="upLen" column="Up_Length" type="java.lang.Integer" />
+		<property name="upTotalT" column="Up_Time_Count_Second" type="java.lang.Integer" />
+		<property name="upItlN" column="Up_Time_Interval_Normal_Second"
+			type="java.lang.Integer" />
+		<property name="upItlP" column="Up_Time_Interval_Peak_Second"
+			type="java.lang.Integer" />
+		<property name="upFirst" column="Up_Time_First_bus" type="java.lang.Integer" />
+		<property name="upLast" column="Up_Time_Last_bus" type="java.lang.Integer" />
+		<property name="dnLen" column="Down_Length" type="java.lang.Integer" />
+		<property name="dnTotalT" column="Down_Time_Count_Second"
+			type="java.lang.Integer" />
+		<property name="dnItlN" column="Down_Time_Interval_Normal_Second"
+			type="java.lang.Integer" />
+		<property name="dnItlP" column="Down_Time_Interval_Peak_Second"
+			type="java.lang.Integer" />
+		<property name="dnFirst" column="Down_Time_First_bus" type="java.lang.Integer" />
+		<property name="dnLast" column="Down_Time_Last_bus" type="java.lang.Integer" />
+		<property name="remark" column="Remark" type="string" length="512" />
+		<property name="upLng" column="Up_JingDu" type="string"
+			length="1024" />
+		<property name="upLat" column="Up_WeiDu" type="string"
+			length="1024" />
+		<property name="dnLng" column="Down_JingDu" type="string"
+			length="1024" />
+		<property name="dnLat" column="Down_WeiDu" type="string"
+			length="1024" />
+		<property name="mapTp" column="MapType" type="java.lang.Integer" />
+		<property name="upSum" column="Up_Station_Sum" type="java.lang.Integer" />
+		<property name="dnSum" column="Down_Station_Sum" type="java.lang.Integer" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardDeviceOflTaskLog" table="dev_ofl_task_log">
+		<!-- ������������ -->
+		<composite-id>
+			<key-property name="id" column="ID" type="java.lang.Integer"/>
+        </composite-id>
+		<!-- ������������ -->
+        <property name="devIdno" column="DevIDNO" type="java.lang.String" length="40"/>
+        <property name="dtCreateTask" column="dtCreateTask" type="java.util.Date"/>
+        <property name="dtExecutionTask" column="dtExecutionTask" type="java.util.Date"/>
+        <property name="dtEndTask" column="dtEndTask" type="java.util.Date"/>
+        <property name="nTaskStatus" column="nTaskStatus" type="java.lang.Integer"/>
+        <property name="nFileType" column="nFileType" type="java.lang.Integer"/>
+        <property name="strParam" column="strParam" type="java.lang.String" length="255"/>
+        <property name="strFileName" column="strFileName" type="java.lang.String" length="128"/>
+	</class>
+</hibernate-mapping>

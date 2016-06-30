@@ -1,0 +1,190 @@
+@charset "UTF-8";
+#main {
+	width: 100%;
+	height: 100%;
+}
+.header {
+	background-color: #2b3442;
+	box-shadow:#b7b7b7 4px 4px 4px;
+    height: 100px;
+    width:auto;
+	display: none;
+    z-index: 3;
+}
+.show {
+	display : block;
+}
+.header .header-title {
+    float: left;
+    height: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 40px;
+}
+.header .header-title .logo {
+    height: 50px;
+    margin: 5px 0 0 28px;
+}
+.header .header-title .logo img{
+    width: 65px;
+    height: 50px;
+}
+.header-title .logo span {
+	vertical-align:middle;
+    color: white;
+    /*cursor: pointer;*/
+    display: inline-block;
+    font-family: "Microsoft YaHei";
+    font-size: 20px;
+    font-weight: 500;
+    left: 10px;
+    margin-top: -43px;
+    padding-left: 5px;
+    border-left: 1px solid #394049;
+}
+.header .login-mess {
+	height: 40px;
+	display: inline;
+	float: right;
+	left: 0;
+    position: absolute;
+    width: 100%;
+    background-color: #171f2a;
+}
+.header .login-mess .login-mess-account {
+	*width:auto;
+	word-break:keep-all;
+	text-overflow:ellipsis;
+	white-space:normal;
+	*white-space:nowrap;
+	overflow:hidden;
+	display: inline;
+	float: right;
+	padding: 10px 5px 0;
+}
+.header .login-mess .login-mess-account a{
+	color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    padding: 0 10px;
+    cursor:pointer;
+}
+.header .login-mess .login-mess-account .down{
+	height: 100%;
+	border-right: 1px solid #394049;
+}
+.header .login-mess a span{
+    color: #fff;
+    font-size: 12px;
+	cursor: pointer;
+	display: inline-block;
+}
+.header .login-mess  a span:hover{
+   text-decoration: underline;
+}
+
+.header .login-mess .login-mess-account .down em{
+	background: url("../images/angle_botoom.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background:	url("../images/angle_botoom.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-color: rgba(0, 0, 0, 0);
+    display: inline-block;
+    margin: 0px 0px 0px 5px;
+    height: 5px;
+    vertical-align: middle;
+    width: 10px;
+}
+.header .login-mess .quick-menu {
+    background-color: #fff;
+    border: 1px solid #000;
+    display: none;
+    position: absolute;
+  /**  right: 40px; **/
+    top: 32px;
+    z-index: 9;
+    right: 52px;
+}
+
+.header .login-mess .quick-menu p a{
+	padding: 10px;
+	cursor: pointer;
+    display: block;
+}	
+
+.header .login-mess .quick-menu p:hover a{
+	background-color: #202833;
+    color: #ffb800;
+}
+.header .email{
+	display: inline-block;
+	position: relative;
+	background: url('../images/menu-ico.png') no-repeat -225px -22px;
+	background:	url("../images/menu-ico.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: -225px -22px;
+	background-color: rgba(0, 0, 0, 0);
+	width: 14px;
+	height: 11px;
+}
+
+.header .email i{
+	position: absolute;
+	width: 6px;
+	height:6px;
+	border-radius: 50%;
+	background-color: #f31b5d;
+	right: -3px;
+	top:-3px;
+}
+
+.header .nav-bar {
+    float: left;
+    height: 60px;
+    margin-top: 40px;
+}
+.header .nav-bar li {
+	height: 60px;
+    margin: 0 0 0 10px;
+	cursor: pointer;
+	float: left;
+}
+.header .nav-bar a {
+    color: #fff;
+    float: left;
+    overflow: hidden;
+    padding: 0px 15px;
+    text-align: center;
+    font-size: 16px;
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+}
+.header .nav-bar li:hover a,.nav-bar li.current a{
+	background: #202833 none repeat scroll 0 0;
+    color: #ffb800;
+    font-weight: bold;
+}
+#mainPanel-all .mainPanel {
+	width: 100%;
+	height: 100%;
+	display:none;
+}
+#mainPanel-all .current {
+	display: block;
+}
+#leftPanel {
+    background-color: #f5f6f7;
+    bottom: 0;
+    font-family: "Microsoft Yahei";
+    left: 0;
+	top: 0;
+	float:left;
+	height:100%;
+}
+#rightPanel {
+	float: left;
+	height:100%;
+}

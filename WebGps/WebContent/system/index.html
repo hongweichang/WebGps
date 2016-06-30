@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/public.css?v150825" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js?v150825"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js?v150825"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js?v150825"></script>
+<script type="text/javascript" src="../js/myajax.js?v150825"></script>
+<script type="text/javascript" src="../js/public.js?v150825"></script>
+<script type="text/javascript" src="../js/lang_fun.js?v150825"></script>
+<script type="text/javascript" src="js/lang.js?v150825"></script>
+<script type="text/javascript" src="js/lang_en.js?v150825"></script>
+<script type="text/javascript" src="js/lang_tw.js?v150825"></script>
+<script type="text/javascript" src="js/lang_turkey.js?v150825"></script>
+<script type="text/javascript" src="js/lang_thai.js?v150825"></script>
+<script type="text/javascript" src="js/lang_pt.js?v150825"></script>
+<script type="text/javascript" src="js/lang_ar.js?v150825"></script>
+<script type="text/javascript" src="js/lang_es.js?v150825"></script>
+<script type="text/javascript" src="js/lang_ru.js?v150825"></script>
+<script type="text/javascript" src="js/lang_bg.js?v150825"></script>
+<script type="text/javascript" src="js/index.js?v150825"></script>
+</head>
+<body>
+<!--头部公用区域 start-->
+<div id="topbutton">
+	<div id="logo">&nbsp;<span id="mainTitle">&nbsp;</span></div>
+	<div class="toptext">
+		<span id="welcome">&nbsp;</span>&nbsp;
+		<a href="javascript:" onclick="changeAccount()"><span id="username" class="blue">&nbsp;</span></a>&nbsp;|&nbsp;
+		<span id="role"></span>&nbsp;|&nbsp;
+		<a href="javascript:" onclick="changePassword()"><span id="config" class="blue"></span></a>&nbsp;|&nbsp;
+		<a href="javascript:" onclick="exitSystem()" style="display:inline-block;"><span id="exit" class="blue"></span></a>&nbsp;
+	</div>
+</div>
+<div id="nav">
+  <div class="navright"></div>
+  <ul class="buttonbg">
+    <li class="logo"><img src="../images/public/mylogo.gif" style="position:absolute;z-index:1;top:0px;left:54px;heigth:36px;width:36px;" /></li>
+    <li><a href="javascript:" class="befor" name="topMenuItem" onclick="javascript:switchPage('home', 'home.html')"><span id="nav_home"></span></a></li>
+    <li><a href="javascript:" name="topMenuItem" onclick="javascript:switchPage('client', 'client.html')"><span id="nav_client"></span></a></li>
+    <li><a href="javascript:" name="topMenuItem" onclick="javascript:switchPage('device', 'device.html')"><span id="nav_device"></span></a></li>
+    <li><a href="javascript:" name="topMenuItem" onclick="javascript:switchPage('online', 'status.html')"><span id="nav_status"></span></a></li>
+    <li><a href="javascript:" name="topMenuItem" onclick="javascript:switchPage('server', 'server.html')"><span id="nav_server"></span></a></li>
+<!--     <li><a href="javascript:"  target="mainFrame"  name="topMenuItem" onclick="javascript:switchPage('log', 'log.html')"><span id="nav_log"></span></a></li> -->
+    <li><a href="javascript:"  name="topMenuItem" onclick="javascript:switchPage('log', 'log.html')"><span id="nav_log"></span></a></li>
+    
+  </ul>
+</div>
+<div id="search">
+  <div class="searchset">
+    <label class="searchinput">
+      <input id="devicesearch" name="devicesearch" type="text" value="" maxlength="32"/>
+    </label>
+    <label class="searchbtn">
+      <button id="btnSearchDevice" name="btnSearchDevice" type="submit" onclick="queryDeviceInfo()"></button>
+    </label>
+    <label class="searchinput">
+      <input id="clientsearch" name="clientsearch" type="text" value="" maxlength="32"/>
+    </label>
+    <label class="searchbtn">
+      <button id="btnSearchClient" name="btnSearchClient" type="submit" onclick="queryClientInfo()"></button>
+    </label>
+  </div>
+</div>
+<!--头部公用区域 end--> 
+<!-- 框架 -->
+<div id="content">
+<IFRAME id="mainFrame" name="mainFrame" src="home.html" frameBorder=0 width="100%" scrolling=auto onload="javascript:dynIframeHeight(this)" height="100%"></IFRAME>
+</div>
+<!-- 版权声明 -->
+<div id="footer"><span id="spanCopyright"></span></div>
+</body>
+</html>

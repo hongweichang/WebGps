@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/public.css?v150825" rel="stylesheet" type="text/css" />
+<link href="css/online.css?v150825" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js?v150825"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js?v150825"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js?v150825"></script>
+<script type="text/javascript" src="../js/myajax.js?v150825"></script>
+<script type="text/javascript" src="../js/public.js?v150825"></script>
+<script type="text/javascript" src="../js/date.js?v150825"></script>
+<script type="text/javascript" src="../js/gps_common.js?v150825"></script>
+<script type="text/javascript" src="../js/lang_fun.js?v150825"></script>
+<script type="text/javascript" src="js/lang.js?v150825"></script>
+<script type="text/javascript" src="js/status.js?v150825"></script>
+</head>
+<body>
+<!--内容start-->
+<div class="comt">
+  <h2 class="title"> <span class="more"></span> <span class="icon icon4"></span> <span id="statusTitle">&nbsp;</span> > <span id="statusView">&nbsp;</span> </h2>
+  <div class="cont">
+  	<div></div>
+  	<div class="submenu">
+	    <ul>
+	      <li><a href="javascript::" name="statusMenuItem" onclick="javascript:switchStatusPage('device')" class="befor"><span id="liDeviceStatus"></span></a></li>
+	      <li><a href="javascript::" name="statusMenuItem" onclick="javascript:switchStatusPage('unreg')" ><span id="liUnregStatus"></span></a></li>
+	      <li><a href="javascript::" name="statusMenuItem" onclick="javascript:switchStatusPage('client')" ><span id="liClientStatus"></span></a></li>
+	    </ul>
+	</div>
+	<div class="contright">
+		<div>
+			<h3 id="deviceStatus" style="display:none"><span id="lableDeviceCount"> &nbsp;</span>&nbsp;<strong class="blue"><span id="deviceCount">&nbsp;</span></strong></h3> 
+		</div>
+		<table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="deviceTable" style="display:none">
+	      <tr class="heard">
+	        <th class="tableft"><span></span></th>
+	        <th><span id="thDeviceIndex">&nbsp;</span></th>
+	        <th><span id="thDeviceName">&nbsp;</span></th>
+	        <th><span id="thDeviceIDNO">&nbsp;</span></th>
+	        <th><span id="thDeviceClient">&nbsp;</span></th>
+	        <th><span id="thDeviceJingWei">&nbsp;</span></th>
+	        <th><span id="thDeviceGpsTime">&nbsp;</span></th>
+	        <th><span id="thDeviceAddress">&nbsp;</span></th>
+	        <th><span id="thDeviceNetwork">&nbsp;</span></th>
+	        <th><span id="thDeviceGWSvr">&nbsp;</span></th>
+	        <th><span id="thProtocol">&nbsp;</span></th>
+	        <th><span id="thAudioCodec">&nbsp;</span></th>
+	        <th><span id="thDiskType">&nbsp;</span></th>
+	        <th class="tabright"><span></span></th>
+	      </tr>
+	      <tr id="deviceTableTemplate" class="tabdata" style="display:none">
+	        <td class="tableft">&nbsp;</td>
+	        <td><span id="tdDeviceIndex"></span></td>
+	        <td class="set"><span id="tdDeviceName"></span></td>
+	        <td class="set"><span id="tdDeviceIDNO"></span></td>
+	        <td class="set"><span id="tdDeviceClient"></span></td>
+	        <td><span id="tdDeviceJingWei"></span></td>
+	        <td><span id="tdDeviceGpsTime"></span></td>
+	        <td><span id="tdDeviceAddress"></span></td>
+	        <td><span id="tdDeviceNetwork"></span></td>
+	        <td><span id="tdDeviceGWSvr"></span></td>
+	        <td><span id="tdProtocol"></span></td>
+	        <td><span id="tdAudioCodec"></span></td>
+	        <td><span id="tdDiskType"></span></td>
+	        <td class="tabright">&nbsp;</td>
+	      </tr>
+	    </table>
+	    <div id="devicePagination" class="pagination" style="margin:10px 10px 10px 10px;" style="display:none"></div>
+	    <div>
+			<h3 id="unregStatus" style="display:none"><span id="lableUnregCount" > &nbsp;</span>&nbsp;<strong class="blue"><span id="unregCount">&nbsp;</span></strong></h3> 
+		</div>
+		<table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="unregTable" style="display:none">
+	      <tr class="heard">
+	        <th class="tableft"><span></span></th>
+	        <th><span id="thUnregIndex">&nbsp;</span></th>
+	        <th><span id="thOperator"></span></td>
+	        <!-- 
+	        <th><span id="thUnregName">&nbsp;</span></th>
+	         -->
+	        <th><span id="thUnregIDNO">&nbsp;</span></th>
+	        <th><span id="thUnregJingWei">&nbsp;</span></th>
+	        <th><span id="thUnregGpsTime">&nbsp;</span></th>
+	        <th><span id="thUnregAddress">&nbsp;</span></th>
+	        <th><span id="thUnregNetwork">&nbsp;</span></th>
+	        <th><span id="thUnregGWSvr">&nbsp;</span></th>
+	        <th class="tabright"><span></span></th>
+	      </tr>
+	      <tr id="unregTableTemplate" class="tabdata" style="display:none">
+	        <td class="tableft">&nbsp;</td>
+	        <td><span id="tdUnregIndex"></span></td>
+	        <td class="set"><span id="tdOperator"></span></td>
+	        <!-- 
+	        <td class="set"><span id="tdUnregName"></span></td>
+	        -->
+	        <td class="set"><span id="tdUnregIDNO"></span></td>
+	        <td><span id="tdUnregJingWei"></span></td>
+	        <td><span id="tdUnregGpsTime"></span></td>
+	        <td><span id="tdUnregAddress"></span></td>
+	        <td><span id="tdUnregNetwork"></span></td>
+	        <td><span id="tdUnregGWSvr"></span></td>
+	        <td class="tabright">&nbsp;</td>
+	      </tr>
+	    </table>
+	    <div id="unregPagination" class="pagination" style="margin:10px 10px 10px 10px;" style="display:none"></div>
+	    <div>
+	    	<h3 id="clientStatus" style="display:none"><span id="labelClientCount">&nbsp;</span>&nbsp;<strong class="blue">&nbsp;<span id="clientCount">&nbsp;</span></strong></h3>
+	    </div>
+	    <table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="clientTable">
+	      <tr class="heard">
+	        <th class="tableft"><span></span></th>
+	        <th><span id="thClientIndex">&nbsp;</span></th>
+	        <th><span id="thClientName">&nbsp;</span></th>
+	        <th><span id="thClientAccount">&nbsp;</span></th>
+	        <th><span id="thClientAddress">&nbsp;</span></th>
+	        <th><span id="thClientLoginTime">&nbsp;</span></th>
+	        <th><span id="thClientType">&nbsp;</span></th>
+	        <th><span id="tdClientUserSvr">&nbsp;</span></th>
+	        <th class="tabright"><span></span></th>
+	      </tr>
+	      <tr id="clientTableTemplate" class="tabdata" style="display:none">
+	        <td class="tableft">&nbsp;</td>
+	        <td><span id="tdIndex"></span></td>
+	        <td class="blue"><span id="tdName"></span></td>
+	        <td class="blue"><span id="tdAccount"></span></td>
+	        <td class="blue"><span id="tdAddress"></span></td>
+	        <td><span id="tdLoginTime"></span></td>
+	        <td><span id="tdType"></span></td>
+	        <td><span id="tdUserSvr"></span></td>
+	        <td class="tabright">&nbsp;</td>
+	      </tr>
+	    </table>
+	    <div id="clientPagination" class="pagination" style="margin:10px 10px 10px 10px;" style="display:none"></div>
+	</div>
+  </div>
+</div>
+</body>
+</html>

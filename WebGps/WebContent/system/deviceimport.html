@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/public.css?v150825" rel="stylesheet" type="text/css" />
+<link href="css/serverinfo.css?v150825" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js?v150825"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js?v150825"></script>
+<script type="text/javascript" src="../js/jquery.form.js?v150825"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js?v150825"></script>
+<script type="text/javascript" src="../js/myajax.js?v150825"></script>
+<script type="text/javascript" src="../js/public.js?v150825"></script>
+<script type="text/javascript" src="js/devicefun.js?v150825"></script>
+<script type="text/javascript" src="js/deviceimport.js?v150825"></script>
+</head>
+
+<body style="background-color:#fff;">
+<div class="serverall" style="width:480px;padding-bottom:60px;">
+    <form action="SysDeviceAction_importExcel.action" id="uploadForm" name="uploadForm" method="post" enctype="multipart/form-data">
+	<dl class="setingbox">
+	  <dt><span id="lableType"></span></dt>
+	  <dd>
+	    <select id="importType" name="importType"></select></dd>
+	  <dt><span id="lableExcel"></span></dt>
+	  <dd><input type="file" id="uploadFile" name="uploadFile" accept="*.xls"/></dd>
+	  <dt><span id="lableVehicleTip" style="display:none;"></span></dt>
+	  <dd><span id="spanVehicleFormat" style="display:none;"></span></dd>
+	  <dt><span id="lableMobileTip" style="display:none;"></span></dt>
+	  <dd><span id="spanMobileFormat" style="display:none;"></span></dd>
+	  <dt></dt>
+	  <dd>
+	    <label class="searchbtn">
+	      <button id="save" type="button" onclick="ajaxImportDevice()"></button>
+	    </label>
+	  </dd>
+	</dl>
+	</form>
+</div>
+</body>
+</html>

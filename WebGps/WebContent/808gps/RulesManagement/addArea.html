@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../../css/public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../../js/myajax.js"></script>
+<script type="text/javascript" src="../../js/public.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5"></script>
+<script type="text/javascript" src="js/addArea.js"></script>
+</head>
+
+<body style="background-color:#fff;">
+<div class="serverall" style="width:500px;padding-bottom:60px;">
+	<dl class="setingbox">
+	  <dt></dt>
+	  <dd style="color:red" id="editPwd"></dd>
+	  <dt><span id="labelPwd1"></span></dt>
+	  <dd>
+	    <input id="pwd1" name="pwd1" type="text" class="text" value="" maxlength="16"/>
+	    <span id="pwd1Wrong" class="red">*</span></dd>
+	  <dt><span id="labelPwd2"></span></dt>
+	  <dd>
+	    <input id="pwd2" name="pwd2" type="text" class="text" value="" maxlength="16"/>
+	  </dd>
+	  <dt></dt>
+	  <dd>
+		<a href="javascript:ajaxSavePassword();" class="searchbtn">
+	  		<span id="save"></span>
+	    </a>
+	  </dd>
+	</dl>
+</div>
+</body>
+</html>

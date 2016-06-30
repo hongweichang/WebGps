@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardAreaChina" table="jt808_area_china">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ��������identity������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->
+		<property name="name" column="Name" type="string" length="256"/>
+		<property name="jingDu" column="Longtude" type="string" length="256"/>
+		<property name="weiDu" column="Latitude" type="string" length="256"/>
+		<property name="parentId" column="ParentId" type="java.lang.Integer"/>
+		<property name="areaName" column="AreaName" type="string" length="256"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,112 @@
+@CHARSET "UTF-8";
+i {
+    display: inline-block;
+    font-style: normal;
+    vertical-align: middle;
+}
+.tabManage {
+	height:30px;
+	background:#f5f7f7;
+	border-bottom:#b3b3b3 solid 1px;
+	position:relative;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+.tabManage .tab-box {
+	height: 31px;
+    margin: 0 35px;
+    overflow: hidden;
+    position: relative;
+}
+.tabManage .tab-box ul {
+	width: 200%;
+	position: absolute;
+}
+.tabManage ul li {
+	height:26px;
+	line-height:26px;
+	font-size:12px;
+	border-radius:3px 3px 0 0;
+	background:#fff;
+	border:#b3b3b3 solid 1px;
+	border-bottom:none;
+	color:#010101;
+	float:left;
+	margin-left:1px;
+	margin-top:3px;
+	cursor:pointer;
+	position: relative;
+	width: 120px;
+}
+.tabManage ul li:hover {
+	background:#e5f5ff;
+}
+.tabManage ul li.cur {
+	height:27px;
+	background:#f5f7f7;
+	color:#0070c7;
+	margin-top:3px;
+	border-bottom:none;
+}
+.tabManage ul li div {
+	text-overflow: ellipsis;
+   	overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    margin: 0px 20px 0px 10px;
+}
+.tabManage ul li.cur div a{
+	color:#0070c7;
+}
+.tabManage ul li i.close{
+	background:url(../images/icon_tab.png) -88px 2px no-repeat;
+	width:14px;
+	height:14px;
+	display:inline-block;
+/* 	margin-left:5px; */
+	cursor:pointer;
+	position: absolute;
+    right: 4px;
+    top: 8px;
+}
+.tabManage ul li:hover i.close,.tabManage ul li.cur i.close{
+	background-position: -88px -11px;
+}
+.tabManage ul li i.close:hover{
+	background-position: -68px 1px;
+}
+.tabManage ul li i.close:active{
+	background-position: -68px -14px;
+}
+.tabManage .tab-page {
+	position:absolute;
+	top:8px;
+	width:15px;
+	height:15px;
+	display:inline-block;
+	cursor:pointer;
+	transition:none;
+	background: url(../images/icon_tab.png) 0 0 no-repeat;
+/* 	display: none; */
+}
+.tabManage .prev{
+	left:10px;
+	background-position: 0px -15px;
+}
+.tabManage .prev:hover{
+	background-position: -17px -15px;
+}
+.tabManage .next{
+	right:10px;
+}
+.tabManage .next:hover{
+	background-position: -17px 0px;
+}
+
+.iframeManage .iframePage {
+	display: none;
+}
+.iframeManage .iframePage.cur {
+	display: block;
+}

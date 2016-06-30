@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.report.model">
+	<class name="DeviceHardwareStatus" table="dev_hardware_status">
+		<!-- ������������ -->
+		<composite-id>
+			<key-property name="id" column="ID" type="java.lang.Integer"/>
+            <key-property name="devIdno" column="DevIDNO" type="java.lang.String" length="40"/>
+            <key-property name="date" column="Date" type="java.util.Date"/>
+        </composite-id>
+		<!-- ������������ -->
+		<property name="devVerNum" column="DevVerNum" type="java.lang.String" length="40"/>
+		<property name="diskType" column="DiskType" type="java.lang.String" length="64"/>
+		<property name="diskAllVolume" column="DiskAllVolume" type="java.lang.String" length="128"/>
+		<property name="diskLeftVolume" column="DiskLeftVolume" type="java.lang.String" length="128"/>
+		<property name="diskStatus" column="DiskStatus" type="java.lang.String" length="64"/>
+		<property name="diskSerialNum" column="DiskSerialNum" type="java.lang.String" length="128"/>
+		<property name="videoLost" column="VideoLost" type="java.lang.String" length="64"/>
+		<property name="record" column="Record" type="java.lang.String" length="64"/>
+		<property name="videoTran" column="VideoTran" type="java.lang.Integer"/>
+		<property name="threeFlow" column="ThreeFlow" type="java.lang.Integer"/>
+		<property name="fourFlow" column="FourFlow" type="java.lang.Integer"/>
+		<property name="dateI" column="DateI" type="java.lang.Integer"/>
+		<property name="updateTime" column="UpdateTime"	type="java.util.Date"/>
+	</class>
+</hibernate-mapping>

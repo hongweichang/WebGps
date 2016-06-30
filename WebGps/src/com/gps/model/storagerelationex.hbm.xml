@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps.model">
+	<class name="StorageRelationEx" table="storage_relation">
+		<!-- ����������������?? -->
+		<id	name="devIdno" column="DevIDNO" type="string" length="40" >
+			 <generator class="assigned" />
+		</id>
+		<property name="svrIdno" column="SvrIDNO" type="string" not-null="true" length="40"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.report.model">
+	<class name="DispatchCommand" table="dev_dispatch_command">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ��������identity������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->
+		<property name="devIdno" column="DevIDNO" type="string" length="40"/>
+		<property name="guid" column="GUID" type="string" length="40"/>
+		<property name="accountID" column="AccountID" type="java.lang.Integer"/>
+		<property name="command" column="Command" type="string" length="256"/>
+		<property name="mapType" column="MapType" type="java.lang.Integer"/>
+		<property name="jingDu" column="JingDu" type="java.lang.Integer"/>
+		<property name="weiDu" column="WeiDu" type="java.lang.Integer"/>
+		<property name="dtime" column="DTime" type="java.util.Date"/>
+		<property name="status" column="Status" type="java.lang.Integer"/>
+		<property name="completeDesc" column="CompleteDesc" type="string" length="256"/>
+		<property name="completeTime" column="CompleteTime" type="java.util.Date"/>
+		<many-to-one name="user" column="AccountID" class="com.gps.model.UserAccountEx" not-found="ignore" lazy="false" insert="false" update="false"/>
+	</class>
+</hibernate-mapping>

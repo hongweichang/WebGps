@@ -1,0 +1,42 @@
+@import url("wy-mod-banner.css");
+@import url("wy-mod-infobox.css");
+@import url("wy-mod-news.css");
+
+/*微云福利，弹出图层视频播放*/
+.index-play{
+	position: absolute;
+	z-index: 2;
+	left: 50%;
+	/*top: 50%;*/
+	width: 960px;
+	height: 540px;
+	margin-left: -480px;
+	/*margin-top: -270px;*/
+    background-color:black;
+	top: 110px;
+}
+.index-play .play-box,
+.index-play .play-box video{
+	width: 100%;
+	height: 100%;
+}
+.index-play .close{
+	position: absolute;
+	right: -50px;
+	top: 0;
+	width: 50px;
+	height: 50px;
+	line-height: 1.1;
+	background: #0d0d0d;
+	color: #868686;
+	font-size: 40px;
+	text-align: center;
+	text-decoration: none;
+}
+.index-play .close:hover{
+	text-decoration: none;
+	color: #ffffff;
+}
+.index-play .close:active{
+	text-decoration: none;
+}/*  |xGv00|907970ae65556d4d2c364074f15406d1 */

@@ -1,0 +1,70 @@
+﻿/*CSS Reset*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+  margin: 0;
+  padding: 0;
+}
+/*body{background: #e6e6e6}*/
+body,
+input,
+button,
+textarea,
+select {
+    font:12px/1.5 Tahoma,Helvetica,Arial;
+    color: #4c4c4c;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+	color:#d30000;
+	text-decoration:none;
+}
+
+a:hover, a:active {
+	text-decoration:underline;
+}
+.wrapper{position: relative;z-index: 1;min-width: 1000px;margin: auto;overflow: hidden;}
+.clearfix:after{display: block;height:0px;overflow: hidden;clear:both;content:""}
+.clearfix{*zoom:1;}
+/*  |xGv00|8f1362367104f248eab2ad81c045718e */

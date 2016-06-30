@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+.setdate{overflow:hidden; zoom:1; padding:20px 20px 0;}
+.setdate .setdatetext{display:block; float:left; color:#333; line-height:24px; padding-right:10px;}
+.setdate .setdateinput{display:block; float:left; margin-right:15px}
+.setdate .setdateinput input{width:180px; height:20px; border:solid 1px #cdcdcd; line-height:20px; padding:0 4px; color:#666;}

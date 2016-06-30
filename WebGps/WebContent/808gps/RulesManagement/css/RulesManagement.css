@@ -1,0 +1,60 @@
+@charset "utf-8";
+.nav {
+    border-right: 1px solid #99ccff;
+}
+.nav li{
+	padding:25px 0 25px 70px; 
+	border-bottom: 1px solid #99ccff;
+	position: relative;
+	background-color: #fff;
+	border-left:2px solid #fff;
+	cursor: pointer;
+}
+.nav li i{
+	position: absolute;
+	top:20px;
+	left:35px;
+	background: url('../../images/rule.png') no-repeat;
+	background:	url("../../images/rule.png");
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+.nav li.RuleMaintain i{
+	background-position: -18px -196px;
+	width: 32px;
+	height: 31px;
+}
+.main .menu3 li.ico2 em{
+	background-position: -125px -196px;
+	width: 33px;
+	height: 36px;
+}
+.nav li.AssignMaintain i{
+	background-position:  -238px -198px;
+	width: 32px;
+	height: 36px;
+}
+.nav li.RuleMaintain:hover i,.nav li.RuleMaintain.current i{
+	background-position: -66px -195px;
+}
+.main .menu3 li.ico2:hover em,.main .menu3 li.ico2.active em{
+	background-position: -178px -195px;
+}
+.nav li.AssignMaintain:hover i,.nav li.AssignMaintain.current i{
+	background-position: -286px -197px;
+}
+.nav li:hover,.nav li.current{
+	background-color: #0b83dc;
+	border-left:2px solid #4cffff;
+}
+.nav .text {
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+}
+.nav .current a span, .nav li:hover a span{
+     color: #fff;
+}
+#leftPanel {
+	background-color: #f2f2f2;
+}

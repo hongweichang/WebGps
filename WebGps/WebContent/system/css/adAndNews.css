@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+.title .icon { background: url(../images/public/title.png) no-repeat; float: left; display: block; width: 53px; height: 30px; }
+.seting { margin: 0 20px; padding-left: 15px;}
+.seting a { font: bold 12px/34px Arial, Helvetica, sans-serif; padding: 0 10px; color: #2b99dd; text-decoration: none }
+.info { font: normal 12px/34px Arial, Helvetica, sans-serif; color: #666; padding-left: 15px; margin: 0 20px; }
+.setingtop { overflow: hidden; zoom: 1; background: #efefef; border: solid 1px #d6d6d6; -webkit-border-top-left-radius: 4px; -webkit-border-top-right-radius: 4px; -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; }
+.adTable {margin-top:20px; }
+.adTable .heard { background: url(../images/public/tableheard.png) repeat-x 0 -24px; height: 24px; color: #fff }
+.adTable .tableft, .adTable th.tabright { width: 24px; }
+.adTable .tableft span { background: url(../images/public/tableheard.png) no-repeat 0 0; float: left; width: 4px; height: 24px; }
+.adTable .tabright span { background: url(../images/public/tableheard.png) no-repeat 0 -48px; float: right; width: 4px; height: 24px; }
+.cont { padding: 10px 10px 20px; }
+.tabdata td { text-align: center; border-bottom: solid 1px #cdcdcd; height: 30px; color: #666; vertical-align: middle }
+.info strong, .tabdata td.blue { color: #2b99dd }
+.tabdata .tableft { border-left: solid 1px #cdcdcd; }
+.tabdata .tabright { border-right: solid 1px #cdcdcd; }
+.ent { width: 34px; }
+.checkbox { width: 14px; }
+.set a { color: #2b99dd; text-decoration: none; padding: 0 5px; }
+.pageNum { position: relative; text-align: center; padding: 20px 0 0; word-spacing: 5px; }
+.pageNum span { padding: 3px 5px; background-color: #f7f7f7; border: solid 1px #ccc; margin: 0 2px; }
+.pageNum span.befor { background-color: #ccc; font-weight: bold }
+.pageNum a { color: #666; font-size: 14px; text-decoration: none; }
+.setcenter { position: absolute; left: 50%; margin-left: -15%; }
+.Settitle { background: url(../images/public/tableheard.png) repeat-x 0 -24px; hanging-punctuation: 24px; overflow: hidden; margin-top: 10px; font: bold 12px/24px Arial, Helvetica, sans-serif; color: #fff; text-indent: 20px }
+.stleft { background: url(../images/public/tableheard.png) no-repeat 0 0; float: left; width: 4px; height: 24px; }
+.stright { background: url(../images/public/tableheard.png) no-repeat 0 -48px; float: right; width: 4px; height: 24px; }
+.setingbox { display: block; border: solid 1px #ccc; padding: 40px; overflow: hidden; zoom: 1; }
+.setingbox dl { }
+.setingbox dt { float: left; width: 70px; text-align: right; margin-right: 10px; color: #333; padding-top: 10px; clear: both; display: block }
+.setingbox dd { padding-top: 10px; width: 400px; float: left; color: #666 }
+.setingbox dd input.text { width: 226px; height: 20px; border: solid 1px #cdcdcd; line-height: 20px; padding: 0 4px; color: #666; }
+.setingbox dd select { width: 236px; height: 22px; color: #666; }
+

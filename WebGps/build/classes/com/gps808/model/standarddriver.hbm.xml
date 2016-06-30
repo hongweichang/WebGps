@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardDriver" table="jt808_driver_info">
+		<!-- ����������������?? -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ������������identity������������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ����������?������? -->
+		<property name="jobNum" column="JobNum"	type="string" length="64"/>
+		<property name="name" column="Name" type="string" length="64"/>
+		<property name="contact" column="Contact"	type="string" length="256"/>
+		<property name="sex" column="Sex" type="java.lang.Integer"/>
+		<property name="cardNumber" column="IDNumber" type="string" length="256"/>
+		<property name="birth" column="DateOfBirth"	type="java.util.Date"/>
+		<property name="licenseNum" column="DriverLicenseNum" type="string" length="256"/>
+		<property name="rushDate" column="RushDate" type="java.util.Date"/>
+		<property name="validity" column="Validity" type="java.util.Date"/>
+		<property name="updateTime" column="UpdateTime"	type="java.util.Date"/>
+		
+		<many-to-one name="company" column="CompanyID" class="com.gps808.model.StandardCompany" unique="true" lazy="false" not-found="ignore" /> 
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps.model">
+	<class name="GMapInfo" table="gmap_info">
+		<!-- ����������������?? -->
+		<id	name="gpsLatitude" column="GPSLatitude" type="string" ></id>
+		<!-- ����������?������? -->
+		<property name="gmapInfo" column="GMapInfo" type="string" />
+		<property name="position" column="Position" type="string" />
+	</class>
+</hibernate-mapping>

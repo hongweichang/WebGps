@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps808.model.line">
+	<class name="StandardStationReport" table="jt808_station_report">
+		<!-- ������������ -->
+		<composite-id>
+            <key-property name="vid" column="VehiID" type="java.lang.Integer"/>
+            <key-property name="rt" column="ReportTime" type="java.util.Date"/>
+        </composite-id>
+		<!-- ������������ -->	
+		<property name="dno" column="DevIDNO" type="string" length="40"/>
+		<property name="did" column="DriverID" type="java.lang.Integer"/>
+		<property name="lid" column="LineID" type="java.lang.Integer"/>
+		<property name="ld" column="LineDirection" type="java.lang.Integer"/>
+		<property name="sf" column="StationFlag" type="java.lang.Integer"/>
+		<property name="si" column="StationIndex" type="java.lang.Integer"/>
+		<property name="it" column="In_Time" type="java.util.Date"/>
+		<property name="is" column="In_Speed" type="java.lang.Integer"/>
+		<property name="ot" column="Out_Time" type="java.util.Date"/>
+		<property name="os" column="Out_Speed" type="java.lang.Integer"/>
+		<property name="ls" column="LimitSpeed" type="java.lang.Integer"/>
+		<property name="lc" column="LiCheng" type="java.lang.Integer"/>
+		<property name="yl" column="YouLiang" type="java.lang.Integer"/>
+		<property name="rti" column="ReportTimeI" type="java.lang.Integer"/>
+		<property name="ut" column="UpdateTime" type="java.util.Date"/>
+	</class>
+</hibernate-mapping>

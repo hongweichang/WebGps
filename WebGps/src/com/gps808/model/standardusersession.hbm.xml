@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardUserSession" table="user_session">
+		<!-- ����������������?? -->
+		<id	name="id" type="integer" >
+			<generator class="identity"/>
+		</id>
+		<!-- ����������?������? -->
+		<property name="userid" column="UserID" type="java.lang.Integer" unique="true"/>
+		<property name="session" column="Session" type="string" not-null="true" length="40" unique="true"/>
+		<property name="clientIP" column="ClientIP" type="string" not-null="true" length="256"/>
+		<property name="port" column="ClientPort" type="java.lang.Integer"/>
+		<property name="type" column="ClientType" type="java.lang.Integer"/>
+		<property name="status" column="Status" type="java.lang.Integer"/>
+		<property name="usrSvrIdno" column="UsrSvrIDNO" type="string" not-null="true" length="40"/>
+		<property name="updateTime" column="UpdateTime" type="java.util.Date"/>
+		<many-to-one name="userAccount" column="UserID" class="com.gps808.model.StandardUserAccount" lazy="false" not-found="ignore" insert="false" update="false"/>
+		<many-to-one name="svrInfo" column="UsrSvrIDNO" class="com.gps.model.ServerInfo" lazy="false" not-found="ignore" insert="false" update="false"/>
+	</class>
+</hibernate-mapping>

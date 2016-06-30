@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../js/dxtree/dhtmlxtree.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxcommon.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxtree.js"></script>
+<script type="text/javascript" src="../js/vehi_tree.js"></script>
+<script type="text/javascript" src="../js/gps_common.js"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="js/vehi_downplan_setup.js?140411"></script>
+<style>
+.module {
+	float:left;
+	width:100px;
+	height: 16px;
+	line-height:16px;
+	padding-bottom: 5px;
+}
+</style>
+</head>
+<body style="background-color:#fff;">
+<div id="content" style="width:700px;height:400px;position:relative;overflow:hidden; ">
+	<div id="devList" style="padding-left:10px;padding-top:10px;float:left; width:220px;border-right: solid 1px #cdcdcd;">
+		<div>
+			<span id="labelSearch"></span>
+			<input id="name" name="name" type="text" class="text" value="" maxlength="32" style="width:140px;" onkeyup="searchVehicle()"/>
+		</div>
+		<div id="vehicle_tree" style="margin-top:8px;width:210px; height:254px;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto;"></div>
+	</div>
+	<div>
+		<div id="downPlanContent" class="serverall" style="padding-bottom:20px;margin-left:231px;">
+			<dl class="downplan">
+			  <dt></dt>
+			  <dd>
+			    <span id="labelBeginTime1"></span>
+			  </dd>
+			  <dd>
+			  	<span id="labelEndTime1"></span>
+			  </dd>
+			  <dd>
+			    <span id="labelBeginTime2"></span>
+			  </dd>
+			  <dd>
+			  	<span id="labelEndTime2"></span>
+			  </dd>
+			  <dt><span id="labelDay1"></span></dt>
+				  <dd>
+				    <input id="day1Begin1" name="day1Begin1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day1End1" name="day1End1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				    <input id="day1Begin2" name="day1Begin2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day1End2" name="day1End2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+			  <dt><span id="labelDay2"></span></dt>
+				  <dd>
+				    <input id="day2Begin1" name="day2Begin1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day2End1" name="day2End1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				    <input id="day2Begin2" name="day2Begin2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day2End2" name="day2End2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				<dt><span id="labelDay3"></span></dt>
+				  <dd>
+				    <input id="day3Begin1" name="day3Begin1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day3End1" name="day3End1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				    <input id="day3Begin2" name="day3Begin2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day3End2" name="day3End2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				<dt><span id="labelDay4"></span></dt>
+				  <dd>
+				    <input id="day4Begin1" name="day4Begin1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day4End1" name="day4End1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				    <input id="day4Begin2" name="day4Begin2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day4End2" name="day4End2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				<dt><span id="labelDay5"></span></dt>
+				  <dd>
+				    <input id="day5Begin1" name="day5Begin1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day5End1" name="day5End1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				    <input id="day5Begin2" name="day5Begin2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day5End2" name="day5End2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				<dt><span id="labelDay6"></span></dt>
+				  <dd>
+				    <input id="day6Begin1" name="day6Begin1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day6End1" name="day6End1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				    <input id="day6Begin2" name="day6Begin2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day6End2" name="day6End2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				<dt><span id="labelDay7"></span></dt>
+				  <dd>
+				    <input id="day7Begin1" name="day7Begin1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day7End1" name="day7End1" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				    <input id="day7Begin2" name="day7Begin2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				  <dd>
+				  	<input id="day7End2" name="day7End2" type="text" class="text" value="" maxlength="32"/>
+				  </dd>
+				<dt><span id="labelDownType"></span></dt>
+				  <dd>
+				    <select id="downType" name="downType" onchange=check(this.value)></select>
+				  </dd>
+				  <dd></dd><dd></dd>
+			    <dt class="module checkType" style="padding-top:5px;display: none;">
+			    	<label for="allType" id="allAlarm" style="float: right;"></label>
+			    	<input type="checkbox" id="allType" class="allType" style="float: right;" value="1" onclick="selectAll();"/>
+			    </dt>
+			    <dd style="width:320px;padding-top:5px;display: none;" class="checkType">
+			    	<div class="module">
+						<input type="checkbox" style="float: left;" value="1" id="ioType" name='subBox' class="ioType selectAlarmType" onclick="setSelectAll()"/>
+						<label for="ioType" id="ioAlarm"></label>
+					</div>
+					<div class="module">
+						<input type="checkbox" style="float: left;" value="1" id="speedType" name='subBox' class="speedType selectAlarmType" onclick="setSelectAll()"/>
+						<label for="speedType" id="speedAlarm"></label>
+					</div>
+					<div class="module">
+						<input type="checkbox" style="float: left;" value="1" id="gSensorType" name='subBox' class="gSensorType selectAlarmType" onclick="setSelectAll()"/>
+						<label for="gSensorType" id="gSensorAlarm"></label>
+					</div>
+					<div class="module">
+						<input type="checkbox" style="float: left;" value="1" id="tempType" name='subBox' class="tempType selectAlarmType" onclick="setSelectAll()"/>
+						<label for="tempType" id="tempAlarm"></label>
+					</div>
+					<div class="module">
+						<input type="checkbox" style="float: left;" value="1" id="motionType" name='subBox' class="motionType selectAlarmType" onclick="setSelectAll()"/>
+						<label for="motionType" id="motionAlarm"></label>
+					</div>
+					<div class="module">
+						<input type="checkbox" style="float: left;" value="1" id="upsCutType" name='subBox' class="upsCutType selectAlarmType" onclick="setSelectAll()"/>
+						<label for="upsCutType" id="upsCutAlarm"></label>
+					</div>
+			    </dd>
+				<dd></dd><dd></dd>
+			  <dt></dt>
+			  <dd>
+			  	<a href="javascript:ajaxSetupDownPlan();" class="searchbtn">
+			  		<span id="save"></span>
+			    </a>
+			  </dd>
+			</dl>
+		</div>
+	</div>
+</div>
+</body>
+</html>

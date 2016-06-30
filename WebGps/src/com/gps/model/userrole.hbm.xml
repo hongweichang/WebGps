@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps.model">
+	<class name="UserRole" table="user_role">
+		<!-- ����������������?? -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ������������identity������������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ����������?������? -->
+		<property name="userId" column="UserID" type="java.lang.Integer" not-null="true" />
+		<property name="name" column="Name"	type="string" length="64" not-null="true"/>
+		<property name="remarks" column="Remarks" type="string" length="128"/>
+		<property name="privilege" column="Privilege" type="string" length="1024"/>
+	</class>
+</hibernate-mapping>

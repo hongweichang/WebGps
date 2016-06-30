@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate"/>
+<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT"/>
+<title></title>
+<link href="css/public.css?v150825" rel="stylesheet" type="text/css" />
+<link href="css/adinfo.css?v150825" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js?v150825"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js?v150825"></script>
+<script type="text/javascript" src="../js/jquery.form.js?v150825"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js?v150825"></script>
+<script type="text/javascript" src="../js/myajax.js?v150825"></script>
+<script type="text/javascript" src="../js/public.js?v150825"></script>
+<script type="text/javascript" src="../js/date.js?v150825"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js?v150825"></script>
+</head>
+
+<body style="background-color:#fff;">
+<div class="serverall" style="width:800px;height:600px;padding-bottom:20px;">
+	<form id="adForm" method="" action="" enctype="multipart/form-data">
+	<dl class="setingbox">
+	  <dt><span id="lableTitle"></span></dt>
+	  <dd>
+	    <input id="title" name="title" type="text" class="text" value="" maxlength="100"/>
+	    <span id="titleWrong" class="red">*</span>
+	 </dd>
+	 
+	  <dt id="labPic"><span id="lablePic"></span></dt>
+	  <dd id="labPicx">
+	  	<input id="beforSrc" class="text" type="hidden" name="src" value="" />
+	  	<input id="selectedImg" class="selectedImg" type="button" value=""  style="cursor: pointer;" onclick="onSelectPicture()"/>
+        <input accept="image/*" id="picture" type="file" name="simplePicture" class="picture" onchange="previewImage(this,document.getElementById('bigPicture'))" style="display:none;"/>
+	    
+<!-- 	    <input id="selectedImg" class="selectedImg" type="button" value=""  style="cursor: pointer;position: absolute;" /> -->
+<!--         <input accept="image/*" id="picture" type="file" name="simplePicture" class="picture" onchange="previewImage(this,document.getElementById('bigPicture'))" style="width:200px;opacity:0;filter:alpha(opacity=0);position:relative;cursor: pointer;"/> -->
+	    <span id="pictureWrong" class="red">*</span>
+	    <br/><span id="pictureSize"></span>
+	 </dd>
+	 <dt id="dtbigPicture" style="display:none;"></dt>
+	 <dd id="ddbigPicture" style="display:none;">
+	 	<img id="bigPicture" style="width:200px;height:100px;"></img>
+	 </dd>
+	  
+	  <dt><span id="lableValidity"></span></dt>
+	  <dd>
+	    <input id="validity" name="validity" type="text" style="ime-mode:disabled;" size="15" readonly class="Wdate"/>
+	  </dd>
+	  
+	   <dt><span id="lableContent"></span></dt>
+	   <dd>
+     		<textarea id="contentTextArea" class="contentTextArea" name="contentTextArea" maxlength="200" rows="6" cols="40"></textarea>
+     		<p><span id="contentTextAreaWrong" class="red"></span></p>
+	   </dd>
+	  <dt></dt>
+	  <dd>
+	    <div class="searchbtn">
+	      <div onclick="ajaxSaveAdOrNews()">
+	      	<span id="save"></span>
+	      </div>
+	    </div>
+	  </dd>
+	</dl>
+	</form>
+</div>
+<script type="text/javascript" src="../ckeditor/ckeditor.js?v150825"></script>
+<script type="text/javascript" src="../ckeditor/config.js?v150825"></script>
+<script type="text/javascript" src="js/adAndNewsInfo.js?v150825"></script>
+<script type="text/javascript">
+	var editor;
+	$(function(){
+		adType = getUrlParameter("adType");
+		if(adType=="ad"){
+			if(parent.langIsChinese()){
+				editor = CKEDITOR.replace('contentTextArea',{
+			      language : 'zh-cn'
+			     });
+			}else{
+				editor = CKEDITOR.replace('contentTextArea',{
+				      language : 'en-au'
+				     });
+			}
+		}else{
+			$(".serverall").css("width","600px");
+			$(".serverall").css("height","300px");
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+@charset "utf-8";
+* { margin: 0; padding: 0; }
+.red {
+	color: red;
+}
+#info-mid {
+    border-bottom: 1px solid #acd1d9;
+    color: #333;
+    font-size: 12px;
+    margin-bottom: 3px;
+    padding: 5px 5px 5px 5px;
+    vertical-align: middle;
+	overflow: hidden;
+	display:block;
+}
+#toolbar-btn .bg-icon {
+	background: url("../image/dn.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background:	url("../image/dn.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-color: rgba(0, 0, 0, 0);
+    height: 16px;
+    margin: 6px 0 0 9px;
+    width: 7px;
+}
+#info-mid-table {
+	height:auto;
+}
+#info-mid-table td .span-tip{
+	min-height:20px;
+	height:auto;
+	line-height:20px;
+	margin-left:10px;
+}
+#info-mid-table .td-mail span.span-tip,#info-mid-table .td-phone span.span-tip{
+	margin-left:0;
+}
+#info-mid-table .btn-group {
+    padding: 0;
+    float:left;
+}
+#info-mid-table .btn-group .y-btn {
+	padding: 2px 5px;
+}
+#info-mid-table .btn-group .item {
+	margin:0;
+}
+#info-mid-table input {
+    white-space: nowrap;
+	padding:0 0 0 0;
+	height: 16px;
+    line-height: 16px;
+}
+#info-mid-table .form-input {
+    width:30%;
+	float:left;
+}
+#info-mid-table .input-ruleName {
+    width:67%;
+}
+#info-mid-table textarea.form-input {
+    width:98%;
+}
+#info-mid-table .td-cameraWebcam .module,#info-mid-table .td-videoWebcam .module 
+,#info-mid-table .td-otherParam .module{
+	border-collapse: collapse;
+	padding: 4px 2px;
+	text-align: left;
+	float:left;
+	width:50px;
+}
+#info-mid-table .td-cameraWebcam .module input,#info-mid-table .td-videoWebcam .module input
+,#info-mid-table .td-otherParam .module input{
+	float:left;
+}
+#info-mid-table .y-btn .bg-icon {
+    padding: 0;
+}
+.phoneContentTip,.mailContentTip {
+    float: left;
+}
+#select-start .ui-menu-item .text,#select-end .ui-menu-item .text,#select-keypoint .ui-menu-item .text,#select-areaName .ui-menu-item .text {
+	display: inline;
+}
+#select-start .ui-menu-item span,#select-end .ui-menu-item span,#select-keypoint .ui-menu-item span,#select-areaName .ui-menu-item span {
+	color:#536083;
+	font-size: 12px;
+	margin-right: 10px;
+}
+#info-mid-table .operat{
+   	margin-left:5px;
+	color: #0068b7;
+	cursor: pointer;
+}
+#info-mid-table .operat:hover{
+    color: #FF0000;
+	text-decoration:underline;
+}

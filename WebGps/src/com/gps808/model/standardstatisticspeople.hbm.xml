@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardStatisticsPeople" table="statistics_people">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->	
+		<property name="devIdno" column="DevIDNO" type="string" length="40"/>
+		<property name="upPeople1" column="UpPeople1" type="java.lang.Integer"/>
+		<property name="downPeople1" column="DownPeople1" type="java.lang.Integer"/>
+		<property name="upPeople2" column="UpPeople2" type="java.lang.Integer"/>
+		<property name="downPeople2" column="DownPeople2" type="java.lang.Integer"/>
+		<property name="upPeople3" column="UpPeople3" type="java.lang.Integer"/>
+		<property name="downPeople3" column="DownPeople3" type="java.lang.Integer"/>
+		<property name="upPeople4" column="UpPeople4" type="java.lang.Integer"/>
+		<property name="downPeople4" column="DownPeople4" type="java.lang.Integer"/>
+		<property name="statisticsTime" column="StatisticsTime" type="java.util.Date"/>
+		<property name="jindu" column="Jindu" type="java.lang.Integer"/>
+		<property name="weidu" column="Weidu" type="java.lang.Integer"/>
+		<property name="curPeople" column="CurPeople" type="java.lang.Integer"/>
+		<property name="incrPeople" column="IncrPeople" type="java.lang.Integer"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.vehicle.model">
+	<class name="DriverInfo" table="driver_info">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ��������identity������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->
+		<property name="userID" column="UserID" type="java.lang.Integer" not-null="true"/>
+		<property name="name" column="Name" type="string" length="256"/>
+		<property name="telephone" column="Telephone" type="string" length="256"/>
+		<property name="email" column="EMail" type="string" length="256"/>
+		<property name="cardNO" column="CardNO" type="string" length="256"/>
+		<property name="licence" column="Licence" type="string" length="256"/>
+		<property name="orgName" column="OrgName" type="string" length="256"/>
+		<property name="effective" column="Effective" type="java.util.Date" />
+		<property name="expiration" column="Expiration" type="java.util.Date"/>
+	</class>
+</hibernate-mapping>

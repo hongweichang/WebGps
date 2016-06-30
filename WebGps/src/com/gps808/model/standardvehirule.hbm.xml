@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardVehiRule" table="jt808_vehicle_rule">
+		<!-- ����������������?? -->
+		<id	name="id" column="ID" type="integer" >
+			 <!--������������identity������������������  -->
+			<generator class="identity"/>
+		</id>
+	 
+	 	<many-to-one name="rule" column="RuleId" class="com.gps808.model.StandardRuleMaintain" unique="true" lazy="false" not-found="ignore"/> 
+		<many-to-one name="vehicle" column="VehiIDNO" class="com.gps808.model.StandardVehicle" unique="true" lazy="false" not-found="ignore"/> 
+	</class>
+</hibernate-mapping>

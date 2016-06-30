@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/public.css?v150825" rel="stylesheet" type="text/css" />
+<link href="css/device.css?v150825" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js?v150825"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js?v150825"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js?v150825"></script>
+<script type="text/javascript" src="../js/myajax.js?v150825"></script>
+<script type="text/javascript" src="../js/public.js?v150825"></script>
+<script type="text/javascript" src="../js/date.js?v150825"></script>
+<script type="text/javascript" src="js/lang.js?v150825"></script>
+<script type="text/javascript" src="js/device.js?v150825"></script>
+<script type="text/javascript" src="js/devicefun.js?v150825"></script>
+<script type="text/javascript" src="js/devicepay.js?v150825"></script>
+</head>
+<body>
+<!--内容start-->
+<div class="comt">
+  <h2 class="title"> <span class="more"></span> <span class="icon icon1"></span> <span id="deviceTitle"></span> > <span id="deviceType"></span></h2>
+  <div class="cont">
+    <div class="submenu">
+      <ul>
+        <li><a href="javascript::" name="devMenuItem" onclick="switchDevicePage('all','','')" class="befor"><span id="deviceAll"></span></a></li>
+        <li><a href="javascript::" name="devMenuItem" onclick="switchDevicePage('store','','')"><span id="deviceStore"></span></a></li>
+        <li><a href="javascript::" name="devMenuItem" onclick="switchDevicePage('7dayexpire','','7')"><span id="7dayExpire"></span></a></li>
+         <li><a href="javascript::" name="devMenuItem" onclick="switchDevicePage('30dayexpire','','30')"><span id="30dayExpire"></span></a></li>
+        <li><a href="javascript::" name="devMenuItem" onclick="switchDevicePage('expire','','0')"><span id="expire"></span></a></li>
+      </ul>
+    </div>
+    <div class="contright">
+	  	<div class="setingtop">
+	  		<form method="post" name="reportForm" action="">
+      		<div class="info"><span id="labelManageCount"></span>&nbsp;<span id="manageCount"><strong></strong></span>&nbsp;&nbsp;&nbsp;&nbsp;
+      		<span id="labelDeviceTotal"></span>&nbsp;&nbsp;<span id="deviceTotal"><strong></strong></span>&nbsp;&nbsp;&nbsp;&nbsp;
+      		<span id="labelStoreCount"></span>&nbsp;&nbsp;<span id="storeCount"><strong></strong></span></div>
+      		<div class="seting">
+      			<a href="javascript:void(0)" onclick="addDevice()"><span id="addDevice">&nbsp;</span></a>
+      			<a href="javascript:void(0)" onclick="batchAddDevice()"><span id="batchAdd">&nbsp;</span></a> 
+      			<a href="javascript:void(0)" onclick="delSelDevice()"><span id="delSelDevice">&nbsp;</span></a> 
+      			<a href="javascript:void(0)" onclick="saleSelDevice()"><span id="saleSelDevice">&nbsp;</span></a>
+      			<a href="javascript:void(0)" onclick="exportAllExcel()"><span id="exportAllExcel">&nbsp;</span></a>
+      			<a href="javascript:void(0)" onclick="exportVehicleExcel()" style="display:none;"><span id="exportVehicleExcel">&nbsp;</span></a>
+      			<a href="javascript:void(0)" onclick="exportMobileExcel()" id="hrefExportMobile" style="display:none;"><span id="exportMobileExcel">&nbsp;</span></a>
+      			<a href="javascript:void(0)" onclick="importExcel()"><span id="importExcel">&nbsp;</span></a>
+      			
+      			<a>
+      				<span id="isSequenceTip"></span>
+      				<span id="isSequence" onclick="sequenceDevice(this)" data-id="1" style="cursor: pointer;"></span>
+      			</a>
+      		</div>
+      		</form>
+	    </div>
+	    <table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="deviceTable">
+	      <tr class="heard">
+	        <th class="tableft"><span></span></th>
+	        <th class="checkbox"><input type="checkbox" name="selectDeviceAll" id="selectDeviceAll" onclick="onSelectedAll('selectDeviceIdList', 'selectDeviceAll')"/></th>
+	        <th class="ent"><span id="thDeviceSelectAll"></span></th>
+	        <th><span id="thDeviceIndex"></span></th>
+	        <th><span id="thDeviceName"></span></th>
+	        <th><span id="thDeviceIDNO"></span></th>
+	        <th><span id="thDeviceDevType"></span></th>
+	        <!-- 
+	        <th><span id="thDeviceChnCount"></span></th>
+	        -->
+	        <th><span id="thDeviceSimCard"></span></th>
+	        <th><span id="thDevicePayEnable"></span></th>
+	        <th><span id="thDevicePayBegin"></span></th>
+	        <th><span id="thDevicePayMonth"></span></th>
+	        <!-- 
+	        <th><span id="thDevicePayPeriod"></span></th>
+	         -->
+	        <th><span id="thDevicePayStatus"></span></th>
+	        <!-- 
+	        <th><span id="thDevicePayOverDay"></span></th>
+	         -->
+	        <th><span id="thDeviceClient"></span></th>
+	        <th><span id="thDeviceOperator"></span></th>
+	        <th class="tabright"><span></span></th>
+	      </tr>
+	      <tr id="deviceTableTemplate" class="tabdata" style="display:none">
+	        <td class="tableft">&nbsp;</td>
+	        <td><input type="checkbox" id="selectDeviceIdList" name="selectDeviceIdList" onclick="onSelectedItem('selectDeviceIdList', 'selectDeviceAll')" value=""/></td>
+	        <td  class="ent">&nbsp;</td>
+	        <td><span id="tdIndex">1</span></td>
+	        <td class="set"><span id="tdName"></span></td>
+	        <td class="set"><span id="tdIDNO"></span></td>
+	        <td><span id="tdDevType"></span></td>
+	        <!-- 
+	        <td><span id="tdChnCount"></span></td>
+	         -->
+	        <td><span id="tdSimCard"></span></td>
+	        <td><span id="tdPayEnable"></span></td>
+	        <td><span id="tdPayBegin"></span></td>
+	        <td><span id="tdPayMonth"></span></td>
+	        <!-- 
+	        <td><span id="tdPayPeriod"></span></td>
+	         -->
+	        <td><span id="tdPayStatus"></span></td>
+	        <!-- 
+	        <td><span id="tdPayOverDay"></span></td>
+	         -->
+	        <td class="set"><span id="tdClient"></span></td>
+	        <td class="set"><span id="tdOperator"><a href="#"></a> <a href="deviceSet.html"></a> <a href="#"></a></span></td>
+	        <td class="tabright">&nbsp;</td>
+	      </tr>
+	    </table>
+	    <div id="devicePagination" class="pagination" style="margin:10px 10px 10px 10px;"></div>
+	 </div>
+  </div>
+</div>
+</body>
+</html>

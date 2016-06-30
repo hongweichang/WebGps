@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardVehiDevRelationEx" table="jt808_vehicle_device_relation">
+		<!-- ��������������������������? -->
+		<id	name="id" column="ID" type="integer" >
+			 <!--������������identity������������������  -->
+			<generator class="identity"/>
+		</id>
+		<property name="vehiIdno" column="VehiIDNO"	type="string" length="40"/>
+		<property name="devIdno" column="DevIDNO"	type="string" length="64"/>
+		<property name="chnAttr" column="ChnAttr"	type="string" length="40"/>
+		<property name="ioInAttr" column="IOInAttr" type="string" length="40"/>
+		<property name="ioOutAttr" column="IOOutAttr"	type="string" length="40"/>
+		<property name="tempAttr" column="TempAttr"	type="string" length="40"/>
+		<property name="module" column="Module" type="java.lang.Integer"/>
+		<property name="mainDev" column="MainDevFlag" type="java.lang.Integer"/>
+		<property name="updateTime" column="UpdateTime"	type="java.util.Date"/>
+	</class>
+</hibernate-mapping>

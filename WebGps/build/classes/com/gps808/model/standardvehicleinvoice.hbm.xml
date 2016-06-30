@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardVehicleInvoice" table="jt808_vehicle_invoice">
+		<!-- ��������������������������?
+		 ����������?������? -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ������������identity������������������ -->
+			<generator class="identity"/>
+		</id>
+		<property name="sentCarSingleNum" column="SentCarSingleNum"	type="string" length="20"/>
+		<property name="sentCarPeople" column="SentCarPeople"	type="string" length="64"/>
+		<property name="driverName" column="DriverName"	type="string" length="64"/>
+		<property name="carriageUnit" column="CarriageUnit"	type="string" length="64"/>
+		<property name="sendStartTime" column="SendStartTime"	type="java.util.Date"/>
+		<property name="sendEndTime" column="SendEndTime"	type="java.util.Date"/>
+		<property name="startLiCheng" column="StartLiCheng"	type="string" length="20"/>
+		<property name="endLiCheng" column="EndLiCheng"	type="string" length="20"/>
+		<property name="departure" column="Departure"	type="string" length="256"/>
+		<property name="destination" column="Destination"	type="string" length="256"/>
+		<property name="clientName" column="ClientName"	type="string" length="20"/>
+		<property name="contactsAndPhone" column="ContactsAndPhone"	type="string" length="128"/>
+		<property name="customerAddress" column="CustomerAddress"	type="string" length="256"/>
+		<property name="servers" column="Servers"	type="java.lang.Integer"/>
+		<property name="cargoName" column="CargoName"	type="string" length="128"/>
+		<property name="cargoWeight" column="CargoWeight"	type="string" length="10"/>
+		<property name="cargoNum" column="CargoNum"	type="java.lang.Integer"/>
+		<property name="cargoVolume" column="CargoVolume"	type="string" length="10"/>
+		<property name="freightInvoiceNo" column="FreightInvoiceNo"	type="string" length="20"/>
+		<property name="scatteredSingleNum" column="ScatteredSingleNum"	type="string" length="20"/>
+		<property name="box" column="Box"	type="java.lang.Integer"/>
+		<property name="boxNum" column="BoxNum"	type="java.lang.Integer"/>
+		<property name="boxNumOne" column="BoxNumOne"	type="string" length="20"/>
+		<property name="boxNumTwo" column="BoxNumTwo"	type="string" length="20"/>
+		<property name="ticketRecordMile" column="TicketRecordMile"	type="string" length="20"/>
+		<property name="actualMileAcess" column="ActualMileAcess"	type="string" length="20"/>
+		<property name="unitPrice" column="UnitPrice"	type="string" length="10"/>
+		<property name="nuclearFees" column="NuclearFees"	type="string" length="10"/>
+		<property name="parkingFee" column="ParkingFee"	type="string" length="10"/>
+		<property name="roadToll" column="RoadToll"	type="string" length="10"/>
+		<property name="collectionCosts" column="CollectionCosts"	type="string" length="128"/>
+		<property name="squareTransferReceipt" column="SquareTransferReceipt"	type="string" length="64"/>
+		<property name="customerSignRecognition" column="CustomerSignRecognition"	type="string" length="64"/>
+		<property name="updateTime" column="UpdateTime"	type="java.util.Date"/>
+		<property name="status" column="Status"	type="java.lang.Integer"/>
+		<property name="companyId" column="CompanyID"	type="java.lang.Integer"/>
+		<property name="safeTip" column="SafeTip"	type="string" length="256"/>
+		<property name="explanation" column="Explanation"	type="string" length="256"/>
+		<property name="receiptId" column="ReceiptID"	type="java.lang.Integer"/>
+		<many-to-one name="vehicle" column="VehiIDNO" class="com.gps808.model.StandardVehicle" unique="true" lazy="false" not-found="ignore"/> 
+	</class>
+</hibernate-mapping>

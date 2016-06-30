@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="author" content="TTX-AFU">
+<meta name="Copyright" content="Babelstar">
+<meta name="Description" content="">
+<meta name="Keywords" content="">
+<title></title>
+<link rel="stylesheet" href="./css/hb/reset.css" media="screen">
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/jquery.placeholder.js"></script>
+<script type="text/javascript" src="./js/myajax.js"></script>
+<script type="text/javascript" src="js/lang_fun.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="./js/pageStyle.js"></script>
+<script type="text/javascript" src="./js/login.js"></script>
+</head>
+<body>
+<div class="header_j">
+	<ul class="menu">
+    	<li><a id="spanHome" href="javascript:;"></a></li>
+        <li>|</li>
+        <li class="fy_j">
+        	<a href="javascript:;" id="currentLang"><span></span><i class="icon_sanj"></i></a>
+        	<ul class="nav_box" id="langBox"><em></em></ul>
+        </li>
+        <li>|</li>
+        <li><a id="hrefClientDown" class="down_j"></a></li>
+    </ul>
+ 
+</div>
+
+<div class="login_box">
+	<div class="login_box1">
+    	<span class="blue"></span>
+    	<h1 class="title_login" id="spanWelcome"></h1>
+        <div class="wbk_Box">
+        	<h2 id="spanAccount"></h2>
+            <div class="text_j"><span class="icon_user"></span><input tabindex="1" id="loginAccount" placeholder="" name="loginAccount" maxlength="32" type="text"></div>
+        </div>
+        <div class="wbk_Box">
+        	<h2 id="spanPassword"></h2>
+            <div class="text_j"><span class="icon_pass"></span><input placeholder="" tabindex="2" id="loginPassword" name="loginPassword" maxlength="20" type="password"></div>
+        </div>
+      <div class="yzm_box">
+        	<input tabindex="3" placeholder="" maxlength="4" id="phraseLogin" name="phrase" type="text"><span><img id="lwm" onclick="changeValidateCode()" width="124" height="40"></span>
+        </div>
+        <a id="loginSubmit" class="btn_login" href="javascript:;"></a>
+    </div>
+    
+</div>
+
+<div class="ljxz">
+	<ul class="menu menu_left">
+    	<li id="spanDownload"></li>
+    	<li id="liDown2" style="display:none"><a id="spanDownload2" href="javascript:download(2);">IOS</a></li>
+        <li id="liDown21" style="display:none">|</li>
+        <li id="liDown5" style="display:none"><a id="spanDownload5" href="javascript:download(5);">MapIfno</a></li>
+        <li id="liDown51" style="display:none">|</li>
+        <li id="liDown4" style="display:none"><a id="spanDownload4" href="javascript:download(4);">回放分析</a></li>
+        <li id="liDown41" style="display:none">|</li>
+        <li id="liDown1" style="display:none"><a id="spanDownload1" class="icon_j_win" href="javascript:download(1);"></a></li>
+        <li id="liDown11" style="display:none">|</li>
+        <li id="liDown3" style="display:none"><a id="spanDownload3" class="icon_j_andro" href="javascript:download(3);"></a></li>
+    </ul>
+    <div class="spacer"></div>
+</div>
+<div class="footer">
+	<p id="spanCopyright"></p>
+</div>
+</body>
+</html>

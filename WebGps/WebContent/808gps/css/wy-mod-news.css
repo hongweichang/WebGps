@@ -1,0 +1,10 @@
+.wy-mod-news li{margin-bottom:4px;font-family: "microsoft yahei";}
+.wy-mod-news li a{text-decoration: none;padding:8px 40px 8px 15px;background: #f2f2f2;margin-bottom:4px;font-family: "microsoft yahei";position: relative;display: block;}
+.wy-mod-news li .arrow{position:absolute;width:5px;height:9px;right:20px;top:25px;overflow: hidden;}
+.wy-mod-news li .arrow span{position:absolute;width:200px;height:200px;background:url(../img/sprite.png) 0 0 no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled="true", src="http://imgcache.qq.com/vipstyle/nr/box/home/img/sprite.png",sizingMethod="image");display: block;left:0px;top:-60px;line-height: 999em;cursor:pointer;}
+.wy-mod-news h4{font-weight: 400;color:#4c4c4c;font-size: 14px;}
+.wy-mod-news p{font-weight: 400;color:#b2b2b2;font-size: 12px;}
+.wy-mod-news li a:hover{text-decoration: none;background: #eee;}
+.wy-mod-news li a:hover h4,.wy-mod-news li a:hover p{text-decoration: none;}
+
+/*  |xGv00|850f75001568b6c90277ecbf4405aed1 */

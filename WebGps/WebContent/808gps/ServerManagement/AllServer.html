@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<link href="css/public.css" rel="stylesheet" type="text/css" />
+	<link href="css/server.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../css/labelIcon.css"/>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../js/myajax.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../js/public.js"></script>
+	<script type="text/javascript" src="js/AllServer.js"></script>
+	<style type="text/css">
+		.view, .all {
+			margin: 4px 0px -4px 0px;
+		}
+	</style>
+</head>
+<body style="padding: 20px;">
+<div class="serverall">
+	<h3><a href="javascript:;" onclick="switchServerPage('LoginServer')" class="svrmore"><span id="view" class="view">&nbsp;</span></a><span id="loginServer">&nbsp;</span></h3>
+	<p class="serverinfo"><span id="loginStatus">&nbsp;</span></p>
+	<h3><a href="javascript:" onclick="switchServerPage('GatewayServer')" class="svrmore"><span id="allGateway" class="all">&nbsp;</span></a><span id="gatewayServer">&nbsp;</span></h3>
+	<p class="serverinfo">
+		<span id="totalGateway">&nbsp;</span>:&nbsp;<span id="totalGatewayCount">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span id="gatewayOnline">&nbsp;</span>:&nbsp;<span id="totalGatewayOnline">&nbsp;</span>
+	</p>
+	<h3><a href="javascript:;" onclick="switchServerPage('UserServer')" class="svrmore"><span id="allUser" class="all">&nbsp;</span></a><span id="userServer">&nbsp;</span></h3>
+	<p class="serverinfo">
+		<span id="totalUser">&nbsp;</span>:&nbsp;<span id="totalUserCount">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span id="userOnline">&nbsp;</span>:&nbsp;<span id="totalUserOnline">&nbsp;</span>
+	</p>
+	<h3><a href="javascript:;" onclick="switchServerPage('MediaServer')" class="svrmore"><span id="allMedia" class="all">&nbsp;</span></a><span id="mediaServer">&nbsp;</span></h3>
+	<p class="serverinfo">
+		<span id="totalMedia">&nbsp;</span>:&nbsp;<span id="totalMediaCount">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span id="mediaOnline">&nbsp;</span>:&nbsp;<span id="totalMediaOnline">&nbsp;</span>
+	</p>
+	<h3 id = "hServerStorage"><a href="javascript:;" onclick="switchServerPage('StorageServer')" class="svrmore"><span id="allStorage" class="all">&nbsp;</span></a><span id="storageServer">&nbsp;</span></h3>
+	<p class="serverinfo" id = "pServerStorage">
+		<span id="totalStorage">&nbsp;</span>:&nbsp;<span id="totalStorageCount">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span id="storageOnline">&nbsp;</span>:&nbsp;<span id="totalStorageOnline">&nbsp;</span>
+	</p>
+	<h3 id = "hServerDownload"><a href="javascript:;" onclick="switchServerPage('DownServer')" class="svrmore"><span id="allDownload" class="all">&nbsp;</span></a><span id="downloadServer">&nbsp;</span></h3>
+	<p class="serverinfo" id = "pServerDownload">
+		<span id="totalDownload">&nbsp;</span>:&nbsp;<span id="totalDownloadCount">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span id="downloadOnline">&nbsp;</span>:&nbsp;<span id="totalDownloadOnline">&nbsp;</span>
+	</p>
+</div>
+</body>
+</html>

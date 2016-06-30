@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var param = [];
+         	param.push({name: 'vehiIdno', value: getUrlParameter('car')});
+         	param.push({name: 'begintime', value: getUrlParameter('Datetime')});
+         	param.push({name: 'endtime', value: getUrlParameter('End_datetime')});
+         	param.push({name: 'toMap', value: getUrlParameter('toMap')});
+			$.ajax({
+				type: 'POST',
+				url: 'http://'+ window.location.host+'/StandardApiAction_findLastPosition.action',
+				data: param,
+				cache:false,/*禁用浏览器缓存*/
+				dataType: 'json',
+				success: function (data) {
+					if(data.result == 0){
+						if(data.position) {
+							$('body').html(data.position);
+						}else {
+							$('body').html('No Data!');
+						}
+					} else {
+						$('body').html('Error!');
+					}
+				},
+				error: function (XMLHttpRequest, textStatus, errorThrown) {
+					try {
+						if (p.onError) p.onError(XMLHttpRequest, textStatus, errorThrown);
+					} catch (e) {}
+					$('body').html('Error!');
+				}
+			});
+		});
+		
+		//获取URL参数信息
+		function getUrlParameter(name){
+			if(location.search==''){
+				return '';
+			}
+			
+			var o={};
+			var search=location.search.replace(/\?/,'');//只替换第一个问号,如果参数中带有问号,当作普通文本
+			var s=search.split('&');
+			for(var i=0;i<s.length;i++){
+				o[s[i].split('=')[0]]=s[i].split('=')[1];
+			}
+			return o[name]==undefined?'':o[name];
+		}
+	</script>
+</head>
+<body></body>
+</html>

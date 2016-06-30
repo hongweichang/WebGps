@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lang 
+playTxt="播放"
+pausTxt="暂停"
+stopTxt="停止"
+fastPre="快退"
+fastNxt="快进"
+disableSound="静音"
+enableSound="取消静音"
+full="全屏"
+norm="正常"
+loading="正在缓冲"
+connect="正在连接"
+connectError="无法连接"
+offLine="当前设备不在线"
+waiting="未连接视频"
+captxt="截图"
+/>

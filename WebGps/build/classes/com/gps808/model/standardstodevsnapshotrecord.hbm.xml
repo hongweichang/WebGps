@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardStoDevSnapshotRecord" table="jt808_sto_dev_snapshot_record">
+		<!-- ����������������??-->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ������������identity������������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ����������?������? -->
+		<property name="vehiId" column="VehiID" type="java.lang.Integer"/>
+		<property name="devIdno" column="DevIDNO" type="string" length="40"/> 
+		<property name="channel" column="Channel" type="java.lang.Integer"/>
+		<property name="fileType" column="FileType" type="java.lang.Integer"/>
+		<property name="encode" column="Encode" type="java.lang.Integer"/>
+		<property name="filePath" column="FilePath" type="string" length="256"/> 
+		<property name="fileOffset" column="FileOffset" type="java.lang.Integer"/>
+		<property name="fileSize" column="FileSize" type="java.lang.Integer"/>
+		<property name="fileTime" column="FileTime"	type="java.util.Date"/>
+		<property name="fileTimeI" column="FileTimeI"	type="java.lang.Integer"/>
+		<property name="svrId" column="SvrID" type="java.lang.Integer"/>
+		<property name="GPSStatus" column="GPSStatus" type="string" length="512"/>
+		<property name="alarmType" column="AlarmType" type="java.lang.Integer"/>
+		<property name="alarmParam" column="AlarmParam" type="java.lang.Integer"/>
+		<property name="updateTime" column="UpdateTime"	type="java.util.Date"/>
+	</class>
+</hibernate-mapping>

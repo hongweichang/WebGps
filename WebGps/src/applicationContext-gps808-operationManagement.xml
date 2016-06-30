@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+    default-autowire="byName">
+    <bean id="standardUserAccountDao"
+		class="com.gps808.operationManagement.dao.impl.StandardUserAccountDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+    <bean id="standardUserSessionDao"
+		class="com.gps808.operationManagement.dao.impl.StandardUserSessionDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="standardUserService"
+		class="com.gps808.operationManagement.service.impl.StandardUserServiceImpl">
+		<property name="standardUserAccountDao" ref ="standardUserAccountDao" />
+		<property name="paginationDao" ref ="paginationDao" />
+		<property name="standardUserSessionDao" ref ="standardUserSessionDao"/>
+	</bean>
+	 <bean id="standardMonitorDao"
+		class="com.gps808.monitor.dao.impl.StandardMonitorDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="standardMonitorService"
+		class="com.gps808.monitor.service.impl.StandardMonitorServiceImpl">
+		<property name="standardMonitorDao" ref ="standardMonitorDao" />
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean id="standardLineDao"
+		class="com.gps808.operationManagement.dao.impl.StandardLineDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="standardLineService"
+		class="com.gps808.operationManagement.service.impl.StandardLineServiceImpl">
+		<property name="standardLineDao" ref ="standardLineDao" />
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean id="standardUserBaseAction" abstract="true" lazy-init="true">
+		<property name="userService" ref="userService" />
+		<property name="standardUserService" ref="standardUserService" />
+		<property name="notifyService" ref="notifyService" />
+		<property name="vehicleRuleService" ref ="vehicleRuleService" />
+		<property name="storageRelationService" ref ="storageRelationService" />
+		<property name="deviceService" ref="deviceService" />
+		<property name="standardMonitorService" ref="standardMonitorService" />
+		<property name="standardLineService" ref="standardLineService" />
+	</bean>
+  	<!-- 用户登录 -->
+	<bean name="StandardLoginAction" class="com.gps808.operationManagement.action.StandardLoginAction" scope="prototype" parent="standardUserBaseAction"/>
+	<!-- 公司管理 -->
+	<bean name="StandardCompanyAction" class="com.gps808.operationManagement.action.StandardCompanyAction" scope="prototype" parent="standardUserBaseAction"/>
+	<!-- 车队管理 -->
+	<bean name="StandardVehicleTeamAction" class="com.gps808.operationManagement.action.StandardVehicleTeamAction" scope="prototype" parent="standardUserBaseAction"/>
+	<!-- 用户管理 -->
+	<bean name="StandardUserAction" class="com.gps808.operationManagement.action.StandardUserAction" scope="prototype" parent="standardUserBaseAction"/>
+	<!-- 权限管理 -->
+	<bean name="StandardRoleAction" class="com.gps808.operationManagement.action.StandardRoleAction" scope="prototype" parent="standardUserBaseAction"/>
+	<!-- SIM卡管理 -->
+	<bean name="StandardSIMCardInfoAction" class="com.gps808.operationManagement.action.StandardSIMCardInfoAction" scope="prototype" parent="standardUserBaseAction"/>
+	<!-- 设备管理 -->
+	<bean name="StandardDeviceAction" class="com.gps808.operationManagement.action.StandardDeviceAction" scope="prototype" parent="standardUserBaseAction"/>
+	<!-- 车辆管理 -->
+	<bean name="StandardVehicleAction" class="com.gps808.operationManagement.action.StandardVehicleAction" scope="prototype" parent="standardUserBaseAction"/>
+	<!-- 司机管理 -->
+	<bean name="StandardDriverAction" class="com.gps808.operationManagement.action.StandardDriverAction" scope="prototype" parent="standardUserBaseAction"/>
+	<!-- 保险管理 -->
+	<bean name="StandardVehicleSafeAction" class="com.gps808.operationManagement.action.StandardVehicleSafeAction" scope="prototype" parent="standardUserBaseAction"/>
+	<!-- 日志查询 -->
+	<bean name="StandardUserLogAction" class="com.gps808.operationManagement.action.StandardUserLogAction" scope="prototype" parent="standardUserBaseAction">
+		<property name="userLogService" ref="userLogService" />
+	</bean>
+	<!-- 服务器管理 -->
+	<bean name="StandardServerAction" class="com.gps808.operationManagement.action.StandardServerAction" scope="prototype" parent="standardUserBaseAction">
+		<property name="serverService" ref="serverService" />
+		<property name="notifyService" ref="notifyService" />
+		<property name="sysUserService" ref="sysUserService" />
+		<property name="downStationService" ref="downStationService" />
+	</bean>
+	<!-- 线路管理 -->
+	<bean name="StandardLineAction" class="com.gps808.operationManagement.action.StandardLineAction" scope="prototype" parent="standardUserBaseAction"/>
+<!-- 	<bean name="UserBindingListener" class="com.framework.utils.UserBindingListener" scope="prototype"></bean> -->
+</beans>

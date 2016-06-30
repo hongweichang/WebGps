@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model.line">
+	<class name="StandardLineStationRelation" table="jt808_line_station_relation">
+		<!-- ����������������?? -->
+		<id name="id" column="ID" type="integer">
+			<!--������������identity������������������ -->
+			<generator class="identity" />
+		</id>
+		<!-- ����������?������? -->
+		<property name="lid" column="LineID" type="java.lang.Integer" />
+		<property name="sid" column="StationID" type="java.lang.Integer" />
+		<property name="sindex" column="StationIndex" type="java.lang.Integer" />
+		<property name="direct" column="Direction" type="java.lang.Integer" />
+		<property name="stype" column="StationType" type="java.lang.Integer" />
+		<property name="speed" column="LimitSpeed" type="java.lang.Integer" />
+		<property name="len" column="Distance" type="java.lang.Integer" />
+	</class>
+</hibernate-mapping>
