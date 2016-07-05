@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+    default-autowire="byName">
+    
+  	<!-- 用户管理（包括用户登录） -->
+  	<bean id="userAlarmShieldService" class="com.gps.user.service.impl.UserAlarmShieldServiceImpl"/>
+  	<bean id="verifyInfoService" class="com.gps.user.service.impl.VerifyInfoServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean id="rememberKeyService" class="com.gps.user.service.impl.RememberKeyServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean name="LoginAction"
+		class="com.gps.user.action.LoginAction"
+		scope="prototype">
+		<property name="userService" ref="userService" />
+		<property name="userAlarmShieldService" ref="userAlarmShieldService" />
+		<property name="rememberKeyService" ref="rememberKeyService" />
+		<property name="verifyInfoService" ref="verifyInfoService" />
+	</bean>
+	<bean id="userDevPermitDao"
+		class="com.gps.user.dao.impl.UserDevPermitDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean name="UserAction"
+		class="com.gps.user.action.UserAction"
+		scope="prototype" parent="userBaseAction">
+		<property name="accountService" ref="accountService" />
+		<property name="roleService" ref="roleService" />
+	</bean>
+	<bean id="roleService" class="com.gps.user.service.impl.RoleServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean name="RoleAction"
+		class="com.gps.user.action.RoleAction"
+		scope="prototype" parent="userBaseAction">
+		<property name="roleService" ref="roleService" />
+	</bean>
+	<bean name="PriviAction"
+		class="com.gps.user.action.PriviAction"
+		scope="prototype" parent="userBaseAction">
+		<property name="roleService" ref="roleService" />
+	</bean>
+	<bean name="UserLogAction" class="com.gps.user.action.UserLogAction" scope="prototype" parent="userBaseAction">
+		<property name="userLogService" ref="userLogService" />
+	</bean>
+<!-- 	<bean name="UserBindingListener" class="com.framework.utils.UserBindingListener" scope="prototype"></bean> -->
+</beans>

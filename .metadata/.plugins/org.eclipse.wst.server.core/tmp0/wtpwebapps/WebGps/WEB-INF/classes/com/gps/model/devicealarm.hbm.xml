@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps.model">
+	<class name="DeviceAlarm" table="dev_alarm">
+		<!-- ����������������?? 
+		<id	name="guid" column="Guid" type="string" length="40" >
+			 <generator class="assigned" />
+		</id>
+		 ����������?������? -->
+		<!-- ����������������?? -->
+		<composite-id>
+            <key-property name="guid" column="Guid" type="java.lang.String" length="40"/>
+            <key-property name="armTime" column="ArmTime" type="java.util.Date"/>
+        </composite-id>
+		<property name="devIdno" column="DevIDNO" type="string" length="40"/>
+		<!--<property name="armTime" column="ArmTime" type="java.util.Date"/>-->
+		<property name="armType" column="ArmType" type="java.lang.Integer"/>
+		<property name="armInfo" column="ArmInfo" type="java.lang.Integer"/>
+		<property name="armDesc" column="ArmDesc" type="string" length="40"/>
+		<property name="Param1" column="Param1" type="java.lang.Integer"/>
+		<property name="Param2" column="Param2" type="java.lang.Integer"/>
+		<property name="Param3" column="Param3" type="java.lang.Integer"/>
+		<property name="Param4" column="Param4" type="java.lang.Integer"/>
+		<property name="status1" column="Status1" type="java.lang.Integer"/>
+		<property name="status2" column="Status2" type="java.lang.Integer"/>
+		<property name="status3" column="Status3" type="java.lang.Integer"/>
+		<property name="status4" column="Status4" type="java.lang.Integer"/>
+		<property name="speed" column="Speed" type="java.lang.Integer"/>
+		<property name="jingDu" column="JingDu" type="java.lang.Integer"/>
+		<property name="weiDu" column="WeiDu" type="java.lang.Integer"/>
+		<property name="gaoDu" column="GaoDu" type="java.lang.Integer"/>
+		<property name="huangXiang" column="HangXiang" type="java.lang.Integer"/>
+		<property name="liCheng" column="LiCheng" type="java.lang.Integer"/>
+		<property name="youLiang" column="YouLiang" type="java.lang.Integer"/>
+		<property name="parkTime" column="ParkTime" type="java.lang.Integer"/>
+		<property name="tempSensor1" column="TempSensor1" type="java.lang.Integer"/>
+		<property name="tempSensor2" column="TempSensor2" type="java.lang.Integer"/>
+		<property name="tempSensor3" column="TempSensor3" type="java.lang.Integer"/>
+		<property name="tempSensor4" column="TempSensor4" type="java.lang.Integer"/>
+		<property name="imageUrl" column="ImageUrl" type="string" length="512"/>
+		<property name="gpsTime" column="GPSTime" type="java.util.Date"/>
+		<property name="handleUserID" column="HandleUserID" type="java.lang.Integer"/>
+		<property name="handleTime" column="HandleTime" type="java.util.Date"/>
+		<property name="handleWay" column="HandleWay" type="string" length="256"/>
+<!-- 		<property name="createTime" column="CreateTime" type="java.util.Date"/> -->
+	</class>
+</hibernate-mapping>

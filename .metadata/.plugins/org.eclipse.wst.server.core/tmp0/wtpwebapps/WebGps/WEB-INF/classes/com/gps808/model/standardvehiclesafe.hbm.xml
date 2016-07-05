@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardVehicleSafe" table="jt808_vehicle_safe">
+		<!-- ��������������������������?
+		 ����������?������? -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ������������identity������������������ -->
+			<generator class="identity"/>
+		</id>
+		<property name="safeCom" column="SafeCom"	type="string" length="64"/>
+		<property name="agent" column="Agent"	type="string" length="32"/>
+		<property name="telephone" column="Telephone"	type="string" length="20"/>
+		<property name="startTime" column="StartTime" type="java.util.Date"/>
+		<property name="endTime" column="EndTime" type="java.util.Date"/>
+		<property name="count" column="Count"	type="java.lang.Integer"/>
+		<property name="price" column="Price"	type="java.lang.Integer"/>
+		<property name="discount" column="Discount"	type="java.lang.Integer"/>
+		<property name="actualPrice" column="ActualPrice"	type="java.lang.Double"/>
+		<property name="remark" column="Remark"	type="string" length="256"/>
+		<property name="updateTime" column="UpdateTime"	type="java.util.Date"/>
+		
+		<many-to-one name="vehicle" column="VehiIDNO" class="com.gps808.model.StandardVehicle" unique="true" lazy="false" not-found="ignore"/> 
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link rel="stylesheet" type="text/css" href="../reset.css"/>
+<link rel="stylesheet" type="text/css" href="../bin.css">
+<link rel="stylesheet" type="text/css" href="css/gj.css"/>
+<script type="text/javascript" src="../js/jquery.min.js" ></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript"  src="../js/public.js"></script>
+<script type="text/javascript"  src="../js/hashtable.js"></script>
+<script type="text/javascript" src="jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="ttxline.js"></script>
+</head>
+<body onresize="setPanelWidth();">
+    <!--地图公交-->
+    <div class="map_area">
+    	<div class="gj_box_top">
+        	<div class="gj_top">
+            	<h2 class="gj_top_title"></h2>
+            	<ul>
+                	<!-- <li><a href="#">30路</a></li>
+                    <li>|</li>
+                    <li><a href="#">31路</a></li>
+                    <li>|</li>
+                    <li><a href="#">32路</a></li>
+                    <li>|</li>
+                    <li><a href="#">33路</a></li>
+                    <li>|</li>
+                    <li><a href="#">34路</a></li>
+                    <li>|</li>
+                    <li><a href="#">35路</a></li>
+                    <li>|</li>
+                    <li><a href="#">36路</a></li>
+                    <li>|</li>
+                    <li><a href="#">37路</a></li>
+                    <li>|</li>
+                    <li><a href="#">38路</a></li>
+                    <li>|</li>
+                    <li><a href="#">39路</a></li>
+                    <li>|</li>
+                    <li><a href="#">40路</a></li>
+                    <li>|</li>
+                    <li><a href="#">41路</a></li>
+                    <li>|</li>
+                    <li><a href="#">42路</a></li>
+                    <li>|</li>
+                    <li><a href="#">43路</a></li>
+                    <li>|</li> -->
+                </ul>
+            </div>
+        </div>
+        <div class="gj_box_cont">
+        	<div style="margin-top:20px;">
+            	<div class="fl gj_lx">
+            		<span>
+            			<b class="gj_lx_name"></b>
+            			<span class="gj_lx_from"></span>&nbsp;&nbsp; 
+            			<i class="zi_cuhei gj_lx_begin"></i>  
+            			&nbsp;&nbsp;<span class="gj_lx_to"></span>&nbsp;&nbsp;
+            			<i class="zi_cuhei gj_lx_end"></i>
+            		</span>
+            		&nbsp;&nbsp;<span class="gj_lx_morning"></span>
+            		&nbsp;&nbsp;<i class="zi_bl gj_lx_beginTime"></i> 
+            		&nbsp;&nbsp; <span class="gj_lx_night"></span>
+            		&nbsp;&nbsp;<i class="zi_bl gj_lx_endTime"></i>
+           	 		&nbsp;&nbsp;|&nbsp;&nbsp;<span class="gj_lx_way"></span>
+           	 		&nbsp;&nbsp;<i class="zi_bl gj_lx_wayCount"></i>
+           	 		&nbsp;<span class="gj_lx_wayTip"></span>
+           	 		&nbsp;&nbsp;  <i class="zi_bl gj_lx_waitCount"></i> 
+           	 		&nbsp;&nbsp;<span class="gj_lx_wait"></span>
+           	 		&nbsp;&nbsp;<i class="zi_bl gj_lx_arrivalCount"></i>
+           	 		&nbsp;&nbsp;<span class="gj_lx_arrival"></span>
+           	 	</div>
+            	<div class="fr gj_btn_xq">
+            		<a class="gj_btn_xq_detail" href="#"></a>
+            		<a class="gj_btn_xq_scheduling" href="#"></a>
+            		<a class="gj_btn_xq_station" href="#"></a>
+            	</div>
+            	<div class="spacer"></div>
+            </div>
+            <div class="gj_xlxx">
+            	<h3 class="gj_xlxx_title"></h3>
+                <p>
+                	<span class="gj_xlxx_totalTip"></span>
+                	<span class="gj_xlxx_total"></span>
+                	<span class="gj_xlxx_totalUnit"></span><br />
+					<span class="gj_xlxx_peakTip"></span>
+					<span class="gj_xlxx_peak"></span><br />
+					<span class="gj_xlxx_normalTip"></span>
+					<span class="gj_xlxx_normal"></span><br />
+					<span class="gj_xlxx_lengthTip"></span>
+					<span class="gj_xlxx_length"></span>
+				</p>
+            </div>
+            <!--公交路线-->
+            <div class="gj_luxian">
+            	<div class="luxian_box"></div>
+                <div class="lu_box">
+                	<div class="car_jian">
+                		<b id="gj_stratStation"></b> 
+                		<span id="gj_lineName" class="arow"></span> 
+                		<b id="gj_endStation"></b>
+                		<em class="zhan"></em>
+                	</div>
+                    <div class="car_xx">
+                    	<em></em>
+                        <table width="0" border="0" cellspacing="0" cellpadding="0">
+						  	<tr>
+						    	<td><span id="gj_vehiIdno_label">车辆：</span><span id="gj_vehiIdno">粤B 123456</span></td>
+						    	<td><span id="gj_driver_label">司机：</span><span id="gj_driver">某某某</span></td>
+						    	<td><span>车辆：</span><span>粤B 123456</span></td>
+						  	</tr>
+						  	<tr>
+						    	<td><span id="gj_position_label">位置：</span><span id="gj_position">深圳市沙河西路2002号</span></td>
+						    	<td><span id="gj_time_label">时间：</span><span id="gj_time">2016-3-10 17:37:33</span></td>
+						    	<td><span id="gj_jobNum_label">工号：</span><span id="gj_jobNum">455657</span></td>
+						  	</tr>
+						  	<tr>
+						    	<td><span id="gj_alarm_label">报警：</span><span id="gj_alarm">acc关 gps天线异常 超速</span></td>
+						    	<td><span id="gj_station_label">站点：</span><span id="gj_station">上沙</span></td>
+						   	 	<td><span id="gj_action_label">出勤率：</span><span id="gj_action">100%</span></td>
+						  	</tr>
+						</table>
+                    </div>
+                </div>
+            </div>
+            <!--时间线-->
+            <div class="gj_time_line_box" style="margin-top:160px;">
+            	<div class="siji_box">
+                    <div class="siji">
+                    	<i></i>
+                    	<span>粤B 12345<br />  18:45 <br />  王小明 </span>
+                    </div>
+                    <div style="left:6%; z-index:4" class="siji">
+                    	<i></i>
+                    	<span>粤B 12345<br />  18:45 <br /> 王小明 </span>
+                    </div>
+                    <div style="left:60%; z-index:4" class="siji siji_blue">
+                    	<i></i>
+                    	<span>粤B 12345<br />  18:45 <br />  王小明 </span>
+                    </div>
+                    <div style="left:63%; z-index:4" class="siji siji_blue">
+                    	<i></i>
+                    </div>
+                    <div style="left:80%; z-index:4" class="siji siji_blue">
+                    	<i></i>
+                    	<span class="ru">
+                    		<em></em>
+                    		粤B &nbsp;  12345  &nbsp;  22:00   &nbsp; 王小明<br />
+							粤B  &nbsp;12345   &nbsp; 22:00  &nbsp; 王小明<br />
+							粤B &nbsp; 12345  &nbsp;  22:00  &nbsp; 王小明<br />
+							粤B &nbsp; 12345 &nbsp;   22:00  &nbsp; 王小明
+						</span>
+                    </div>
+                </div>
+           		<div class="gj_tl_bg">
+	                <div class="gj_tl">
+	                   	<span class="gj_be_left"><i></i></span>
+						<span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                   	<span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_tl_l"><i></i></span>
+	                    <span class="gj_tl_d"><i></i></span>
+	                    <span class="gj_be_right"></span>
+	                    <div class="gj_tl_cur"></div>
+	                    <div class="spacer"></div>   
+	                </div>
+	                <div class="gj_tl_1">
+	                	<span>6:00</span>
+	                    <span>7:00</span>
+	                    <span>8:00</span>
+	                    <span>9:00</span>
+	                    <span>10:00</span>
+	                    <span>11:00</span>
+	                    <span>12:00</span>
+	                    <span>13:00</span>
+	                    <span>14:00</span>
+	                    <span>15:00</span>
+	                    <span>16:00</span>
+	                    <span>17:00</span>
+	                    <span>18:00</span>
+	                    <span>19:00</span>
+	                    <span>20:00</span>
+	                    <span>21:00</span>
+	                    <span>22:00</span>
+	                    <span>23:00</span>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </div>
+</body>
+</html>

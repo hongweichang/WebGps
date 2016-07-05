@@ -37,6 +37,47 @@ public class StandardTrackAction
     return isRole(StandardUserRole.PRIVI_PAGE_TRACK.toString());
   }
   
+  protected void queryDeviceindexTrack(Pagination pagination)throws Exception{
+	  try{
+		  String toMap = getRequestString("toMap");
+		  String devIdno = getRequestString("devIdno");
+		  Integer ID = Integer.valueOf(getRequestString("ID"));
+		  AjaxDto<StandardDeviceTrack> ajaxdto =  this.vehicleGpsService.queryDeviceindexTrack(ID, 0, 0, 0, 0, 0, pagination, toMap,devIdno);
+		  List<StandardDeviceTrack> track = ajaxdto.getPageList();
+	      List<DeviceStatusLite> tracklites = null;
+	      if (track != null)
+	        {
+	          String[] devIdnos = new String[1];
+	          devIdnos[0] = devIdno;
+	          AjaxDto<DeviceStatusLite> dtoAjax = this.deviceService.getDeviceStatusLite(devIdnos);
+	          DeviceStatusLite status = null;
+	          if ((dtoAjax.getPageList() != null) && (dtoAjax.getPageList().size() >= 1)) {
+	            status = (DeviceStatusLite)dtoAjax.getPageList().get(0);
+	          }
+	          tracklites = new ArrayList();
+	          for (int i = 0; i < track.size(); i++)
+	          {
+	            DeviceStatusLite lite = new DeviceStatusLite();
+	            lite.setStatusLite((StandardDeviceTrack)track.get(i));
+	            if (status != null)
+	            {
+	              lite.setPt(status.getPt());
+	              lite.setDt(status.getDt());
+	              lite.setAc(status.getAc());
+	              lite.setFt(status.getFt());
+	              lite.setFdt(status.getFdt());
+	            }
+	            tracklites.add(lite);
+	          }
+	        }
+	        addCustomResponse("infos", tracklites);
+	        addCustomResponse("paginationTrack", ajaxdto.getPagination());
+	  }catch (Exception ex){
+		  this.log.error(ex.getMessage(), ex);
+	      addCustomResponse(ACTION_RESULT, Integer.valueOf(1));
+	  }
+  }
+  
   protected void queryGpsTrack(String distance, String parkTime, Pagination pagination, Integer type, boolean nameEncoder)
     throws Exception
   {

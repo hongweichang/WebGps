@@ -1,0 +1,68 @@
+/**
+* 覆盖
+*/
+.jumbotron {
+    background: rgba(0, 0, 0, 0) linear-gradient(45deg, #006600 0%, #3366FF 100%) repeat scroll 0 0;
+}
+.bs-docs-sidenav > .nav-list {
+	padding: 0px;
+	margin: 0px;
+}
+.bs-docs-sidenav > .nav-list > li > a {
+    border: 1px solid #e5e5e5;
+    display: block;
+    margin: 0 0 -1px;
+    padding: 8px 14px;
+}
+.bs-docs-sidenav > .nav-list > .active > a {
+    border: 0 none;
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.1) inset, -1px 0 0 rgba(0, 0, 0, 0.1) inset;
+    padding: 9px 15px;
+    position: relative;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+.bs-docs-sidenav > .nav-list:first-child > li:first-child > a {
+    border-radius: 6px 6px 0 0;
+}
+.bs-docs-sidenav > .nav-list:last-child > li:last-child > a {
+    border-radius: 0 0 6px 6px;
+}
+td{padding:0 6px 0;}
+/*一级菜单*/
+.menu-first,.bs-docs-sidenav .nav li .menu-first, .bs-docs-sidenav .nav .active .menu-first{
+	height:45px;
+	line-height:45px;
+	background-color: #e9e9e9;
+	border-top: 1px solid #efefef;
+	border-bottom: 1px solid #e1e1e1;
+	padding: 0;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	color: #000;
+}
+.menu-first:first-child {
+	border-radius: 6px 6px 0 0;
+}
+.menu-first:last-child {
+	border-radius: 0 0 6px 6px;
+}
+/*一级菜单鼠标划过状态*/
+.menu-first:hover, .bs-docs-sidenav .nav li .menu-first:hover{
+	text-decoration: none;
+	background-color: #d6d4d5;
+	border-top: 1px solid #b7b7b7;
+	border-bottom: 1px solid #acacac;
+	color: #000;
+}
+.menu-first:focus {
+	text-decoration: none;
+	outline: thin dotted #333;
+	outline-offset: -2px; 
+}
+.page-title {
+	border-top: 1px solid #eee;
+    margin: 30px 0 -20px;
+    color: #5a5a5a;
+}

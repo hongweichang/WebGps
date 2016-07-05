@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+.setingbox { display: block; overflow: hidden; zoom: 1; }
+.setingbox dl { }
+.setingbox dt { float: left; width:150px; text-align: right; margin-right: 10px; color: #333; padding-top: 10px; clear: both; display: block }
+.setingbox dd { padding-top: 10px; width: 300px; float: left; color: #000 }
+.setingbox dd input.text { width: 160px; height: 20px; border: solid 1px #cdcdcd; line-height: 20px; padding: 0 4px; color: #666; }
+.setingbox dd select { width: 170px; height: 22px; color: #666; }

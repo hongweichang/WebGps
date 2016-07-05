@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<link href="../../css/public.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/report.css" rel="stylesheet" type="text/css" />
+	<link href="../../js/dxtree/dhtmlxtree.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexigrid.css"/>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css?150120"/>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../../js/myajax.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../js/public.js?150120"></script>
+	<script type="text/javascript" src="../../js/date.js"></script>
+	<script type="text/javascript"  src="../js/hashtable.js"></script>
+	<script type="text/javascript" src="../../js/dxtree/dhtmlxcommon.js"></script>
+	<script type="text/javascript" src="../../js/dxtree/dhtmlxtree.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexigrid.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexiManage.js?150120"></script>
+	<script type="text/javascript" src="../../js/gps_common.js"></script>
+	<script type="text/javascript" src="../../js/date.js"></script>
+	<script type="text/javascript" src="../../js/company_tree.js"></script>
+	<script type="text/javascript" src="js/VehicleTeam.js?150120"></script>
+	<style type="text/css">
+	#left {
+		display:block;
+		float:left;
+		width:560px; 
+		height:480px;
+		border: 1px solid Silver;
+	}
+	#middle {
+		height:500px;
+		display:block;
+		float:left;
+		overflow:auto;
+		margin-left:10px;
+		margin-right:10px;
+	}
+	#middle .btn-group{
+		margin-top:80px;
+	}
+	#middle .btn-group .item{
+		padding:20px 0px;
+		margin:0;
+		display:block; 
+		float:none;
+	}
+	*+html #middle .btn-group .item{
+		display:inline-block;
+	}
+	#right {
+		display:block;
+		float:left;
+		width:370px; 
+		height:480px;
+		border: 1px solid Silver;
+		overflow: auto;
+	}
+	#company_tree{
+		height:420px;
+		margin:2px;
+		background-color:#f5f5f5;
+		border :1px solid Silver;
+		overflow:auto;
+	}
+	#search .righttitile_vehicle {
+		background:	url("../images/icon.png");
+		background-attachment: scroll;
+		background-repeat: no-repeat;
+		background-position: -9px -219px;
+		background-color: rgba(0, 0, 0, 0);
+	}
+	.flexigrid {
+		margin:0px 1px;
+	}
+	</style>
+</head>
+<body onresize="setPanelWidth(); " style="min-width:1050px;">
+<div id="search">
+	<h2 class="righttitile_vehicle"><span id="groupTitle">&nbsp;</span></h2>
+</div>
+<div style="padding-left:20px;">
+	<div style="width:auto;overflow:hidden;margin-bottom:10px;">
+		<div id="left">
+			<div class="companyList" style="float:left;overflow: auto;">
+				<label class="labelList"><h2><span id="spanGroup"></span></h2></label>
+				<div class="searchList" style="margin-top:4px;margin-bottom:4px;">
+					<span id="searchCompany">&nbsp;</span>
+					<input id="name" name="name" type="text" class="text" value="" maxlength="64" onkeyup="searchCompany()" style="width:100px;"/>&nbsp;&nbsp;	
+				</div>
+				<div id="company_tree"></div>
+			</div>
+			<div class="vehicleList" style="float:left;overflow: auto;">
+				<label class="labelList"><h2><span id="spanVehicleList"></span></h2></label>
+				<div class="searchList" style="margin-top:4px;margin-bottom:4px;">
+					<span id="searchVehicle">&nbsp;</span>
+					<input id="vehiName" name="vehiName" type="text" class="text" value="" maxlength="64" onkeyup="searchVehicle()" style="width:100px;"/>&nbsp;&nbsp;	
+				</div>
+				<div id="vehicleTable"></div>
+			</div>
+		</div>
+		<div id="middle"></div>
+		<div id="right">
+			<label class="labelList"><h2><span id="spanVehicleFree"></span></h2></label>
+			<div class="searchList" style="margin-top:4px;margin-bottom:4px;">
+				<span id="searchFreeVehicle">&nbsp;</span>
+				<input id="freeName" name="freeName" type="text" class="text" value="" maxlength="32" onkeyup="searchFreeVehicle()" style="width:100px;"/>&nbsp;&nbsp;	
+			</div>
+			<div id="freeVehicleTable"></div>
+		</div>
+	</div>
+	<div id="toolbar-btn" style="display: none;margin:10px;">
+<!-- 		<a href="javascript:addGroup();" class="blue"><span id="addGroup">&nbsp;</span></a>&nbsp;&nbsp; -->
+<!-- 		<a href="javascript:editGroup();" class="blue"><span id="editGroup">&nbsp;</span></a>&nbsp;&nbsp; -->
+<!-- 		<a href="javascript:delGroup();" class="blue"><span id="delGroup">&nbsp;</span></a>&nbsp;&nbsp; -->
+<!-- 		<a href="javascript:moveGroup();" class="blue"><span id="moveGroup">&nbsp;</span></a>&nbsp;&nbsp; -->
+	</div>
+	<div style="display:block;margin:10px;">
+		<span id="tipDrag">&nbsp;</span>
+		<br><span id="tipMove">&nbsp;</span>
+	</div>
+</div>
+</body>
+</html>

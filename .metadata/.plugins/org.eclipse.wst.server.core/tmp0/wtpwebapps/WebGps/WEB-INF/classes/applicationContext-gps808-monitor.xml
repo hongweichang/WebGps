@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+    default-autowire="byName">
+	<bean name="StandardPositionAction"
+		class="com.gps808.monitor.action.StandardPositionAction"
+		scope="prototype" parent="standardReportBaseAction">
+	</bean>
+	<bean name="StandardTTSAction"
+		class="com.gps808.monitor.action.StandardTTSAction"
+		scope="prototype" parent="standardUserBaseAction">
+	</bean>
+	<bean name="StandardAlarmMotionAction"
+		class="com.gps808.monitor.action.StandardAlarmMotionAction"
+		scope="prototype" parent="standardUserBaseAction">
+	</bean>
+	<bean name="StandardFlowAction"
+		class="com.gps808.monitor.action.StandardFlowAction"
+		scope="prototype" parent="standardUserBaseAction">
+	</bean>
+	<bean name="StandardDownTaskAction"
+		class="com.gps808.monitor.action.StandardDownTaskAction"
+		scope="prototype" parent="standardUserBaseAction">
+	</bean>
+</beans>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<link href="css/public.css" rel="stylesheet" type="text/css" />
+	<link href="css/server.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexigrid.css"/>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css?150120"/>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../js/myajax.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../js/public.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexiManage.js?150120"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexigrid.js"></script>
+	<script type="text/javascript" src="../../js/date.js"></script>
+	<script type="text/javascript" src="../../js/gps_common.js"></script>
+	<script type="text/javascript" src="js/storagerelation.js"></script>
+</head>
+<body style="background-color:#fff;">
+<div id="content" class="serverall" style="width:700px;height:500px;position:relative;overflow:hidden;">
+	<div style="overflow:hidden;">
+		<br/>
+		<label class="searchinput">
+	      <input id="devicesearch" name="devicesearch" type="text" value="" maxlength="32"/>
+	    </label>
+	    <label class="searchbtn">
+	      <button id="btnSearchDevice" name="btnSearchDevice" type="submit" onclick="queryRelationInfo()"></button>
+	    </label>
+	    <br/>
+    </div>
+    <div>
+		<h3>
+			<span class="set"><a class="bluelink" href="javascript:delSelRelation();" id="hrefRemove"><span id="spanRemove" class="blue">&nbsp;</span></a></span>&nbsp;&nbsp;
+			<span id="labelStorageServer" style="padding-left:10px;font-weight:bold">&nbsp;</span>&nbsp;<span id="spanStorageServer" class="blue"></span>&nbsp;&nbsp;
+			<span id="labelRelationCount" style="padding-left:10px;font-weight:bold">&nbsp;</span>&nbsp;<span id="spanRelationCount" class="blue"></span>
+		</h3>
+	</div>
+	<table id="storagerelationTable" style="display:none;"></table>
+</div>
+</body>
+</html>

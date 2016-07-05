@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="js/mobile_info.js"></script>
+<style type="text/css">
+.input_none {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+}
+</style>
+</head>
+<body style="background-color:#fff;">
+<div style="width:520px;padding-bottom:30px;">
+	<div class="tab">
+	    <ul id="tabnav">
+			<li id="li_basicParam" class="now_focus"><a href="javascript:switchPage('basicParam');" class="blue"><span id="liBasicParam">&nbsp;</span></a></li>
+			<li id="li_moduleParam" style="display:none"><a href="javascript:switchPage('moduleParam');" class="blue"><span id="liModuleParam">&nbsp;</span></a></li>
+	    </ul>
+	    <div id="tabcontent">
+		    <div id="basicParam" class="now_focus">
+				<dl class="setingbox">
+					<dt><span id="labelName"></span></dt>
+						<dd>
+							<input id="name" name="name" type="text" class="text" value="" maxlength="15"/>
+							<span id="nameWrong" class="red">*</span></dd>
+					<dt><span id="labelIdno"></span></dt>
+						<dd><input id="idno" name="idno" type="text" class="text" value="" maxlength="32"/></dd>
+					<dt><span id="labelSex"></span></dt>
+						<dd>
+							<input type="radio" value="1" id="sex_male" class="input_none" name="sex"/>
+							<span id="spanMale">&nsbp;</span>
+							<input type="radio" value="2" id="sex_female" class="input_none" name="sex"/>
+							<span id="spanFemale">&nsbp;</span>
+						</dd>
+					<dt><span id="labelUserIDNO"></span></dt>
+						<dd><input id="userIDNO" name="userIDNO" type="text" class="text" value="" maxlength="15"/></dd>
+					<dt><span id="labelTelephone"></span></dt>
+						<dd><input id="simCard" name="simCard" style="ime-mode:disabled;" type="text" class="text" value="" maxlength="15" onkeydown="onKeyDownDigit(event)"/></dd>
+					<dt><span id="labelPost"></span></dt>
+						<dd><select id="postList" name="postList"></select></dd>
+					<dt><span id="labelCardID"></span></dt>
+						<dd><input id="cardID" name="cardID" type="text" class="text" value="" maxlength="18"/></dd>
+					<dt><span id="labelAddress"></span></dt>
+						<dd><input id="address" name="address" type="text" class="text" style="width:280px;" value="" maxlength="256"/></dd>
+					<dt><span id="labelRemarks"></span></dt>
+						<dd><input id="remarks" name="remarks" type="text" class="text" style="width:280px;" value="" maxlength="64"/></dd>
+				</dl>
+		    </div>
+			<div id="moduleParam" style="display:none">
+				<dl class="setingbox">
+					<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module0" value="0"/>
+				  			<span id="spanModuleOilSensor"></span>
+				  		</dd>
+					<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module1" value="1"/>
+				  			<span id="spanModuleOilControl"></span>
+				  		</dd>
+				  	<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module2" value="2"/>
+				  			<span id="spanModuleElecControl"></span>
+				  		</dd>
+				  	<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module3" value="3"/>
+				  			<span id="spanModuleTTSControl"></span>
+				  		</dd>
+				</dl>
+			</div>
+	    </div>
+	</div>
+	<div id="saveParam">
+		<dl class="setingbox">
+			<dt></dt>
+			<dd>
+				<a href="javascript:ajaxSaveMobile();" class="searchbtn">
+			  		<span id="save"></span>
+			    </a>
+			</dd>
+		</dl>
+	</div>
+</div>
+</body>
+</html>

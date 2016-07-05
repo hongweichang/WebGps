@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardUserAccount" table="jt808_account">
+		<!-- ��������������������������? -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ������������identity������������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ����������?������? -->
+		<property name="account" column="Account" type="string" unique="true"  length="40"/>
+		<property name="name" column="Name"	type="string"  length="64"/>
+		<property name="password" column="Password"	type="string"  length="64"/>
+	<!--	<property name="type" column="Type" type="java.lang.Integer" />-->
+		<property name="status" column="UseStatus" type="java.lang.Integer" />
+	<!--  	<property name="parentCompanyId" column="CompanyID" type="java.lang.Integer" not-null="true"/>
+		<property name="roleId" column="UserRoleID" type="java.lang.Integer" not-null="true"/>-->
+		<property name="validity" column="Validity" type="java.util.Date"/>
+		<property name="createTime" column="CreateTime" type="java.util.Date"/>
+		<property name="updateTime" column="UpdateTime" type="java.util.Date"/>
+		<property name="accountType" column="AccountType" type="java.lang.Integer" />
+		<many-to-one name="company" column="CompanyID" class="com.gps808.model.StandardCompany" unique="true" lazy="false"  not-found="ignore"/>
+		<many-to-one name="role" column="UserRoleID" class="com.gps808.model.StandardUserRole" unique="true" lazy="false" not-found="ignore" cascade="all"/>
+	</class>
+</hibernate-mapping>

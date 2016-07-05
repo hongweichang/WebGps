@@ -1,0 +1,70 @@
+package com.gps808.monitor.dao.impl;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.transform.Transformers;
+import org.hibernate.type.StandardBasicTypes;
+
+import com.framework.web.dto.QueryScalar;
+import com.gps808.model.StandardDeviceGps;
+import com.gps808.model.StandardTransportGps;
+import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+public class StandardindexTrackDao extends HibernateDaoSupport {
+	
+	public StringBuffer getQueryindexTrack(){
+		StringBuffer sql = new StringBuffer("SELECT b.DevIDNO£¬a.Online,b.GPSDate,b.GPSData From dev_station a,jt808_vehicle_gps b");
+		Date dt = new Date();
+	    SimpleDateFormat matter = new SimpleDateFormat("yyyy-MM-dd");
+	    int Online = 1;
+		sql.append(String.format("where a.Online = %d and b.GPSData = %s", new Object[]{ Online, matter.format(dt) }));
+		return sql;
+	}
+	
+	public static List<QueryScalar> getTrackindexList(){
+		List<QueryScalar> tk = new ArrayList<>();
+		tk.add(new QueryScalar("DevIDNO", StandardBasicTypes.STRING));
+		tk.add(new QueryScalar("Online", StandardBasicTypes.INTEGER));
+		tk.add(new QueryScalar("GPSDate", StandardBasicTypes.DATE));
+		tk.add(new QueryScalar("GPSData", StandardBasicTypes.BLOB));
+		return tk;
+		
+	}
+	
+	public  List<StandardDeviceGps> getStandardDeviceindexTrack(){
+		StringBuffer sqlQuery = getQueryindexTrack();
+		List<QueryScalar> re = getTrackindexList();
+		Session session = getHibernateTemplate().getSessionFactory().openSession();
+		SQLQuery query = null;
+		try{
+			query = session.createSQLQuery(sqlQuery.toString());
+			for(int i = 0; i < re.size(); i++){
+				query.addScalar(((QueryScalar)re.get(i)).getValue(), ((QueryScalar)re.get(i)).getType());
+			}
+			query.setResultTransformer(Transformers.aliasToBean(QueryScalar.class));
+			return query.list();
+		} catch (RuntimeException te){
+			throw te;
+		}
+		finally{
+			session.close();
+		}
+		
+	}
+	
+	public static void main(String[] args){
+		 StandardindexTrackDao test = new StandardindexTrackDao();
+		 
+		System.out.println(test.getTrackindexList()); 
+	}
+}
+

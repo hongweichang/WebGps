@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="TTX-AFU">
+    <meta name="Copyright" content="Babelstar">
+    <meta name="Description" content="">
+    <meta name="Keywords" content="">
+    
+    <title></title>
+    <link rel="stylesheet" href="./css/global.css?v150105" media="screen">
+    <link rel="stylesheet" href="./css/login.css?v150105" media="screen">
+    <link rel="stylesheet" href="./css/product.css?v150105" media="screen">
+    <script type="text/javascript" src="../js/json2.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/lang_fun.js"></script>
+    <script type="text/javascript" src="../js/public.js?150107"></script>
+    <script type="text/javascript" src="js/public.js?150107"></script>
+    <script type="text/javascript" src="../js/flexigrid/flexiManage.js?150120"></script>
+    <script type="text/javascript" src="../js/myajax.js?150107"></script>
+    <script type="text/javascript" src="./js/function.js?150107"></script>
+    <!--[if IE 6]><script type="text/javascript">try{document.execCommand('BackgroundImageCache',false,true);}catch(e){}</script><![endif]-->
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wy-header">
+            <div class="wy-mod-top">
+                <div class="logo">
+                    <img src="./images/home/logo.png" alt="">
+                    <span id="spanTitle"></span>
+                </div>
+            </div>
+            <div class="wy-mod-nav clearfix">
+                <div class="web-link" style="display:none" id="clientDownload">
+                    <a id="hrefClientDown" href="" data-log-id="150021" target="_blank" class="btn-web-link"><span id="spanDownClient"></span></a>
+                </div>
+				<div class="wy-mod-lang">
+					<div class="switch">
+						<div class="switch-div"><span class="switch-span"></span><a class="carat"></a></div>
+						<div class="language"></div>
+					</div>
+				</div>
+                <ul class="wy-mod-nav-main clearfix">
+                    <li>
+                        <a href="./login.html" ><span id="spanHome"></span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="on"><span id="spanFunction"></span></a>
+                    </li>
+                    <li>
+                        <a href="./open/webApi.html" target="_blank"><span id="spanOpenApi"></span></a>
+                    </li>
+                </ul>
+            </div>
+			<div class="clearfix" style="height:30px;line-height:30px;background-color:#f2f2f2;"></div>
+        </div>
+        <div class="wy-content">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+			    <td bgcolor="#F2F2F2">&nbsp;</td>
+			    <td width="960" align="center" bgcolor="#F2F2F2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			      <tr>
+			        <td align="center"><img src="./images/home/pro2_r2_c5.jpg" width="642" height="527"  alt=""/></td>
+			      </tr>
+			    </table></td>
+			    <td bgcolor="#F2F2F2">&nbsp;</td>
+			  </tr>
+			  <tr>
+			    <td rowspan="2">&nbsp;</td>
+			    <td width="960">&nbsp;</td>
+			    <td rowspan="2">&nbsp;</td>
+			  </tr>
+			  <tr>
+			    <td width="900" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			      <tr>
+			        <td width="320" align="center"><img src="./images/home/pro2_r4_c3.jpg" width="113" height="119"  alt=""/></td>
+			        <td width="320" align="center"><img src="./images/home/pro2_r4_c7.jpg" width="79" height="110"  alt=""/></td>
+			        <td width="320" align="center"><img src="./images/home/pro2_r6_c7.jpg" width="62" height="116"  alt=""/></td>
+			      </tr>
+			      <tr>
+			        <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			          <tr>
+			            <td height="40" align="center" class="word16" id="position-location"></td>
+			          </tr>
+			          <tr>
+			            <td align="center" id="position-location-info"></td>
+			          </tr>
+			          <tr>
+			            <td height="40" align="center">&nbsp;</td>
+			          </tr>
+			        </table></td>
+			        <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			          <tr>
+			            <td height="40" align="center" class="word16" id="video-surveillance"></td>
+			          </tr>
+			          <tr>
+			            <td align="center" id="video-surveillance-info"></td>
+			          </tr>
+			          <tr>
+			            <td height="40" align="center">&nbsp;</td>
+			          </tr>
+			        </table></td>
+			        <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			          <tr>
+			            <td height="40" align="center" class="word16" id="download-storage"></td>
+			          </tr>
+			          <tr>
+			            <td align="center" id="download-storage-info"></td>
+			          </tr>
+			          <tr>
+			            <td height="40" align="center">&nbsp;</td>
+			          </tr>
+			        </table></td>
+			      </tr>
+			      <tr>
+			        <td align="center"><img src="./images/home/pro2_r4_c9.jpg" width="96" height="105"  alt=""/></td>
+			        <td align="center"><img src="./images/home/pro2_r6_c3.jpg" width="99" height="102"  alt=""/></td>
+			        <td align="center"><img src="./images/home/pro2_r6_c9.jpg" width="69" height="119"  alt=""/></td>
+			      </tr>
+			      <tr>
+			        <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			          <tr>
+			            <td height="40" align="center" class="word16" id="image-capture"></td>
+			          </tr>
+			          <tr>
+			            <td align="center" id="image-capture-info"></td>
+			          </tr>
+			          <tr>
+			            <td height="40" align="center">&nbsp;</td>
+			          </tr>
+			        </table></td>
+			        <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			          <tr>
+			            <td height="40" align="center" class="word16" id="track-playback"></td>
+			          </tr>
+			          <tr>
+			            <td align="center" id="track-playback-info"></td>
+			          </tr>
+			          <tr>
+			            <td height="40" align="center">&nbsp;</td>
+			          </tr>
+			        </table></td>
+			        <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			          <tr>
+			            <td height="40" align="center" class="word16" id="voice-intercom"></td>
+			          </tr>
+			          <tr>
+			            <td align="center" id="voice-intercom-info"></td>
+			          </tr>
+			          <tr>
+			            <td height="40" align="center">&nbsp;</td>
+			          </tr>
+			        </table></td>
+			      </tr>
+			    </table></td>
+			  </tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+			    <td bgcolor="#F3F3F3">&nbsp;</td>
+			    <td width="960" height="80" align="center" valign="bottom" bgcolor="#F3F3F3" class="word24" id="platforms"></td>
+			    <td bgcolor="#F3F3F3">&nbsp;</td>
+			  </tr>
+			  <tr>
+			    <td bgcolor="#F3F3F3">&nbsp;</td>
+			    <td height="60" align="center" bgcolor="#F3F3F3" class="word16" id="platforms-info"></td>
+			    <td bgcolor="#F3F3F3">&nbsp;</td>
+			  </tr>
+			  <tr>
+			    <td bgcolor="#F3F3F3">&nbsp;</td>
+			    <td align="center" bgcolor="#F3F3F3"><img src="./images/home/pro2_r8_c4.jpg" width="732" height="303"  alt=""/></td>
+			    <td bgcolor="#F3F3F3">&nbsp;</td>
+			  </tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+			    <td>&nbsp;</td>
+			    <td width="960" height="80" align="center" valign="bottom" class="word24" id="phone"></td>
+			    <td>&nbsp;</td>
+			  </tr>
+			  <tr>
+			    <td>&nbsp;</td>
+			    <td height="60" align="center" class="word16" id="phone-info"></td>
+			    <td>&nbsp;</td>
+			  </tr>
+			  <tr>
+			    <td>&nbsp;</td>
+			    <td align="center"><img src="./images/home/pro2_r10_c2.jpg" width="791" height="487"  alt=""/></td>
+			    <td>&nbsp;</td>
+			  </tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+			    <td bgcolor="#F2F2F2">&nbsp;</td>
+			    <td width="980" height="80" align="center" valign="bottom" bgcolor="#F2F2F2" class="word24" id="statistical-reports"></td>
+			    <td bgcolor="#F2F2F2">&nbsp;</td>
+			  </tr>
+			  <tr>
+			    <td bgcolor="#F2F2F2">&nbsp;</td>
+			    <td width="980" height="60" align="center" bgcolor="#F2F2F2" class="word16" id="statistical-reports-info"></td>
+			    <td bgcolor="#F2F2F2">&nbsp;</td>
+			  </tr>
+			  <tr>
+			    <td bgcolor="#F2F2F2">&nbsp;</td>
+			    <td width="980" align="center" bgcolor="#F2F2F2"><img src="./images/home/pro2_r12_c2.jpg" width="892" height="474"  alt=""/></td>
+			    <td bgcolor="#F2F2F2">&nbsp;</td>
+			  </tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+			    <td>&nbsp;</td>
+			    <td width="980" height="80" align="center" valign="bottom" class="word24" id="information-management"></td>
+			    <td>&nbsp;</td>
+			  </tr>
+			  <tr>
+			    <td>&nbsp;</td>
+			    <td width="980" height="60" align="center" class="word16" id="information-management-info"></td>
+			    <td>&nbsp;</td>
+			  </tr>
+			  <tr>
+			    <td>&nbsp;</td>
+			    <td width="980" align="center" style="background:url(images/home/pro2_r14_c2.jpg) center center no-repeat">
+                	<div class="pic_text">
+                    	<span class="t1"></span>
+                        <span class="t2"></span>
+                        <span class="t3"></span>
+                        <span class="t4"></span>
+                    </div>
+                </td>
+			    <td>&nbsp;</td>
+			  </tr>
+			</table>
+        </div>
+        <div class="wy-footer">
+            <div class="footer-cont">
+                <div class="copyright"><span id="spanCopyright"></span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

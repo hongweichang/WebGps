@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexigrid.css"/>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css?150120"/>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../js/myajax.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexiManage.js?150120"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexigrid.js"></script>
+	<script type="text/javascript" src="../js/public.js?150120"></script>
+	<script type="text/javascript" src="../../js/gps_common.js"></script>
+	<script type="text/javascript" src="../js/date.js"></script>
+	<script type="text/javascript" src="js/storageList.js"></script>
+	<style>
+		#search-list {
+			width: 120px;
+			float: left;
+			border: 1px solid #ccc;
+			overflow: hidden;
+		}
+		#search-table {
+			margin-left: 125px;
+		}
+		#search-list ul,#search-table ul{
+			padding: 0px;
+			margin: 0px;
+		}
+		#search-table li.list{
+			display: none;
+		}
+		#search-table li.active{
+			display: block;
+		}
+		#search-list a, #search-list li{
+		    cursor: pointer;
+		}
+		#search-list a {
+			color: #333;
+		    cursor: pointer;
+		    font-size: 14px;
+		}
+		#search-list li {
+			border-bottom: 1px solid #ccc;
+		    padding:10px;
+		    height: 20px;
+    		line-height: 20px;
+		    overflow: hidden;
+		}
+		#search-list li.active, #search-list li:hover {
+		    background-color: #0b83dc;
+/* 		    border-left: 2px solid #4cffff; */
+		}
+		#search-list li.active a, #search-list li:hover a {
+			color: #fff;
+		}
+		#search-btn {
+			height: 30px;
+			line-height: 30px;
+			padding: 5px 0px 0px 5px;
+		}
+		#toolbar-btn {
+			width:auto;
+			float:right;
+		}
+	</style>
+</head>
+<body style="background-color:#fff;overflow: auto;font-size: 12px;"  onresize="setPanelWidth();">
+	<form method="post" name="reportForm" action="">
+		<input id="vehiIdnos" type="hidden" name="vehiIdnos" data-name="vehiIdnos">
+	</form>
+	<div id="search-list">
+		<ul>
+			<li class="storage active"><a></a></li>
+			<li class="offline"><a></a></li>
+			<li class="damage"><a></a></li>
+		</ul>
+	</div>
+	<div id="search-table">
+		<ul>
+			<li class="list active"><table id="storageTable" style="display:none;"></table></li>
+			<li class="list"><table id="offlineTable" style="display:none;"></table></li>
+			<li class="list"><table id="damageTable" style="display:none;"></table></li>
+		</ul>
+		<div id="search-btn">
+			<div class="damageTimeConfig" style="float:left;display:none;">
+				<span class="damageTip"></span>
+				<input type="text" class="damageValue" maxlength="3" size="4" />
+				<span class="damageUnit"></span>
+			</div>
+			<div id="toolbar-btn"></div>
+		</div>
+	</div>
+</body>
+</html>

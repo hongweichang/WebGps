@@ -1,0 +1,42 @@
+package com.gps808.report.vo;
+
+import java.sql.Blob;
+import java.util.Date;
+
+public class StandardindexTrack {
+	private String devIdno;
+	private Integer Online;
+	private Date GPSDate;
+	private Blob GPSData;
+	private Integer plateType;
+	public Integer getPlateType() {
+		return plateType;
+	}
+	public void setPlateType(Integer plateType) {
+		this.plateType = plateType;
+	}
+	public String getDevIdno() {
+		return devIdno;
+	}
+	public void setDevIdno(String devIdno) {
+		this.devIdno = devIdno;
+	}
+	public Integer getOnline() {
+		return Online;
+	}
+	public void setOnline(Integer online) {
+		Online = online;
+	}
+	public Date getGPSDate() {
+		return GPSDate;
+	}
+	public void setGPSDate(Date gPSDate) {
+		GPSDate = gPSDate;
+	}
+	public Blob getGPSData() {
+		return GPSData;
+	}
+	public void setGPSData(Blob gPSData) {
+		GPSData = gPSData;
+	}
+}

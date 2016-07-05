@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=WebGps/ImportedClasses&lt;com.gps.model(DeviceStatusLite.class[DeviceStatusLite" modifiers="33" timestamp="1466583984828"/>
+<typeInfo handle="=WebGps/F:\/workspace\/WebGps\/WebContent\/WEB-INF\/lib\/ehcache-core-2.5.2.jar&lt;net.sf.ehcache.hibernate(HibernateUtil.class[HibernateUtil" modifiers="49" timestamp="1466583998195"/>
+<typeInfo handle="=WebGps/ImportedClasses&lt;com.gps.model(DeviceStatus.class[DeviceStatus" modifiers="33" timestamp="1466583984498"/>
+<typeInfo handle="=WebGps/F:\/workspace\/WebGps\/WebContent\/WEB-INF\/lib\/hibernate3.jar&lt;org.hibernate(SessionFactory.class[SessionFactory" modifiers="1537" timestamp="1466584002547"/>
+<typeInfo handle="=WebGps/F:\/workspace\/WebGps\/WebContent\/WEB-INF\/lib\/hibernate3.jar&lt;org.hibernate.impl(SessionFactoryImpl.class[SessionFactoryImpl" modifiers="49" timestamp="1466584002547"/>
+<typeInfo handle="=WebGps/F:\/workspace\/WebGps\/WebContent\/WEB-INF\/lib\/struts2-core-2.3.28.1.jar&lt;org.apache.struts2.factory(StrutsResultFactory.class[StrutsResultFactory" modifiers="33" timestamp="1466583991637"/>
+</typeInfoHistroy>

@@ -1,0 +1,51 @@
+package com.gps808.monitor.dao.impl;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.type.StandardBasicTypes;
+
+import com.framework.web.dto.QueryScalar;
+import com.gps808.model.StandardDeviceStatus;
+import com.gps808.model.StandardTransportGps;
+import com.gps808.monitor.dao.StandardDeviceStatusDao;
+import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+public class StandardindexTrackDao extends HibernateDaoSupport implements StandardDeviceStatusDao {
+
+	@Override
+	public List<StandardDeviceStatus> getStandardDeviceStatus() 
+			throws HibernateException {
+		List<QueryScalar> rt = new ArrayList<>();
+		Query query = getSession().createQuery(String.valueOf("from dev_status where Online = 1"));
+		Iterator it = query.iterate();
+		if(it.hasNext()){
+			rt.add(new QueryScalar("devIDNO", StandardBasicTypes.STRING));
+		}
+//		if(query == null){
+//			return null;
+//		}else{
+//			return query.list();
+//		}	
+	}
+
+	@Override
+	public List<StandardDeviceStatus> getStandardDeviceStatus(String devIDNO) 
+			throws HibernateException{
+		List<QueryScalar> rt = new ArrayList<>();
+		Query query = getSession().createQuery(String.format("from jt808_vehicle_gps where DevIDNO = %d and DateDiff(d,GPSDate,getdate())=0", new Object[]{ devIDNO }));
+		Iterator it = query.iterate();
+		if(it.hasNext()){
+			rt.add(new QueryScalar("devIDNO", StandardBasicTypes.STRING));
+			rt.add(new QueryScalar("Online", StandardBasicTypes.INTEGER));
+			rt.add(new QueryScalar("GPSDate", StandardBasicTypes.DATE));
+			rt.add(new QueryScalar("GPSData", StandardBasicTypes.BLOB));
+			return rt;
+		}
+	}
+}

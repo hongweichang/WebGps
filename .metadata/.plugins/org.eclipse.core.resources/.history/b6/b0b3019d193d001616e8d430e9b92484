@@ -1,0 +1,7 @@
+package com.gps808.monitor.dao;
+
+import java.io.Serializable;
+
+public interface StandardDeviceStatusDao {
+	 public Object getObjectById(Class clazz, Serializable id);
+}

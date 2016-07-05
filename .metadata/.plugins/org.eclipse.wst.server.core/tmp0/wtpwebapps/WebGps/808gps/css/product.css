@@ -1,0 +1,535 @@
+@charset "utf-8";
+.word24 {
+	font-size: 24px;
+	font-family: 微软雅黑;
+}
+			
+.word16 {
+	font-size: 16px;
+}
+
+.function-intro {
+    background: none repeat scroll 0 0 #fff;
+    margin: 30px auto 80px;
+    padding-bottom: 80px;
+    width: 960px;
+}
+
+#main p.lastNode {
+	margin-bottom: 0;
+}
+a:link img, a:visited img {
+	border: none;
+}
+div.clearFloat {
+	clear: both;
+	font-size: 0;
+	height: 0;
+	line-height: 0px;
+}
+li.clearFloat {
+	clear: both;
+}
+ul.symbolList {
+	display: inline;
+	float: left;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.AbsWrap {
+	position: relative;
+	width: 100%;
+}
+.rowWrap {
+	width: 100%;
+}
+
+#Div {
+	margin-left: 0px;
+	margin-top: 0px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+	background-color: #f2f2f2;
+	width: 960px;
+}
+
+#Div2 {
+    background-color: #f2f2f2;
+    display: inline;
+    float: left;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: 0;
+    width: 960px;
+}
+
+.Txt_车辆监控管理系统 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 240%;
+	text-align: left;
+	color: #000;
+	line-height: 120%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 413px;
+	margin-top: 27px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+}
+#ad11 {
+	margin-left: 190px;
+	margin-top: 8px;
+	display: inline;
+	float: left;
+	height: 516px;
+	margin-bottom: 0;
+	width: 634px;
+}
+#bant_gps {
+	margin-left: 115px;
+	margin-top: 54px;
+	display: inline;
+	float: left;
+	height: 119px;
+	margin-bottom: 0;
+	width: 113px;
+}
+#bant_view {
+	margin-left: 248px;
+	margin-top: 59px;
+	display: inline;
+	float: left;
+	height: 110px;
+	margin-bottom: 0;
+	width: 79px;
+}
+#bant_piture {
+	margin-right: 121px;
+	margin-top: 61px;
+	display: inline;
+	float: right;
+	height: 105px;
+	margin-bottom: 0;
+	width: 96px;
+}
+.Txt_GPS位置定位 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 180%;
+	text-align: left;
+	color: #333;
+	line-height: 120%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 116px;
+	margin-top: 29px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+}
+.Txt_3G4G视频监控 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 180%;
+	text-align: left;
+	color: #333;
+	line-height: 120%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 223px;
+	margin-top: 29px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+}
+.Txt_图像抓拍 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 180%;
+	text-align: left;
+	color: #333;
+	line-height: 120%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-right: 131px;
+	margin-top: 25px;
+	display: inline;
+	float: right;
+	margin-bottom: 0;
+}
+.Txt_全球卫星定位，采用google平面及卫星地图直观展现，提供7 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 120%;
+	text-align: center;
+	color: #333;
+	line-height: 160%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 21px;
+	margin-top: 7px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+	width: 301px;
+}
+.Txt_全球卫星定位，采用google平面及卫星地图直观展现，提供72 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 120%;
+	text-align: center;
+	color: #333;
+	line-height: 160%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-right: 15px;
+	margin-top: 3px;
+	display: inline;
+	float: right;
+	margin-bottom: 0;
+	width: 301px;
+}
+.Txt_在3G网络下实现CIF或D1图像清晰流畅的传输效果，支持流畅性和实时性两种预览模式，可自定义画面轮询 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 120%;
+	text-align: center;
+	color: #333;
+	line-height: 160%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-right: 44px;
+	margin-top: 7px;
+	display: inline;
+	float: right;
+	margin-bottom: 0;
+	width: 301px;
+}
+#bant_track {
+	margin-left: 122px;
+	margin-top: 53px;
+	display: inline;
+	float: left;
+	height: 102px;
+	margin-bottom: 0;
+	width: 99px;
+}
+#bant_down {
+	margin-left: 264px;
+	margin-top: 46px;
+	display: inline;
+	float: left;
+	height: 116px;
+	margin-bottom: 0;
+	width: 62px;
+}
+#bant_talk {
+	margin-right: 134px;
+	margin-top: 44px;
+	display: inline;
+	float: right;
+	height: 119px;
+	margin-bottom: 0;
+	width: 69px;
+}
+.Txt_车辆轨迹回放 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 180%;
+	text-align: left;
+	color: #333;
+	line-height: 150%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 116px;
+	margin-top: 16px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+}
+.Txt_录像存储 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 180%;
+	text-align: left;
+	color: #333;
+	line-height: 150%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 250px;
+	margin-top: 16px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+}
+.Txt_语音对讲 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 180%;
+	text-align: left;
+	color: #333;
+	line-height: 150%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-right: 131px;
+	margin-top: 16px;
+	display: inline;
+	float: right;
+	margin-bottom: 0;
+}
+.Txt_全球卫星定位，采用google平面及卫星地图直观展现，提供73 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 120%;
+	text-align: center;
+	color: #333;
+	line-height: 160%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 23px;
+	margin-top: 7px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+	width: 301px;
+}
+.Txt_全球卫星定位，采用google平面及卫星地图直观展现，提供74 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 120%;
+	text-align: center;
+	color: #333;
+	line-height: 160%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-right: 16px;
+	margin-top: 7px;
+	display: inline;
+	float: right;
+	margin-bottom: 0;
+	width: 301px;
+}
+.Txt_全球卫星定位，采用google平面及卫星地图直观展现，提供75 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 120%;
+	text-align: center;
+	color: #333;
+	line-height: 160%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-right: 40px;
+	margin-top: 7px;
+	display: inline;
+	float: right;
+	margin-bottom: 0;
+	width: 301px;
+}
+#Div2 {
+	margin-left: 0px;
+	margin-top: 66px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+	background-color: #f3f3f3;
+	width: 1024px;
+	padding-top: 0px;
+	height: 519px;
+}
+html > body #Div2 {
+	height: auto;
+	min-height: 520px;
+}
+.Txt_交通部部标平台 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 240%;
+	text-align: left;
+	color: #000;
+	line-height: 120%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 425px;
+	margin-top: 80px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+}
+.Txt_CMSV6为交通部部标平台 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 180%;
+	text-align: left;
+	color: #333;
+	line-height: 150%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 285px;
+	margin-top: 9px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+	width: 524px;
+}
+#adg2 {
+	margin-left: 163px;
+	margin-top: 21px;
+	display: inline;
+	float: left;
+	height: 274px;
+	margin-bottom: 0;
+	width: 704px;
+}
+.Txt_玩转手机，随时随地查看位置和视频画面 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 240%;
+	text-align: left;
+	color: #000;
+	line-height: 120%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 294px;
+	margin-top: 52px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+}
+.Txt_车辆位置定位，实时视频查看，支持Android系统和IOS系统 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 180%;
+	text-align: left;
+	color: #333;
+	line-height: 150%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 271px;
+	margin-top: 18px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+}
+#adgphone {
+	margin-left: 121px;
+	margin-top: 17px;
+	display: inline;
+	float: left;
+	height: 487px;
+	margin-bottom: 0;
+	width: 791px;
+}
+#Div3 {
+	margin-left: 0px;
+	margin-top: 83px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+	background-color: #f2f2f2;
+	width: 1024px;
+	padding-top: 0px;
+	height: 763px;
+}
+html > body #Div3 {
+	height: auto;
+	min-height: 764px;
+}
+.Txt_丰富报表统计 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 240%;
+	text-align: left;
+	color: #000;
+	line-height: 120%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 437px;
+	margin-top: 79px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+}
+.Txt_报警类型有：紧急按钮报警，视频无信号报警，非法开门报警，硬盘错误报警，超速低速报警，移动侦测报警，停车时间过长报警，温度报警，GPS信号丢失报警 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 180%;
+	text-align: left;
+	color: #333;
+	line-height: 150%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 163px;
+	margin-top: 17px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+	width: 706px;
+}
+#adgbiao {
+	margin-left: 108px;
+	margin-top: 19px;
+	display: inline;
+	float: left;
+	height: 465px;
+	margin-bottom: 0;
+	width: 845px;
+}
+.Txt_信息化管理理念 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 240%;
+	text-align: left;
+	color: #000;
+	line-height: 120%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 426px;
+	margin-top: 53px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+}
+.Txt_平台秉承信息化管理设计理念，实现用户、车辆、设备、广告等信息化管理 {
+	font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+	font-size: 180%;
+	text-align: left;
+	color: #333;
+	line-height: 150%;
+	padding-bottom: 2px;
+	padding-top: 1px;
+	margin-left: 213px;
+	margin-top: 19px;
+	display: inline;
+	float: left;
+	margin-bottom: 0;
+}
+#adgguanli {
+	margin-left: 48px;
+	margin-top: 29px;
+	display: inline;
+	float: left;
+	height: 540px;
+	margin-bottom: 0;
+	width: 929px;
+}
+
+.pic_text{
+	width:881px;
+	height:540px;
+	position:relative;
+	}
+.pic_text span{
+	position:absolute;
+	}
+.pic_text span.t1{
+	font-size:24px;
+	color:#333;
+	font-weight:bold;
+	left:187px;
+	top:214px;
+	}
+.pic_text span.t2{
+	font-size:26px;
+	color:#fff;
+	font-weight:bold;
+	left:452px;
+	top:316px;
+	}
+.pic_text span.t3{
+	font-size:24px;
+	color:#fff;
+	font-weight:bold;
+	left:401px;
+	top:180px;
+	}
+.pic_text span.t4{
+	font-size:18px;
+	color:#333;
+	font-weight:bold;
+	left:504px;
+	top:115px;
+	}

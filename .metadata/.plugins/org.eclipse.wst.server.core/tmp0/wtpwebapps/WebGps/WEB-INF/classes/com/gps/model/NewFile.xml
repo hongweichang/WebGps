@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps.model">
+	<class name="UserLog" table="user_log">
+		<!-- ����������������?? -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ������������identity������������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ����������?������? -->
+		<property name="userId" column="UserID" type="java.lang.Integer"/>
+		<property name="devIdno" column="DevIDNO" type="string" length="40"/>
+		<property name="mainType" column="MainType" type="java.lang.Integer"/>
+		<property name="subType" column="SubType" type="java.lang.Integer"/>
+		<property name="param1" column="Param1" type="string" length="256"/>
+		<property name="param2" column="Param2" type="string" length="256"/>
+		<property name="param3" column="Param3" type="string" length="256"/>
+		<property name="param4" column="Param4" type="string" length="256"/>
+		<property name="dtime" column="DTime" type="java.util.Date"/>
+		<property name="dtimeI" column="DTimeI" type="java.lang.Integer"/>
+		<many-to-one name="userInfo" column="UserID" class="com.gps.model.UserInfo" not-found="ignore" lazy="false" insert="false" update="false"/>
+	</class>
+</hibernate-mapping>

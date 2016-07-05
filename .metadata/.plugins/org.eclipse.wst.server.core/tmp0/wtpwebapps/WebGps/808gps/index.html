@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--	<metahttp-equivmetahttp-equiv="x-ua-compatible"content="IE=7"/>  -->
+    <title></title>
+	<link rel="stylesheet" type="text/css" href="reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/pageManagement.css"/>
+	<script type="text/javascript" src="../js/json2.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="js/myajax.js"></script>
+	<script type="text/javascript" src="../js/public.js?150120"></script>
+	<script type="text/javascript" src="js/lang_fun.js"></script>
+	<script type="text/javascript" src="js/public.js?150530"></script>
+	<script type="text/javascript" src="../js/flexigrid/flexiManage.js?150530"></script>
+	<script type="text/javascript"  src="js/hashtable.js"></script>
+	<script type="text/javascript"  src="js/lineStationManager.js"></script>
+	<script type="text/javascript"  src="js/standardStatus.js"></script>
+	<script type="text/javascript"  src="js/standardDevice.js"></script>
+	<script type="text/javascript"  src="js/vehicleDevice.js"></script>
+	<script type="text/javascript"  src="js/vehicleDevice.js"></script>
+	<script type="text/javascript" src="js/vehicleManager.js"></script>
+	<script type="text/javascript" src="js/userRole.js"></script>
+	<script type="text/javascript" src="js/pageStyle.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<!--[if lt IE 8]>
+				<div id="browser" style="height: 30px;background:#ffc none repeat scroll 0 0;font-size: 16px;line-height:30px;float: left;width:100%;">
+					<div>
+						<span id="browserTip" style="margin-left:30%;color: red;text-align: left;float: left;"></span>
+						<div id="toolbar-btn" style="float:right;text-align: right;margin-right:20px;cursor: pointer;"></div>
+					</div>
+				</div>
+			<![endif]-->
+</head>
+<body onresize="setPanelWidth();">
+	<div id="main">
+		<div id="main-topPanel" class="header show clearfix">
+			<div class="header-title">
+	             <div class="logo">
+	                 <img src="./images/home/logo.png" alt="" style="width: 60px;height:50px;">
+	                 <span id="spanTitle"></span>
+	             </div>
+            </div>
+			<div class="login-mess" style="display:none;">
+				<div class="login-mess-account">
+				 <!--	<a><span class="account"></span></a>
+					<a id="login-out" class="login-out"><!--<em></em><span></span></a> -->
+					<a class="down"><span class="account"></span><em class="arrows"></em></a>
+					<a class="email" style="display:none;"><i></i></a>
+					<a id="login-out" class="login-out"><span></span></a>
+				</div>
+				<div class="quick-menu">
+					<p><a class="password"></a></p>
+				</div>
+			</div>
+			<div id="rightTabs" class="nav-bar clearfix"></div>
+		</div>
+		<div id="mainPanel-all">
+		</div>
+	</div>
+</body>
+</html>

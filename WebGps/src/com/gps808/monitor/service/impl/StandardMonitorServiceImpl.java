@@ -7,6 +7,7 @@ import com.framework.web.service.impl.UniversalServiceImpl;
 import com.gps.model.DeviceStatusLite;
 import com.gps808.model.StandardAlarmAudio;
 import com.gps808.model.StandardAlarmMotion;
+import com.gps808.model.StandardDeviceGps;
 import com.gps808.model.StandardDownTask;
 import com.gps808.model.StandardFixedTts;
 import com.gps808.monitor.dao.StandardMonitorDao;

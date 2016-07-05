@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <link href="../../../bootstrap/css/button.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../../js/flexigrid/flexigrid.css"/>
+    <script  type="text/javascript"  src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../js/WdatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../js/date.js"></script>
+    <script type="text/javascript" src="../../../js/flexigrid/flexigrid.js"></script>
+    <script type="text/javascript" src="js/trackList.js"></script>
+    <style type="text/css">
+    	body,* {
+    		margin: 0;
+    		font-size: 12px;
+    	}
+    	.params {
+    		padding: 5px 10px;
+    	}
+    	.query {
+    		padding: 5px 10px;
+    		margin: 5px 10px;
+    		border: 1px solid #ddd;
+    		border-radius: 3px;	
+    	}
+    	.flexigrid {
+		    border-radius: 3px;
+		    margin: 10px;
+		}
+    </style>
+  </head>
+  <body onresize="loadTableWidth(fixHeight);">
+  	<div id="flashExample">
+  		<div id="cmsv6flash"></div>
+  	</div>
+    <div id="operateExample">
+    	<!--  轨迹查询开始  -->
+    	<div class="query">
+    		<p id="queryTitle"></p>
+    		<div class="params">
+   				<a class="title" id="vehicleTitle"></a>
+				<input style="width: 140px;" value="" class="vehiIdno">
+				<a style="padding-left: 20px;" class="title" id="startTimeTitle"></a>
+   				<input style="width: 140px;" value="" class="startTime Wdate" readonly>
+   				<a style="padding-left: 20px;" class="title" id="endTimeTitle"></a>
+   				<input style="width: 140px;" value="" class="endTime Wdate" readonly>
+   				<a style="margin-left: 20px;" id="queryBtn" class="button button-primary button-rounded button-small" onclick="queryTrack()"></a>
+    		</div>
+    	</div>
+    	<!--  轨迹查询结束  -->
+    	<!--  轨迹列表开始  -->
+    	<table id="trackTable" style="display:none;"></table>
+    	<!--  轨迹列表结束  -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+@import url("reset.css");
+@import url("wy-header.css");
+@import url("wy-footer.css");
+
+/*遮罩层*/
+.mod-mask {
+    position:fixed;
+    _position:absolute;
+    z-index: 1;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:#000;
+    filter:alpha(opacity=70);
+    opacity:.70;
+    background: rgba(0,0,0,.7);
+}
+/*  |xGv00|12a82ecde301eabf018b3b61fd7d6431 */

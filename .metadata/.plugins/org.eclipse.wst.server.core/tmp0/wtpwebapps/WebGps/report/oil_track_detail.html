@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/report.css" rel="stylesheet" type="text/css" />
+<link href="../js/editselect/jquery.editable-select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/flotr2/flotr2.ie.min.js"></script>
+<script type="text/javascript" src="../js/flotr2/flotr2.min.js"></script>
+<script type="text/javascript" src="../js/editselect/jquery.editable-select.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/gps_common.js"></script>
+<script type="text/javascript" src="js/search_option.js"></script>
+<script type="text/javascript" src="js/oil_track_detail.js"></script>
+<link rel="stylesheet" type="text/css" href="../js/flexigrid/flexigrid.css"></link>
+<script type="text/javascript" src="../js/flexigrid/flexigrid.js"></script>
+<style>
+	#oilTrackDetailGraph {
+		margin-left:20px;
+	}
+	#oilTrack-render {
+	  width: 1000px;
+	  height: 600px;
+	  margin: 24px auto;
+	  float: left;
+	}
+	.flotr-graph-description {
+		width: 1000px;
+	  	margin: 10px 40px auto;
+	  	float:left;
+	}
+	.flotr-graph-description a{
+		cursor: pointer;
+	}
+	.flotr-graph-description label {
+		float: left;
+	}
+</style>
+</head>
+<body>
+<div id = "sysuserLogDate" class="setdate">
+<form method="post" name="reportForm" action="">
+	<h2 class="righttitile1"><span id="reportTitle">&nbsp;</span></h2>
+    <div class="slinput">
+    	<div class="inputdis">
+	    	<span id="labelBegintime" class="setdatetext">&nbsp;</span>
+	    		<input type="text" id="begintime" name="begintime" size="15" readonly class="Wdate" style="width:160px;"/>
+	    	<span id="labelEndtime" class="setdatetext">&nbsp;</span>
+	    		<input type="text" id="endtime" name="endtime" size="15" readonly class="Wdate" style="width:160px;"/>
+			<span id="labelDistance" class="setdatetext">Distance:</span>
+				<select style="display: inline;" name="distance" id="distance"></select>
+	    </div>
+   </div>
+    <div class="slinput">
+     	<div class="inputdis">
+ 	    	<span id="labelSelectVehicle" class="setdatetext">&nbsp;</span>
+	    	<select class="editable-select" id="deviceList" name="deviceList"></select>
+	    	<input type="text" style="display:none" id="devIdnos" name="devIdnos" value=""/>
+<!-- 	    	<input type="text" style="display:none" id="sortname" name="sortname" value=""/> -->
+<!-- 	    	<input type="text" style="display:none" id="sortorder" name="sortorder" value=""/>	    	 -->
+     	</div>
+     	<a href="#" id="btnQuery" class="pinbtn"><span id="spanBtnQuery">&nbsp;</span></a>
+		<a href="#" id="btnExport" class="pinbtn"><span id="spanBtnExport">&nbsp;</span></a>		
+		<a href="#" id="btnExportCsv" class="pinbtn"><span id="spanBtnExportCsv">&nbsp;</span></a>
+		<a href="#" id="btnExportPdf" class="pinbtn"><span id="spanBtnExportPdf">&nbsp;</span></a>
+		<a href="#" id="btnGraph" class="pinbtn"><span id="spanGraph">&nbsp;</span></a>
+     </div>
+</form>
+</div>
+<div id="oilTrackDetailGraph" style="display:none">
+	<div>
+		<span id="mouseTip-one" style="width:100%;float:left;text-align:left;"></span>
+		<span id="mouseTip-two" style="width:100%;float:left;text-align:left;"></span>
+	</div>
+	<div class="flotr-graph-description">
+		<form onsubmit="return false;" action="" id="image-download" name="image-download">
+			<label><input type="radio" checked="checked" value="png" name="format"/>PNG</label>
+			<label><input type="radio" value="jpeg" name="format"/>JPEG</label>
+			<a onclick="CurrentExample('to-image')" class="pinbtn" name="to-image"><span class="toImage"></span></a>
+			<a onclick="CurrentExample('download-image')" class="pinbtn" name="download-image"><span class="downloadImage"></span></a>
+			<a onclick="CurrentExample('reset-image')" class="pinbtn" name="reset-image"><span class="resetImage"></span></a>
+		</form>
+	</div>
+	<div id="oilTrack-render"></div>
+</div>
+<table id="oilTrackDetailTable" style="display:none"></table>
+</body>
+</html>

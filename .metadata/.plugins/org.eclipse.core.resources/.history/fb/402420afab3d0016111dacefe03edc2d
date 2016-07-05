@@ -1,0 +1,7 @@
+package com.gps808.monitor.dao;
+
+import com.gps808.model.StandardDeviceStatus;
+
+public interface StandardDeviceStatusDao {
+	public abstract List<StandardDeviceStatus> getStandardDeviceStatus();
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+<script type="text/javascript" src="http://dev.baidu.com/wiki/static/map/API/examples/script/convertor.js?v150717"></script>
+
+
+</head>
+<body>
+<div style="width:520px;height:340px;border:1px solid gray" id="container"></div>
+  
+<span id="baiduXY"> </span>
+</body>
+</html>
+<script type="text/javascript">
+function getParam(paramName)
+{
+        paramValue = "";
+        isFound = false;
+        if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=")>1)
+        {
+            arrSource = unescape(this.location.search).substring(1,this.location.search.length).split("&");
+            i = 0;
+            while (i < arrSource.length && !isFound)
+            {
+                if (arrSource[i].indexOf("=") > 0)
+                {
+                     if (arrSource[i].split("=")[0].toLowerCase()==paramName.toLowerCase())
+                     {
+                        paramValue = arrSource[i].split("=")[1];
+                        isFound = true;
+                     }
+                }
+                i++;
+            }   
+        }
+   return paramValue;
+}
+var jd = getParam("jd");
+var wd = getParam("wd");
+
+if(jd == ""){
+	jd = 113.928710;
+}
+if(wd == ""){
+	wd = 22.556697;
+}
+
+var bm = new BMap.Map("container");
+var point = new BMap.Point(jd, wd);
+bm.centerAndZoom(point, 15);
+bm.addControl(new BMap.NavigationControl());
+
+ 
+translateCallback = function (point){
+    bm.clearOverlays();
+    var marker = new BMap.Marker(point);
+    bm.addOverlay(marker);
+    bm.setCenter(point);
+    document.getElementById("baiduXY").innerHTML = point.lng + "," + point.lat;
+    document.getElementById("container").style.display="none";
+    window.gps.getbaidugps( point.lng + "," + point.lat);
+}
+
+BMap.Convertor.translate(point,0,translateCallback);
+</script>

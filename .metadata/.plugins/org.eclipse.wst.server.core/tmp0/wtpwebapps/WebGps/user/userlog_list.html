@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css?v150717" rel="stylesheet" type="text/css" />
+<link href="../css/report.css?v150717" rel="stylesheet" type="text/css" />
+<link href="../js/editselect/jquery.editable-select.css?v150717" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js?v150717"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js?v150717"></script>
+<script type="text/javascript" src="../js/editselect/jquery.editable-select.js?v150717"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js?v150717"></script>
+<script type="text/javascript" src="../js/myajax.js?v150717"></script>
+<script type="text/javascript" src="../js/public.js?v150717"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js?v150717"></script>
+<script type="text/javascript" src="../js/date.js?v150717"></script>
+<script type="text/javascript" src="../js/gps_common.js?v150717"></script>
+<script type="text/javascript" src="../report/js/search_option.js?v150717"></script>
+<script type="text/javascript" src="js/userlog_list.js?v150717"></script>
+</head>
+<body>
+<div id = "sysuserLogDate" class="setdate">
+<form method="post" name="reportForm" action="">
+	<h2 class="righttitile_user"><span id="userLogTitle">&nbsp;</span></h2>
+    <div class="slinput">
+    	<div class="inputdis">
+	    	<span id="labelBegintime" class="setdatetext">&nbsp;</span>
+	    		<input type="text" id="begintime" name="begintime" size="15" readonly class="Wdate" style="width:160px;"/>
+	    	<span id="labelEndtime" class="setdatetext">&nbsp;</span>
+	    		<input type="text" id="endtime" name="endtime" size="15" readonly class="Wdate" style="width:160px;"/>
+	    </div>
+    </div>
+    <div class="slinput">
+    	<div class="inputdis">
+    		<span id="labelSelectUser" class="setdatetext">&nbsp;</span>
+	    	<select id="userList" name="userList"></select>
+    	</div>
+    	<!-- 
+	    <a href="#" id="btnSelUser" class="pinbtn"><span id="spanBtnSelUser">&nbsp;</span></a>
+	     -->
+    	<a href="#" id="btnQuery" class="pinbtn"><span id="spanBtnQuery">&nbsp;</span></a>
+		<a href="#" id="btnExport" class="pinbtn"><span id="spanBtnExport">&nbsp;</span></a>
+     </div>
+</form>
+</div>
+<table width="1360" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="userLogDetailTable">
+	<tr class="heard">
+		<th class="tableft"><span></span></th>
+		<th id="thIndex">&nbsp;</th>
+		<th id="thName">&nbsp;</th>
+		<th id="thDate">&nbsp;</th>
+		<th id="thEvent">&nbsp;</th>
+		<th class="tabright"><span></span></th>
+	</tr>
+	<tr id="userLogTableTemplate" class="tabdata" style="display:none">
+		<td class="tableft">&nbsp;</td>
+		<td id="tdIndex">&nbsp;</td>
+		<td id="tdName">&nbsp;</td>
+		<td id="tdDate">&nbsp;</td>
+		<td id="tdEvent">&nbsp;</td>
+		<td class="tabright">&nbsp;</td>
+	</tr>
+</table>
+<div id="userLogPagination" class="pagination" style="margin:10px 10px 10px 10px;"></div>
+</body>
+</html>

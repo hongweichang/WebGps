@@ -1,0 +1,51 @@
+@charset "utf-8";
+* { margin: 0; padding: 0; }
+body { }
+
+.righttitile1 { display: block; background: url(../images/system/icon.png) no-repeat; padding: 2px 0 8px 33px; margin: 20px 20px 10px; border-bottom: solid 1px #cdcdcd; }
+.righttitile_user { display: block; background: url(../images/system/title_user.png) no-repeat; padding: 2px 0 8px 33px; margin: 20px 20px 10px; border-bottom: solid 1px #cdcdcd; }
+.righttitile_vehicle { display: block; background: url(../images/system/title_vehicle.png) no-repeat; padding: 2px 0 8px 33px; margin: 20px 20px 10px; border-bottom: solid 1px #cdcdcd; }
+.righttitile2 { background: url(../images/system/icon.png) no-repeat; display:block; float:left; padding-left:20px; font-weight: normal; color:#666}
+.slinput { margin: 0 20px 10px; line-height: 22px; font-size: 12px; color: #333; overflow: hidden; zoom: 1 }
+.slinput input { height: 20px; border: solid 1px #a4b9cd }
+.inputdis { float: left; margin-right: 10px; }
+
+a.pinbtn{display:block; float:left; background: url(../images/public/pintbtn.png) no-repeat; height:23px; line-height:23px; padding-left:23px; margin-left:7px; color:#000}
+a.pinbtn span{display:block; background:url(../images/public/pintbtn.png) top right; padding-right:23px;}
+a:hover.pinbtn{ background-position:left bottom;}
+a:hover.pinbtn span{ background-position:bottom right;}
+
+#search{overflow:hidden; zoom:1; }
+.searcha{float:left;padding-left:20px;padding-bottom:8px;}
+.searcha a { color: #2b99dd; }
+
+.searchset{float:right; width:320px;margin-right:10px;}
+.searchinput{float:left; display:block; padding:0 5px 0 15px;}
+.searchinput input { background: url(../images/public/srchNbtn.png) no-repeat; width: 165px; height: 21px; line-height: 21px; border: none; padding-left: 21px; color: #999 }
+
+
+.seting { margin: 0 20px; padding-left: 0px; }
+.seting a { font: bold 12px/34px Arial, Helvetica, sans-serif; padding: 0 10px; color: #2b99dd; text-decoration: none }
+
+.devicetable{margin:0 auto;margin-left:6px;padding-left:10px;padding-right:10px;}
+.devicetable .heard { background: url(../images/public/tableheard.png) repeat-x 0 -24px; height: 24px; color: #fff }
+.devicetable .tableft, .devicetable th.tabright { width: 24px; }
+.devicetable .tableft span { background: url(../images/public/tableheard.png) no-repeat 0 0; float: left; width: 4px; height: 24px; }
+.devicetable .tabright span { background: url(../images/public/tableheard.png) no-repeat 0 -48px; float: right; width: 4px; height: 24px; }
+.devicetable tr td,span {text-align: center;word-break: break-all;}
+.tabdata td { text-align: center; border-bottom: solid 1px #cdcdcd; height: 30px; color: #666; vertical-align: middle;}
+.tabdata td.blue { color: #2b99dd }
+.tabdata .tableft { border-left: solid 1px #cdcdcd; }
+.tabdata .tabright { border-right: solid 1px #cdcdcd; }
+.tabdata .tableft { border-left: solid 1px #cdcdcd; }
+.tabdata .tabright { border-right: solid 1px #cdcdcd; }
+.devicetable tr { background-color: #fff;border-bottom: solid 1px #cdcdcd; }
+.devicetable tr.bluebg { background-color: #F5F6F7;}
+.devicetable tr.focusbg { background-color: #DEF2FF; }
+
+.pagination {margin:10px 10px 10px 10px;padding-left:10px;}
+.pagination a{color:#2b99dd; text-decoration:none; }
+
+#sysuserLogDate .btn-group .y-btn {padding: 3px 14px;}
+#sysuserLogDate .btn-group .buttom {padding: 3px 0px;}
+.flexigrid {margin: 0px 20px;}

@@ -1,0 +1,140 @@
+@charset "utf-8";
+.nav {
+    border-right: 1px solid #99ccff;
+}
+.nav li {
+	background-color: #fff;
+    border-bottom: 1px solid #99ccff;
+    border-left: 2px solid #fff;
+    padding: 12px 0 12px 65px;
+    position: relative;
+	cursor: pointer;
+}
+.nav .current, .nav li:hover {
+    background-color: #0b83dc;
+    border-left: 2px solid #4cffff;
+}
+.nav .text {
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+}
+.nav li .bg {
+	background: url("../../images/icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background:	url("../../images/icon.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: -11px -331px;
+	background-color: rgba(0, 0, 0, 0);
+    left: 35px;
+    position: absolute;
+    top: 12px;
+}
+.nav li.AllCompanyInfo .bg {
+	background-position: -9px -5px;
+    height: 22px;
+    width: 24px;
+}
+.nav li.AllCompanyInfo.current .bg, .nav li.AllCompanyInfo:hover .bg{
+     background-position: -42px -6px;
+}
+.nav li.AllRoleInfo .bg {
+	background-position: -9px -42px;
+    height: 22px;
+    width: 24px;
+}
+.nav li.AllRoleInfo.current .bg, .nav li.AllRoleInfo:hover .bg{
+     background-position: -42px -41px;
+}
+.nav li.AllUserInfo .bg {
+	background-position:-9px -78px;
+	width: 24px;
+	height: 22px;
+}
+.nav li.AllUserInfo.current .bg, .nav li.AllUserInfo:hover .bg{
+	background-position:-42px -76px;
+}
+.nav li.AllSIMInfo .bg {
+	background-position:-9px -106px;
+	width: 24px;
+	height: 22px;
+}
+.nav li.AllSIMInfo.current .bg, .nav li.AllSIMInfo:hover .bg{
+	background-position:-42px -107px;
+}
+.nav li.AllDeviceInfo .bg {
+	background-position:-9px -138px;
+	width: 24px;
+	height: 22px;
+	top:15px;
+}
+.nav li.AllDeviceInfo.current .bg, .nav li.AllDeviceInfo:hover .bg{
+	background-position:-42px -137px;
+}
+.nav li.AllVehicleInfo .bg {
+	background-position:-9px -160px;
+	width: 24px;
+	height: 22px;
+}
+.nav li.AllVehicleInfo.current .bg, .nav li.AllVehicleInfo:hover .bg{
+	background-position:-42px -160px;
+}
+.nav li.AllDriverInfo .bg {
+	background-position:-9px -193px;
+	width: 24px;
+	height: 22px;
+	top:14px;
+}
+.nav li.AllDriverInfo.current .bg, .nav li.AllDriverInfo:hover .bg{
+	background-position:-42px -192px;
+}
+.nav li.VehicleTeam .bg {
+	background-position: -9px -219px;
+	width: 24px;
+	height: 22px;
+}
+.nav li.VehicleTeam.current .bg, .nav li.VehicleTeam:hover .bg{
+	background-position:-42px -215px
+}
+.nav li.AllSafeInfo .bg {
+	background-position:-12px -396px;
+	width: 24px;
+	height: 22px;
+	top:14px;
+}
+.nav li.AllSafeInfo.current .bg, .nav li.AllSafeInfo:hover .bg{
+	background-position:-42px -396px;
+}
+.nav li.MaturityInfo .bg {
+	background-position:-12px -428px;
+	width: 24px;
+	height: 22px;
+	top:14px;
+}
+.nav li.MaturityInfo.current .bg, .nav li.MaturityInfo:hover  .bg{
+	background-position:-42px -428px;
+}
+.nav li.DocumentInfo .bg {
+	background-position:-12px -461px;
+	width: 24px;
+	height: 22px;
+	top:14px;
+}
+.nav li.DocumentInfo.current .bg, .nav li.DocumentInfo:hover  .bg{
+	background-position:-42px -461px;
+}
+.nav li.AllLineInfo .bg {
+	background-position:-12px -363px;
+	width: 24px;
+	height: 22px;
+	top:14px;
+}
+.nav li.AllLineInfo.current .bg, .nav li.AllLineInfo:hover  .bg{
+	background-position:-42px -363px;
+}
+.nav .current a span, .nav li:hover a span{
+     color: #fff;
+}
+#leftPanel {
+	background-color: #f2f2f2;
+}

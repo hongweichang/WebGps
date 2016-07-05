@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+    default-autowire="byName">
+    <bean id="vehicleRuleDao"
+		class="com.gps808.rule.dao.impl.StandardVehicleRuleDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="vehicleRuleService" class="com.gps808.rule.service.impl.StandardVehicleRuleServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+		<property name="vehicleRuleDao" ref ="vehicleRuleDao" />
+	</bean>
+	<bean name="StandardVehicleRuleAction" class="com.gps808.rule.action.StandardVehicleRuleAction" scope="prototype" parent="standardUserBaseAction"/>
+</beans>

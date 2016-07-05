@@ -1,0 +1,210 @@
+/* CSS Document */
+body{
+	background:#fff;
+	}
+.spacer {
+	clear: both;
+	font-size: 0;
+	line-height: 0;
+}
+.header_j{
+	height:116px;
+	}
+.menu{
+	float:right;
+	margin-top:68px;
+	}
+.menu li{
+	float:left;
+	font-size:18px;
+	position:relative;
+	}
+.menu > li:hover a{
+	border-bottom:#000 solid 1px;
+	}
+
+.menu li a{
+	font-size:18px;
+	margin:0 15px;
+	}
+.login_box{
+	background:url(../../images/hb/j_baner_10.jpg) top center no-repeat;
+	height:530px;
+	box-shadow:0px 0px 5px rgba(75,127,199,.5);
+	position:relative;
+	}
+.icon_sanj{
+	background:url(../../images/hb/j_icon_06.png) 0 0 no-repeat;
+	width:12px;
+	height:9px;
+	display:inline-block;
+	margin-left:5px;
+	}
+.nav_box{
+	position:absolute;
+	width:100px;
+/* 	top:32px; */
+	left:0px;
+	background:#fff;
+	border:#ddd solid 1px;
+	border-radius:3px;
+	text-align:center;
+	z-index:999;
+	display:none;
+	padding:10px;
+	}
+.menu > li:hover .nav_box li a{
+	border-bottom:none;
+	}
+.nav_box li:hover a{
+	border-bottom:none;
+	}
+.nav_box em{
+	width:0; 
+    height:0; 
+    border-left:20px solid transparent;
+    border-right:20px solid transparent;
+    border-bottom:20px solid #fff;
+	position:absolute;
+	top:-8px;
+	left:8px;
+	}
+.down_j{
+	background:url(../../images/hb/j_icon_03.png) 0 0 no-repeat;
+	width:115px;
+	height:29px;
+	display:inline-block;
+	margin:0 10px;
+	}
+.menu > li .down_j:hover,.menu > li.fy_j:hover a{
+	border-bottom:none;
+	}
+.login_box1{
+	position:absolute;
+	top:60px;
+	right:60px;
+	width:320px;
+	height:400px;
+	background:#fff;
+	border-radius:3px;
+	}
+.title_login{
+	font-size:20px;
+	letter-spacing:10px;
+	color:#d6dae0;
+	text-align:center;
+	margin-top:20px;
+	}
+.login_box1 span.blue{
+	background:#4fc1e9;
+	height:8px;
+	border-radius:3px 3px 0 0;
+	display:block;
+	}
+.wbk_Box{
+	margin:10px 20px 0 20px;
+	}
+.wbk_Box h2{
+	font-size:14px;
+	color:#a4aab2;
+	}
+.text_j{
+	width:278px;
+	height:44px;
+	border-radius:3px;
+	border:#b7babf solid 1px;
+	margin-top:8px;
+	position:relative;
+	}
+.text_j:hover{
+	border:#4fc1e9 solid 1px;
+	}
+.text_j span.icon_user{
+	background:#f0f2f5 url(../../images/hb/j_icon_11.png) center center no-repeat;
+	width:44px;
+	height:44px;
+	display:inline-block;
+	}
+.text_j input{
+	background:none;
+	display:inline-block;
+	width:220px;
+	height:44px;
+	position:absolute;
+	left:50px;
+	top:0px;
+	font-size:18px;
+	}
+.text_j span.icon_pass{
+	background:#f0f2f5 url(../../images/hb/j_icon_14.png) center center no-repeat;
+	width:44px;
+	height:44px;
+	display:inline-block;
+	}
+.text_j:hover span.icon_user{
+	background:#f0f2f5 url(../../images/hb/j_icon_hover_11.png) center center no-repeat;
+	}
+.text_j:hover span.icon_pass{
+	background:#f0f2f5 url(../../images/hb/j_icon_hover_14.png) center center no-repeat;
+	}
+.yzm_box{
+	width:132px;
+	height:44px;
+	border-radius:3px;
+	border:#b7babf solid 1px;
+	margin:15px 20px 0 20px;
+	position:relative;
+	}
+.yzm_box input{
+	font-size:18px;
+	height:44px;
+	width:132px;
+	background:none;
+	border:none;
+	text-align:center;
+	}
+.yzm_box span{
+	position:absolute;
+	left:154px;
+	top:2px;
+	display:inline-block;
+	}
+.btn_login{
+	height:58px;
+	line-height:58px;
+	text-align:center;
+	color:#fff;
+	display:block;
+	font-size:28px;
+	background:#5d9cec;
+	margin-top:45px;
+	}
+.btn_login:hover{
+	background:#1d7ffc;
+	}
+.icon_j_win{
+	background:url(../../images/hb/j_icon_17.png) center center no-repeat;
+	width:33px;
+	height:33px;
+	display:inline-block;
+	}
+.icon_j_andro{
+	background:url(../../images/hb/j_icon_19.png) center center no-repeat;
+	width:33px;
+	height:33px;
+	display:inline-block;
+	}
+.menu_left{
+	float:left;
+	margin:20px 0 0 60px;
+	}
+.footer{
+	height:50px;
+	}
+.footer p{
+	font-size:20px;
+	color:#afb3b9;
+	text-align:center;
+	margin-top:48px;
+	font-family:"STXihei";
+	}

@@ -1,0 +1,47 @@
+@charset "utf-8";
+html, body {
+    height: 100%;
+    overflow-y: hidden;
+}
+body {
+    background: none repeat scroll 0 0 #f5f6f7;
+	background-attachment: scroll;
+	background-color:#f5f6f7;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+    color: #333;
+    font: 12px/1.5 tahoma,arial;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+ol, ul {
+    list-style: none outside none;
+}
+a {
+    outline: 0 none;
+    text-decoration: none;
+	margin: 0px 15px 0px 15px;
+}
+.flexigrid {
+	margin: 0px 20px;
+}
+.blue {
+	color: #0068b7;
+}
+#opera-top {
+    border-bottom: 1px solid #cdcdcd;
+    color: #333;
+    font-size: 12px;
+    height: 34px;
+    line-height: 30px;
+    vertical-align: middle;
+    margin: 20px 20px 10px;
+}
+.flexigrid .bDiv a:hover{
+	color: #219bd0;
+}
+.btn-group .item .y-btn span{
+	width: 60px;
+}

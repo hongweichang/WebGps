@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps.model">
+	<class name="ServerInfo" table="server_info">
+		<!-- ����������������?? -->
+		<id	name="idno" column="IDNO" type="string" length="40" >
+			 <generator class="assigned" />
+		</id>
+		<!-- ����������?������? -->
+		<property name="id" column="ID" type="java.lang.Integer" unique="true" insert="false" update="false"/>
+		<property name="name" column="Name"	type="string" length="256"/>
+		<property name="area" column="Area" type="java.lang.Integer"/>
+		<property name="type" column="Type" type="java.lang.Integer"/>
+		<property name="lanip" column="LanIP" type="string" length="256"/>
+		<property name="deviceIp" column="IPDevice" type="string" length="256"/>
+		<property name="devicePort" column="PortDevice" type="java.lang.Integer"/>
+		<property name="clientIp" column="IPClient" type="string" length="256"/>
+		<property name="clientPort" column="PortClient" type="java.lang.Integer"/>
+		<property name="deviceIp2" column="IPDevice2" type="string" length="256"/>
+		<property name="clientIp2" column="IPClient2" type="string" length="256"/>
+		<property name="clientPortOther" column="PortClientOther" type="string" length="256"/>
+		<property name="offlineTimeout" column="OfflineTimeout" type="java.lang.Integer"/>
+		<one-to-one name="svrSession" class="ServerSession" fetch="join"/> 
+	</class>
+</hibernate-mapping>

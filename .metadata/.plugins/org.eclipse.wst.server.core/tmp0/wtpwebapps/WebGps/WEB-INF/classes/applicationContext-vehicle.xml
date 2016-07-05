@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+    default-autowire="byName">
+    
+  	<!-- 车辆管理（车辆参数配置、车辆分组、车辆下载计划） -->
+	<bean name="VehicleAction"
+		class="com.gps.vehicle.action.VehicleAction"
+		scope="prototype"  parent="userBaseAction">
+	</bean>
+	<bean name="DvrAction"
+		class="com.gps.vehicle.action.DvrAction"
+		scope="prototype"  parent="userBaseAction">
+	</bean>
+	<bean name="VehiGroupAction"
+		class="com.gps.vehicle.action.VehiGroupAction"
+		scope="prototype"  parent="userBaseAction">
+	</bean>
+	<bean id="downPlanService" class="com.gps.vehicle.service.impl.DownPlanServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean id="snapshotPlanService" class="com.gps.vehicle.service.impl.SnapshotPlanServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean id="recordPlanService" class="com.gps.vehicle.service.impl.RecordPlanServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean name="VehiDownPlanAction"
+		class="com.gps.vehicle.action.VehiDownPlanAction"
+		scope="prototype"  parent="userBaseAction">
+		<property name="downPlanService" ref="downPlanService" />
+	</bean>
+	<bean id="mapFenceService" class="com.gps.vehicle.service.impl.MapFenceServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean id="mapMarkerService" class="com.gps.vehicle.service.impl.MapMarkerServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean name="VehiFenceAction"
+		class="com.gps.vehicle.action.VehiFenceAction"
+		scope="prototype"  parent="userBaseAction">
+		<property name="mapMarkerService" ref="mapMarkerService" />
+		<property name="mapFenceService" ref="mapFenceService" />
+	</bean>
+	<bean name="TerminalMobileAction"
+		class="com.gps.vehicle.action.TerminalMobileAction"
+		scope="prototype"  parent="userBaseAction">
+	</bean>
+	<bean name="SnapshotPlanAction"
+		class="com.gps.vehicle.action.SnapshotPlanAction"
+		scope="prototype"  parent="userBaseAction">
+		<property name="snapshotPlanService" ref="snapshotPlanService" />
+		<property name="storageRelationServiceEx" ref="storageRelationServiceEx" />
+	</bean>
+	<bean name="RecordPlanAction"
+		class="com.gps.vehicle.action.RecordPlanAction"
+		scope="prototype"  parent="userBaseAction">
+		<property name="recordPlanService" ref="recordPlanService" />
+		<property name="storageRelationServiceEx" ref="storageRelationServiceEx" />
+	</bean>
+	<bean id="vehiAlarmActionDao"
+		class="com.gps.vehicle.dao.impl.VehiAlarmActionDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="alarmActionService" class="com.gps.vehicle.service.impl.AlarmActionServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+		<property name="vehiAlarmActionDao" ref ="vehiAlarmActionDao" />
+	</bean>
+	<bean name="VehiAlarmActionAction"
+		class="com.gps.vehicle.action.VehiAlarmActionAction"
+		scope="prototype"  parent="userBaseAction">
+		<property name="alarmActionService" ref="alarmActionService" />
+	</bean>
+	<bean id="driverInfoService" class="com.gps.vehicle.service.impl.DriverInfoServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean name="DriverInfoAction"
+		class="com.gps.vehicle.action.DriverInfoAction"
+		scope="prototype"  parent="userBaseAction">
+		<property name="driverInfoService" ref="driverInfoService" />
+	</bean>
+</beans>

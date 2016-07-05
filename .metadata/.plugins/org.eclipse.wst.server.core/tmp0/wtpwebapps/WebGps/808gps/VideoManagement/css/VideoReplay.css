@@ -1,0 +1,227 @@
+/* CSS Document */
+.more_car{
+	display: inline-block;
+	background: url('../../images/track-ico2.png') no-repeat -22px -2px;
+	width: 18px;
+	height: 4px;
+	margin-left: 5px;
+	cursor: pointer;
+	}
+
+.ui-datepicker-header{
+	background:#e7eff5;
+	text-align:center;
+	height:35px;
+	line-height:25px;
+	
+	}
+.ui-datepicker-title{
+	display:inline-block;
+	
+	line-height:25px;
+	vertical-align:middle;
+	margin-top:4px;
+	}
+.ui-datepicker-title select{
+	line-height:25px;
+	display:inline-block;
+	margin:0 5px;
+	}
+.ui-datepicker-title span:last-child{
+	border-left:#c9d3da solid 1px;
+	}
+.ui-datepicker-prev{
+	width:25px;
+	height:25px;
+	float:left;
+	vertical-align:middle;
+	margin-top:8px;
+	text-indent:-2000px;
+	overflow:hidden;
+	background:url(../../images/icon_state.png) 12px -324px no-repeat;
+	cursor:pointer;
+	transition:none;
+	}
+.ui-datepicker-prev:hover{
+	background:url(../../images/icon_state.png) 12px -344px no-repeat;
+	transition:none;
+	}
+.ui-datepicker-next{
+	width:25px;
+	height:25px;
+	float:right;
+	margin-top:8px;
+	text-indent:-2000px;
+	overflow:hidden;
+	background:url(../../images/icon_state.png) 12px -285px no-repeat;
+	cursor:pointer;
+	transition:none;
+	}
+.ui-datepicker-next:hover{
+	background:url(../../images/icon_state.png) 12px -305px no-repeat;
+	transition:none;
+	}
+.ui-datepicker-calendar{
+	width:100%;
+	line-height:25px;
+	text-align:center;
+	}
+.ui-datepicker-calendar th{
+	background:#87a1b5;
+	color:#fff;
+	}
+.ui-datepicker-calendar td{
+	border:#e4e4e4 solid 1px;
+	color:#999;
+	}
+.ui-datepicker-today{
+	background:#ffda89;
+	border:#ffc648 solid 1px;
+	box-sizing:border-box;
+	}
+.ui-datepicker-calendar td:hover{
+	border:#c6d0d8 solid 1px;
+	box-sizing:border-box;
+	background:#e7eff5;
+	}
+.ui-datepicker-current-day{
+	background:#87a1b5;
+	border:#1a4e74 solid 1px;
+	box-sizing:border-box;
+	}
+.ui-datepicker-current-day a{
+	color:#fff;
+	}
+.hf_box h3{
+	line-height:25px;
+	font-weight:normal;
+	padding:5px 10px;
+	}
+.hf_box > div{
+	padding-left:10px;
+	line-height:25px;
+	}
+.hf_box input{
+	margin-right:5px;
+	margin-left:10px;
+	vertical-align:middle;
+	display:inline-block;
+	}
+span.line{
+	border-bottom:#ebebeb solid 1px;
+	margin:10px;
+	background:none;
+	height:1px;
+	display:block;
+	}
+.btn_blue{
+	background:#0b83dc;
+	color:#fff;
+	text-align:center;
+	display:block;
+	padding:5px 0;
+	margin:10px;
+	}
+.btn_blue:hover{
+	background:#2499f0;
+	}
+.car_select{
+	height: 30px;
+	margin:10px 10px 10px 10px;
+	}
+.play_box{
+	width:822px;
+	height:445px;
+	background:#282828;
+	}
+.icon_hf_box{
+	height:46px;
+	}
+.icon_hf_box i{
+	background:url(../../images/icon_state.png) 0 0 no-repeat;
+	width:15px;
+	height:13px;
+	display:inline-block;
+	cursor:pointer;
+	margin:0px 0 0  13px;
+	vertical-align:middle;
+	}
+.icon_hf_box i.icon_hf_play{
+	background-position:-550px -143px;
+	}
+.icon_hf_box i.icon_hf_play:hover{
+	background-position:-550px -171px;
+	}
+.icon_hf_box i.icon_hf_play.icon_hf_step{
+	background-position:-580px -143px;
+	}
+.icon_hf_box i.icon_hf_play.icon_hf_step:hover{
+	background-position:-580px -171px;
+	}
+
+.icon_hf_box i.icon_hf_stop{
+	background-position:-613px -143px;
+	}
+.icon_hf_box i.icon_hf_stop:hover{
+	background-position:-613px -171px;
+	}
+
+.icon_hf_box i.icon_hf_pic_one{
+	background-position:-646px -143px;
+	}
+.icon_hf_box i.icon_hf_pic_one:hover{
+	background-position:-646px -171px;
+	}
+	
+.icon_hf_box i.icon_hf_phpone{
+	background-position:-681px -143px;
+	}
+.icon_hf_box i.icon_hf_phpone:hover{
+	background-position:-681px -171px;
+	}
+
+.main .car_select .select-search {
+    padding: 0;
+    width: 200px;
+    line-height: 18px;
+    border: 1px solid #999;
+    float: left;
+}
+
+.main .car_select .select-search .y-btn {
+    border: 0 none;
+    padding: 2px 0 3px 5px;
+    width: 195px;
+}
+.main .car_select .select-search .y-btn .search-input {
+    padding: 0;
+    width: 180px;
+    border: medium none;
+    height: 20px;
+}
+.flexigrid .bDiv a {
+    margin: 0px 10px;
+    outline: 0 none;
+    text-decoration: none;
+    cursor: pointer;
+}
+.flexigrid .bDiv a:hover{
+	color: #219bd0;
+}
+#vehicleChnTip {
+	background-color: #ddd;
+	position: absolute;
+	z-index: 1000;
+	display: none;
+}
+#vehicleChnTip li{
+	float: left;
+	cursor: pointer;
+	width: 100%; 
+}
+#vehicleChnTip li:hover{
+	background-color: #3a8cf2;
+}
+#vehicleChnTip span{
+	padding: 3px 0px 2px 10px;
+}

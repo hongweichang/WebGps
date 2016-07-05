@@ -1,0 +1,5 @@
+package com.gps808.monitor.dao.impl;
+
+public class StandardDeviceStatusDaoimpl {
+
+}

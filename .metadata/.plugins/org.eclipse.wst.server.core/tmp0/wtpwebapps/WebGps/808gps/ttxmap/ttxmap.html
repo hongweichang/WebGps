@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="../reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../bin.css">
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexigrid.css"></link>
+	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="../css/labelIcon.css"/>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../js/public.js"></script>
+	<script type="text/javascript"  src="../js/hashtable.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexigrid.js"></script>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../js/myajax.js"></script>
+	<script type="text/javascript" src="myMap.js"></script>
+	<script type="text/javascript" src="ttxmap.js"></script>
+	<style type="text/css">
+		#myMap_ {
+		 	border-right: 4px solid #a0b1c5;
+	    	position: fixed;
+	    	right: 0;
+	    	top: 70px;
+	    	display: none;
+		}
+		#myMap_ .spantitle {
+			color: #fff;
+			white-space:normal;
+			word-break:break-all;
+			word-wrap: break-word;
+			padding: 10px 0 10px 10px;
+    		width: 30px;
+    		float: left;
+    		cursor: pointer;
+    		background-color: #0071c6;
+		}
+		#myMap_ .myMap-pane{
+			background-color: #fff;
+		    border: 1px solid #ddd;
+		    display: none;
+		    float: left;
+		    height: 300px;
+		    width: 460px;
+		}
+		#myMap_ .myMap-pane.active{
+			display: block;
+		}
+		#myMap_ .myMap-pane .myMap-tab {
+			display: inline-block;
+			cursor: pointer;
+		}
+		#myMap_ .myMap-pane .myMap-tab li {
+			background-color: #ddd;
+		    border-left: 2px solid #fff;
+		    float: left;
+		    padding: 5px 15px;
+		}
+		#myMap_ .myMap-pane .myMap-tab li.active {
+			background-color: #0071c6;
+		}
+		#myMap_ .myMap-pane .myMap-box {
+		}
+		#myMap_ .myMap-pane .myMap-box li {
+			display: none;
+		}
+		#myMap_ .myMap-pane .myMap-box li.active {
+			display: block;
+		}
+		.flexigrid .bDiv a {
+		    margin: 0px 10px;
+		    outline: 0 none;
+		    text-decoration: none;
+		    cursor: pointer;
+		}
+		.flexigrid .bDiv a:hover{
+			color: #219bd0;
+		}
+		.flexigrid .pcontrol input {
+			border: 1px solid #ddd;
+		}
+		.icon_xu i{
+			margin: 0px 10px;
+		}
+		#fullScreen label {
+			cursor: pointer;
+		}
+	</style>	
+</head>
+<body onresize="setPanelWidth();">
+<div class="dm_map" >
+	<div class="map_btn">
+		<DIV id="overVehicleAddress" class="left" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding: 0px 10px;"></DIV>
+		<div id="draw_box" class="left dh">
+			<span class="icon_xu">
+				<i id="drawMove" class="icon icon_diy"></i>
+			    <i id="drawPoint" class="icon icon_diy"></i>
+			    <i id="drawCircle" class="icon icon_circle"></i>
+			    <i id="drawRectangle" class="icon icon_squer"></i>
+			    <i id="drawPolygon" class="icon icon_polygon"></i>
+			    <i id="drawLine" class="icon icon_curve"></i>
+			</span>
+        </div>
+		<div id="flllscreen_box" class="right dh map_select">
+			<span id="fullScreen" class="big_box"><i class="icon icon_bigMap"></i></span>
+		</div>
+		<div id="changemap_box" class="right dh map_select">
+			<span id="currentMap"><i class="icon icon_xia"></i></span>
+			<div id="mapSelect">
+				<ul class="tc_box">
+				</ul>
+			</div>
+		</div>
+		<div id="map_toolbox" class="right dh tool_box map_select">
+			<span id="maptoolname"><i class="icon icon_tool"></i><i class="icon icon_xia"></i></span>
+			<ul class="tc_box" style="display: none;">
+				<li><a href="#"><i class="icon icon_yidong"></i><span id="tool_move"></span></a></li>
+				<li id="liDistance"><a href="#"><i class="icon icon_celiang"></i><span id="tool_distance"></span></a></li>
+				<li id="liZoomIn"><a href="#"><i class="icon icon_plusMax"></i><span id="tool_zoom_in"></span></a></li>
+				<li id="liZoomOut"><a href="#"><i class="icon icon_minusMin"></i><span id="tool_zoom_out"></span></a></li>
+			</ul>
+		</div>
+		<div id="rect_searchbox" class="right dh lak_box map_select">
+			<span id="rect_searchname">
+				<i class="icon icon_lak"></i>
+				<i class="icon icon_xia"></i>
+			</span>
+			<div id="selectSearchbox">
+				<ul class="tc_box" style="display: none;"> 
+	            	<li><a href="#"><i class="icon icon_lk1"></i><span id="rect_search_mycar"></span></a></li>
+					<li><a href="#"><i class="icon icon_lk2"></i><span id="rect_search_hiscar"></span></a></li>
+	            </ul>
+	        </div>
+        </div>
+       	<div id="search_box" class="right dh">
+			<div style="margin-left:100px;" class="so">
+				<span><i class="icon icon_so"></i><input type="text" name="" class="so_text"></span>
+				<ul class="tc_box so_box " style="display: none;">
+					<!-- 
+					<li><a href="#">发送拍照指令</a></li>
+					 -->
+				</ul>
+			</div>
+		</div>
+		<div id="mapMoreBtn" class="left dh map_select">
+			<span id="btnSave" style="display: none;"></span>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="map" id="mapcanvas"></div>	
+</div>
+<SPAN id=menu_more onmouseover="clearInterval(_s);" onmouseout="hidemore('menu_more',300)"></SPAN>
+<span id="tip" unselectable="on" style="position: absolute; z-index: 10; background:#FBFFD7; border:solid 1px #999999; font-weight: bold; l"></span>
+<div id="myMap_">
+	<div class="spantitle"></div>
+	<div class="myMap-pane">
+		<ul class="myMap-tab">
+			<li class="point active"><span id="pointTitle"></span><span id="pointSum"></span></li>
+			<li class="area"><span id="areaTitle"></span><span id="areaSum"></span></li>
+			<li class="line"><span id="lineTitle"></span><span id="lineSum"></span></li>
+			<li style="margin-left: 10px;padding: 5px 5px 5px 5px;">
+				<div id="myMap_draw_box" class="left dh">
+					<span class="icon_xu">
+						<i id="myMap_drawMove" class="icon icon_diy" style="display:none;"></i>
+					    <i id="myMap_drawPoint" class="icon icon_diy" style="display:none;"></i>
+					    <i id="myMap_drawCircle" class="icon icon_circle" style="display:none;"></i>
+					    <i id="myMap_drawRectangle" class="icon icon_squer" style="display:none;"></i>
+					    <i id="myMap_drawPolygon" class="icon icon_polygon" style="display:none;"></i>
+					    <i id="myMap_drawLine" class="icon icon_curve" style="display:none;"></i>
+					</span>
+		        </div>
+			</li>
+		</ul>
+		<div class="myMap-box">
+			<ul>
+				<li class="point active">
+					<table id="pointTable" style="display:none;"></table>
+				</li>
+				<li class="area">
+					<table id="areaTable" style="display:none;"></table>
+				</li>
+				<li class="line">
+					<table id="lineTable" style="display:none;"></table>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

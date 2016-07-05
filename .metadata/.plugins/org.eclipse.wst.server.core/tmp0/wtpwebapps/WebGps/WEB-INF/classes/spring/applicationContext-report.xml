@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+    default-autowire="byName">
+    
+  	<!-- 报表查询功能 -->
+	<bean id="reportBaseAction" abstract="true" lazy-init="true" parent="userBaseAction">
+		<property name="deviceGpsService" ref="deviceGpsService" />
+		<property name="deviceAlarmService" ref="deviceAlarmService" />
+	</bean>
+	<bean id="deviceDailyDao"
+		class="com.gps.report.dao.impl.DeviceDailyDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="deviceAlarmDao"
+		class="com.gps.report.dao.impl.DeviceAlarmDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="deviceNetFlowDao"
+		class="com.gps.report.dao.impl.DeviceNetFlowDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="deviceHardwareStatusDao"
+		class="com.gps.report.dao.impl.DeviceHardwareStatusDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="deviceOflTaskLogDao"
+		class="com.gps.report.dao.impl.DeviceOflTaskLogDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+  	<bean id="deviceDailyService" class="com.gps.report.service.impl.DeviceDailyServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+		<property name="deviceDailyDao" ref ="deviceDailyDao" />
+	</bean>
+	<bean id="deviceGpsService" class="com.gps.report.service.impl.DeviceGpsServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean id="deviceAlarmService" class="com.gps.report.service.impl.DeviceAlarmServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+		<property name="deviceAlarmDao" ref ="deviceAlarmDao" />
+	</bean>
+	<bean id="dispatchCommandService" class="com.gps.report.service.impl.DispatchCommandServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+	</bean>
+	<bean id="deviceNetFlowService" class="com.gps.report.service.impl.DeivceNetFlowServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+		<property name="deviceNetFlowDao" ref ="deviceNetFlowDao" />
+	</bean>
+	<bean id="deviceHardwareStatusService" class="com.gps.report.service.impl.DeviceHardwareStatusServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+		<property name="deviceHardwareStatusDao" ref ="deviceHardwareStatusDao" />
+	</bean>
+	<bean id="deviceOflTaskLogService" class="com.gps.report.service.impl.DeviceOflTaskLogServiceImpl">
+		<property name="paginationDao" ref ="paginationDao" />
+		<property name="deviceOflTaskLogDao" ref ="deviceOflTaskLogDao" />
+	</bean>
+	<bean name="ReportNormalAction"
+		class="com.gps.report.action.ReportNormalAction"
+		scope="prototype"  parent="reportBaseAction">
+		<property name="deviceDailyService" ref="deviceDailyService" />
+	</bean>
+	<bean name="ReportSpeedAction"
+		class="com.gps.report.action.ReportSpeedAction"
+		scope="prototype" parent="reportBaseAction">
+	</bean>
+	<bean name="ReportLoginAction"
+		class="com.gps.report.action.ReportLoginAction"
+		scope="prototype" parent="reportBaseAction">
+	</bean>
+	<bean name="ReportIoinAction"
+		class="com.gps.report.action.ReportIoinAction"
+		scope="prototype" parent="reportBaseAction">
+	</bean>
+	<bean name="ReportAlarmAction"
+		class="com.gps.report.action.ReportAlarmAction"
+		scope="prototype" parent="reportBaseAction">
+	</bean>
+	<bean name="ReportOilAction"
+		class="com.gps.report.action.ReportOilAction"
+		scope="prototype" parent="reportBaseAction">
+	</bean>
+	<bean name="ReportParkAction"
+		class="com.gps.report.action.ReportParkAction"
+		scope="prototype" parent="reportBaseAction">
+	</bean>
+	<bean name="ReportFenceAction"
+		class="com.gps.report.action.ReportFenceAction"
+		scope="prototype" parent="reportBaseAction">
+		<property name="mapMarkerService" ref ="mapMarkerService" />
+	</bean>
+	<bean name="ReportNetFlowAction"
+		class="com.gps.report.action.ReportNetFlowAction"
+		scope="prototype" parent="reportBaseAction">
+		<property name="deviceNetFlowService" ref ="deviceNetFlowService" />
+	</bean>
+	<bean name="ReportDispatchAction"
+		class="com.gps.report.action.ReportDispatchAction"
+		scope="prototype" parent="reportBaseAction">
+		<property name="dispatchCommandService" ref ="dispatchCommandService" />
+	</bean>
+	<bean name="ReportTtsAction"
+		class="com.gps.report.action.ReportTtsAction"
+		scope="prototype" parent="reportBaseAction">
+		<property name="userLogService" ref ="userLogService" />
+	</bean>
+	<bean name="ReportHardwareStatusAction"
+		class="com.gps.report.action.ReportHardwareStatusAction"
+		scope="prototype" parent="reportBaseAction">
+		<property name="deviceHardwareStatusService" ref ="deviceHardwareStatusService" />
+	</bean>
+	<bean name="ReportDeviceOflTaskLogAction"
+		class="com.gps.report.action.ReportDeviceOflTaskLogAction"
+		scope="prototype" parent="reportBaseAction">
+		<property name="deviceOflTaskLogService" ref ="deviceOflTaskLogService" />
+		<property name="deviceHardwareStatusService" ref ="deviceHardwareStatusService" />
+	</bean>
+</beans>

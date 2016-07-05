@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/report.css" rel="stylesheet" type="text/css" />
+<link href="../js/dxtree/dhtmlxtree.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxcommon.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxtree.js"></script>
+<script type="text/javascript" src="../js/gps_common.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="js/brand_tree.js"></script>
+<script type="text/javascript" src="js/brand_list.js"></script>
+<style type="text/css">
+#left {
+	display:block;
+	float:left;
+	width:370px; 
+	height:480px;
+}
+#right {
+	display:block;
+	float:left;
+	width:370px; 
+	height:480px;
+	padding-left: 32px;
+}
+#vehiBrand_tree{
+	width:100%;
+	height:420px;
+	margin:2px;
+	background-color:#f5f5f5;
+	border :1px solid Silver;
+	overflow:auto;
+}
+#vehiType {
+	width:100%;
+	height:420px;
+	margin:2px;
+	background-color:#f5f5f5;
+	border :1px solid Silver;
+	overflow:auto;
+}
+</style>
+</head>
+<body>
+<div style="padding:5px 0 0 20px;">
+	<div style="width:800px;overflow:hidden;margin-bottom:10px;">
+		<div id="left">
+			<label><h2><span id="spanBrand"></span></h2></label>
+			<!--  <div style="margin-top:4px;margin-bottom:4px;">
+				<span id="searchVehicle">&nbsp;</span>
+				<input id="name" name="name" type="text" class="text" value="" maxlength="64" onkeyup="searchVehicle()" style="width:100px;"/>&nbsp;&nbsp;	
+			</div>-->
+			<div id="vehiBrand_tree"></div>
+			<a href="javascript:addBrand();" class="blue"><span id="addBrand">&nbsp;</span></a>&nbsp;&nbsp;
+			<a href="javascript:editBrand();" class="blue"><span id="editBrand">&nbsp;</span></a>&nbsp;&nbsp;
+			<a href="javascript:delBrand();" class="blue"><span id="delBrand">&nbsp;</span></a>&nbsp;&nbsp;
+		</div>
+		<div id="right">
+			<label><h2><span id="spanType"></span></h2></label>
+			<!--<div style="margin-top:4px;margin-bottom:4px;">
+				<span id="searchFreeVehicle">&nbsp;</span>
+				<input id="freeName" name="freeName" type="text" class="text" value="" maxlength="32" onkeyup="searchFreeVehicle()" style="width:100px;"/>&nbsp;&nbsp;	
+			</div>-->
+			<div id="vehiType"></div>
+			<a href="javascript:addType()" class="blue"><span id="addType">&nbsp;</span></a>&nbsp;&nbsp;
+			<a href="javascript:editType()" class="blue"><span id="editType">&nbsp;</span></a>&nbsp;&nbsp;
+			<a href="javascript:delType()" class="blue"><span id="delType">&nbsp;</span></a>&nbsp;&nbsp;
+		</div>
+	</div>
+</div>
+</body>
+</html>

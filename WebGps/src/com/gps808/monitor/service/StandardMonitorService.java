@@ -6,6 +6,7 @@ import com.framework.web.service.UniversalService;
 import com.gps.model.DeviceStatusLite;
 import com.gps808.model.StandardAlarmAudio;
 import com.gps808.model.StandardAlarmMotion;
+import com.gps808.model.StandardDeviceGps;
 import com.gps808.model.StandardDownTask;
 import com.gps808.model.StandardFixedTts;
 import java.util.List;
@@ -29,4 +30,5 @@ public abstract interface StandardMonitorService
   public abstract AjaxDto<StandardDownTask> getDownTaskList(String paramString1, String paramString2, String paramString3, String paramString4, Pagination paramPagination);
   
   public abstract List<DeviceStatusLite> getDeviceStatusLite(String[] paramArrayOfString);
+  
 }

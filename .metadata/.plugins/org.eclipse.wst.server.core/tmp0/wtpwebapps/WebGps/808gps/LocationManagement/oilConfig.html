@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexigrid.css"/>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css?150120"/>
+	<link rel="stylesheet" type="text/css" href="../css/labelIcon.css"/>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../js/myajax.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexiManage.js?150120"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexigrid.js"></script>
+	<script type="text/javascript" src="../js/public.js?150120"></script>
+	<script type="text/javascript" src="../../js/gps_common.js"></script>
+	<script type="text/javascript" src="../js/date.js"></script>
+	<script type="text/javascript" src="js/oilConfig.js"></script>
+	<style>
+		#search-list {
+			width: 120px;
+			float: left;
+			border: 1px solid #ccc;
+			overflow: hidden;
+		}
+		#search-list ul,#search-table ul{
+			padding: 0px;
+			margin: 0px;
+		}
+		#search-table li.list{
+			display: none;
+		}
+		#search-table li.active{
+			display: block;
+		}
+		#search-list a, #search-list li{
+		    cursor: pointer;
+		}
+		#search-list a {
+			color: #333;
+		    cursor: pointer;
+		    font-size: 14px;
+		}
+		#search-list li {
+			border-bottom: 1px solid #ccc;
+		    padding:10px;
+		    height: 20px;
+    		line-height: 20px;
+		    overflow: hidden;
+		}
+		#search-list li.active, #search-list li:hover {
+		    background-color: #0b83dc;
+/* 		    border-left: 2px solid #4cffff; */
+		}
+		#search-list li.active a, #search-list li:hover a {
+			color: #fff;
+		}
+		#search-btn {
+			height: 30px;
+			line-height: 30px;
+			padding: 5px 0px 0px 5px;
+		}
+		#toolbar-btn1, #toolbar-btn2{
+			width:auto;
+		}
+		a {
+		    outline: 0 none;
+		    text-decoration: none;
+			margin: 0px 15px 0px 0px;
+		}
+	</style>
+</head>
+<body style="background-color:#fff;overflow: auto;font-size: 12px;"  onresize="setPanelWidth();">
+	<form method="post" name="reportForm" action=""></form>
+	<div id="search-table">
+		<ul>
+			<li class="list active"><table id="storageTable" style="display:none;"></table></li>
+		</ul>
+		<div id="search-btn">
+			<div id="toolbar-btn1"></div>
+		</div>
+	</div>
+	<div id="info-mid-table" style="margin-top: 10px;"></div>
+	<div id="toolbar-btn2" style="display:none;margin-top:20px;margin-left:200px;"></div>
+</body>
+</html>

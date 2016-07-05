@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexigrid.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css"/>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../js/myajax.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexigrid.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexiManage.js"></script>
+	<script type="text/javascript" src="../js/public.js"></script>
+	<script type="text/javascript" src="../js/date.js"></script>
+	<script type="text/javascript" src="js/deviceParamConfigTtx.js"></script>
+	<style>
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+		#search-list {
+			width: 120px;
+			height: 358px;
+			float: left;
+			border: 1px solid #ccc;
+			overflow: hidden;
+		}
+		#search-table {
+			margin-left: 125px;
+			height: 358px;
+			overflow: hidden;
+		}
+		#search-table li.list{
+			display: none;
+		}
+		#search-table li.active{
+			display: block;
+		}
+		#search-list a, #search-list li{
+		    cursor: pointer;
+		}
+		#search-list a {
+			color: #333;
+		    cursor: pointer;
+		    font-size: 14px;
+		}
+		#search-list li {
+			border-bottom: 1px solid #ccc;
+		    padding:10px;
+		    height: 20px;
+		    line-height: 20px;
+		    overflow: hidden;
+		}
+		#search-list li.active, #search-list li:hover {
+		    background-color: #0b83dc;
+		}
+		#search-list li.active a, #search-list li:hover a {
+			color: #fff;
+		}
+		#search-btn {
+			height: 30px;
+			line-height: 30px;
+			padding: 5px 0px 0px 5px;
+		}
+		#network-config .slide-panel li, #code-config .slide-panel li, #PTZ-config .slide-panel li {
+			border: none;
+		}
+		#search-table .integ_tab {
+			margin: 0px auto;
+		}
+		#search-table .btn-group .buttom {
+		    padding: 3px 0;
+		}
+		#search-table .label{
+			width: 155px;
+			overflow: hidden;
+		    text-align: center;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		}
+		#search-table .form-input {
+			width: 188px;
+		}
+		#network-config input.form-input {
+			width: 250px;
+		}
+		.td-quality div.btn-group, .td-quality .span-tip {
+			float: left;
+		}
+		.td-quality .span-tip {
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body style="background-color:#fff;overflow: auto;font-size: 12px;">
+	<div id="search-list">
+		<ul>
+			<li class="network active"><a></a></li>
+			<li class="code"><a></a></li>
+			<li class="PTZ"><a></a></li>
+			<li class="parking"><a></a></li>
+		</ul>
+	</div>
+	<div id="search-table">
+		<ul>
+			<li class="list active"><div id="network-config"></div></li>
+			<li class="list"><div id="code-config"></div></li>
+			<li class="list"><div id="PTZ-config"></div></li>
+			<li class="list"><div id="parking-config"></div></li>
+		</ul>
+	</div>
+	<div id="toolbar-btn" class="search-button" style="display:none;margin:10px 0 0 150px;"></div>
+	<div id="configListTitle" style="font-weight: bold;padding: 5px 0;"></div>
+	<table id="configListTable" style="display:none;"></table>
+</body>
+</html>

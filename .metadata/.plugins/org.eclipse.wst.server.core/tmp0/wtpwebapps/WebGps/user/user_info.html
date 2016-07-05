@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css?v150717" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js?v150717"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js?v150717"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js?v150717"></script>
+<script type="text/javascript" src="../js/myajax.js?v150717"></script>
+<script type="text/javascript" src="../js/public.js?v150717"></script>
+<script type="text/javascript" src="../js/date.js?v150717"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js?v150717"></script>
+<script type="text/javascript" src="js/user_info.js?v150717"></script>
+</head>
+<body style="background-color:#fff;">
+<div class="serverall" style="width:500px;padding-bottom:60px;">
+	<dl class="setingbox">
+	  <dt><span id="labelName"></span></dt>
+	  <dd>
+	    <input id="name" name="name" type="text" class="text" value="" maxlength="32"/>
+	    <span id="nameWrong" class="red">*</span></dd>
+	  <dt><span id="labelAccount"></span></dt>
+	  <dd>
+	    <input id="account" name="account" type="text" class="text" value="" maxlength="32"/>
+	    <span id="accountWrong" class="red">*</span></dd>
+	  <dt id="dtPwd1"><span id="labelPwd1"></span></dt>
+	  <dd id="ddPwd1">
+	    <input id="pwd1" type="password" maxlength="16" class="text" style="ime-mode:disabled;" value="000000"/>
+	    <span id="pwd1Wrong" class="red">*</span></dd>
+	  <dt id="dtPwd2"><span id="labelPwd2"></span></dt>
+	  <dd id="ddPwd2">
+	    <input id="pwd2" type="password" maxlength="16" class="text" style="ime-mode:disabled;" value="000000"/>
+	    <span id="pwd2Wrong" class="red">*</span></dd>
+	  <dt id="dtDefaultPwd"><span id="labelDefaultPwd">&nbsp;</span></dt>
+	  <dd id="ddDefaultPwd"><span id="defaultPwdtip" class="red"></span>
+		  </dd>
+	  <dt><span id="labelRole"></span></dt>
+	  <dd>
+	    <select id="roleList" name="roleList">
+        </select>
+	    <span id="roleWrong" class="red">*</span></dd>
+	   <dt><span id="labelDemo">&nbsp;</span></dt>
+	  <dd>
+	    <input id="isDemo" name="isDemo" type="checkbox" value="1"/>&nbsp;<span id="spanIsDemo"></span>
+	  </dd>
+	  <dt><span id="labelValidaty"></span></dt>
+	  <dd>
+	  	<input type="text" class="text" id="validaty" name="validaty" size="15" readonly class="Wdate"/>
+		<span id="validatyWrong" class="red"></span>
+		</dd>
+	  <dt><span id="labelLinkMan"></span></dt>
+	  <dd>
+	  	<input id="linkMan" name="linkMan" type="text" class="text" value="" maxlength="32"/>
+		<span id="linkManWrong" class="red"></span>
+		</dd>
+	  <dt><span id="labelTelephone"></span></dt>
+	  <dd>
+	    <input id="telephone" name="telephone" type="text" style="ime-mode:disabled;" class="text" value="" maxlength="16" onkeydown="onKeyDownDigit(event)"/>
+	    <span id="telephoneWrong" class="red"></span>
+	  </dd>
+	  <dt><span id="labelEmail"></span></dt>
+	  <dd>
+	    <input id="email" name="email" type="text" class="text" value="" maxlength="32"/>
+	    <span id="emailWrong" class="red"></span>
+	  </dd>
+	  <dt><span id="labelAddress"></span></dt>
+	  <dd>
+	    <input id="address" name="address" type="text" class="text" value="" maxlength="32"/>
+	    <span id="addressWrong" class="red"></span>
+	  </dd>
+	  <dt><span id="labelUrl"></span></dt>
+	  <dd>
+	    <input id="url" name="url" type="text" class="text" value="" maxlength="60"/>
+	    <span id="urlWrong" class="red"></span>
+	  </dd>
+	  <dt></dt>
+	  <dd>
+	  	<a href="javascript:ajaxSaveUser();" class="searchbtn">
+	  		<span id="save"></span>
+	    </a>
+	  </dd>
+	</dl>
+</div>
+</body>
+</html>

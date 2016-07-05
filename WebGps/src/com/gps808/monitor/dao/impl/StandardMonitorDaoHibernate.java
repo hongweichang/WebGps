@@ -4,9 +4,13 @@ import com.framework.web.dao.HibernateDaoSupportEx;
 import com.framework.web.dto.QueryScalar;
 import com.gps.model.DeviceStatusLite;
 import com.gps808.model.StandardAlarmMotion;
+import com.gps808.model.StandardDeviceGps;
 import com.gps808.model.StandardFixedTts;
 import com.gps808.monitor.dao.StandardMonitorDao;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -165,5 +169,5 @@ public class StandardMonitorDaoHibernate
     {
       session.close();
     }
-  }
+  }	
 }

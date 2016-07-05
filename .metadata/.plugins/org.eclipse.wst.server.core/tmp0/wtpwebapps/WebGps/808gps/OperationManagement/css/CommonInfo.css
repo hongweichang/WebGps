@@ -1,0 +1,150 @@
+@charset "utf-8";
+html, body {
+    height: 100%;
+    overflow-y: hidden;
+}
+body {
+    background: none repeat scroll 0 0 #fff;
+	background-attachment: scroll;
+	background-color:#fff;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+    color: #333;
+    font: 12px/1.5 tahoma,arial;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+ol, ul {
+    list-style: none outside none;
+}
+a {
+    color: #0068b7;
+    outline: 0 none;
+    text-decoration: none;
+}
+.red {
+	color: red;
+}
+.flexigrid {
+	margin: 0px 20px;
+}
+#info-mid {
+    border-bottom: 1px solid #acd1d9;
+    color: #333;
+    font-size: 12px;
+    margin-bottom: 3px;
+    padding: 5px 5px 5px 5px;
+    vertical-align: middle;
+	width: 965px; 
+	height: 590px;
+	overflow: auto;
+}
+#toolbar-btn .bg-icon {
+	background: url("../image/dn.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background:	url("../image/dn.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-color: rgba(0, 0, 0, 0);
+    height: 16px;
+    margin: 6px 0 0 9px;
+    width: 7px;
+}
+#info-mid-table {
+	height:auto;
+}
+#info-mid-table td .span-tip{
+	height:20px;
+	line-height:20px;
+	margin-left:10px;
+}
+#info-mid-table .btn-group {
+    padding: 0;
+    float:left;
+}
+#info-mid-table .btn-group .y-btn {
+	padding: 2px 5px;
+}
+#info-mid-table input {
+    height: 16px;
+    line-height: 16px;
+    white-space: nowrap;
+	padding:0 0 0 0;
+}
+#info-mid-table .y-btn .bg-icon {
+	padding:0 0 0 0;
+}
+#info-mid-table .form-input {
+    width:70%;
+}
+#info-mid-table .btn-group .item {
+	margin:0;
+}
+/**
+	分组车辆
+*/
+
+#info-mid-table .vehi-group-area .area {
+	height: 300px;
+    width: 950px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+	background-color:#f5f5f5;
+	border:1px solid Silver;
+}
+#info-mid-table .vehi-group-area .area .containerTableStyle{
+	position : static;
+} 
+#info-mid-table .vehi-group-area #area-button {
+	float:left;
+	margin: 50px 20px 0;
+	height:300px;
+	width:80px;
+}
+#info-mid-table .vehi-group-area .btn-group .y-btn {
+	padding : 6px 14px;
+	margin-top: 10px;
+}
+#info-mid-table .vehi-group-area .btn-group .item {
+	display: block;
+	float:none;
+	margin: 0;
+}
+
+
+/*
+
+*/
+#info-mid-table .dev-group .dev-addType,.dev-group .dev-input-devIDNO,.dev-group .dev-bgInput{
+	height: 25px;
+	line-height: 25px;
+}
+#info-mid-table .dev-group .dev-addType {
+	margin-left: 20px;
+}
+
+#info-mid-table .dev-group .dev-item {
+	display: none;
+}
+#info-mid-table .dev-group .show {
+	display: inline;
+}
+
+/**
+* 权限
+*/
+#info-mid-table .slide-panel .panel-head #allSelect span{
+	cursor: pointer;
+}
+#info-mid-table .selectInfo , #info-mid-table .operat{
+    color: #0068b7;
+}
+#info-mid-table .selectInfo:hover , #info-mid-table .operat:hover{
+    color: #FF0000;
+	text-decoration:underline;
+}
+
+.btn-group .item .search-input {
+	width: 207px;
+}

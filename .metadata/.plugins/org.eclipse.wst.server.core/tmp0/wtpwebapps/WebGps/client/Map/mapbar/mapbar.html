@@ -1,0 +1,107 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML><HEAD><TITLE></TITLE>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<LINK rel=stylesheet type=text/css href="../google/theme/common.css?v150717">
+<script type=text/javascript src="../google/js/common.js?v150717"></script>
+<script type="text/javascript" src="http://202.96.42.111:81/OpenLayers/OpenLayers.js?v150717"></script>
+<script type="text/javascript" language="javascript" src="http://202.96.42.111:81/SE_JSAPI?v=ol&uid=wxjxkj"></script>
+<SCRIPT type=text/javascript src="../google/js/hashtable.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="../google/js/json2.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="../google/js/jquery-1.4.2.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="../google/js/jquery.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/vehicle.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/function.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/map-mapbar.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/public.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/popupmarker.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/namemarker.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/mapmarker.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/maptrack.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/mapframe.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="js/ev-mapbar.js?v150717"></SCRIPT>
+<SCRIPT type=text/javascript src="../google/js/lang.js?v150717"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+
+var	lang = null;
+var GFRAME = new mapframe();
+function initialize(){
+	initCommon("../google/theme/");
+	$("#spanCurMap").text(lang.mapMapBar);
+	$('#liMap9').hide();
+	
+	GFRAME.createMap(true);
+}
+
+function testVehicle() {
+	var nVehiId = "1001";
+	insertVehicle(nVehiId);
+ 	setVehiName(nVehiId, "测试数据");
+	setVehiMenu(nVehiId, 0, "视频", true);
+	setVehiPopMenuName(nVehiId, 0, 0, "通道1");
+	setVehiPopMenuName(nVehiId, 0, 1, "通道2");
+	setVehiPopMenuName(nVehiId, 0, 2, "通道3");
+	setVehiPopMenuName(nVehiId, 0, 3, "通道4");
+	setVehiIcon(nVehiId, 1);
+//	MAP_UpdateVehicleEx(m_lMapHandle, nVehiId, lpszJindu, lpszWeidu, _T("200.72"), 0, _T("东南"), 0, _T("2011-06-20 19:20:20"), _T("1034.公里"));
+	updateVehicle(nVehiId, "113.1234", "23.1234", 90, 0, "100km/h", "2011-06-20 19:20:20"
+		, "<span class ='b'>时间:</span>2012-12-25 10:55:45<br/><span class ='b'>里程:</span>0.00 km<br/><span class ='b'>速度:</span>0.00 km/h(北)<br/><span class ='b'>司机:</span><br/><span class ='b'>位置:</span>118.131274, 33.159078<br/><span class ='b'>报警:</span><font color=#ff0000>硬盘2不存在</font><br/><span class ='b'>状态:</span>GPS定位有效,ACC开启,GPS天线存在,硬盘1存在,<br/>3G信号好<br/>");
+	centerVehicle(nVehiId);
+	selectVehicleEx(nVehiId);
+}
+
+function testMarker() {
+	insertMarker(1);
+	updateMarker(1, 10, "测试", "113.1234", "23.2134", 10000, "FF00000", "<span class ='b'>时间:</span>2012-12-25 10:55:45<br/><span class ='b'>里程:</span>0.00 km", "");
+	selectMarker(1);
+}
+
+</SCRIPT>	
+<META name=GENERATOR content="MSHTML 8.00.6001.19088"></HEAD>
+<BODY oncontextmenu="return false;" onresize=GFRAME.restFrame(); onload=initialize(); onselectstart="return false" ondragstart="return false" onbeforecopy="return false" oncopy=document.selection.empty() onselect=document.selection.empty()>
+<DIV id=FrameCanvas>
+	<DIV id=mapbar>
+		<DIV id=maptoolbar style="padding-left:6px;">
+			<img id="btnCruise" src="../google/image/cruise.gif" style="padding-top:2px;display:none;" onclick="onCruise()"/>
+			<img id="btnCountry" src="../google/image/country.gif" style="padding-top:2px;display:none;" onclick="onCountry()"/>
+			<img id="zoomIn" src="../google/image/zoomin.gif" style="padding-top:2px;display:none;" onclick="onZoomIn()"/>
+			<img id="zoomOut" src="../google/image/zoomout.gif" style="padding-top:2px;display:none;" onclick="onZoomOut()"/>
+			<img id="distance" src="../google/image/distance.gif" style="padding-top:2px;display:none;" onclick="onDistance()"/>
+			<img id="btnArea" src="../google/image/area.gif" style="padding-top:2px;display:none;" onclick="onArea()"/>
+			<img id="addPoint" src="../google/image/addpoint.gif" style="padding-top:2px;display:none;" onclick="addMarkerPoint()"/>
+			<img id="addCircle" src="../google/image/addCircle.gif" style="padding-top:2px;display:none;" onclick="addMarkerCircle()"/>
+			<img id="addRectangle" src="../google/image/addrectangle.gif" style="padding-top:2px;display:none;" onclick="addMarkerRectangle()"/>
+			<img id="addPolygon" src="../google/image/addpolygon.gif" style="padding-top:2px;display:none;" onclick="addMarkerPolygon()"/>
+			<img id="addLine" src="../google/image/addline.gif" style="padding-top:2px;display:none;" onclick="addMarkerLine()"/>
+			<img id="btnSearch" src="../google/image/search.gif" style="padding-top:2px;display:none;" onclick="searchVehi()"/>
+			<img id="btnFullScreen" src="../google/image/fullscreen.gif" style="padding-top:2px;display:none;" onclick="fullScreen()"/>
+			<img id="btnCenter" src="../google/image/savemapconfig.gif" style="padding-top:2px;display:none;" onclick="getCenter()"/>
+			<img id="btnPrint" src="../google/image/distance.gif" style="padding-top:2px;display:none;" onclick="onMapPrint()"/>
+			<img id="btnCapture" src="../google/image/capture.gif" style="padding-top:2px;display:none;" onclick="onMapCapture()"/>
+		</DIV>
+		<div id="selectMap" class="cat_list_type">
+			<div id="mapMenu" class="h2_cat_type" onMouseOver="showMapSelect()"><h3 ><span id="spanCurMap"></span></h3>
+				<div class="h3_cat_type">
+					<div class="shadow_border_type">
+						<ul>
+							<li style="display:none;" id="liMap3" ><a href="javascript:switchMapTo('3');"><span id="spanMap3"></span></a></li>	<!--百度-->
+							<li style="display:none;" id="liMap9" ><a href="javascript:switchMapTo('9');"><span id="spanMap9"></span></a></li>  <!--Mapbar-->
+							<li style="display:none;" id="liMap0" ><a href="javascript:switchMapTo('0');"><span id="spanMap0"></span></a></li>  <!--谷歌-->
+							<li style="display:none;" id="liMap8" ><a href="javascript:switchMapTo('8');"><span id="spanMap8"></span></a></li>  <!--Arcgis-->
+							<li style="display:none;" id="liMap1" ><a href="javascript:switchMapTo('1');"><span id="spanMap1"></span></a></li>  <!--MapInfo-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<DIV id=mapbarRight>
+			<img id="btnExpand" src="../google/image/expand.jpg" style="padding-top:2px;display:none;" onclick="expand()"/>
+		</DIV>
+		<DIV id="overVehicleAddress"></DIV>
+	</DIV>	
+	<DIV id=mapcanvas></DIV>
+</DIV>
+<SPAN id=menu_more onmouseover=clearInterval(_s); onmouseout="hidemore('menu_more',500)"></SPAN>
+<span id="tip" unselectable="on" style="position: absolute; z-index: 1; background:#FBFFD7; border:solid 1px #999999; font-weight: bold; l"></span>
+</BODY>
+</HTML>

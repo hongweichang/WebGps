@@ -1,0 +1,48 @@
+package com.gps808.monitor.dao.impl;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.type.StandardBasicTypes;
+
+import com.framework.web.dto.QueryScalar;
+import com.gps808.model.StandardDeviceGps;
+import com.gps808.model.StandardDeviceStatus;
+import com.gps808.model.StandardTransportGps;
+import com.gps808.monitor.dao.StandardDeviceStatusDao;
+import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+public class StandardindexTrackDao extends HibernateDaoSupport implements StandardDeviceStatusDao {
+	
+	public String getQueryindexTrack(){
+		StringBuffer sql = new StringBuffer("SELECT a.DevIDNO£¬a.Online,b.GPSDate,b.GPSData From dev_station a,jt808_vehicle_gps b");
+		Date dt = new Date();
+	    SimpleDateFormat matter = new SimpleDateFormat("yyyy-MM-dd");
+	    int Online = 1;
+		sql.append(String.format("where Online = %d and GPSData = %s", new Object[]{ Online, matter.format(dt) }));
+		return sql.toString();
+	}
+	
+	public static List<QueryScalar> getTrackindexList(){
+		List<QueryScalar> tk = new ArrayList<>();
+		tk.add(new QueryScalar("devIDNO", StandardBasicTypes.STRING));
+		tk.add(new QueryScalar("Online", StandardBasicTypes.INTEGER));
+		tk.add(new QueryScalar("GPSDate", StandardBasicTypes.DATE));
+		tk.add(new QueryScalar("GPSData", StandardBasicTypes.BLOB));
+		return tk;
+		
+	}
+	
+	public static void main(String[] args){
+		 StandardindexTrackDao test = new StandardindexTrackDao();
+		 
+		System.out.println(test.getTrackindexList()); 
+	}
+}
+

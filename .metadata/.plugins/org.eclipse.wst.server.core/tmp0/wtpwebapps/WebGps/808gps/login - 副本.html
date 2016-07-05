@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="TTX-AFU">
+    <meta name="Copyright" content="Babelstar">
+    <meta name="Description" content="">
+    <meta name="Keywords" content="">
+    <title></title>
+    <link rel="stylesheet" href="./css/reset.css" media="screen">
+    <script type="text/javascript" src="../js/json2.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="js/lang_fun.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+	<script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="../js/myajax.js?150107"></script>
+	<script type="text/javascript" src="../js/flexigrid/flexiManage.js?150120"></script>
+	<script type="text/javascript" src="./js/pageStyle.js"></script>
+    <script type="text/javascript" src="./js/glume.js"></script>
+    <script type="text/javascript" src="./js/login.js"></script>
+    <!--[if lt IE 8]>
+				<div id="browser" style="height: 30px;background:#ffc none repeat scroll 0 0;font-size: 16px;line-height:30px;float: left;width:100%;">
+					<div>
+						<span id="browserTip" style="margin-left:30%;color: red;text-align: left;float: left;"></span>
+						<div id="toolbar-btn" style="float:right;text-align: right;margin-right:20px;cursor: pointer;"></div>
+					</div>
+				</div>
+			<![endif]-->
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wy-header">
+            <div class="wy-mod-top">
+                <div class="logo">
+                    <img src="./images/home/logo.png" alt="">
+                    <span id="spanTitle"></span>
+                </div>
+            </div>
+            <div class="wy-mod-nav clearfix">
+                <div class="web-link" style="display:none" id="clientDownload">
+                    <a id="hrefClientDown" href="" data-log-id="150021" target="_blank" class="btn-web-link"><span id="spanDownClient"></span></a>
+                </div>
+                <div class="wy-mod-style switchMenuItem">
+	           		<div class="switch">
+						<div class="switch-div"><span class="switch-span"></span><a class="carat"></a></div>
+						<div class="switch-style switchItem"></div>
+					</div>
+	           	</div>
+				<div class="wy-mod-lang switchMenuItem">
+					<div class="switch">
+						<div class="switch-div"><span class="switch-span"></span><a class="carat"></a></div>
+						<div class="language switchItem"></div>
+					</div>
+				</div>
+				 <div class="api switchMenuItem">
+				 	<div class="switch">
+                        <a href="./open/webApi.html" target="_blank" id="spanOpenApi"></a>
+                	</div>
+                </div>
+                <ul class="wy-mod-nav-main clearfix" style="display:none">
+                    <li class="home">
+                        <a href="javascript:void(0)" class="on"><span id="spanHome"></span></a>
+                    </li>
+                    <li class="function">
+                        <a href="./function.html" data-log-id="150022"><span id="spanFunction"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wy-content">
+            <div class="wy-mod-banner">
+                <div id="_banners" class="banners">
+               		<div class="banner banner1"  style="z-index:2;display:none">
+                        <div class="z">
+                        	<div class="banner1_box">
+								<span class="banner_text"><i class="icon icon_1"></i><span class="span1"></span></span>
+								<span class="banner_text"><i class="icon icon_2"></i><span class="span2"></span></span>
+								<span class="banner_text"><i class="icon icon_3"></i><span class="span3"></span></span>
+								<span class="banner_text"><i class="icon icon_4"></i><span class="span4"></span></span>
+								<span class="banner_text"><i class="icon icon_5"></i><span class="span5"></span></span>
+								<span class="banner_text"><i class="icon icon_6"></i><span class="span6"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner banner2"  style="z-index:1;display:none">
+                        <div class="z">
+                        	<div class="banner2_box">
+								<h2 class="lbt_1"></h2>
+								<h4 class="lbt_fu_1"></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner banner3"  style="z-index:0;display:none">
+                        <div class="z">
+                        	<div class="banner3_box">
+								<h2 class="lbt_2"></h2>
+								<h4 class="lbt_fu_2"></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="_focus" class="focus" style="display:none">
+                	<a data-index="0" href="#" class="on">
+                        <span class="bg-b"></span>
+                        <span class="inner"></span>
+                    </a>
+                    <a data-index="1" href="#" >
+                        <span class="bg-b"></span>
+                        <span class="inner"></span>
+                    </a>
+                    <a data-index="2" href="#">
+                        <span class="bg-b"></span>
+                        <span class="inner"></span>
+                    </a>
+                </div>
+				<div style="display:inline;" id="loginPanel" class="login-panel">
+					<h1><span id="spanWelcome"></span></h1>
+					<div id="login">
+						<div id="modLoginWrap" class="mod-qiuser-pop">
+							<div style="display: none;" class="login-error login-error-msg">
+								<span id="spanLoginErrorTip"></span>
+							</div>
+							<dl class="login-wrap">
+								<dt><span id="loginTitle"></span></dt>
+								<dd>
+									<div class="quc-clearfix login-item">
+										<label for="loginAccount"></label>
+										<span class="input-bg">
+											<input type="text" placeholder="" tabindex="1" id="loginAccount" name="loginAccount" autocomplete="off" maxlength="32" class="ipt tipinput1">
+										</span>
+									</div>
+								</dd>
+								<dd class="password">
+									<div class="quc-clearfix login-item">
+										<label for="loginPassword"></label>
+										<span class="input-bg">
+											<input type="password" placeholder="" tabindex="2" id="loginPassword" name="loginPassword" maxlength="20" autocomplete="off" class="ipt tipinput1">
+										</span>
+									</div>
+								</dd>
+								<dd class="rem" id="phraseLoginwarp">
+									<label for="phraseLogin">
+										<span id="spanYzm"></span>
+									</label>
+									<span class="verify-code">
+										<input type="text" tabindex="3" placeholder="" maxlength="4" id="phraseLogin" name="phrase" class="ipt1 tipinput1" autocomplete="off">
+									</span>
+									<span class="yz">
+										<img width="99" height="35" title="" id="lwm" onclick="changeValidateCode()">
+										<a class="ml8 fac" href="#nogo" id="refreshCaptchaLogin"></a>
+									</span>
+								</dd>
+								<dd class="submit">
+									<span>
+										<input type="button" onfocus="this.blur()" id="loginSubmit" value="" class="btn-login quc-psp-gstat">
+									</span>
+								</dd>
+								<dd class="global-tips">
+									<div id="error_tips" class=""></div>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+            </div>
+            
+            <div class="download-content">
+                <ul class="clearfix">
+                    
+                    <li class="mod-download" id="liDown1" style="display:none">
+                        <div >
+                        	<div> 
+                        		 <h3><span id="downName1"></span></h3>
+                        	</div>
+                        	<div> 
+                        		<div class="link">
+									<button id="downHref1" class="btn-download" data-global-action="download" data-type="windows" onclick="download(1)">
+		                                <span id="downLogo1" class="icon-logo"></span>
+		                                <span class="text" id="spanDownload1"></span>
+		                            </button>
+		                        </div>
+		                        <div class="info">
+			                     	 <span id="downLabelVer1"></span><span id="downVer1"></span><br>
+							         <span id="downLabelDate1"></span><span id="downDate1"></span><br>
+		                        </div>
+                        	</div>
+                        </div>
+                    </li>
+                    
+                    <li class="mod-download" id="liDown2" style="display:none">
+                        <div >
+                        	<div> 
+                        		 <h3><span id="downName2"></span></h3>
+                        	</div>
+                        	<div> 
+                        		<div class="link">
+									<button id="downHref2" class="btn-download" data-global-action="download" data-type="windows" onclick="download(2)">
+		                                <span id="downLogo2" class="icon-logo"></span>
+		                                <span class="text" id="spanDownload2"></span>
+		                            </button>
+		                        </div>
+		                        <div class="info">
+			                     	<span id="downLabelVer2"></span><span id="downVer2"></span><br>
+							        <span id="downLabelDate2"></span><span id="downDate2"></span><br>
+		                        </div>
+                        	</div>
+                        </div>
+                    </li>
+                    
+                    <li class="mod-download" id="liDown3" style="display:none">
+                        <div >
+                        	<div> 
+                        		 <h3><span id="downName3"></span></h3>
+                        	</div>
+                        	<div> 
+                        		<div class="link">
+									<button id="downHref3" class="btn-download" data-global-action="download" data-type="windows" onclick="download(3)">
+		                                <span id="downLogo3" class="icon-logo"></span>
+		                                <span class="text" id="spanDownload3"></span>
+		                            </button>
+		                        </div>
+		                        <div class="info">
+			                     	<span id="downLabelVer3"></span><span id="downVer3"></span><br>
+							        <span id="downLabelDate3"></span><span id="downDate3"></span><br>
+		                        </div>
+                        	</div>
+                        </div>
+                    </li>
+                    
+                    <li class="mod-download" id="liDown4" style="display:none">
+                        <div> 
+                       		 <h3><span id="downName4"></span></h3>
+                       	</div>
+                       	<div> 
+                       		<div class="link">
+								<button id="downHref4" class="btn-download" data-global-action="download" data-type="windows" onclick="download(4)">
+	                                <span id="downLogo4" class="icon-logo"></span>
+	                                <span class="text" id="spanDownload4"></span>
+	                            </button>
+	                        </div>
+	                        <div class="info">
+		                     	<span id="downLabelVer4"></span><span id="downVer4"></span><br>
+							    <span id="downLabelDate4"></span><span id="downDate4"></span><br>
+	                        </div>
+                       	</div>
+                    </li>
+                    
+                    <li class="mod-download" id="liDown5" style="display:none">
+                        <div> 
+                       		 <h3><span id="downName5"></span></h3>
+                       	</div>
+                       	<div> 
+                       		<div class="link">
+								<button id="downHref5" class="btn-download" data-global-action="download" data-type="windows" onclick="download(5)">
+	                                <span id="downLogo5" class="icon-logo"></span>
+	                                <span class="text" id="spanDownload5"></span>
+	                            </button>
+	                        </div>
+	                        <div class="info">
+		                     	 <span id="downLabelVer5"></span><span id="downVer5"></span><br>
+							    <span id="downLabelDate5"></span><span id="downDate5"></span><br>
+	                        </div>
+                       	</div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="wy-footer">
+            <div class="footer-cont">
+                <div class="copyright"><span id="spanCopyright"></span></div>
+            </div>
+        </div>
+    </div>
+    <div id="ddd" style="display: none;"></div> 
+</body>
+</html>

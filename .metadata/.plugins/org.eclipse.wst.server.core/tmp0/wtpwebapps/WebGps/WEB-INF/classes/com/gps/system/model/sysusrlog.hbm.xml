@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.system.model">
+	<class name="SysUsrLog" table="sys_user_log">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ��������identity������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->
+		<property name="usrid" column="UsrID" type="java.lang.Integer" not-null="true"/>
+		<property name="mainType" column="MainType"	type="java.lang.Integer" not-null="true"/>
+		<property name="subType" column="SubType" type="java.lang.Integer" not-null="true" />
+		<property name="param1" column="Param1" type="string" length="256"/>
+		<property name="param2" column="Param2" type="string" length="256"/>
+		<property name="param3" column="Param3" type="string" length="256"/>
+		<property name="param4" column="Param4" type="string" length="256"/>
+		<property name="dtime" column="DTime" type="java.util.Date" not-null="true"/>
+		<many-to-one name="sysUsr" column="UsrID" class="SysUsrInfo" lazy="false" not-found="ignore" insert="false" update="false"/>
+	</class>
+</hibernate-mapping>

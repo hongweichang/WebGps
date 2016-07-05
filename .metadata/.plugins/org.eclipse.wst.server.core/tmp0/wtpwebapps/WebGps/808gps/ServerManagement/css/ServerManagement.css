@@ -1,0 +1,104 @@
+@charset "utf-8";
+.nav {
+    border-right: 1px solid #99ccff;
+}
+.nav li {
+	background-color: #fff;
+    border-bottom: 1px solid #99ccff;
+    border-left: 2px solid #fff;
+    padding: 12px 0 12px 65px;
+    position: relative;
+	cursor: pointer;
+}
+.nav .current, .nav li:hover {
+    background-color: #0b83dc;
+    border-left: 2px solid #4cffff;
+}
+.nav .text {
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+}
+.nav li .bg {
+	background: url("../../images/iconserver.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background:	url("../../images/iconserver.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: -11px -331px;
+	background-color: rgba(0, 0, 0, 0);
+    left: 35px;
+    position: absolute;
+    top: 12px;
+}
+.nav li.AllServer .bg {
+	background-position: -10px -5px;
+    height: 22px;
+    width: 24px;
+}
+.nav li.AllServer.current .bg, .nav li.AllServer:hover .bg{
+     background-position: -47px -6px;
+}
+.nav li.LoginServer .bg {
+	background-position: -13px -36px;
+    height: 22px;
+    width: 24px;
+}
+.nav li.LoginServer.current .bg, .nav li.LoginServer:hover .bg{
+     background-position: -49px -36px;
+}
+.nav li.GatewayServer .bg {
+	background-position:-13px -67px;
+	width: 24px;
+	height: 22px;
+}
+.nav li.GatewayServer.current .bg, .nav li.GatewayServer:hover .bg{
+	background-position:-49px -67px;
+}
+.nav li.UserServer .bg {
+	background-position:-13px -97px;
+	width: 24px;
+	height: 22px;
+}
+.nav li.UserServer.current .bg, .nav li.UserServer:hover .bg{
+	background-position:-49px -97px;
+}
+.nav li.MediaServer .bg {
+	background-position:-13px -128px;
+	width: 24px;
+	height: 22px;
+	top:15px;
+}
+.nav li.MediaServer.current .bg, .nav li.MediaServer:hover .bg{
+	background-position:-49px -128px;
+}
+.nav li.StorageServer .bg {
+	background-position:-13px -159px;
+	width: 24px;
+	height: 22px;
+}
+.nav li.StorageServer.current .bg, .nav li.StorageServer:hover .bg{
+	background-position:-49px -159px;
+}
+.nav li.DownStation .bg {
+	background-position:-13px -189px;
+	width: 24px;
+	height: 22px;
+	top:14px;
+}
+.nav li.DownStation.current .bg, .nav li.DownStation:hover .bg{
+	background-position:-49px -189px;
+}
+.nav li.DownServer .bg {
+	background-position: -13px -220px;
+	width: 24px;
+	height: 22px;
+}
+.nav li.DownServer.current .bg, .nav li.DownServer:hover .bg{
+	background-position:-49px -220px
+}
+.nav .current a span, .nav li:hover a span{
+     color: #fff;
+}
+#leftPanel {
+	background-color: #f2f2f2;
+}

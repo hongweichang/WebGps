@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0; list-style:none;}
+body { margin: 0 ; background-color: #f5f6f7}
+a{text-decoration:none;}
+.clear{clear:both; height:0; line-height:0; overflow:hidden;}
+#top{background:url(../images/home/topbg.png) repeat-x; height:113px;}
+.top{width:1026px; margin:0 auto;}
+/*h1#logo{width:153px; height:66px; display:block; float:left; margin-top:34px;}*/
+h1#logo{background:url(../images/home/logo.gif) no-repeat; width:153px; height:66px; display:block; float:left; margin-top:34px;}
+#nav{float:right; width:540px; overflow:hidden;zoom:1; margin-top:60px}
+#nav li{float:left; margin-left:10px;}
+#nav li.eng{margin-left:30px; font-weight:bold}
+#nav li a{display:block; float:left;padding-left:20px;   font-size:14px; color:#fff; background:url(../images/home/btnbg.png) no-repeat 0 200px; cursor:pointer}
+#nav li a span{padding-right:20px;height:33px; display:block;line-height:33px; background:url(../images/home/btnbg.png) no-repeat 0 200px; _float:left;}
+#nav li a:hover{background:url(../images/home/btnbg.png) no-repeat top left;}
+#nav li a:hover span{background:url(../images/home/btnbg.png) no-repeat top right;}
+#nav li.viewed a{background:url(../images/home/btnbg.png) no-repeat bottom left;}
+#nav li.viewed a span{background:url(../images/home/btnbg.png) bottom right no-repeat;}
+
+#showmenu{}
+#menubox{ width:100px; padding:8px 6px 8px 6px; background-color:#ffffff; border:#106086 solid 1px;filter:alpha(opacity=90);opacity: 0.90;
+position:absolute; top:0px; left:0px; display:none;z-index:100005;}
+#menubox a{ width:88px; padding-left:6px; padding-right:6px;display:block; color:#106086;border-bottom:#ACE3F8 dashed 1px;height:28px; line-height:28px;}
+#menubox a:hover{background-color:#084673; color:#ffffff; text-decoration:none;}
+#menubox a span{width:88px;text-align:center; display:block;}
+
+#content{margin:0 auto; width:1026px; position:relative}
+.logtop{position:absolute; background:url(../images/home/logintop.png) no-repeat; width:450px; height:10px; top:-10px; left:0;}
+.logleft{float:left; background:url(../images/home/loginbg.png) repeat-y; height:425px; width:450px;}
+.contbg{background-color:#dcdedd;}
+.logicon{background:url(../images/home/loginicon.png) no-repeat 0 0; height:29px; padding-left:45px; margin:80px 0 0 84px; font: bold 18px/29px Arial,"微软雅黑"; color:#999; margin-bottom:10px;}
+.logintab{margin-left:84px;}
+.logininput input{ width:218px; height:30px; border:solid 1px #c6c6c6; }
+.loginyzm img{ vertical-align:middle}
+.loginyzm input{width:77px; height:30px;border:solid 1px #c6c6c6;}
+.loginyzm a{color:#2b99dd; font-size:12px;}
+.logintab td{padding:10px 5px;}
+.inputtext{text-align:right; width:60px;}
+.loginbtn a{background:url(../images/home/loginicon.png) no-repeat 0 -33px; text-align:center; font: bold 16px/31px Arial,"微软雅黑"; width:105px; hanging-punctuation:31px; display:block; color:#fff}
+#footer{height:70px; background-color:#f5f6f7;}
+.copyright{width:958px; margin:0 auto; font:normal 11px/70px Arial, Helvetica, sans-serif; color:#666}
+.downtitle{background:url(../images/home/downtopbg.png) repeat-x; height:48px; font:bold 20px/48px Arial,"微软雅黑"; padding-left:20px; color:#333; border:solid 1px #cccbcb;}
+.downcontent{width:966px; margin:0 auto; padding:24px 0 10px}
+.downcontent ul{overflow:hidden; zoom:1; border:solid 1px #cccbcb; border-top:none;}
+.downcontent ul li{float:left; width:320px; height:340px; background-color:#fff; border-right: solid 1px #cccbcb}
+.downcontent ul li.end{width:321px;}
+.downicon{background:url(../images/home/downskip.png) no-repeat; width:226px; margin:50px auto 0; height:81px; margin-bottom:38px}
+.apple{background-position:0 0;}
+.windowns{background-position:0 -106px;}
+.android{background-position:0 -210px;}
+.downcontent ul li a{display:block; background:url(../images/home/downskip.png) no-repeat 0 -341px; width:226px; height:43px; margin:0 auto; text-align:center; font:normal 18px/43px Arial,"微软雅黑"; color:#fff; text-indent:-10px; margin-bottom:10px}
+.downcontent ul li a.disabled{background-position:0 -386px;}
+.downcontent ul li p{width:226px; margin:0 auto; font-size:12px; line-height:1.8em; color:#333}

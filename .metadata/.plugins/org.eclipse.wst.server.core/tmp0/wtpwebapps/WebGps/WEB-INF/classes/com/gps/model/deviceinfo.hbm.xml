@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps.model">
+	<class name="DeviceInfo" table="dev_info" polymorphism="explicit">
+		<!-- 
+		<id name="accountId" column="AccountID" type="java.lang.Integer">
+		   <generator class="foreign">
+				<param name="property">userAccount</param>
+			</generator>
+		</id>
+		<property name="idno" column="IDNO" type="string" length="40" unique="true"/>
+		-->	
+		<id	name="idno" column="IDNO" type="string" length="40" >
+			 <generator class="assigned" />
+		</id>
+			
+		<!-- ����������?������? -->
+		<property name="id" column="ID" type="java.lang.Integer" unique="true" insert="false" update="false"/>
+		<property name="devType" column="DevType" type="java.lang.Integer" not-null="true"/>
+		<property name="devSubType" column="DevSubType" type="java.lang.Integer"/>
+		<property name="icon" column="Icon" type="java.lang.Integer"/>
+		<property name="chnCount" column="ChnCount" type="java.lang.Integer"/>
+		<property name="chnName" column="ChnName" type="string" length="256"/>
+		<property name="ioInCount" column="ioInCount" type="java.lang.Integer"/>
+		<property name="ioInName" column="IOInName" type="string" length="256"/>
+		<property name="tempCount" column="TempCount" type="java.lang.Integer"/>
+		<property name="tempName" column="TempName" type="string" length="256"/>
+		<property name="simCard" column="SimCard" type="string" length="256"/>
+		<property name="vehiColor" column="VehiColor" type="java.lang.String" length="256"/>
+		<property name="vehiBand" column="VehiBand" type="java.lang.String" length="256"/>
+		<property name="vehiType" column="VehiType" type="java.lang.String" length="256"/>
+		<property name="vehiUse" column="VehiUse" type="java.lang.String" length="256"/>
+		<property name="vehiCompany" column="VehiCompany" type="java.lang.String" length="256"/>
+		<property name="driverName" column="DriverName" type="java.lang.String" length="256"/>
+		<property name="driverTele" column="DriverTele" type="java.lang.String" length="256"/>
+		<property name="dateProduct" column="DateProduct" type="java.util.Date" not-null="true"/>
+		<property name="userID" column="UserID" type="java.lang.Integer" not-null="true"/>
+		<property name="devGroupId" column="DevGroupID" type="java.lang.Integer"/>
+		<property name="module" column="Module" type="java.lang.Integer"/>
+		<property name="plateColor" column="PlateColor" type="java.lang.Integer"/>
+		<property name="terminalId" column="TerminalID" type="java.lang.String" length="64"/>
+		<property name="terminalModel" column="TerminalModel" type="java.lang.String" length="64"/>
+		<property name="productId" column="ProductID" type="java.lang.String" length="64"/>
+		<property name="typeId" column="TypeId" type="java.lang.Integer"/>
+		<property name="bandId" column="BandId" type="java.lang.Integer"/>
+		<!-- ������������������	-->
+		<property name="userSex" column="UserSex" type="java.lang.Integer"/>
+		<property name="userCardID" column="UserCardID" type="java.lang.String" length="32"/>
+		<property name="userIDNO" column="UserIDNO" type="java.lang.String" length="32"/>
+		<property name="userAddress" column="UserAddress" type="java.lang.String" length="256"/>
+		<property name="userPost" column="UserPost" type="java.lang.Integer"/>
+		<property name="userEquip" column="UserEquip" type="java.lang.Integer"/>
+		<property name="remarks" column="Remarks" type="java.lang.String" length="256"/>
+		<property name="protocol" column="Protocol" type="java.lang.Integer"/>
+		<property name="diskType" column="DiskType" type="java.lang.Integer"/>
+		<property name="audioCodec" column="AudioCodec" type="java.lang.Integer"/>
+		<property name="netAddrType" column="NetAddrType" type="java.lang.Integer"/>
+		<property name="mapType" column="MapType" type="java.lang.Integer"/>
+		<property name="mapValid" column="MapValid" type="java.lang.Integer"/>
+		<property name="jingDu" column="JingDu" type="java.lang.Integer"/>
+		<property name="weiDu" column="WeiDu" type="java.lang.Integer"/>
+		<!-- ������������ -->
+		<property name="payEnable" column="PayEnable" type="java.lang.Integer"/>
+		<property name="payBegin" column="PayBegin" type="java.util.Date"/>
+		<property name="payPeriod" column="PayPeriod" type="java.lang.Integer"/>
+		<property name="payMonth" column="PayMonth" type="java.lang.Integer"/>
+		<property name="payDelayDay" column="PayDelayDay" type="java.lang.Integer"/>
+		<property name="stoDay" column="stoDay" type="java.lang.Integer"/>
+		<property name="updateTime" column="UpdateTime" type="java.util.Date"/>
+		
+		<many-to-one name="userAccount" column="AccountID" class="UserAccount" unique="true" lazy="false" cascade="all"/>
+		<!--
+		<one-to-one name="userAccount" class="UserAccount" constrained="true"/>
+		--> 
+		<!-- ������������������������������	-->
+		<many-to-one name="userInfo" column="userID" class="UserInfo" not-found="ignore" lazy="false" insert="false" update="false"/>
+	</class>
+</hibernate-mapping>

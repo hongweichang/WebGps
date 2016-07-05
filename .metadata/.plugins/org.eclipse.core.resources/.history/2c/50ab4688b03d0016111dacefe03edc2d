@@ -1,0 +1,36 @@
+package com.gps808.model;
+
+import java.util.Date;
+
+import com.mysql.jdbc.Blob;
+
+public class StandatdDeviceTrack {
+	private Integer vehiID;
+	private String DevIdNO;
+	private Date GPSDate;
+	private Blob GPSData;
+	public Integer getVehiID() {
+		return vehiID;
+	}
+	public void setVehiID(Integer vehiID) {
+		this.vehiID = vehiID;
+	}
+	public String getDevIdNO() {
+		return DevIdNO;
+	}
+	public void setDevIdNO(String devIdNO) {
+		DevIdNO = devIdNO;
+	}
+	public Date getGPSDate() {
+		return GPSDate;
+	}
+	public void setGPSDate(Date gPSDate) {
+		GPSDate = gPSDate;
+	}
+	public Blob getGPSData() {
+		return GPSData;
+	}
+	public void setGPSData(Blob gPSData) {
+		GPSData = gPSData;
+	}
+}

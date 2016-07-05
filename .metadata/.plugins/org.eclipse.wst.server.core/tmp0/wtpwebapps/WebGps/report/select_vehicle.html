@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../js/dxtree/dhtmlxtree.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxcommon.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxtree.js"></script>
+<script type="text/javascript" src="../js/vehi_tree.js"></script>
+<script type="text/javascript" src="../js/gps_common.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="js/select_vehicle.js?131225"></script>
+</head>
+<body style="background-color:#fff;">
+<div style="width:500px;padding-bottom:60px;">
+	<dl class="setingbox">
+	  <dt><span id="labelSearch"></span></dt>
+	  <dd>
+		<input id="name" name="name" type="text" class="text" value="" maxlength="32" style="width:120px;" onkeyup="searchVehicle()"/>
+	  </dd>
+	  <dt><span id="labelSelectVehicle"></span></dt>
+	  <dd>
+	    <div id="vehicle_tree" style="width:260px; height:320px;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto;"/>
+	  </dd>
+	  <dt></dt>
+	  <dd>
+	  	<a href="javascript:saveSelectVehicle();" class="searchbtn">
+	  		<span id="save"></span>
+	    </a>
+	  </dd>
+	</dl>
+</div>
+</body>
+</html>

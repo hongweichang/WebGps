@@ -1,0 +1,19 @@
+package com.gps808.model;
+
+public class StandardDeviceStatus {
+	private String devIDNO;
+	private Integer olnine;
+	public String getDevIDNO() {
+		return devIDNO;
+	}
+	public void setDevIDNO(String devIDNO) {
+		this.devIDNO = devIDNO;
+	}
+	public Integer getOlnine() {
+		return olnine;
+	}
+	public void setOlnine(Integer olnine) {
+		this.olnine = olnine;
+	}
+	
+}

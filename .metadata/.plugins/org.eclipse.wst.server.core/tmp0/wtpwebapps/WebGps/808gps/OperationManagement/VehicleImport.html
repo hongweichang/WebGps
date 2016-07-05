@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../../system/css/public.css" rel="stylesheet" type="text/css" />
+<link href="../../system/css/serverinfo.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css?150120"/>
+<script type="text/javascript" src="../../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.form.js"></script>
+<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../../js/flexigrid/flexiManage.js?150120"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../../js/public.js"></script>
+<script type="text/javascript" src="js/VehicleImport.js"></script>
+</head>
+
+<body style="background-color:#fff;">
+<div class="serverall" style="width:480px;padding-bottom:20px;">
+    <form action="StandardVehicleAction_importExcel.action" id="uploadForm" name="uploadForm" method="post" enctype="multipart/form-data">
+	<dl class="setingbox">
+	  <dt><span id="lableExcel"></span></dt>
+	  <dd><input type="file" id="uploadFile" name="uploadFile" accept="*.xls"/></dd>
+	  <dt></dt>
+	  <dd>
+	  </dd>
+	</dl>
+	<div id="toolbar-btn" style="display:none;float:left;margin-left:100px;"></div>
+	</form>
+	<form action="StandardVehicleAction_excel.action?type=import" id="downloadForm" name="downloadForm" method="post" enctype="multipart/form-data">
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+.wy-header{position: relative;top:0px;left:0px;width: 100%;z-index: 999;}
+.wy-mod-top{width: 100%;height:80px;opacity: .9;filter:alpha(opacity=90);background: #fff;position: absolute;left:0px;top:0px;z-index: 1;}
+.wy-mod-top .logo{position: absolute;left:50%;margin-left:-480px;top:5px;}
+.wy-mod-top .logo img {
+	vertical-align:middle;
+}
+.wy-mod-top .logo span {
+	vertical-align:middle;
+    color: black;
+    cursor: pointer;
+    padding-left:10px;
+    display: inline-block;
+    font-family: "Microsoft YaHei";
+    font-size: 28px;
+    font-weight: 500;
+    left: 10px;
+}
+.wy-mod-nav{width:960px;height:80px;margin:0 auto;position: relative;z-index: 2;}
+.wy-mod-nav-main{float:right;font-family: "microsoft yahei"}
+.wy-mod-nav-main li{float:left;height:80px;}
+.wy-mod-nav-main li a{display: block;line-height: 76px;padding:0 15px 4px;font-size: 16px;color:#8d8d8d;}
+.wy-mod-nav-main li a:hover{padding-bottom:0px;color:#000000;text-decoration: none;}
+.wy-mod-nav-main li a.on{padding-bottom:0px;border-bottom:4px solid #3091f2;color:#000000;text-decoration: none;}
+.wy-mod-nav-main li a.on{font-weight: 700;color:#000;}
+.web-link{float:right;margin:20px 0px 0px 40px;}
+.btn-web-link{display: inline-block;*display: inline;width:90px;height:40px;padding-right:20px;background: url(../images/home/btn.png) 0px 0px no-repeat;line-height: 40px;color:#ffffff;font-family: "microsoft yahei";font-size: 14px;text-align: center;zoom:1;}
+.btn-web-link:hover{text-decoration: none;opacity: .9;filter:alpha(opacity=90);}
+.logo-link{display:blcok;width:200px;height:50px;position:absolute;z-index:33;top:8px;left:0px;}
+/*  |xGv00|4ed90b0123f21f291232e97dbd9f51c5 */
+
+.wy-mod-lang {
+	margin: 0 auto;
+	position: relative;
+	z-index: 3;
+}
+.wy-mod-lang a,.wy-mod-lang span{
+	white-space: nowrap;
+	word-break: break-all;
+	text-decoration: none
+ }
+.wy-mod-lang h2 {
+	color: #aaa;
+	font-size: 12px;
+	font-weight: 400;
+	display:inline;
+	float:right;
+}
+.wy-mod-lang h2 a,.wy-mod-lang h2 span{
+	color: #7c87a5;
+	float: left;
+	font-family: simsun;
+	height: 30px;
+	line-height: 30px;
+}
+.wy-mod-lang h2 span.text{
+	padding: 0 0 0 10px;
+}
+.wy-mod-lang h2 a{
+	padding: 0 10px 0 10px;
+	cursor: pointer;
+}
+.wy-mod-lang h2 a span{
+	color: #3083eb;
+}
+.wy-mod-lang .switch {
+	display:inline;
+	position: relative;
+	float:right;
+	margin-right: 20px;
+	top: 24px;
+}
+.wy-mod-lang .switch ul {
+	background-color: #fff;
+	border: 1px solid #bbcbdf;
+	border-radius: 2px;
+	box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
+	left: -1px;
+/*	position: absolute; */
+	display: none;
+	top: -1px;
+	vertical-align: top;
+	width: 120px;
+	z-index: 100;
+}
+.wy-mod-lang .switch ul.show {
+	display: block;
+}
+.wy-mod-lang .switch ul li {
+	height: 30px;
+	overflow: hidden;
+}
+.wy-mod-lang .switch ul li.current .icon{
+	background: url("../images/index.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background:	url("../images/index.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-color: rgba(0, 0, 0, 0);
+}
+.wy-mod-lang .switch ul a,.wy-mod-lang .switch span{
+	color: #536083;
+	display: block;
+	font-family: simsun;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 38px;
+	position: relative;
+	cursor: pointer;
+}
+.wy-mod-lang .switch span{
+	padding: 0px 10px;
+}
+.wy-mod-lang .switch span.switch-span:hover {
+	/* background-color: #3083eb;
+	color: #fff; */
+}
+.wy-mod-lang .switch ul a:hover{
+	background-color: #3083eb;
+	color: #fff;
+}
+.wy-mod-lang .switch ul a:hover span{
+	background-color: #3083eb;
+	color: #fff;
+}
+.wy-mod-lang .switch ul a i,.wy-mod-lang h2 a i{
+	height: 10px;
+	left: 20px;
+	margin: -5px 0 0;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	width: 10px;
+}
+.wy-mod-lang .switch .language {
+	position: absolute;
+	right: -20px;
+}
+.wy-mod-lang .carat{
+    position: absolute;
+    right: 0px;
+    margin-top: 0px;
+    border-width: 5px 4px 4px;
+    border-style: solid;
+    border-color: #3091F2 transparent transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    top: 14px;
+}
+.wy-mod-lang .show {
+	margin-top: -6px;
+	border-top: 4px solid transparent;
+	border-bottom: 5px solid #3091F2;
+}

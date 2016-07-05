@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<link href="../../css/public.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/report.css" rel="stylesheet" type="text/css" />
+	<link href="../../js/editselect/jquery.editable-select.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexigrid.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css"/>
+	<link rel="stylesheet" type="text/css" href="../StatisticalReports/css/StatisticalReports.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/labelIcon.css"/>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/editselect/jquery.editable-select.js"></script>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../js/myajax.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexiManage.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexigrid.js"></script>
+	<script type="text/javascript" src="../../js/jquery.form.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../js/public.js"></script>
+	<script type="text/javascript" src="../../js/WdatePicker/WdatePicker.js"></script>
+	<script type="text/javascript" src="../../js/date.js"></script>
+	<script type="text/javascript" src="../../js/gps_common.js"></script>
+	<script type="text/javascript" src="../StatisticalReports/js/search_option.js"></script>
+	<script type="text/javascript" src="js/file_detail.js"></script>
+</head>
+<style>
+	#toolbar-btn2 {
+		margin: 5px 0px 0px 159px;
+	}
+</style>
+<body onresize="setReportTableWidth(fixHeight);">
+<div id = "sysuserLogDate" class="setdate">
+<form method="post" name="reportForm" action="">
+    <div class="slinput">
+    	<div class="inputdis ttxinput" style="margin-right:0px;">
+	    	<span id="labelBegintime" class="setdatetext">&nbsp;</span>
+	    		<input type="text" id="begintime" size="15" readonly class="Wdate" style="width:165px;"/>
+	    	<span id="labelEndtime" class="setdatetext">&nbsp;</span>
+	    		<input type="text" id="endtime" size="15" readonly class="Wdate" style="width:165px;"/>
+    		<span id="labelhandled" class="setdatetext" style="float:left;">&nbsp;</span>
+    			<input type="text" id="select-version" size="15" style="width:165px;"/>
+	    </div>
+    	<div id="toolbar-btn1" class="ttxinput" style="display:none;float:left;margin-left:10px;"></div>
+    </div>
+</form>
+</div>
+<table id="alarmDetailTable" style="display:none;"></table>
+<div>
+	<form id="uploadForm" enctype="multipart/form-data">
+	<dl class="setingbox">
+	  <dt><span id="lableExcel"></span></dt>
+	  <dd><input type="file" id="uploadFile" name="uploadFile" onchange="setVersionNum()"/></dd>
+	  <dt><span id="lableVersionNum"></span></dt>
+	  <dd><input type="text" id="versionNum" style="width:300px;" maxlength="64"/></dd>
+	</dl>
+	</form>
+</div>
+<div id="toolbar-btn2"></div>
+</body>
+</html>

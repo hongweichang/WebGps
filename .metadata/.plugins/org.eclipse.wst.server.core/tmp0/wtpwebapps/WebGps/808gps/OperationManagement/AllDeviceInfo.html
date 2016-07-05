@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--<metahttp-equivmetahttp-equiv="x-ua-compatible"content="IE=7"/> -->
+    <title></title>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexigrid.css"/>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css?150120"/>
+	<link rel="stylesheet" type="text/css" href="../css/labelIcon.css"/>
+	<link rel="stylesheet" type="text/css" href="css/AllCommonInfo.css?150120"/>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../../js/dxtree/dhtmlxcommon.js"></script>
+	<script type="text/javascript" src="../../js/dxtree/dhtmlxtree.js"></script>
+	<script type="text/javascript" src="../../js/company_tree.js"></script>
+	<script type="text/javascript" src="../js/myajax.js"></script>
+	<script type="text/javascript" src="../../js/date.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexiManage.js?150120"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexigrid.js"></script>
+	<script type="text/javascript" src="../js/public.js?150120"></script>
+	<script type="text/javascript" src="js/AllDeviceInfo.js"></script>
+	<style>
+		#opera-top {
+			min-width: 900px;
+		}
+		#deviceInfo span.infotit {
+			padding:0px 5px 0px 10px;
+		}
+		#deviceInfo span#sysAllDevice {
+			padding: 0px 5px 0px 0px;
+		}
+		.btn-group .item .btnUnRegDevice span{
+			width: 75px;
+		}
+	</style>
+</head>
+ <body onresize="loadReportTableWidth();">
+	<div id="opera-top">
+		<div id="opera-top-toolbar">
+			<div id="toolbar-combo-install" style="display:none;float:left;"></div>
+			<div class="td-company" style="display:none;float:left;"></div>
+			<div id="toolbar-search" style="display:none;float:left;"></div>
+			<div id="toolbar-btn" style="display:none;float:left;margin-left:10px;"></div>
+			<div id="deviceInfo" style="display: inline-block;">
+				<span id="sysAllDevice" class="infotit sysDevice"></span>
+				<span id="sysAllDeviceCount" class="infocount blue sysDevice"></span>
+				<span id="allDevice" class="infotit sysDevice"></span>
+				<span id="allDeviceCount" class="infocount blue sysDevice"></span>
+				<span id="allowAddDevice" class="infotit sysDevice"></span>
+				<span id="allowAddDeviceCount" class="infocount blue sysDevice"></span>
+				<span id="onlineDevice" class="infotit"></span>
+				<span id="onlineDeviceCount" class="infocount blue"></span>
+				<span id="unRegDevice" class="infotit"></span>
+				<span id="unRegDeviceCount" class="infocount blue"></span>
+			</div>
+		</div>
+	</div>
+	<table id="deviceInfoTable" style="display:none;"></table>
+	<div id="company_tree" style="height:200px;background-color:#f5f5f5;border:1px solid Silver;overflow:auto;position: absolute;display:none;background-color: #fff;border: 1px solid rgba(0, 0, 0, 0.1);box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);z-index: 1998;"></div>
+ </body>
+</html>

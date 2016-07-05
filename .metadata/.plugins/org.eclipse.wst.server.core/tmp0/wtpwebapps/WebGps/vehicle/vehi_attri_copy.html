@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../js/dxtree/dhtmlxtree.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxcommon.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxtree.js"></script>
+<script type="text/javascript" src="../js/vehi_tree.js"></script>
+<script type="text/javascript" src="../js/gps_common.js"></script>
+<script type="text/javascript" src="js/vehi_attri_copy.js"></script>
+</head>
+<body style="background-color:#fff;">
+<div id="content" style="width:700px;position:relative;overflow:hidden; ">
+	<div id="devList" style="padding-left:10px;padding-top:10px;float:left; width:220px;border-right: solid 1px #cdcdcd;">
+		<div>
+			<span id="spanSelectTerminalTip"></span>
+		</div>
+		<div>
+			<span id="labelSearch"></span>
+			<input id="name" name="name" type="text" class="text" value="" maxlength="32" style="width:140px;" onkeyup="searchVehicle()"/>
+		</div>
+		<div id="vehicle_tree" style="margin-top:8px;width:210px; height:364px;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto;"></div>
+	</div>
+	<div>
+		<div id="downPlanContent" class="serverall" style="padding-bottom:20px;margin-left:231px;">
+			<dl class="mapfence">
+				<dt></dt>
+			  		<dd>
+			  			<span id="spanCopySelect"></span>
+			  		</dd>
+			  	<dt></dt>
+			  		<dd>
+			  			<input type="checkbox" name="attribute" id="attrIcon" value="1"/>
+			  			<span id="spanIcon"></span>&nbsp;&nbsp;<img id="imgIcon" width="32px" height="32px" src=""/>
+			  		</dd>
+				<dt></dt>
+			  		<dd>
+			  			<input type="checkbox" name="attribute" id="attrChannel" value="1"/>
+			  			<span id="spanChannel"></span>
+			  		</dd>
+			  	<dt></dt>
+			  		<dd>
+			  			<input type="checkbox" name="attribute" id="attrIo" value="1"/>
+			  			<span id="spanIo"></span>
+			  		</dd>
+			  	<dt></dt>
+			  		<dd>
+			  			<input type="checkbox" name="attribute" id="attrTemperature" value="1"/>
+			  			<span id="spanTemperature"></span>
+			  		</dd>
+			  	<dt></dt>
+			  		<dd>
+			  			<input type="checkbox" name="attribute" id="attrModule" value="1"/>
+			  			<span id="spanModule"></span>
+			  		</dd>
+			  	
+				<dt></dt>
+			  		<dd>
+			  			<input type="checkbox" name="attribute" id="attrCompany" value="1"/>
+			  			<span id="spanCompany"></span>
+			  		</dd>
+				<dt></dt>
+			  		<dd>
+			  			<input type="checkbox" name="attribute" id="attrBrand" value="1"/>
+			  			<span id="spanBrand"></span>
+			  		</dd>
+			  	<dt></dt>
+			  		<dd>
+			  			<input type="checkbox" name="attribute" id="attrVehiType" value="1"/>
+			  			<span id="spanVehiType"></span>
+			  		</dd>
+			  	<dt></dt>
+			  		<dd>
+			  			<input type="checkbox" name="attribute" id="attrPlateColor" value="1"/>
+			  			<span id="spanPlateColor"></span>
+			  		</dd>
+			  	<dt></dt>
+			  		<dd>
+			  			<input type="checkbox" name="attribute" id="attrFactoryCode" value="1"/>
+			  			<span id="spanFactoryCode"></span>
+			  		</dd>
+			  	<dt></dt>
+			  		<dd>
+			  			<input type="checkbox" name="attribute" id="attrTerminalType" value="1"/>
+			  			<span id="spanTerminalMode"></span>
+			  		</dd>
+			  	<dt></dt>
+					  <dd>
+					  	<a href="javascript:ajaxSaveCopy();" class="searchbtn">
+					  		<span id="save">&nbsp;</span>
+					    </a>
+					  </dd>
+			</dl>
+		</div>
+	</div>
+</div>
+</body>
+</html>

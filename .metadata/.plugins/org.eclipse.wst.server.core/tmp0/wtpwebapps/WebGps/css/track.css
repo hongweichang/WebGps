@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+html {
+	height: 100%;
+	margin: 0 auto;
+}
+
+body {
+	height: 100%;
+	background-color: #f5f6f7;
+}
+	
+.trackbox { display: block; overflow: hidden; zoom: 1; }
+.trackbox dl { }
+.trackbox dt { float: left; width:60px; text-align: right; margin-right: 10px; color: #333; padding-top: 2px; clear: both; display: block }
+.trackbox dd { padding-top: 2px; width: 170px; float: left; color: #666 }
+.trackbox dd input.text { width: 160px; height: 20px; border: solid 1px #cdcdcd; line-height: 20px; padding: 0 4px; color: #666; }
+.trackbox dd select { width: 162px; height: 20px;  }
+
+#mapToolbar {
+	height:25px; background-color: #F4F4F4;overflow:hidden;
+}
+#overVehicleAddress {
+	 float:left;display:inline;line-height: 25px; float: right; height: 25px; padding-right:20px; 
+}
+#statusToolbar {
+	height:25px; background-color: #F4F4F4;overflow:hidden;border-top:solid 1px #cdcdcd;border-bottom:solid 1px #cdcdcd;
+}
+
+#trackTable{height:130px; overflow:auto;display:block;border-bottom:solid 1px #cdcdcd;}
+#trackTable table{ width:100%;_width:98%;}
+
+.devicetable{margin:0 auto;}
+.devicetable .heard { background: url(../images/public/tableheard.png) repeat-x 0 -24px; height: 24px; color: #fff }
+.devicetable .tableft, .devicetable th.tabright { width: 24px; }
+.devicetable .tableft span { background: url(../images/public/tableheard.png) no-repeat 0 0; float: left; width: 4px; height: 24px; }
+.devicetable .tabright span { background: url(../images/public/tableheard.png) no-repeat 0 -48px; float: right; width: 4px; height: 24px; }
+.tabdata .tableft { border-left: solid 1px #cdcdcd; }
+.tabdata .tabright { border-right: solid 1px #cdcdcd; }
+.tabdata td { text-align: center; border-bottom: solid 1px #cdcdcd; height: 30px; color: #666; vertical-align: middle }
+.devicetable tr { background-color: #fff; }
+			tr.bluebg { background-color: #f5f6f7 }
+			tr.focusbg { background-color: #DEF2FF; }

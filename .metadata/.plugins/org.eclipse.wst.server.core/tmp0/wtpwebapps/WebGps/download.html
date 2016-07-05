@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/website.css?v150717" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/json2.js?v150717"></script>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js?v150717"></script>
+<script type="text/javascript" src="js/lhgdialog.min.js?v150717"></script>
+<script type="text/javascript" src="js/public.js?v150717"></script>
+<script type="text/javascript" src="js/myajax.js?v150717"></script>
+<script type="text/javascript" src="js/lang_fun.js?v150717"></script>
+<script type="text/javascript" src="lang.js?v150717"></script>
+<script type="text/javascript" src="lang_en.js?v150717"></script>
+<script type="text/javascript" src="lang_tw.js?v150717"></script>
+<script type="text/javascript" src="lang_turkey.js?v150717"></script>
+<script type="text/javascript" src="lang_thai.js?v150717"></script>
+<script type="text/javascript" src="lang_pt.js?v150717"></script>
+<script type="text/javascript" src="lang_ar.js?v150717"></script>
+<script type="text/javascript" src="lang_es.js?v150717"></script>
+<script type="text/javascript" src="lang_ru.js?v150717"></script>
+<script type="text/javascript" src="lang_bg.js?v150717"></script>
+<script type="text/javascript" src="website.js?v150717"></script>
+<script type="text/javascript" src="download.js?v150717"></script>
+</head>
+<body>
+<div id="top">
+  <div class="top">
+    <h1 id="logo"></h1>
+    <div id="nav">
+      <ul>
+        <li><a href="login.html"><span id="spanHome"></span></a></li>
+        <li class="viewed"><a href="#"><span id="spanDownload"></span></a></li>
+        <li><a href="#"><span id="spanQuestion"></span></a></li>
+        <li class="eng">
+	       <a href="#" id="showmenu"><span id="language">&nbsp;</span></a>
+	       <!-- 
+	       <a id="changeChinese" href="javascript:void(0);" onclick="switchLanguage('zh')"><span id="chinese"></span></a>
+	       <a id="changeEnglish" href="javascript:void(0);" onclick="switchLanguage('en')"><span id="english"></span></a>
+	       <a id="changeTw" href="javascript:void(0);" onclick="switchLanguage('tw')"><span id="chineseTW"></span></a>
+	        -->
+       	</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="contbg">
+  <div class="downcontent">
+    <div class="downtitle"> <span id="spanDownGViewer"></span> </div>
+    <ul>
+    	<li>
+        <div id="liDiv1" class="downicon apple" style="display:none;"></div>
+        <a id="liHref1" href="javascript:void(0);" class="downbtn" style="display:none;"><span id="liName1"></span></a>
+        <p id="liPart1" style="display:none;"><span id="liVersion1"></span>&nbsp;<span id="liVerValue1"></span><br />
+			<span id="liVerDate1"></span>&nbsp;<span id="liDateValue1"></span>&nbsp;&nbsp;  <br /></p>
+        </li>
+      <li>
+        <div id="liDiv2" class="downicon apple" style="display:none;"></div>
+        <a id="liHref2" href="javascript:void(0);" class="downbtn" style="display:none;"><span id="liName2"></span></a>
+        <p id="liPart2" style="display:none;"><span id="liVersion2"></span>&nbsp;<span id="liVerValue2"></span><br />
+			<span id="liVerDate2"></span>&nbsp;<span id="liDateValue2"></span>&nbsp;&nbsp;  <br /></p>
+        </li>
+      <li class="end">
+        <div id="liDiv3" class="downicon apple" style="display:none;"></div>
+        <a id="liHref3" href="javascript:void(0);" class="downbtn" style="display:none;"><span id="liName3"></span></a>
+        <p id="liPart3" style="display:none;"><span id="liVersion3"></span>&nbsp;<span id="liVerValue3"></span><br />
+			<span id="liVerDate3"></span>&nbsp;<span id="liDateValue3"></span>&nbsp;&nbsp;  <br /></p>
+        </li>
+    </ul>
+  </div>
+  <div id="downOther" class="downcontent" style="display:none;">
+    <div class="downtitle"> <span id="spanDownOther"></span> </div>
+    <ul>
+       <li >
+        <div id="liDiv4" class="downicon apple" style="display:none;"></div>
+        <a id="liHref4" href="javascript:void(0);" class="downbtn" style="display:none;"><span id="liName4"></span></a>
+        <p id="liPart4" style="display:none;"><span id="liVersion4"></span>&nbsp;<span id="liVerValue4"></span><br />
+			<span id="liVerDate4"></span>&nbsp;<span id="liDateValue4"></span>&nbsp;&nbsp;  <br /></p>
+        </li>
+       
+        <!-- gplayer client-->
+    	<li>
+        <div id="liDiv5" class="downicon apple" style="display:none;"></div>
+        <a id="liHref5" href="javascript:void(0);" class="downbtn" style="display:none;"><span id="liName5"></span></a>
+        <p id="liPart5" style="display:none;"><span id="liVersion5"></span>&nbsp;<span id="liVerValue5"></span><br />
+			<span id="liVerDate5"></span>&nbsp;<span id="liDateValue5"></span>&nbsp;&nbsp;  <br /></p>
+        </li>
+     
+        <li >
+        	<div id="liDiv6" class="downicon apple" style="display:none;"></div>
+        	<a id="liHref6" href="javascript:void(0);" class="downbtn" style="display:none;"><span id="liName6"></span></a>
+        	<p id="liPart6" style="display:none;"><span id="liVersion6"></span>&nbsp;<span id="liVerValue6"></span><br />
+			<span id="liVerDate6"></span>&nbsp;<span id="liDateValue6"></span>&nbsp;&nbsp;  <br /></p>
+        </li>  
+    </ul>
+  </div>
+</div>
+<div id="footer">
+  <div class="copyright"><span id="spanCopyright"></span></div>
+</div>
+<div id="menubox">
+	<a id="changeChinese" href="javascript:void(0);" onclick="switchLanguage('zh')"><span id="spanLangChinese"></span></a>
+    <a id="changeEnglish" href="javascript:void(0);" onclick="switchLanguage('en')"><span id="spanLangEnglish"></span></a>
+    <a id="changeTw" href="javascript:void(0);" onclick="switchLanguage('tw')"><span id="spanLangChineseTW"></span></a>
+    <a id="changeTurkey" href="javascript:void(0);" onclick="switchLanguage('tr')"><span id="spanLangTurkey"></span></a>     
+    <a id="changeThai" href="javascript:void(0);" onclick="switchLanguage('th')"><span id="spanLangThai"></span></a>     
+    <a id="changePt" href="javascript:void(0);" onclick="switchLanguage('pt')"><span id="spanLangPt"></span></a> 
+    <a id="changeAr" href="javascript:void(0);" onclick="switchLanguage('ar')"><span id="spanLangAr"></span></a> 
+    <a id="changeEs" href="javascript:void(0);" onclick="switchLanguage('es')"><span id="spanLangEs"></span></a>
+    <a id="changeBg" href="javascript:void(0);" onclick="switchLanguage('bg')"><span id="spanLangBg"></span></a>
+    <a id="changeRu" href="javascript:void(0);" onclick="switchLanguage('ru')"><span id="spanLangRu"></span></a>     	
+</div>
+</body>
+</html>

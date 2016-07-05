@@ -1,0 +1,40 @@
+@charset "UTF-8";
+.tangram-suggestion-main{z-index:20;}
+.icon_alarm_linkage {display:none;}
+.icon_alarm_mask {display:none;}
+div.dhtmlxMenu_dhx_web_SubLevelArea_Polygon table.dhtmlxMebu_SubLevelArea_Tbl td.sub_item_icon {
+    width: 0;
+}
+.maplngLat {
+	color: #0077ff;
+	cursor: pointer;
+	padding: 0px;
+}
+.maplngLat:hover{
+    color: #FF0000;
+	text-decoration:underline;
+}
+#state_position div{
+	float: left;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 180px;
+}
+.flexigrid .bDiv a {
+    margin: 0px 10px;
+    outline: 0 none;
+    text-decoration: none;
+    cursor: pointer;
+}
+.flexigrid .bDiv a:hover{
+	color: #219bd0;
+}
+.flexigrid .pcontrol input {
+	border: 1px solid #ddd;
+}
+/** 线路  **/
+.dm_line {
+	display: none;
+}
+/** 线路  **/

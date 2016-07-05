@@ -1,0 +1,16 @@
+package com.gps808.monitor.dao.impl;
+
+import java.io.Serializable;
+
+import com.gps808.monitor.dao.StandardDeviceStatusDao;
+
+public class StandardDeviceStatusDaoimpl implements StandardDeviceStatusDao {
+
+	@Override
+	public Object getObjectById(Class clazz, Serializable id) {
+		Object obj = null;
+		
+		return null;
+	}
+
+}

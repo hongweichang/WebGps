@@ -1,7 +1,5 @@
 package com.gps808.report.vo;
 
-import com.mysql.jdbc.Blob;
-
 public class StandardDeviceTrack
 {
   public static final int VEHICLE_GPS_LENGTH = 72;
@@ -16,7 +14,16 @@ public class StandardDeviceTrack
   private Integer status2;
   private Integer status3;
   private Integer status4;
-  private Integer tempSensor1;
+  private Integer Online;
+  public Integer getOnline() {
+	return Online;
+}
+
+public void setOnline(Integer online) {
+	Online = online;
+}
+
+private Integer tempSensor1;
   private Integer tempSensor2;
   private Integer tempSensor3;
   private Integer tempSensor4;

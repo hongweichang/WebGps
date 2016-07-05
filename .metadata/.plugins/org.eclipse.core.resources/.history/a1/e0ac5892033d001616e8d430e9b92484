@@ -1,0 +1,7 @@
+package com.gps808.model;
+
+public class StandardDeviceStatus {
+	private String devIDNO;
+	private Integer olnine;
+	
+}

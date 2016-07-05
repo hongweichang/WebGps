@@ -1,0 +1,38 @@
+package com.gps808.monitor.dao.impl;
+
+import java.util.Date;
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+
+import com.gps808.model.StandardDeviceStatus;
+import com.gps808.model.StandardTransportGps;
+import com.gps808.monitor.dao.StandardDeviceStatusDao;
+import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+public class StandardindexTrackDao extends HibernateDaoSupport implements StandardDeviceStatusDao {
+
+	@Override
+	public List<StandardDeviceStatus> getStandardDeviceStatus() 
+			throws HibernateException {
+		Query query = getSession().createQuery(String.valueOf("from dev_status where Online = 1"));
+		if(query == null){
+			return null;
+		}else{
+			return query.list();
+		}	
+	}
+
+	@Override
+	public List<StandardDeviceStatus> getStandardDeviceStatus(String devIDNO) 
+			throws HibernateException{
+		Query query = getSession().createQuery(String.format("from jt808_vehicle_gps where DevIDNO = %d and DateDiff(d,GPSDate,getdate())=0", new Object[]{ devIDNO }));
+		if(query == null){
+			return null;
+		}else{
+			return query.list();
+		}
+	}
+}

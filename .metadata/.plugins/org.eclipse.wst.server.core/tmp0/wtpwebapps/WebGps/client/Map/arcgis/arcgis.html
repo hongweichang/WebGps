@@ -1,0 +1,377 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="GENERATOR" content="MSHTML 8.00.6001.19088" />
+    <!-- arcgis map-->
+    <link rel="stylesheet" href="http://js.arcgis.com/3.12/esri/css/esri.css?v150717" />
+    <script type="text/javascript" src="http://js.arcgis.com/3.12/"></script>
+    <!-- refrence google map js resource -->
+    <link rel="stylesheet" type="text/css" href="../google/theme/common.css?v150717">
+    <script type="text/javascript" src="../google/js/common.js?v150717"></script>
+    <script type="text/javascript" src="../google/js/hashtable.js?v150717"></script>
+    <script type="text/javascript" src="../google/js/json2.js?v150717"></script>
+    <script type="text/javascript" src="../google/js/jquery-1.4.2.js?v150717"></script>
+    <script type="text/javascript" src="../google/js/jquery.js?v150717"></script>
+    <script type="text/javascript" src="../google/js/lang.js?v150717"></script>
+    <!-- arcgis library -->
+    <script type="text/javascript" src="js/vehicle.js?v150717"></script>
+    <script type="text/javascript" src="js/mapframe.js?v150717"></script>
+    <script type="text/javascript" src="js/map-arcgis.js?v150717"></script>
+    <script type="text/javascript" src="js/public.js?v150717"></script>
+    <script type="text/javascript" src="js/popupmarker.js?v150717"></script>
+    <script type="text/javascript" src="js/namemarker.js?v150717"></script>
+    <script type="text/javascript" src="js/mapmarker.js?v150717"></script>
+    <script type="text/javascript" src="js/maptrack.js?v150717"></script>
+    <script type="text/javascript" src="js/ev-arcgis.js?v150717"></script>
+    <script type="text/javascript" src="js/function.js?v150717"></script>
+    
+    <!--<style>
+      html, body, #mapcanvas {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+       
+      body {
+        background-color: #FFF;
+        overflow: hidden;
+        font-family: "Trebuchet MS";
+      }
+    </style>
+    -->
+
+    <!-- 去掉infowindow 多余部分-->
+    <style>
+    .esriPopup .actionsPane .zoomTo {  
+        display: none;  
+    }  
+    .esriPopup .titleButton.maximize {  
+     display: none;  
+    }  
+    </style>
+</head>
+<script type="text/javascript">
+    //global var defination
+    var lang = null;
+    var GFRAME = new mapframe();
+    var map = null;
+    var myValue;
+    var markers = [];
+
+    function initialize() {
+        initCommon("../google/theme/");
+
+        GFRAME.createMap(true);
+
+        document.getElementById('spanCurMap').innerText = lang.mapArcGis;
+        document.getElementById('spanMap8').style.display = "none";
+    }
+
+</script>
+
+<script type="text/javascript">
+    //for testing interface
+    function add_vehicle()
+    {
+        if (!isLoadMapSuc())
+        {
+            alert("Map no ready yet.");
+            return;
+        }
+        
+        insertVehicle('00001');
+        setVehiName('00001', "粤B8888");
+
+        setVehiMenu("00001", 0, "视频", false);
+        setVehiMenu("00001", 1, "操作", false);
+        setVehiMenu("00001", 2, "更多", false);
+
+        //setVehiIcon(1, "../google/image/1/online/1.gif");
+        updateVehicle('00001', 123, 32, 90, 0, 60, "2014-12-24", "ACC ON");
+
+    }
+    function update_vehicle()
+    {
+        var txt = "ACC OFF";
+
+        updateVehicle('00001', 113, 22, 0, 0, 60, "2014-12-24", txt);
+
+        move2vehicle(findVehicle('00001'));
+    }
+
+    function on_delete_vehicle()
+    {
+        deleteVehicle('00001');
+    }
+
+    function select_vehicle()
+    {
+        selectVehicleEx("00001");
+    }
+
+    function center_vehicle()
+    {
+        centerVehicle("00001");
+    }
+
+    var drawtrace = false;
+    function draw_trace()
+    {
+        //insertVehicle("00002");
+        //pushTrackPoint("00001", 113, 22);
+       // pushTrackPoint("00001", 123, 33);
+       // pushTrackPoint("00001", 133, 23);
+
+       // drawTrackPoint("00001");
+       // return;
+        var fJindu = 113;
+        var fWeidu = 22;
+
+        for (var i = 0; i < 100; ++i)
+        {
+            fJindu += 0.0002;
+            pushTrackPoint("00001", fJindu, fWeidu);
+        }
+        drawtrace = true;
+
+        drawTrackPoint("00001");
+
+    }
+
+    function delete_trace()
+    {
+        if (!drawtrace)
+        {
+            alert("not draw trace yet.");
+            return; 
+        }
+        deleteTrackPoint("00001");
+    }
+
+    function add_point()
+    {
+        insertMarker(100);
+        //1 for point
+        
+        updateMarker(100, 1, "My Point", "115", "25", 1, "ff0000", "hello point.");
+    }
+
+    function update_point()
+    {
+        //insertMarker(100);
+        //1 for point
+        updateMarker(100, 1, "My Point1", "125", "25", 1, "ff0000", "hello point1.");
+    }
+
+    function add_rectangle()
+    {
+        insertMarker(200);
+        //2 for rectangle
+        updateMarker(200, 2, "My Rectangle", "101.865234,103.710937,103.710937,101.865234,101.865234", "17.560247,17.560247,16.299051,16.299051,17.560247", 1, "ff0000", "hello rectangle.");
+    }
+
+    function update_rectangle()
+    {
+        updateMarker(200, 2, "My Rectangle1", "95,110", "5,15", 1, "00ff00", "hello rectangle1.");
+    }
+
+    function add_polygon()
+    {
+        insertMarker(300);
+        //3 for polygon
+        updateMarker(300, 3, "My Polygon", "102.917285,115.917385,129.916285,102.917285", "25.083448,27.083548,35.082448,25.083448", 1, "ff0000", "<b>地点：</b>深圳公司<br/><b>备注：<b>多边形");
+    }
+
+    function update_polygon()
+    {
+        //3 for polygon
+        updateMarker(300, 3, "My Polygon1", "145,155,165,145", "15,45,25,15", 1, "00ff00", "hello polygon1.");
+    }
+
+
+    function add_polyline()
+    {
+        insertMarker(400);
+        //9 for polygon
+        updateMarker(400, 9, "My Polyline", "115,125,135", "25,35,15", 1, "ff0000", "hello polyline.");
+    }
+
+    function update_polyline()
+    {
+        //9 for polygon
+        updateMarker(400, 9, "My Polyline1", "145,155,165", "15,45,25", 1, "00ff00", "hello polyline1.");
+    }
+
+    function on_select_marker()
+    {
+        //find point
+        //selectMarker(100);
+        //find other
+        selectMarker(300);
+    }
+
+    function on_delete_marker()
+    {
+        /*var aa = new Array();
+
+        aa.push("1");
+        aa.push("2");
+        aa.push("3");
+        aa.push("4");
+
+        var s = aa.pop();
+        aa.unshift(s);
+        alert(s + " length=" + aa.length.toString() );
+        alert(" length=" + aa.length.toString());
+        */
+        //delete point
+        //deleteMarker(100);
+        //delete other
+        deleteMarker(200);
+    }
+
+    function on_prase_addr()
+    {
+        parseAddressEx(38.95, -95.273, function (res, addr)
+        {
+            if (res == 1)
+            {
+                document.getElementById("edtaddr").value = addr;
+            }
+        });
+    }
+
+    var glngs = new Array();
+    var glats = new Array();
+    var gcurrnet = 0;
+    var alen = 2000;
+
+    function move_vheicle()
+    {
+        gcurrnet++;
+        if (gcurrnet < alen)
+        {
+            var track = findTracker(1);
+            trackInsertVehicle(1, gcurrnet, 1);
+            trackUpdatePlayVehicle(track, glngs[gcurrnet], glats[gcurrnet], 90, 1, "label", "status", 1);
+            setTimeout(move_vheicle, 50);
+        }  
+    }
+    function on_playtrace()
+    {
+        GFRAME.map.setZoom(8);
+
+        trackInsertTrack(1);
+        trackInsertVehicle(1, 0, 1);
+        var track = findTracker(1);
+        trackUpdatePlayVehicle(track, 113, 22, 90, 1, "label", "status", 1);
+
+        
+        for (var i = 0; i < alen; i++)
+        {
+            glats.push(22 + 0.02 * i);
+            glngs.push(113 + 0.02 * i);
+        }
+        //画所有轨迹
+        //trackPushPoint(1, 113, 22);
+        //trackPushPoint(1, 115, 22);
+        //trackPushPoint(1, 118, 22);
+        //trackPushPoint(1, 120, 22);
+        for (var i = 0; i < alen; i++)
+        {
+            trackPushPoint(1, glngs[i], glats[i]);
+        }
+
+        trackDrawPoint(1);
+
+        //return;
+        
+        /*
+        trackInsertVehicle(1, 1, 1);
+        trackUpdatePlayVehicle(track, 113, 22, 90, 1, "label", "status", 1);
+
+        trackInsertVehicle(1, 2, 1);
+        trackUpdatePlayVehicle(track, 115, 22, 90, 1, "label", "status", 1);
+
+        trackInsertVehicle(1, 3, 1);
+        trackUpdatePlayVehicle(track, 118, 22, 90, 1, "label", "status", 1);
+
+        //显示终点图标
+        trackInsertVehicle(1, 4, 1);
+        trackUpdatePlayVehicle(track, 120, 22, 90, 1, "label", "status", 1);
+        */
+
+
+        setTimeout(move_vheicle, 100);
+    }
+
+    function on_delete_track()
+    {
+        trackDeleteTrack(1); 
+    }
+
+</script>
+<body oncontextmenu="return false;" onresize="GFRAME.restFrame();" onload="initialize();">
+ <div id="FrameCanvas">
+	<div id="mapbar">
+		<div id="maptoolbar">
+			<img id="addPoint" src="../google/image/addpoint.gif" style="padding-top:2px;padding-left:2px;display:none;" onclick="addMarkerPoint()"/>
+			<img id="addRectangle" src="../google/image/addrectangle.gif" style="padding-top:2px;display:none;" onclick="addMarkerRectangle()"/>
+			<img id="addPolygon" src="../google/image/addpolygon.gif" style="padding-top:2px;display:none;" onclick="addMarkerPolygon()"/>
+            <img id="addLine" src="../google/image/addline.gif" style="padding-top:2px;display:none;" onclick="addMarkerLine()"/>
+			<img id="btnSearch" src="../google/image/search.gif" style="padding-top:2px;display:none;" onclick="searchVehi()"/>
+			<img id="btnFullScreen" src="../google/image/fullscreen.gif" style="padding-top:2px;display:none;" onclick="fullScreen()"/>
+			<img id="btnCenter" src="../google/image/savemapconfig.gif" style="padding-top:2px;display:none;" onclick="getCenter()"/>
+            
+            <!--for testing -- >
+            <input type="button" name="button1" value="add v" onclick="add_vehicle();"/>
+            <input type="button" name="button2" value="update v" onclick="update_vehicle();"/>
+            <input type="button" name="btndeletevehicle" value="delete v" onclick="on_delete_vehicle();"/>
+            <input type="button" name="button3" value="select v" onclick="select_vehicle();"/>
+            <input type="button" name="button4" value="center v" onclick="center_vehicle();"/>
+            <input type="button" name="button5" value="draw trace" onclick="draw_trace();"/>
+            <input type="button" name="button6" value="delete trace" onclick="delete_trace();"/>
+            <input type="button" name="btnplaytrace" value="play trace" onclick="on_playtrace();"/>
+            <input type="button" name="btndeletetrace" value="delete trace" onclick="on_delete_track();"/>
+            <input type="button" name="button7" value="add point" onclick="add_point();"/>
+            <input type="button" name="btnupdatepoint" value="update point" onclick="update_point();"/>
+            <input type="button" name="button8" value="add retangle" onclick="add_rectangle();"/>
+            <input type="button" name="btnupdaterectangle" value="update retangle" onclick="update_rectangle();"/>
+            <input type="button" name="button9" value="add polygon" onclick="add_polygon();"/>
+            <input type="button" name="btnupdatepolygon" value="update polygon" onclick="update_polygon();"/>
+            <input type="button" name="button10" value="add polyline" onclick="add_polyline();"/>
+            <input type="button" name="btnupdatepolyline" value="update polyline" onclick="update_polyline();"/>
+            <input type="button" name="btnselectmarker" value="select marker" onclick="on_select_marker();"/>
+            <input type="button" name="btndelmarker" value="delete marker" onclick="on_delete_marker();"/>
+            <input type="button" name="btnpraseaddr" value="prase addr" onclick="on_prase_addr();"/>
+            <input type="input" id="edtaddr" name="edtaddr" value=""/>
+            <!--end for testing -->
+		</div>
+		<div id="selectMap" onMouseOver="showMapSelect()" onMouseOut="hideMapSelect()" style="display:none;padding-top:4px;width: 98px; height: 18px; border: 1px solid rgb(166, 166, 166); z-index: 100; float: right; " class="cat_list_type" id="cat_list">
+			<div id="mapMenu" class="h2_cat_type"><h3 id="txt"><span id="spanCurMap"></span></h3>
+				<div class="h3_cat_type">
+					<div class="shadow_border_type">
+						<ul>
+                            <li style="display:none;" id="liMap3"><a href="javascript:switchMapTo('3');"><span id="spanMap3"></span></a></li>	<!--百度-->
+							<li style="display:none;" id="liMap0"><a href="javascript:switchMapTo('0');"><span id="spanMap0"></span></a></li>  <!--谷歌-->
+                            <li style="display:none;" id="liMap8"><a href="javascript:switchMapTo('8');"><span id="spanMap8"></span></a></li>  <!--ArcGIS-->
+							<li style="display:none;" id="liMap1"><a href="javascript:switchMapTo('1');"><span id="spanMap1"></span></a></li>  <!--MapInfo-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="mapbarRight">
+			<img id="btnExpand" src="../google/image/expand.jpg" style="padding-top:2px;display:none;" onclick="expand()"/>
+		</div>
+		<div id="overVehicleAddress"></div>
+	</div>
+	<div id="mapcanvas"></div>
+</div>
+<span id="menu_more" onmouseover=clearInterval(_s); onmouseout="hidemore('menu_more',300)"></span>
+<span id="tip" unselectable="on" style="position: absolute; z-index: 10; background:#FBFFD7; border:solid 1px #999999; font-weight: bold; l"></span>
+</body>
+</html>

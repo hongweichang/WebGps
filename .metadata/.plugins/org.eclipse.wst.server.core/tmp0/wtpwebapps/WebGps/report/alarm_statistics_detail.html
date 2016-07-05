@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/report.css" rel="stylesheet" type="text/css" />
+<link href="../js/editselect/jquery.editable-select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/editselect/jquery.editable-select.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/gps_common.js"></script>
+<script type="text/javascript" src="js/search_option.js"></script>
+<script type="text/javascript" src="js/alarm_statistics_detail.js"></script>
+</head>
+<body>
+<div id = "sysuserLogDate" class="setdate">
+<form method="post" name="reportForm" action="">
+	<h2 class="righttitile1"><span id="reportTitle">&nbsp;</span></h2>
+    <div class="slinput">
+    	<div class="inputdis">
+	    	<span id="labelBegintime" class="setdatetext">&nbsp;</span>
+	    		<input type="text" id="begintime" name="begintime" size="15" readonly class="Wdate" style="width:160px;"/>
+	    	<span id="labelEndtime" class="setdatetext">&nbsp;</span>
+	    		<input type="text" id="endtime" name="endtime" size="15" readonly class="Wdate" style="width:160px;"/>
+	    </div>
+    </div>
+    <div class="slinput">
+    	<div class="inputdis">
+    		<span id="labelSelectVehicle" class="setdatetext">&nbsp;</span>
+	    	<select class="editable-select" id="deviceList" name="deviceList"></select>
+	    	<input type="text" style="display:none" id="devIdnos" name="devIdnos" value=""/>
+    	</div>
+	    <a href="#" id="btnSelVehicle" class="pinbtn"><span id="spanBtnSelVehicle">&nbsp;</span></a>
+    	<a href="#" id="btnQuery" class="pinbtn"><span id="spanBtnQuery">&nbsp;</span></a>
+		<a href="#" id="btnExport" class="pinbtn"><span id="spanBtnExport">&nbsp;</span></a>		
+		<a href="#" id="btnExportCsv" class="pinbtn"><span id="spanBtnExportCsv">&nbsp;</span></a>
+		<a href="#" id="btnExportPdf" class="pinbtn"><span id="spanBtnExportPdf">&nbsp;</span></a>
+     </div>
+</form>
+</div>
+<div style="height:550px;overflow: scroll;">
+<table  border="0" cellspacing="0" cellpadding="0" class="devicetable" id="statDetailTable" width="6000px">
+	<tr class="heard">
+		<th class="tableft"><span></span></th>
+		<th><span id="thIndex">&nbsp;</span></th>
+		<th><span id="thName">&nbsp;</span></th>
+		<th><span id="thPlateColor"></span></th>
+		<th><span id="thVehiColor"></span></th>
+		<th><span id="thCustomAlert"></span></th>
+		<th><span id="thEmergencyAlarm"></span></th>
+		<th><span id="thFatigueDriving"></span></th>
+		<th><span id="thMainPowerDisconnect"></span></th>
+		<th><span id="thPulloutTimeout"></span></th>
+		<th><span id="thTimeoutParking"></span></th>
+		<th><span id="thSectionSpeeding"></span></th>
+		<th><span id="thAntennaShortCircuit"></span></th>
+		<th><span id="thCollisionRollover"></span></th>
+		<th><span id="thIllegalMove"></span></th>
+		<th><span id="thTerminalStolen"></span></th>
+		<th><span id="thWarning"></span></th>
+		<th><span id="thGNSSModuleFailure"></span></th>
+		<th><span id="thGNSSAntennaMissedOrcut"></span></th>
+		<th><span id="thGNSSAntennaShortCircuit"></span></th>
+		<th><span id="thLCDOrDisplayFailure"></span></th>
+		<th><span id="thTTSModuleFailure"></span></th>
+		<th><span id="thCameraMalfunction"></span></th>
+		<th><span id="thAccumulatedDayDrivingTimeout"></span></th>
+		<th><span id="thCumulativeDrivingTimeout"></span></th>
+		<th><span id="thTerminalRegion"></span></th>
+		<th><span id="thAccessRoutes"></span></th>
+		<th><span id="thVSSVehicleMalfunction"></span></th>
+		<th><span id="thVehicleFuelAbnormal"></span></th>
+		<th><span id="thIllegalVehicleIgnition"></span></th>
+		<th><span id="thIllegalVehicleDisplacement"></span></th>
+		<th><span id="thTerminalOverspeed"></span></th>
+		<th><span id="thTerminalOffRoute"></span></th>
+		<th><span id="thTimeout"></span></th>
+		<th><span id="thNonWorkingTime"></span></th>
+		<th><span id="thPlatformIntoArea"></span></th>
+		<th><span id="thPlatformOffRoute"></span></th>
+		<th><span id="thPlatformOverspeed"></span></th>
+		<th><span id="thPointsNotArrive"></span></th>
+		<th><span id="thMainPowerUndervoltage"></span></th>
+		<th><span id="thStopTimeout"></span></th>
+		<th><span id="thRegionalSpeeding"></span></th>
+		<th><span id="thOutOfArea"></span></th>
+		<th><span id="thPointsNotLeave"></span></th>
+		<th><span id="thAntennaOpen"></span></th>
+		<th><span id="thAntiTheftDevice"></span></th>
+		
+<!-- 		<th><span id="thDate">&nbsp;</span></th> -->
+<!-- 		<th><span id="thType">&nbsp;</span></th> -->
+<!-- 		<th><span id="thPosition">&nbsp;</span></th> -->
+		<th class="tabright"><span></span></th>
+	</tr>
+	<tr id="statDetailTableTemplate" class="tabdata" style="display:none">
+		<td class="tableft">&nbsp;</td>
+		<td><span id="tdIndex">&nbsp;</span></td>
+		<td><span id="tdName">&nbsp;</span></td>
+		<td><span id="tdPlateColor"></span></td>
+		<td><span id="tdVehiColor"></span></td>
+		<td><span id="tdCustomAlert"></span></td>
+		<td><span id="tdEmergencyAlarm"></span></td>
+		<td><span id="tdFatigueDriving"></span></td>
+		<td><span id="tdMainPowerDisconnect"></span></td>
+		<td><span id="tdPulloutTimeout"></span></td>
+		<td><span id="tdTimeoutParking"></span></td>
+		<td><span id="tdSectionSpeeding"></span></td>
+		<td><span id="tdAntennaShortCircuit"></span></td>
+		<td><span id="tdCollisionRollover"></span></td>
+		<td><span id="tdIllegalMove"></span></td>
+		<td><span id="tdTerminalStolen"></span></td>
+		<td><span id="tdWarning"></span></td>
+		<td><span id="tdGNSSModuleFailure"></span></td>
+		<td><span id="tdGNSSAntennaMissedOrcut"></span></td>
+		<td><span id="tdGNSSAntennaShortCircuit"></span></td>
+		<td><span id="tdLCDOrDisplayFailure"></span></td>
+		<td><span id="tdTTSModuleFailure"></span></td>
+		<td><span id="tdCameraMalfunction"></span></td>
+		<td><span id="tdAccumulatedDayDrivingTimeout"></span></td>
+		<td><span id="tdCumulativeDrivingTimeout"></span></td>
+		<td><span id="tdTerminalRegion"></span></td>
+		<td><span id="tdAccessRoutes"></span></td>
+		<td><span id="tdVSSVehicleMalfunction"></span></td>
+		<td><span id="tdVehicleFuelAbnormal"></span></td>
+		<td><span id="tdIllegalVehicleIgnition"></span></td>
+		<td><span id="tdIllegalVehicleDisplacement"></span></td>
+		<td><span id="tdTerminalOverspeed"></span></td>
+		<td><span id="tdTerminalOffRoute"></span></td>
+		<td><span id="tdTimeout"></span></td>
+		<td><span id="tdNonWorkingTime"></span></td>
+		<td><span id="tdPlatformIntoArea"></span></td>
+		<td><span id="tdPlatformOffRoute"></span></td>
+		<td><span id="tdPlatformOverspeed"></span></td>
+		<td><span id="tdPointsNotArrive"></span></td>
+		<td><span id="tdMainPowerUndervoltage"></span></td>
+		<td><span id="tdStopTimeout"></span></td>
+		<td><span id="tdRegionalSpeeding"></span></td>
+		<td><span id="tdOutOfArea"></span></td>
+		<td><span id="tdPointsNotLeave"></span></td>
+		<td><span id="tdAntennaOpen"></span></td>
+		<td><span id="tdAntiTheftDevice"></span></td>
+		
+<!-- 		<td><span id="tdDate">&nbsp;</span></td> -->
+<!-- 		<td><span id="tdType">&nbsp;</span></td> -->
+<!-- 		<td><span id="tdPosition">&nbsp;</span></td> -->
+		<td class="tabright">&nbsp;</td>
+	</tr>
+</table>
+</div>
+<div id="statDetailPagination" class="pagination" style="margin:10px 10px 10px 10px;"></div>
+</body>
+</html>

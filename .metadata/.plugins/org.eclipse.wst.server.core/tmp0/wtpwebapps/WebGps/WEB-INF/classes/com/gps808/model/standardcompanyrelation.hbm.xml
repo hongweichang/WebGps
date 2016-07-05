@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardCompanyRelation" table="jt808_company_relation">
+		<!-- ����������������?? -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ������������identity������������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ����������?������? -->
+		<property name="companyId" column="CompanyID" type="java.lang.Integer"/>
+		<property name="childId" column="ChildId" type="java.lang.Integer"/>
+<!-- 		<property name="updateTime" column="UpdateTime"	type="java.util.Date"/> -->
+	</class>
+</hibernate-mapping>

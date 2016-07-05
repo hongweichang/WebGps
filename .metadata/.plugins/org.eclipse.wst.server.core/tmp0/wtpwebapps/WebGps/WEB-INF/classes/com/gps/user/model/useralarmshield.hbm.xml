@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.user.model">
+	<class name="UserAlarmShield" table="user_alarm_shield">
+		<!-- ������������ -->
+		<id	name="userId" column="UserID" type="integer" >
+			<!-- ��������identity������������ -->
+			<generator class="assigned"/>
+		</id>
+		<!-- ������������ -->
+		<property name="armString" column="ArmString"	type="string" length="1024" not-null="true"/>
+	</class>
+</hibernate-mapping>

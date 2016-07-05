@@ -1,0 +1,14 @@
+package com.gps808.monitor.service.impl;
+
+import java.util.List;
+
+import com.gps808.model.StandardDeviceStatus;
+import com.gps808.monitor.dao.impl.StandardindexTrackDao;
+
+import io.goeasy.GoEasy;
+
+public class StandardindexTrack {
+	StandardindexTrackDao Track = new StandardindexTrackDao();
+	GoEasy goEasy = new GoEasy("97523f3a-e006-4548-b24a-a8b91abe36a4");
+		
+}

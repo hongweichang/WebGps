@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.hibernate.mapping.List"/>
+<fullyQualifiedTypeName name="java.sql.Blob"/>
+<fullyQualifiedTypeName name="com.gps808.report.vo.StandardindexTrack"/>
+<fullyQualifiedTypeName name="com.framework.web.dto.GoEasyDto"/>
+<fullyQualifiedTypeName name="oracle.sql.BLOB"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="com.gps808.monitor.dao.StandardDeviceStatusDao"/>
+<fullyQualifiedTypeName name="org.hibernate.Hibernate"/>
+<fullyQualifiedTypeName name="org.hibernate.Transaction"/>
+<fullyQualifiedTypeName name="com.gps808.model.StandardFixedTts"/>
+<fullyQualifiedTypeName name="org.springframework.orm.hibernate3.support.HibernateDaoSupport"/>
+<fullyQualifiedTypeName name="org.hibernate.Query"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.persistence.criteria.CriteriaBuilder.In"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.Blob"/>
+<fullyQualifiedTypeName name="com.gps808.model.StandardTransportGps"/>
+<fullyQualifiedTypeName name="org.hibernate.HibernateException"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="com.gps808.monitor.dao.impl.StandardindexTrackDao"/>
+<fullyQualifiedTypeName name="io.goeasy.GoEasy"/>
+<fullyQualifiedTypeName name="com.gps808.model.StandardDeviceStatus"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="org.hibernate.Session"/>
+<fullyQualifiedTypeName name="org.hibernate.SQLQuery"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="org.hibernate.transform.Transformers"/>
+<fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
+<fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionContext"/>
+<fullyQualifiedTypeName name="com.gps808.monitor.dao.impl.StandardMonitorDaoHibernate"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.gps808.model.StandardDeviceGps"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.gps808.report.vo.StandardDeviceTrack"/>
+<fullyQualifiedTypeName name="com.framework.web.dto.QueryScalar"/>
+<fullyQualifiedTypeName name="org.hibernate.type.StandardBasicTypes"/>
+</qualifiedTypeNameHistroy>

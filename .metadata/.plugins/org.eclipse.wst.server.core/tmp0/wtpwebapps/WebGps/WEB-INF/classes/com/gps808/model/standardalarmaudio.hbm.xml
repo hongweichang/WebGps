@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardAlarmAudio" table="jt808_alarm_audio">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->	
+		<property name="uid" column="UserId" type="java.lang.Integer"/>
+		<property name="sds" column="AudioFile" type="string" length="128"/>
+		<property name="dec" column="AudioDesc" type="string" length="512"/>
+		<property name="uptm" column="UpdateTime" type="java.util.Date"/>
+	</class>
+</hibernate-mapping>

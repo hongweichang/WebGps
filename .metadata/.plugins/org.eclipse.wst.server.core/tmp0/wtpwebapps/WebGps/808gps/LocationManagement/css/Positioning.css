@@ -1,0 +1,208 @@
+@charset "UTF-8";
+.main{width:100%;height:100%;min-width:300px;position: relative;overflow: hidden;}
+
+/*轨迹回放*/
+.main .track{position: relative;}
+/*.track_top{height: 38px;line-height: 38px;background-color: #efefef;box-shadow:0 2px 5px #a9a9a9;position: relative;z-index: 1;}*/
+.track_slide{z-index: 2;position: absolute;right: 8px;top:70px;height: 350px;}
+.track_slide .shrink{
+	position: absolute;
+	z-index:9;
+	right: 10px;
+	bottom: -20px;
+	background: url('../../images/track-ico2.png') no-repeat -23px -9px;
+	background:	url("../../images/track-ico2.png");
+	background-repeat: no-repeat;
+	background-position: -23px -9px;
+	background-color: rgba(0, 0, 0, 0);
+	width: 14px;
+	height: 14px;
+}
+.track_slide .shrink.active{background-position: -44px -2px}
+.track_slide .track_slide_rows{width: 312px;padding-top: 10px;background-color:rgba(255,255,255,0.8);padding-bottom: 18px;}
+.track_slide_txt{display: none;width: 90px;height: 32px;background-color:rgba(255,255,255,0.8);line-height: 32px;padding:0 10px;position: absolute;bottom:-28px;right: 0px;}
+.track_slide .rows{padding: 10px 0px 0 20px;color: #333;font-size: 14px;}
+.track_slide .rows .labels{width: 70px;float: left;line-height: 30px;}
+.track_slide .rows .labels_inp{float: left;width: 190px;}
+.track_slide .rows .labels_inp input,.track_slide .rows .labels_inp select{width:168px;padding: 2px 5px;border:1px solid #999; }
+.track_slide .rows .labels_inp select{line-height: 24px;}
+.track_slide .rows .labels_inp input{height: 24px;width: 150px;}
+.track_slide .rows .labels_inp select{padding: 5px 2px;width: 160px;}
+.track_slide .rows .labels_inp .more_car{display: inline-block;background: url('../../images/track-ico2.png') no-repeat -22px -2px;width: 18px;height: 4px;margin-left: 5px;}
+.Wdate{background:#fff url(../../images/datePicker.gif) no-repeat right;border:none;}
+.track_slide .rows.radio-check{padding-top: 20px;}
+.track_slide .rows span{padding-right:10px;}
+.track_slide .rows span a{margin-right: 3px;height: 8px;width: 8px;border:1px solid #a8a8a8;position: relative;padding: 2px;display: inline-block;vertical-align: middle;}
+.track_slide .rows span a i{position: absolute;left: 2px;top:2px;width: 8px;height: 8px;background-color: #a8a8a8;display: none;}
+.track_slide .rows span.active a i{display: block;}
+.track_slide .rows.sear_btn{padding-top: 28px;}
+.track_slide .rows.sear_btn a{width: 120px;height: 42px;line-height: 42px;background-color: #0b83dc;font-size: 16px;text-align: center;color: #fff;margin: 0 auto;display: block;}
+
+.track_main{position: relative;height: 100%;}
+/*.track_main .map{background: url(../images/map.jpg)}*/
+.track_main .play_part{/*cursor: move;*/display: block;z-index: 9;height: 20px;padding: 10px;background-color:rgba(255,255,255,0.9);position: absolute;right:360px;top: 400px; }
+.track_main .play_part .close{position: absolute;background: url('../../images/ico2.png') no-repeat -82px -19px;width: 15px;height: 15px;right: 10px;top:5px;cursor: pointer;}
+.track_main .play_part .play{float: left;cursor: pointer;display: inline-block;background: url('../../images/track-ico2.png') no-repeat -4px -12px;width: 11px;height: 12px;margin-top: 4px;}
+.track_main .play_part .pause{float: left;width: 12px;height: 12px;background-color: #afbfcf;display: inline-block;cursor: pointer;margin: 4px 5px 0 0;}
+.track_main .play_part .time{float: left;cursor: pointer;margin: 0 10px;display: inline-block;background: url('../../images/track-ico2.png') no-repeat -62px -2px;width: 20px;height: 20px;}
+.track_main .play_part .del{float: left;cursor: pointer;display: inline-block;background: url('../../images/track-ico2.png') no-repeat 0 -26px;width: 20px;height: 17px;}
+.track_main .play_part .row{float: left;width: 180px;height: 2px;background-color: #bebebe;margin: 9px 10px 9px 10px;position: relative;}
+.track_main .play_part .row span{position: absolute;width: 0;height: 2px;background-color: #0b8ae8;}
+.track_main .play_part .row em{display: inline-block;cursor: pointer;position: absolute;background: url('../../images/ico2.png') no-repeat -83px -3px;width: 12px;height: 12px;left: 10%;top:-5px;z-index: 2}
+.track_main .play_part .add_reduce{position:absolute;right: 36px;bottom: 42px;;background-color:rgba(255,255,255,0.9);padding: 3px 5px;}
+.track_main .play_part .add_reduce .reduce{width: 10px;height: 2px;background-color: #0b8ae8;margin: 8px auto;}
+.track_main .play_part .add_reduce em{display: block;color: #0b83dc;font-weight: bold;line-height: 20px;font-size: 22px;cursor: pointer;}
+.track_main .play_part .add_reduce .line{width: 2px;height: 50px;margin: 5px auto;position: relative;background-color: #0b8ae8;}
+.track_main .play_part .add_reduce .line .circle{position: absolute;width: 8px;height: 8px;background-color:#0b8ae8;left:-3px;bottom: 0;z-index: 2;border-radius: 50%; }
+.track_main .play_part .add_reduce .line span{position: absolute;width:2px;height: 0px;background-color: #bebebe;}
+.track_main .play_part .add_reduce .addReduce_img{position: relative;float: left;margin: 16px 10px;background: url('../../images/ico2.png') no-repeat -9px -126px;width: 69px;height: 8px;}
+.track_main .play_part .add_reduce .addReduce_img2{position: absolute;left: 0;top:0;background:url('../../images/ico2.png') no-repeat -9px -115px;width:50%;height: 8px;}
+
+.track_main  .forms_area{display: none;position: absolute;left: 0;bottom: 0;width: 100%;height: 32px;z-index: 9}
+.track_main  .forms_area .tit{padding: 0 10px 0 0;height: 32px;line-height: 32px;border-bottom:1px solid #0071c6;background-color: #fff;border-top: 1px solid #b2b2b2;}
+.track_main  .forms_area .tit li{float: left;padding: 0 25px;color: #000;font-size: 14px;cursor: pointer;position: relative;}
+.track_main  .forms_area .tit li i{position: absolute;width: 100%;height: 2px;background-color: #0071c6;left: 0;bottom: 0;display: none;}
+.track_main  .forms_area .tit li.active i{display: block;}
+.track_main  .forms_area .tit .fr a{display: inline-block;background: url('../../images/track-ico2.png') no-repeat;margin-right: 5px;vertical-align: middle;}
+.track_main  .forms_area .tit .fr a.excel{background-position: -23px -29px;width: 14px;height: 12px;}
+.track_main  .forms_area .tit .fr a.pdf{background-position:  -41px -29px;width: 13px;height: 12px;}
+.track_main  .forms_area .tit .fr a.shrink{background-position:-58px -29px;width: 14px;height: 3px;margin-top: 7px;padding-bottom: 10px;}
+.track_main  .forms_area .tit .fr a.zoom{background-position:-75px -29px;width: 14px;height: 12px;}
+
+.track_main  .forms_area .forms_area_content{width: 100%;height: 172px;background-color: #fff;}
+.track_main  .forms_area .forms_area_content li{width: 100%;height: 100%;display: none;}
+.track_main  .forms_area .forms_area_content li.active{display: block;}
+.track_main  .forms_area .forms_area_content li thead{background-color: #e6e6e6;height: 25px;line-height: 25px;}
+.track_main  .forms_area .forms_area_content li td{border-left: 1px solid #fff;}
+.track_main  .forms_area .forms_area_content li td{padding-left: 20px;}
+.track_main  .forms_area .forms_area_content li thead .first{background-color: #fff;}
+.track_main  .forms_area .forms_area_content li thead .first.active{background-color: #cde8f7;}
+.track_main  .forms_area .forms_area_content li thead .first.active i{background-position: -87px -14px;}
+.track_main  .forms_area .forms_area_content li thead .first i{cursor: pointer;margin: 10px 10px 0 0;float: right;display: inline-block;background: url('../../images/track-ico2.png') no-repeat -86px -4px;width: 10px;height: 7px;}
+.track_main  .forms_area .forms_area_content li tbody tr{height: 25px;line-height: 25px;}
+.track_main  .forms_area .forms_area_content li tbody tr.even{background-color: #f9f9f9;}
+.track_main  .forms_area .forms_area_content li tbody tr:hover{background-color: #cde8f7;}
+/*轨迹回放 end*/
+
+/**jqueryUI 提示框**/
+.ui-helper-hidden {
+	display: none;
+}
+.ui-helper-hidden-accessible {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+.ui-widget-header a {
+	color: #222222;
+}
+.ui-tooltip {
+	padding: 8px;
+	position: absolute;
+	z-index: 9999;
+	max-width: 300px;
+	-webkit-box-shadow: 0 0 5px #aaa;
+	box-shadow: 0 0 5px #aaa;
+}
+.ui-tooltip a {
+	color: #222222;
+}
+body .ui-tooltip {
+	border-width: 2px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	background: #ffffff url("images/ui-bg_flat_75_ffffff_40x100.png") repeat-x scroll 50% 50%;
+    border: 1px solid #aaaaaa;
+    color: #222222;
+}
+#tab_state {
+	border: none;
+}
+#tab_state .ui-tabs-nav .ui-tabs-anchor{
+	float: none;
+	padding: 0 0;
+}
+#tab_state .ui-widget-header {
+	border-right: none;
+	border-left: none;
+	padding: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-top-left-radius: 0px;
+}
+#tab_state .ui-tabs-nav li {
+	margin: 0px;
+}  
+#tab_state .ui-tabs-nav .ui-state-active,#tab_state .ui-tabs-nav .ui-state-default{
+	border: none;
+	background: none;
+}
+#tab_state .ui-tabs-panel {
+	border: none;
+	padding: 2px 0 0 0;
+}
+.ui-corner-bottom, .ui-corner-right, .ui-corner-br{
+	border-bottom-right-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-top-left-radius: 0px;
+}
+#tab_state .ui-spinner .ui-spinner-input {
+	margin: 0;
+}
+/**jqueryUI 提示框**/
+
+/** 线路  **/
+.dm_line {
+	background-color: rgba(51, 153, 255, 0.5);
+}
+.dm_line .lineContent {
+	position: relative;
+}
+.dm_line .lineContent .line {
+	background-color: #000;
+	position: absolute;
+	height: 1px;
+	margin: 80px 50px;
+}
+.dm_line .lineContent .stations {
+	margin: 80px 50px;
+	position: absolute;
+}
+.dm_line .lineContent .station {
+	position: absolute;
+}
+.dm_line .lineContent .station .point {
+	width: 10px;
+	height: 10px;
+	background-color: #FF0000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.dm_line .lineContent .station .title {
+	margin-top: 20px;
+}
+.dm_line .station-info {
+	position: absolute;
+	background-color: #FF0000;
+	display: none;
+}
+.dm_line .station-info .station-info-content {
+	padding: 5px 5px;
+}
+.dm_line .station-info .station-info-tip {
+	border-top: 12px solid #ff0000;
+	border-left: 11px solid transparent;
+	border-right: 11px solid transparent;
+	position: absolute;
+}
+/** 线路  **/

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps808.model.line">
+	<class name="StandardTrip" table="jt808_trip_info">
+		<!-- ������������ -->
+		<composite-id>
+            <key-property name="vid" column="VehiID" type="java.lang.Integer"/>
+            <key-property name="gdt" column="GpsDate" type="java.util.Date"/>
+            <key-property name="tt" column="TripTime" type="java.lang.Integer"/>
+        </composite-id>
+		<!-- ������������ -->	
+		<property name="lid" column="LineID" type="java.lang.Integer"/>
+		<property name="did" column="DriverID" type="java.lang.Integer"/>
+		<property name="ld" column="LineDirection" type="java.lang.Integer"/>
+        <property name="st" column="STime" type="java.util.Date"/>
+        <property name="si" column="SStataionIdex" type="java.lang.Integer"/>
+		<property name="et" column="ETime" type="java.util.Date"/>
+		<property name="ei" column="EStataionIdex" type="java.lang.Integer"/>
+		<property name="lc" column="LiCheng" type="java.lang.Integer"/>
+		<property name="yh" column="Youhao" type="java.lang.Integer"/>
+		<property name="wt" column="WorkTime" type="java.lang.Integer"/>
+		<property name="as" column="AlarmSum" type="string" length="256"/>
+		<property name="dt" column="DeviationTime" type="java.lang.Integer"/>
+		<property name="sti" column="STimeI" type="java.lang.Integer"/>
+		<property name="eti" column="ETimeI" type="java.lang.Integer"/>
+	</class>
+</hibernate-mapping>

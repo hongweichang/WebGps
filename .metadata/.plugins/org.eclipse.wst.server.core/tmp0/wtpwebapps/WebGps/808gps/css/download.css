@@ -1,0 +1,267 @@
+.wy-content {
+	background-color: #fff;
+}
+/*background sprites*/
+.mod-download .btn-download,
+.mod-download .btn-download .icon-logo,
+.mod-download .btn-web,
+.mod-web .btn-web,
+.pop-download .btn-goto,
+.pop-download .btn-send {
+    cursor: pointer;
+	background: url(../images/home/bg_download_btns.png?v20150106) no-repeat;
+	background:	url(../images/home/bg_download_btns.png?v20150106);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-color: rgba(0, 0, 0, 0);
+	background-position: 0 0;
+}
+.mod-download .btn-download-disabled{
+	cursor:default;
+	background: url(../images/home/bg_download_btns.png?v20150106) no-repeat 0 -164px;
+	background:	url(../images/home/bg_download_btns.png?v20150106);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-color: rgba(0, 0, 0, 0);
+	background-position: 0 -164px;
+}
+.download-content {
+	width: 960px;
+	padding-top: 40px;
+	padding-bottom: 0px;
+	margin: 0 auto;
+	overflow: hidden;
+	font-family: "microsoft yahei";
+}
+.download-content ul {
+	width: 1050px;
+}
+.download-content li {
+	float: left;
+	width: 300px;
+	margin-right: 14px;
+	margin-bottom: 20px;
+}
+.download-content img {display: block;}
+
+.download-content .mod-download {
+	width: 300px;
+	height: 54px;
+	background-color: #f2f2f2;
+	padding: 10px 0 30px 10px;
+	border-radius: 5px;
+}
+.mod-download .link {
+	width: 120px;
+	float: left;
+}
+.mod-download .info {
+	float: left;
+	color: #999;
+	line-height: 22px;
+	margin-top: 6px;
+}
+.mod-download h3 {
+	color: #333;
+	font-size: 24px;
+	line-height: 24px;
+}
+.mod-download .btn-download,
+.mod-download .btn-web,
+.mod-web .btn-web {
+	display: block;
+	border: none;
+	width: 110px;
+	height: 38px;
+	outline: none;
+
+	font-size: 14px;
+	color: #fff;
+	font-family: "microsoft yahei";
+}
+.mod-download .btn-download {
+	margin-top: 10px;
+	position: relative;
+}
+.mod-download .btn-download .icon-logo {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 9px;
+	left: 10px;
+	margin-top: -18px\0;
+	*margin-top: 0;
+}
+.ie8 .mod-download .btn-download .icon-logo{
+	margin-top: 0px;
+/* 	margin-top: -18px; */
+}
+.mod-download .btn-download .icon-win {
+	background-position: -112px 0;
+}
+.mod-download .btn-download .icon-andriod {
+	background-position: -112px -21px;
+}
+.mod-download .btn-download .icon-apple {
+	background-position: -112px -42px;
+}
+.mod-download .btn-download-disabled .icon-win {
+    background-position: -133px 0;
+}
+.mod-download .btn-download-disabled .icon-andriod {
+    background-position: -133px -21px;
+}
+.mod-download .btn-download-disabled .icon-apple {
+    background-position: -133px -42px;
+}
+.mod-download .btn-download .text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 36px;
+	_line-height: 38px;
+	text-indent: 22px;
+	margin-top: -18px\0;
+	*margin-top: 3px;
+	_margin-top: 0px;
+}
+@media screen and (min-width:0\0) { 
+    .mod-download .btn-download .text{margin-top: 0px;}/* IE9 , IE10 ,IE11 rule sets go here */
+	.mod-download .btn-download .icon-logo{margin-top: 0px;}
+}
+.ie8 .mod-download .btn-download .text {
+	margin-top: 0px;
+/* 	margin-top: -15px; */
+}
+.mod-web .btn-web {
+	background-position: 0 -40px;
+}
+
+.mod-web {
+	position:relative;
+	height:283px;
+	margin-top: 20px;
+	*margin-top: 40px;
+	_margin-top: 20px;
+	border-top: solid 1px #e6e6e6;
+	padding-left: 520px;
+}
+
+.mod-web .web-img {
+	position:absolute;
+	top:75px;
+	left:25px;
+}
+
+.mod-web .link {
+	margin-top: 110px;
+}
+
+.mod-web h3 {
+	color: #333;
+	font-size: 24px;
+	line-height: 24px;
+}
+
+.mod-web .info {
+	margin: 18px 0;
+	color: #999;
+}
+
+.pop-download {
+	padding: 35px 50px 35px 20px;
+	overflow: hidden;
+	_zoom: 1;
+}
+.pop-download .qrcode {
+	width: 221px;
+	text-align: center;
+	float: left;
+	overflow: hidden;
+}
+.pop-download .qrcode p {
+	color: #333;
+	margin-top: 5px;
+}
+.pop-download .info {
+	float: left;
+	padding-left: 50px;
+	width: 240px;
+	border-left: 1px solid #e6e6e6;
+}
+
+.pop-download .way-2,
+.pop-download .way-3 {
+	margin-top: 30px;
+}
+.pop-download .way h4{
+	font-size: 16px;
+	line-height: 16px;
+	color: #333
+}
+.pop-download .way .desc {
+	padding: 5px 0;
+	color: #999;
+}
+.pop-download .btn-goto,
+.pop-download .btn-send {
+	color: #fff;
+	font-family: "microsoft yahei";
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 1px 2px;
+}
+.pop-download .btn-goto {
+	display: block;
+	width: 140px;
+	height: 50px;
+	background-position: 0 -80px;
+	font-size: 16px;
+	margin-top: 24px;
+}
+.pop-download .phonenum {
+	margin-top: 5px;
+}
+.pop-download .ipt-phonenum {
+	float: left;
+	width: 148px;
+	padding: 0 5px;
+	height: 28px;
+	border: 1px solid #b3b3b3;
+	line-height: 28px\9;
+	font-family: "microsoft yahei";
+	font-size: 18px;
+	background-color: #f2f2f2;
+}
+.pop-download .btn-send {
+	float: left;
+	display: block;
+	width: 60px;
+	height: 30px;
+	background-position: 0 -132px;
+	margin-left: 10px;
+}
+
+.pop-download .sms-captcha, .sms-error, .sms-info{
+    margin: 5px 0;
+}
+.pop-download .sms-captcha *{
+    vertical-align: middle;
+}
+.pop-download .sms-captcha input{
+    width: 50px;
+    padding: 0 5px;
+    height: 28px;
+    border: 1px solid #b3b3b3;
+    line-height: 28px\9;
+    font-family: "microsoft yahei";
+    font-size: 18px;
+    background-color: #f2f2f2;
+}
+.pop-download .sms-error{
+    color: red;
+}/*  |xGv00|e39edf14a6facf292854e67466c986cb */

@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="js/dvr_info.js"></script>
+<style type="text/css">
+.input_none {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+}
+</style>
+</head>
+<body style="background-color:#fff;">
+<div style="width:520px;padding-bottom:30px;">
+	<div class="tab">
+	    <ul id="tabnav">
+			<li id="li_basicParam" class="now_focus"><a href="javascript:switchPage('basicParam');" class="blue"><span id="liBasicParam">&nbsp;</span></a></li>
+			<li id="li_channelParam"><a href="javascript:switchPage('channelParam');" class="blue"><span id="liChannelParam">&nbsp;</span></a></li>
+			<li id="li_ioInParam"><a href="javascript:switchPage('ioInParam');" class="blue"><span id="liIOInParam">&nbsp;</span></a></li>
+			<li id="li_tempSensorParam"><a href="javascript:switchPage('tempSensorParam');" class="blue"><span id="liTempSensorParam">&nbsp;</span></a></li>
+			<li id="li_moduleParam" style="display:none"><a href="javascript:switchPage('moduleParam');" class="blue"><span id="liModuleParam">&nbsp;</span></a></li>
+	    </ul>
+	    <div id="tabcontent">
+		    <div id="basicParam" class="now_focus">
+				<dl class="setingbox">
+					<dt><span id="labelName"></span></dt>
+						<dd>
+							<input id="name" name="name" type="text" class="text" value="" maxlength="15"/>
+							<span id="nameWrong" class="red">*</span></dd>
+					<dt><span id="labelIdno"></span></dt>
+						<dd><input id="idno" name="idno" type="text" class="text" value="" maxlength="32"/></dd>
+					<dt><span id="labelDriverName"></span></dt>
+						<dd><input id="driverName" name="driverName" type="text" class="text" value="" maxlength="15"/></dd>
+					<dt><span id="labelDriverTele"></span></dt>
+						<dd><input id="driverTele" name="driverTele" style="ime-mode:disabled;" type="text" class="text" value="" maxlength="15" onkeydown="onKeyDownDigit(event)"/></dd>
+					<dt><span id="labelSimCard"></span></dt>
+						<dd><input id="simCard" name="simCard" style="ime-mode:disabled;" type="text" class="text" value="" maxlength="15" onkeydown="onKeyDownDigit(event)"/></dd>
+					<dt><span id="labelAddress"></span></dt>
+						<dd><input id="address" name="address" type="text" class="text" value="" maxlength="64"/></dd>
+					<dt><span id="labelRemarks"></span></dt>
+						<dd><input id="remarks" name="remarks" type="text" class="text" value="" maxlength="64"/></dd>
+				</dl>
+		    </div>
+		    <div id="ioInParam" style="display:none">
+				<dl class="setingbox">
+					<dt><span id="labelSelIOIn"></span></dt>
+				  		<dd><select id="ioInList" name="ioInList"></select></dd>
+					<dt id="dtIoIn1"><span id="labelIoIn1"></span></dt>
+				  		<dd id="ddIoIn1">
+				  			<input id="ioIn1" name="ioIn1" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="ioInWrong1" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtIoIn2"><span id="labelIoIn2"></span></dt>
+				  		<dd id="ddIoIn2">
+				  			<input id="ioIn2" name="ioIn2" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="ioInWrong2" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtIoIn3"><span id="labelIoIn3"></span></dt>
+				  		<dd id="ddIoIn3">
+				  			<input id="ioIn3" name="ioIn3" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="ioInWrong3" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtIoIn4"><span id="labelIoIn4"></span></dt>
+				  		<dd id="ddIoIn4">
+				  			<input id="ioIn4" name="ioIn4" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="ioInWrong4" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtIoIn5"><span id="labelIoIn5"></span></dt>
+				  		<dd id="ddIoIn5">
+				  			<input id="ioIn5" name="ioIn5" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="ioInWrong5" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtIoIn6"><span id="labelIoIn6"></span></dt>
+				  		<dd id="ddIoIn6">
+				  			<input id="ioIn6" name="ioIn6" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="ioInWrong6" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtIoIn7"><span id="labelIoIn7"></span></dt>
+				  		<dd id="ddIoIn7">
+				  			<input id="ioIn7" name="ioIn7" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="ioInWrong7" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtIoIn8"><span id="labelIoIn8"></span></dt>
+				  		<dd id="ddIoIn8"><input id="ioIn8" name="ioIn8" type="text" class="text" value="" maxlength="15"/>
+				  		<span id="ioInWrong8" class="red">*</span>
+				  	</dd>
+				  	<dt id="dtIoIn9"><span id="labelIoIn9"></span></dt>
+				  		<dd id="ddIoIn9"><input id="ioIn9" name="ioIn9" type="text" class="text" value="" maxlength="15"/>
+				  		<span id="ioInWrong9" class="red">*</span>
+				  	</dd>
+				  	<dt id="dtIoIn10"><span id="labelIoIn10"></span></dt>
+				  		<dd id="ddIoIn10"><input id="ioIn10" name="ioIn10" type="text" class="text" value="" maxlength="15"/>
+				  		<span id="ioInWrong10" class="red">*</span>
+				  	</dd>
+				  	<dt id="dtIoIn11"><span id="labelIoIn11"></span></dt>
+				  		<dd id="ddIoIn11"><input id="ioIn11" name="ioIn11" type="text" class="text" value="" maxlength="15"/>
+				  		<span id="ioInWrong11" class="red">*</span>
+				  	</dd>
+				  	<dt id="dtIoIn12"><span id="labelIoIn12"></span></dt>
+				  		<dd id="ddIoIn12"><input id="ioIn12" name="ioIn12" type="text" class="text" value="" maxlength="15"/>
+				  		<span id="ioInWrong12" class="red">*</span>
+				  	</dd>
+				</dl>
+			</div>
+			<div id="channelParam">
+				<dl class="setingbox">
+					<dt><span id="labelSelChannel"></span></dt>
+				  		<dd><select id="channelList" name="channelList"></select></dd>
+					<dt id="dtChannel1"><span id="labelChannel1"></span></dt>
+				  		<dd id="ddChannel1">
+				  			<input id="channel1" name="channel1" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="channelWrong1" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtChannel2"><span id="labelChannel2"></span></dt>
+				  		<dd id="ddChannel2">
+				  			<input id="channel2" name="channel2" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="channelWrong2" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtChannel3"><span id="labelChannel3"></span></dt>
+				  		<dd id="ddChannel3">
+				  			<input id="channel3" name="channel3" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="channelWrong3" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtChannel4"><span id="labelChannel4"></span></dt>
+				  		<dd id="ddChannel4">
+				  			<input id="channel4" name="channel4" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="channelWrong4" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtChannel5"><span id="labelChannel5"></span></dt>
+				  		<dd id="ddChannel5">
+				  			<input id="channel5" name="channel5" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="channelWrong5" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtChannel6"><span id="labelChannel6"></span></dt>
+				  		<dd id="ddChannel6">
+				  			<input id="channel6" name="channel6" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="channelWrong6" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtChannel7"><span id="labelChannel7"></span></dt>
+				  		<dd id="ddChannel7">
+				  			<input id="channel7" name="channel7" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="channelWrong7" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtChannel8"><span id="labelChannel8"></span></dt>
+				  		<dd id="ddChannel8">
+				  			<input id="channel8" name="channel8" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="channelWrong8" class="red">*</span>
+				  		</dd>
+				</dl>
+			</div>
+			<div id="tempSensorParam" style="display:none">
+				<dl class="setingbox">
+					<dt><span id="labelSelTempSensor"></span></dt>
+				  		<dd><select id="tempSensorList" name="tempSensorList"></select></dd>
+					<dt id="dtTempSensor1"><span id="labelTempSensor1"></span></dt>
+				  		<dd id="ddTempSensor1">
+				  			<input id="tempSensor1" name="tempSensor1" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="tempSensorWrong1" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtTempSensor2"><span id="labelTempSensor2"></span></dt>
+				  		<dd id="ddTempSensor2">
+				  			<input id="tempSensor2" name="tempSensor2" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="tempSensorWrong2" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtTempSensor3"><span id="labelTempSensor3"></span></dt>
+				  		<dd id="ddTempSensor3">
+				  			<input id="tempSensor3" name="tempSensor3" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="tempSensorWrong3" class="red">*</span>
+				  		</dd>
+				  	<dt id="dtTempSensor4"><span id="labelTempSensor4"></span></dt>
+				  		<dd id="ddTempSensor4">
+				  			<input id="tempSensor4" name="tempSensor4" type="text" class="text" value="" maxlength="15"/>
+				  			<span id="tempSensorWrong4" class="red">*</span>
+				  		</dd>
+				</dl>
+			</div>
+			<div id="moduleParam" style="display:none">
+				<dl class="setingbox">
+					<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module0" value="0"/>
+				  			<span id="spanModuleOilSensor"></span>
+				  		</dd>
+					<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module1" value="1"/>
+				  			<span id="spanModuleOilControl"></span>
+				  		</dd>
+				  	<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module2" value="2"/>
+				  			<span id="spanModuleElecControl"></span>
+				  		</dd>
+				  	<dt></dt>
+				  		<dd>
+				  			<input type="checkbox" name="module" id="module3" value="3"/>
+				  			<span id="spanModuleTTSControl"></span>
+				  		</dd>
+				</dl>
+			</div>
+	    </div>
+	</div>
+	<div id="saveParam">
+		<dl class="setingbox">
+			<dt></dt>
+			<dd>
+				<a href="javascript:ajaxSaveDvr();" class="searchbtn">
+			  		<span id="save"></span>
+			    </a>
+			</dd>
+		</dl>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>上传文件</title>
+	<meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="cache-control" content="no-cache"/>
+	<meta http-equiv="expires" content="0"/>
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js?v150717"></script>
+	<script type="text/javascript" src="js/jquery.form.js?v150717"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		    $('#btnSubmit').click(function(){
+			$('#uploadForm').submit();
+		    });
+		    var options = {    
+		        target:        '#output',   
+		        beforeSubmit:  showRequest,   
+		        success:       showResponse   
+		    };
+		    $('#uploadForm').submit(function() {   
+		        $(this).ajaxSubmit(options);
+		        alert(options.target);  
+		        return false;//阻止表单提交   
+		    });
+		    function showRequest(formData, jqForm, options) {   
+		        var queryString = $.param(formData);    
+		        alert('queryString==' + queryString);    
+		        return true;    
+		    }
+		    function showResponse(responseText, statusText) {   
+		        alert('status: ' + statusText + '\n\nresponseText:'+responseText);   
+		    }
+		});
+	</script>
+</head>
+<body>
+    <form action="MobileAction_uploadImage.action?armguid=1234124312341234&devIdno=100001" id="uploadForm" name="uploadForm" method="post" enctype="multipart/form-data">
+    	<input type="file" id="file1" name="uploadFile"/>
+    	<input type="file" id="file2" name="uploadFile"/>
+    	<input type="text" id="describe" name="describe" value=""/>
+    	<input type="button" id="btnSubmit" value="提交"/>
+    	<div id="output"></div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexigrid.css"></link>
+<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css"/>
+<link rel="stylesheet" type="text/css" href="../reset.css"/>
+<link rel="stylesheet" type="text/css" href="../bin.css">
+<link rel="stylesheet" type="text/css" href="css/timelineInfo.css">
+<link rel="stylesheet" type="text/css" href="css/VideoReplay.css">
+<link rel="stylesheet" type="text/css" href="../css/jqueryUITip.css">
+<link rel="stylesheet" type="text/css" href="../css/labelIcon.css"/>
+<script type="text/javascript" src="../../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js" ></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/datepicker.js"></script>
+<script type="text/javascript"  src="../js/hashtable.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../../js/public.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../../js/flexigrid/flexigrid.js"></script>
+<script type="text/javascript" src="../../js/flexigrid/flexiManage.js"></script>
+<script type="text/javascript" src="../js/standardStatus.js"></script>
+<script type="text/javascript" src="../js/standardDevice.js"></script>
+<script type="text/javascript" src="../js/vehicleDevice.js"></script>
+<script type="text/javascript" src="../js/vehicleManager.js"></script>
+<script type="text/javascript" src="../ttxmap/ttxmapapi.js"></script>
+<script type="text/javascript" src="../ttxvideo/ttxvideoapi.js"></script>
+<script type="text/javascript" src="js/trackplay.js"></script>
+<script type="text/javascript" src="js/videoplay.js"></script>
+<script type="text/javascript" src="js/timelineInfo.js"></script>
+<script type="text/javascript" src="js/VideoReplay.js"></script>
+<style type="text/css">
+	.btn-group .y-btn{
+		padding: 3px 0px 3px 0px;
+	}
+	.y-btn #label-alarmList{
+		width:128px;
+	}
+	#select-alarmList .ui-menu-list-box{
+		position: relative;
+		margin-top: -156px;
+	}
+</style>
+</head>
+<body onresize="setPanelWidth(fixHeight);">
+<div class="main">
+  	<!--左边栏-->
+   	<div class="pro_list" style="overflow-y: auto; overflow-x: hidden;">
+     	<div class="dh">
+     		<span id="spanSelVehicle"></span>
+       		<div class="spacer"></div>
+     	</div>
+     	<div class="car_select">		
+   			<div id="search-vehicle" class="labels_inp select-search"></div>
+   			<input id="vehiChn" type="hidden">
+           	<i class="more_car"></i>
+       	</div>
+      	<div id="datepicker"></div>
+       	<div class="hf_box" id="fileLocation">
+       		<h3></h3>
+           	<div>
+           		<label><input id="wjwz-device" name="wjwz" type="radio" value="1" checked><span id="spanDevice"></span></label><br />
+           		<label><input id="wjwz-storage" name="wjwz" type="radio" value="2"><span id="spanStorageServer"></span></label><br />
+           		<label><input id="wjwz-download" name="wjwz" type="radio" value="4"><span id="spanDownloadServer"></span></label> 
+           	</div>
+       	</div>
+        <span class="line"></span>
+       	<div class="hf_box" id="fileType">
+       		<h3></h3>
+          	<div>
+           		<label><input id="wjlx-video" name="wjlx" type="radio" value="2" checked><span id="spanVideoType"></span></label>
+<!--            		<label><input name="wjlx" type="radio" value="">图片</label> -->
+           	</div>
+        </div>
+        <span class="line"></span>
+        <div class="hf_box" id="videoType">
+        	<h3></h3>
+           	<div>
+           		<label><input id="lxlx-normal" name="lxlx" type="radio" value="0" ><span id="spanVideoNormal"></span></label>
+           		<label><input id="lxlx-alarm" name="lxlx" type="radio" value="1"><span id="spanVideoAlarm"></span></label>
+           		<label><input id="lxlx-all" name="lxlx" type="radio" value="-1" checked><span id="spanVideoAll"></span></label>
+           	</div>
+        </div>
+        <div class="hf_box" id="alarmType">
+        	<h3></h3>
+        	<div id="select-alarmList" style="margin-left: 10px;"></div>
+        </div>
+		<div style="margin-top:10px;">
+       		<a id="btn_serach" class="btn_blue" href="javascript:;"></a>
+       	</div>
+   	</div>
+   	
+   	<!--地图栏中间-->
+   	<!-- 主界面  -->
+	<div class="d_main">
+   		<!-- 事件栏 -->
+   	    <div id="mapMoveDiv" class="mapDragMove" style="display: none;"></div>
+   		<div class="d_table map_action">
+        	<div class="map_drag_box">
+        		<i class="icon icon_drag"></i>
+        	</div>
+        	<ul class="map_tab">
+            	<li class="left active" id="video-time"><a id="video_time_title"></a></li>
+                <li class="left" id="video-file"><a id="video_file_title"></a></li>
+               <!--  <li class="left" id="video-download"><a id="video_download_title"></a></li> -->
+                <li class="right" id="video-export">
+ 					<i class="icon icon_download"></i>
+					<i class="icon icon_s_re min_s"></i>
+				</li>
+            </ul>
+			<div class="gps_box">
+               <!-- 报表放这里 -->
+				<ul>
+					<li id="videoTime" class="active"></li>
+					<li id="videoFile">
+						<table id="videoFileTable" style="display:none;"></table>
+					</li>
+					<!-- <li id="videoDownload">
+						<table id="videoDownloadTable" style="display:none;"></table>
+					</li> -->
+				</ul>
+			</div>
+        </div>
+        
+        <!--实时视频-->
+    	<div class="dm_video" style="height: 445px;margin-right: 300px;">
+    		<iframe frameborder="0" scrolling="no" width="100%" height="100%" name="framePreview" id="framePreview" style="background-color: #ffffff;"
+        		src="../ttxvideo/ttxvideo.html?windowCurNum=1&hideTool=true&showTitle=true&changeSize=true">
+			</iframe>
+        </div>
+
+		<!--地图位置定位-->
+        <div class="dm_map" style=" height: 445px;position: absolute;width: 300px;border-left: none;">
+        	<a class="slider_btn_right hide" href="javascript:void(0);"><i class="icon icon_side_right"></i></a>
+        	<iframe frameborder="0" scrolling="no" width="100%" height="100%" name="frameMap" id="frameMap" style="background-color: #ffffff;"
+        		src="../ttxmap/ttxmap.html?rectSearch=1&150613">
+			</iframe>
+        </div>
+        <div class="spacer"></div>
+    </div>
+   	<!-- 主界面结束 -->
+   	<div id="vehicleChnTip"><ul></ul></div>
+</div>
+<!-- <iframe id="supportiframe" name="supportiframe" onload="returnmessage();"></iframe> -->
+</body>
+</html>

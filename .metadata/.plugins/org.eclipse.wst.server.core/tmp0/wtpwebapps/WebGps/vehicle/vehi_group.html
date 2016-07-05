@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/report.css" rel="stylesheet" type="text/css" />
+<link href="../js/dxtree/dhtmlxtree.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxcommon.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxtree.js"></script>
+<script type="text/javascript" src="../js/gps_common.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/vehi_tree.js"></script>
+<script type="text/javascript" src="js/vehi_group.js"></script>
+<style type="text/css">
+#left {
+	display:block;
+	float:left;
+	width:420px; 
+	height:480px;
+}
+#middle {
+	height:500px;
+	display:block;
+	float:left;
+	overflow:auto;
+	margin-left:10px;
+	margin-right:10px;
+}
+#right {
+	display:block;
+	float:left;
+	width:420px; 
+	height:480px;
+}
+#vehicle_tree{
+	width:100%;
+	height:420px;
+	margin:2px;
+	background-color:#f5f5f5;
+	border :1px solid Silver;
+	overflow:auto;
+}
+#vehicle_ungroup {
+	width:100%;
+	height:420px;
+	background-color:#f5f5f5;
+	border :1px solid Silver;
+	overflow:auto;
+}
+</style>
+</head>
+<body>
+<div id="search">
+	<h2 class="righttitile_vehicle"><span id="groupTitle">&nbsp;</span></h2>
+</div>
+<div style="padding-left:20px;">
+	<div style="width:1140px;overflow:hidden;margin-bottom:10px;">
+		<div id="left">
+			<label><h2><span id="spanHasGroup"></span></h2></label>
+			<div style="margin-top:4px;margin-bottom:4px;">
+				<span id="searchVehicle">&nbsp;</span>
+				<input id="name" name="name" type="text" class="text" value="" maxlength="64" onkeyup="searchVehicle()" style="width:100px;"/>&nbsp;&nbsp;	
+			</div>
+			<div id="vehicle_tree"></div>
+		</div>
+		<div id="middle">
+			<div style="margin-top:100px;">
+				<a class="searchbtn" href="javascript:moveSelectDevice();">
+	    			<span id="spanMoveDevice">&nbsp;&nbsp;</span>
+	    		</a>
+    		</div>
+    		<div style="margin-top:140px;">
+				<a class="searchbtn" href="javascript:removeSelectDevice();">
+	    			<span id="spanRemoveDevice">&nbsp;&nbsp;</span> 
+	    		</a>
+    		</div>
+		</div>
+		<div id="right">
+			<label><h2><span id="spanGroupFree"></span></h2></label>
+			<div style="margin-top:4px;margin-bottom:4px;">
+				<span id="searchFreeVehicle">&nbsp;</span>
+				<input id="freeName" name="freeName" type="text" class="text" value="" maxlength="32" onkeyup="searchFreeVehicle()" style="width:100px;"/>&nbsp;&nbsp;	
+			</div>
+			<div id="vehicle_ungroup"></div>
+		</div>
+	</div>
+	<div style="display:block;margin:10px;">
+		<a href="javascript:addGroup();" class="blue"><span id="addGroup">&nbsp;</span></a>&nbsp;&nbsp;
+		<a href="javascript:editGroup();" class="blue"><span id="editGroup">&nbsp;</span></a>&nbsp;&nbsp;
+		<a href="javascript:delGroup();" class="blue"><span id="delGroup">&nbsp;</span></a>&nbsp;&nbsp;
+		<a href="javascript:moveGroup();" class="blue"><span id="moveGroup">&nbsp;</span></a>&nbsp;&nbsp;
+	</div>
+	<div style="display:block;margin:10px;">
+		<span id="tipDrag">&nbsp;</span>
+	</div>
+</div>
+</body>
+</html>

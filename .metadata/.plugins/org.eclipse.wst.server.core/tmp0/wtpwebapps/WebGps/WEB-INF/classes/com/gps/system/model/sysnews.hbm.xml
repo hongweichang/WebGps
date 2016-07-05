@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate���������������� -->
+<hibernate-mapping package="com.gps.system.model">
+	<class name="SysNews" table="sys_news">
+		<!-- ������������ -->
+		<id	name="id" column="ID" type="integer" >
+			<!-- ��������identity������������ -->
+			<generator class="identity"/>
+		</id>
+		<!-- ������������ -->
+		<property name="title" column="NTitle" type="string" length="200" not-null="true"/>
+		<property name="content" column="NContent" type="string" length="9999" not-null="true"/>
+		<property name="atime" column="NTime" type="java.util.Date" not-null="true"/>
+		<property name="endTime" column="NDays" type="java.util.Date" not-null="true"/>
+	</class>
+</hibernate-mapping>

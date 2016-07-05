@@ -2,8 +2,6 @@ package com.gps.model;
 
 import com.gps808.report.vo.StandardDeviceTrack;
 import java.io.Serializable;
-import java.sql.Blob;
-import java.util.Date;
 
 public class DeviceStatusLite
   implements Serializable
@@ -520,6 +518,7 @@ public Integer getNet()
     this.s2 = track.getStatus2();
     this.s3 = track.getStatus3();
     this.s4 = track.getStatus4();
+    this.ol = track.getOnline();
     this.t1 = track.getTempSensor1();
     this.t2 = track.getTempSensor2();
     this.t3 = track.getTempSensor3();

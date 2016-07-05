@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../js/dxtree/dhtmlxtree.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxcommon.js"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxtree.js"></script>
+<script type="text/javascript" src="../js/vehi_tree.js"></script>
+<script type="text/javascript" src="../js/gps_common.js"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="js/vehi_alarmaction_setup.js"></script>
+</head>
+<body style="background-color:#fff;">
+<div id="content" style="width:940px;position:relative;overflow:hidden; ">
+	<div id="devList" style="padding-left:10px;padding-top:10px;float:left; width:200px;border-right: solid 1px #cdcdcd;">
+		<div>
+			<span id="labelSearch"></span>
+			<input id="name" name="name" type="text" class="text" value="" maxlength="32" style="width:100px;" onkeyup="searchVehicle()"/>
+		</div>
+		<div id="vehicle_tree" style="margin-top:8px;width:190px; height:284px;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto;"></div>
+	</div>
+	<div>
+		<div id="alarmSelect" style="padding-left:10px;padding-top:10px;float:left; width:200px;border-right: solid 1px #cdcdcd;">
+			<div><span id="labelAlarmSelect"></span></div>
+			<div id="alarmtype_tree" style="margin-top:8px;width:190px; height:284px;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto;"></div>
+		</div>
+	</div>
+		<div id="actionContent" class="serverall" style="padding-bottom:20px;margin-left:402px;">
+			<dl class="mapfence">
+			  <dt></dt>
+				  <dd>
+				    <input id="smsSend" name="smsSend" type="checkbox" value="1" onclick="clickSmsSend()"/>&nbsp;&nbsp;<span id="spanSmsSend"></span>
+				  </dd>
+			  <dt><span id="labelSmsAddress"></span></dt>
+				  <dd>
+				  	<textarea cols="40" rows="2" id="smsAddress" name="smsAddress" maxlength="200"></textarea> 
+				    <span id="spanTipSmsAddress"></span>
+				  </dd>
+			 <dt><span id="labelSmsContent"></span></dt>
+				  <dd>
+				  	<textarea cols="40" rows="2" id="smsContent" name="smsContent" maxlength="50"></textarea> 
+				  	<span id="spanTipSmsContent"></span>
+				  </dd>
+			 <dt></dt>
+				  <dd>
+				    <input id="emailSend" name="emailSend" type="checkbox" value="1" onclick="clickEmailSend()"/>&nbsp;&nbsp;<span id="spanEmailSend"></span>
+				  </dd>
+			  <dt><span id="labelEmailAddress"></span></dt>
+				  <dd>
+				  	<textarea cols="40" rows="2" id="emailAddress" name="emailAddress" maxlength="200"></textarea> 
+				    <span id="spanTipEmailAddress"></span>
+				  </dd>
+			  <dt><span id="labelEmailContent"></span></dt>
+				  <dd>
+				  	<textarea cols="40" rows="2" id="emailContent" name="emailContent" maxlength="50"></textarea> 
+				  	<span id="spanTipEmailContent"></span>
+				  </dd>
+			<dt><span id="labelCaptureChannel"></span></dt>
+				  <dd> 
+				    <input id="captureChannel" class="captureChannel" name="captureChannel" type="checkbox" value="1"/>
+					<span id="spanCaptureChannel"></span>
+				  </dd>
+			<dt><span id="labelRecordingTime"></span></dt>
+				  <dd> 
+				    <input id="recordingTime" class="recordingTime" type="text"/>
+					<span id="spanTipRecordingTime"></span>
+				  </dd>
+			  <dt><span id="labelTime"></span></dt>
+				  <dd>
+				    <input id="beginTime" name="beginTime" type="text" class="text" value="" maxlength="32" style="width:80px;"/>
+				    <span id="spanTimeTo"></span>
+				    <input id="endTime" name="endTime" type="text" class="text" value="" maxlength="32" style="width:80px;"/>
+				    <span id="spanTipTime" class="red" style="float:left;">&nbsp;</span>
+				  </dd>
+			 <dt class="hide"><span id="labelAlarmSubType"></span></dt>
+				  <dd class="hide"> 
+				    <input id="alarmSubType" class="alarmSubType" type="text"/>
+					<span id="spanTipAlarmSubType" class="red" style="float:left;"></span>
+				  </dd>
+			  <dt></dt>
+			  <dd>
+			  	<a href="javascript:ajaxSetupAlarmAction();" class="searchbtn">
+			  		<span id="save">&nbsp;</span>
+			    </a>
+			  </dd>
+			</dl>
+		</div>
+	</div>
+</body>
+</html>

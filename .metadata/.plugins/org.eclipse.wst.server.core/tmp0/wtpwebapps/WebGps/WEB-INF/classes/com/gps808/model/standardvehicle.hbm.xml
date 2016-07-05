@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardVehicle" table="jt808_vehicle_info">
+		<!-- ��������������������������?
+		 ����������?������? -->
+		<id	name="vehiIDNO" column="VehiIDNO" type="string" length="40">
+			<!-- ������������assigned������������������ -->
+			<generator class="assigned"/>
+		</id>
+		<property name="id" column="ID" type="integer" />
+		<property name="plateType" column="PlateType" type="java.lang.Integer"/>
+		<property name="vehiColor" column="VehiColor"	type="string" length="20"/>
+		<property name="status" column="UseStatus" type="java.lang.Integer"/>
+		<property name="vehiBand" column="VehiBand"	type="string" length="64"/>
+		<property name="vehiType" column="VehiType"	type="string" length="64"/>
+		<property name="vehiUse" column="VehiUse"	type="string" length="64"/>
+		<property name="dateProduct" column="DateProduct" type="java.util.Date"/>
+		<property name="icon" column="Icon"	type="java.lang.Integer"/>
+		<property name="chnCount" column="ChnCount"	type="java.lang.Integer"/>
+		<property name="chnName" column="ChnName"	type="string" length="512"/>
+		<property name="ioInCount" column="IOInCount"	type="java.lang.Integer"/>
+		<property name="ioInName" column="IOInName"	type="string" length="512"/>
+		<property name="ioOutCount" column="IOOutCount"	type="java.lang.Integer"/>
+		<property name="ioOutName" column="IOOutName"	type="string" length="512"/>
+		<property name="tempCount" column="TempCount"	type="java.lang.Integer"/>
+		<property name="tempName" column="TempName"	type="string" length="512"/>
+		<property name="payEnable" column="PayEnable"	type="java.lang.Integer"/>
+		<property name="payBegin" column="PayBegin" type="java.util.Date"/>
+		<property name="payPeriod" column="PayPeriod"	type="java.lang.Integer"/>
+		<property name="payMonth" column="payMonth"	type="java.lang.Integer"/>
+		<property name="payDelayDay" column="PayDelayDay"	type="java.lang.Integer"/>
+		<property name="safeDate" column="SafeEndDate" type="java.util.Date"/>
+		<property name="drivingNum" column="DrivingNum"	type="string" length="512"/>
+		<property name="drivingDate" column="DrivingEndDate" type="java.util.Date"/>
+		<property name="operatingNum" column="OperatingNum"	type="string" length="512"/>
+		<property name="operatingDate" column="OperatingEndDate" type="java.util.Date"/>
+		<property name="stlTm" column="InstallTime"	type="java.util.Date"/>
+		
+		<property name="updateTime" column="UpdateTime"	type="java.util.Date"/>
+	<!-- 	<many-to-one name="device" column="DevIDNO" class="com.gps808.model.StandardDevice" unique="true" lazy="false" not-found="ignore" cascade="save-update"/> 
+		<many-to-one name="simInfo" column="SimCard" class="com.gps808.model.StandardSIMCardInfo" unique="true" lazy="false" not-found="ignore" cascade="save-update"/> 
+	 -->	<many-to-one name="company" column="CompanyID" class="com.gps808.model.StandardCompany" unique="true" lazy="false" not-found="ignore"/> 
+		<many-to-one name="driver" column="DriverId" class="com.gps808.model.StandardDriver" unique="true" lazy="false" not-found="ignore"/> 
+	</class>
+</hibernate-mapping>

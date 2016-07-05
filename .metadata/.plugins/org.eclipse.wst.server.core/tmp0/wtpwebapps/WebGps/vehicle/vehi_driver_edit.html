@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="js/vehi_driver_edit.js"></script>
+</head>
+<body style="background-color:#fff;">
+<div class="serverall" style="width:500px;padding-bottom:60px;">
+	<dl class="setingbox">
+	  <dt><span id="labelName"></span></dt>
+	  <dd>
+	    <input id="name" name="name" type="text" class="text" value="" maxlength="32"/>
+	    <span id="nameWrong" class="red">*</span></dd>
+	  <dt><span id="labelTelephone"></span></dt>
+	  <dd>
+	    <input id="telephone" name="telephone" type="text" style="ime-mode:disabled;" class="text" value="" maxlength="16" onkeydown="onKeyDownDigit(event)"/>
+	    <span id="telephoneWrong" class="red"></span>
+	  </dd>
+	  <dt><span id="labelEmail"></span></dt>
+	  <dd>
+	    <input id="email" name="email" type="text" class="text" value="" maxlength="32"/>
+	    <span id="emailWrong" class="red"></span>
+	  </dd>
+	  <dt><span id="labelCardNO"></span></dt>
+	  <dd>
+	  	<input id="cardNO" name="cardNO" type="text" class="text" value="" maxlength="64"/>
+		</dd>
+	  <dt><span id="labelLicence"></span></dt>
+	  <dd>
+	  	<input id="license" name="license" type="text" class="text" value="" maxlength="64"/>
+		</dd>
+	  <dt><span id="labelOrgName"></span></dt>
+	  <dd>
+	  	<input id="orgName" name="orgName" type="text" class="text" value="" maxlength="64"/>
+		</dd>
+	  <dt><span id="labelEffective"></span></dt>
+	  <dd>
+	  	<input type="text" class="text" id="effective" name="effective" size="15" readonly class="Wdate"/>
+		<span id="effectiveWrong" class="red"></span>
+		</dd>	
+	  <dt><span id="labelExpiration"></span></dt>
+	  <dd>
+	  	<input type="text" class="text" id="expiration" name="expiration" size="15" readonly class="Wdate"/>
+		<span id="expirationWrong" class="red"></span>
+		</dd>
+	  <dt></dt>
+	  <dd>
+	  	<a href="javascript:ajaxSaveDriver();" class="searchbtn">
+	  		<span id="save"></span>
+	    </a>
+	  </dd>
+	</dl>
+</div>
+</body>
+</html>

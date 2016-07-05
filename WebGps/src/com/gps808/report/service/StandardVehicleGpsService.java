@@ -20,7 +20,6 @@ public abstract interface StandardVehicleGpsService
     throws Exception;
   public abstract AjaxDto<StandardTpmsTrack> queryTpmsGps(String paramString1, Date paramDate1, Date paramDate2, Pagination paramPagination, String paramString2, String paramString3)
     throws Exception;
-  
   public abstract AjaxDto<StandardDeviceMinMaxGps> queryGpsDate(String paramString1, String paramString2, String[] paramArrayOfString, Pagination paramPagination, String paramString3);
     
   public abstract AjaxDto<StandardDeviceTrack> queryDateGps(String paramString1, String paramString2, boolean paramBoolean, String[] paramArrayOfString, Pagination paramPagination, String paramString3);
@@ -36,4 +35,7 @@ public abstract interface StandardVehicleGpsService
   public abstract AjaxDto<StandardDeviceAlarmSummary> queryLineDeviceAlarmSummary(String paramString1, String paramString2, String[] paramArrayOfString, String paramString3, String paramString4, String paramString5, String paramString6, String paramString7, Pagination paramPagination);
   
   public abstract AjaxDto<StandardDeviceAlarmEx> queryLineDeviceAlarmDetail(String paramString1, String paramString2, String[] paramArrayOfString, String paramString3, String paramString4, String paramString5, String paramString6, String paramString7, Pagination paramPagination);
+  public abstract AjaxDto<StandardDeviceTrack> queryDeviceindexTrack(Integer ID, int i,
+		int j, int k, int l, int m, Pagination pagination, String toMap,String devIdno)throws Exception;
+  
 }

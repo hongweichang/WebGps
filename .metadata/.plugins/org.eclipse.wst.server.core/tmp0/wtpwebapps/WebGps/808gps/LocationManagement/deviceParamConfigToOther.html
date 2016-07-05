@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<link href="../../js/dxtree/dhtmlxtree.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../css/vehicleTeamTree.css"/>
+	<link rel="stylesheet" type="text/css" href="../../js/flexigrid/flexiManage.css"/>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/lhgdialog.min.js"></script>
+	<script type="text/javascript" src="../../js/dxtree/dhtmlxcommon.js"></script>
+	<script type="text/javascript" src="../../js/dxtree/dhtmlxtree.js"></script>
+	<script type="text/javascript" src="../../js/company_tree.js"></script>
+	<script type="text/javascript" src="../../js/public.js"></script>
+	<script type="text/javascript" src="../js/public.js"></script>
+	<script type="text/javascript"  src="../js/date.js"></script>
+	<script type="text/javascript" src="../../js/flexigrid/flexiManage.js"></script>
+	<script type="text/javascript"  src="../js/hashtable.js"></script>
+	<script type="text/javascript" src="../js/vehicleTeamTree.js"></script>
+	<script type="text/javascript" src="js/deviceParamConfigToOther.js"></script>
+	<style>
+		#vehicle_top {
+			width: auto;
+		    border: 1px solid #ccc;
+		    overflow: auto;
+		}
+		#toolbar-btn {
+			float: right;
+		    height: 25px;
+		    margin: 10px 0 0 10px;
+		    width: 280px;
+		}
+		#toolbar-btn .btn-group .y-btn {
+			padding:3px 12px;
+		}
+		#searchTeam .so_text,#searchVehi .so_text,#searchTeam .tc_box ul,#searchVehi .tc_box ul{
+			width:300px;
+		}
+	</style>
+</head>
+<body style="background-color:#fff;overflow: auto;font-size: 12px;">
+	<div id="vehicle_top">
+		<div id="searchTeam" class="so fl">
+			<span>
+				<i class="icon icon_so"></i>
+				<input class="so_text" name="searchName" type="text" placeholder="" />
+			</span>
+			<div class="tc_box so_box">
+				<ul>
+				</ul>
+			</div>
+		</div>
+		<div id="vehiTeamTree"></div>
+		
+		<div id="searchVehi" class="so fl">
+			<span>
+				<i class="icon icon_so"></i>
+				<input class="so_text" name="searchName" type="text" placeholder=""/>
+			</span>
+			<div class="tc_box so_box">
+				<ul>
+				</ul>
+			</div>
+		</div>
+		<div id="vehicleTree"></div>
+	</div>
+	<div id="toolbar-btn"></div>
+</body>
+</html>

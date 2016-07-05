@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css?v150717" rel="stylesheet" type="text/css" />
+<link href="../css/report.css?v150717" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js?v150717"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js?v150717"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js?v150717"></script>
+<script type="text/javascript" src="../js/myajax.js?v150717"></script>
+<script type="text/javascript" src="../js/public.js?v150717"></script>
+<script type="text/javascript" src="../js/date.js?v150717"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxcommon.js?v150717"></script>
+<script type="text/javascript" src="../js/dxtree/dhtmlxtree.js?v150717"></script>
+<script type="text/javascript" src="js/user_list.js?v150717"></script>
+</head>
+<body>
+<div id="search">
+	<h2 class="righttitile_user"><span id="userTitle">&nbsp;</span></h2>
+	<div class="searcha">
+		<a href="javascript:addUserInfo();" class="blue"><span id="addUser">&nbsp;</span></a>&nbsp;&nbsp;
+		<a href="javascript:delSelUserInfo();" class="blue"><span id="delSelUser">&nbsp;</span></a>
+	</div>
+	<div class="searchset">
+		<label class="searchinput">	
+			<input id="usersearch" name="usersearch" type="text" value="" maxlength="32"/>
+	    </label>
+	    <a href="javascript:queryUserInfo();" class="searchbtn">
+	      	<span id="btnSearchUser">&nbsp;</span>
+	    </a>
+    </div>
+</div>
+<table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="userTable">
+	<tr class="heard">
+		<th class="tableft"><span></span></th>
+		<th class="checkbox"><input type="checkbox" name="selectUserAll" id="selectUserAll" onclick="onSelectedAll('selectUserIdList', 'selectUserAll')"/></th>
+		<th><span id="thOperator"></span></th>
+		<th><span id="thIndex"></span></th>
+		<th><span id="thName"></span></th>
+		<th><span id="thAccount"></span></th>
+		<th><span id="thRole"></span></th>
+		<th><span id="thValidaty"></span></th>
+		<th><span id="thLinkman"></span></th>
+		<th><span id="thTelephone"></span></th>
+		<th><span id="thEmail"></span></th>
+		<th><span id="thUrl"></span></th>
+		<!-- <th><span id="thAddress"></span></th>  -->
+		<th class="tabright"><span></span></th>
+	</tr>
+	<tr id="userTableTemplate" class="tabdata" style="display:none">
+		<td class="tableft">&nbsp;</td>
+		<td><input type="checkbox" id="selectUserIdList" name="selectUserIdList" onclick="onSelectedItem('selectUserIdList', 'selectUserAll')" value=""/></td>
+		<td class="set"><span id="tdOperator"></span></td>
+		<td><span id="tdIndex">&nbsp;</span></td>
+		<td class="set"><span id="tdName">&nbsp;</span></td>
+		<td class="set"><span id="tdAccount">&nbsp;</span></td>
+		<td class="set"><span id="tdRole">&nbsp;</span></td>
+		<td><span id="tdValidaty">&nbsp;</span></td>
+		<td><span id="tdLinkman">&nbsp;</span></td>
+		<td><span id="tdTelephone">&nbsp;</span></td>
+		<td><span id="tdEmail">&nbsp;</span></td>
+		<td><span id="tdUrl">&nbsp;</span></td>
+		<!-- <td><span id="tdAddress">&nbsp;</span></td> -->
+		<td class="tabright">&nbsp;</td>
+	</tr>
+</table>
+<div id="userPagination" class="pagination"></div>
+</body>
+</html>

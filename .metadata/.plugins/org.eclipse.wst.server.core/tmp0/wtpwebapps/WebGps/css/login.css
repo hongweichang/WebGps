@@ -1,0 +1,13 @@
+@charset "utf-8";
+#logo{ background:url(../images/public/loginlogo.png) no-repeat; height:30px; overflow:hidden; margin:40px;}
+#logincont{width:620px; margin:0 auto;}
+.language{text-align:right; color:#666; font-family:Arial, Helvetica, sans-serif; word-spacing:0.5em}
+.language a{color:#2b99dd; text-decoration:none}
+.login{background:url(../images/public/loginbg.jpg) no-repeat; height:493px; margin-top:10px; padding:10px 0 0 40px;}
+h2.logtitle{ color:#fff; font:bold 14px/27px "微软雅黑"; margin-bottom:40px; text-shadow:1px 1px 1px #999}
+.login .t{padding-bottom:20px; font-weight:bold;}
+.login label{display:block; padding-bottom:10px; overflow:hidden; zoom:1}
+.login label input{height:22px; width:229px; float:left; color:#999;}
+.login input.yzm{width:100px;}
+.login label.btn{padding-left:148px;}
+.login button{background:url(../images/public/loginbtn.png) no-repeat; width:91px; height:24px; overflow:hidden; border:none; cursor:pointer}

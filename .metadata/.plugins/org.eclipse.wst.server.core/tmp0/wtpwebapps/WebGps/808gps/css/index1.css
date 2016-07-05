@@ -1,0 +1,299 @@
+@charset "UTF-8";
+#main {
+	width: 100%;
+	height: 100%;
+   /* min-width: 900px;
+	overflow: hidden;*/
+}
+.header {
+    background: none repeat scroll 0 0 #0071c6;
+	background-attachment: scroll;
+	background-color: #0071c6;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+    height: 82px;
+    width:auto;
+	display: none;
+    z-index: 3;
+}
+.show {
+	display : block;
+}
+.header .header-title {
+    float: left;
+    padding: 15px 0px 0 5px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.header .header-title .logo {
+    height: 50px;
+}
+.header .header-title .logo img{
+    width: 65px;
+    height: 50px;
+}
+.header-title .logo span {
+	vertical-align:middle;
+    color: white;
+    /*cursor: pointer;*/
+    display: inline-block;
+    font-family: "Microsoft YaHei";
+    font-size: 20px;
+    font-weight: 500;
+    left: 10px;
+    margin-top: -43px;
+    padding-left: 5px;
+}
+.header .right_menu {
+	height: 80px;
+	display: inline;
+	float: right;
+}
+
+.header .login-mess {
+	height: 80px;
+	display: inline;
+	float: right;
+}
+.header .login-mess .login-mess-account {
+	*width:auto;
+	word-break:keep-all;
+	text-overflow:ellipsis;
+	white-space:normal;
+	*white-space:nowrap;
+	overflow:hidden;
+	height: 52px;
+	padding: 28px 0 0;
+	display: inline;
+	float: right;
+}
+.header .login-mess .login-mess-account a{
+	color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 30px;
+    cursor:pointer;
+}
+.header .login-mess .login-mess-account .down{
+	height: 100%;
+}
+.header .login-mess a span{
+    color: #fff;
+    font-size: 14px;
+	cursor: pointer;
+	display: inline-block;
+}
+.header .login-mess  a span:hover{
+   text-decoration: underline;
+}
+
+.header .login-mess .login-mess-account .down em{
+	background: url("../images/icon2.png") no-repeat scroll -86px -42px rgba(0, 0, 0, 0);
+    background:	url("../images/icon2.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: -86px -42px;
+	background-color: rgba(0, 0, 0, 0);
+    display: inline-block;
+    margin-left: 10px;
+    height: 6px;
+    vertical-align: middle;
+    width: 12px;
+}
+
+.header .login-mess .login-out{
+    background: url("../images/menu-ico.png") no-repeat scroll -249px -6px rgba(0, 0, 0, 0);
+    background:	url("../images/menu-ico.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: -249px -6px;
+	background-color: rgba(0, 0, 0, 0);
+    display: inline-block;
+    margin-right: 3px;
+    height: 21px;
+    vertical-align: middle;
+    width: 21px;
+}
+.header .login-mess .quick-menu {
+    background-color: #fff;
+    border: 1px solid #000;
+    display: none;
+    position: absolute;
+  /**  right: 40px; **/
+    top: 52px;
+    z-index: 9;
+}
+
+.header .login-mess .quick-menu p a{
+	padding: 10px;
+	cursor: pointer;
+    display: block;
+}	
+
+.header .login-mess .quick-menu p:hover a{
+	background-color: #3083eb;
+	color: #fff;
+}
+.header .email{
+	display: inline-block;
+	position: relative;
+	background: url('../images/menu-ico.png') no-repeat -225px -22px;
+	background:	url("../images/menu-ico.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: -225px -22px;
+	background-color: rgba(0, 0, 0, 0);
+	width: 14px;
+	height: 11px;
+}
+
+.header .email i{
+	position: absolute;
+	width: 6px;
+	height:6px;
+	border-radius: 50%;
+	background-color: #f31b5d;
+	right: -3px;
+	top:-3px;
+}
+
+.header .nav-bar {
+    float: left;
+    height: 80px;
+}
+.header .nav-bar li {
+	height: 80px;
+    margin: 0 0 0 -1px;
+	cursor: pointer;
+	float: left;
+}
+.header .nav-bar li:hover,.nav-bar li.current {
+	background-color: #0b83dc;
+}
+.header .nav-bar a {
+/*    border-left: 1px solid transparent;
+    border-right: 1px solid transparent; */
+    float: left;
+    overflow: hidden;
+/*    padding: 18px 22px;*/
+    text-align: center;
+/*	width: 90px;*/
+}
+
+.header .nav-bar li i {
+   	background:	url("../images/menu-ico.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-color: rgba(0, 0, 0, 0);
+}
+.header .nav-bar li i.icon-weizhi {
+	background-position: -40px -33px;
+    width: 22px;
+	height: 28px;
+}
+.header .nav-bar li.current i.icon-weizhi,.header .nav-bar li:hover i.icon-weizhi {
+	background-position: -41px -3px;
+}
+.header .nav-bar li i.icon-shipin {
+	background-position: -68px -37px;
+    width: 22px;
+	height: 28px;
+}
+.header .nav-bar li.current i.icon-shipin,.header .nav-bar li:hover i.icon-shipin {
+	background-position: -70px -5px;
+}
+.header .nav-bar li i.icon-xianlu {
+	background-position: -280px -34px;
+    width: 22px;
+	height: 28px;
+}
+.header .nav-bar li.current i.icon-xianlu,.header .nav-bar li:hover i.icon-xianlu {
+	background-position: -280px -5px;
+}
+.header .nav-bar li i.icon-guiji {
+	background-position: -3px -34px;
+    width: 22px;
+	height: 28px;
+}
+.header .nav-bar li.current i.icon-guiji,.header .nav-bar li:hover i.icon-guiji {
+	background-position: -3px -5px;
+}
+.header .nav-bar li i.icon-tongji {
+	background-position: -100px -35px;
+    width: 22px;
+	height: 28px;
+}
+.header .nav-bar li.current i.icon-tongji,.header .nav-bar li:hover i.icon-tongji {
+	background-position: -101px -5px;
+}
+.header .nav-bar li i.icon-yunying {
+	background-position: -132px -36px;
+    width: 22px;
+	height: 28px;
+}
+.header .nav-bar li.current i.icon-yunying,.header .nav-bar li:hover i.icon-yunying {
+	background-position: -130px -5px;
+}
+.header .nav-bar li i.icon-guize{
+	background-position: -163px -40px;
+	width: 22px;
+	height: 28px;
+}
+.header .nav-bar li.current i.icon-guize,.header .nav-bar li:hover i.icon-guize {
+	background-position: -163px -5px;
+}
+.header .nav-bar li i.icon-server{
+	background-position: -194px -37px;
+	width: 22px;
+	height: 28px;
+}
+.header .nav-bar li.current i.icon-server,.header .nav-bar li:hover i.icon-server {
+	background-position: -194px -7px;
+}
+.header .nav-bar li i.icon-denglu{
+	background-position: -310px -34px;
+	width: 22px;
+	height: 28px;
+}
+.header .nav-bar li.current i.icon-denglu,.header .nav-bar li:hover i.icon-denglu {
+	background-position: -310px -5px;
+}
+.header .nav-bar li i.icon-luxiang {
+	background:url(../images/icon_s_for.png) -178px -430px no-repeat;
+    width: 22px;
+	height: 28px;
+}
+.header .nav-bar li.current i.icon-luxiang,.header .nav-bar li:hover i.icon-luxiang {
+	background-position: -247px -430px;
+}
+.header .nav-bar a i{
+ /*   display: inline-block; */
+ 	display: block;
+    margin: 0px auto;
+    vertical-align: middle;
+}
+.header .nav-bar li a span {
+	font-size: 14px;
+	color: #fff;
+}
+#mainPanel-all .mainPanel {
+	width: 100%;
+	height: 100%;
+	display:none;
+}
+#mainPanel-all .current {
+	display: block;
+}
+#leftPanel {
+    background-color: #f5f6f7;
+    bottom: 0;
+    font-family: "Microsoft Yahei";
+    left: 0;
+	top: 0;
+	float:left;
+	height:100%;
+}
+#rightPanel {
+	float: left;
+	height:100%;
+}

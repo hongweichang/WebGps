@@ -25,6 +25,7 @@ import com.gps808.report.vo.StandardTrackCompare;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -190,7 +191,57 @@ public class StandardVehicleGpsServiceImpl
     track.setTirePress(press);
     track.setTemperures(temperure);
   }
-
+  
+  public void analyDeviceTrack(StandardDeviceGps gps, String vehiIdno, List<StandardDeviceTrack> gpstracks, String toMap){
+	  try{
+		  InputStream inStream = gps.getGpsData().getBinaryStream();
+		  long nLen = gps.getGpsData().length();
+		  int nSize = (int)nLen;
+		  byte[] data = new byte[nSize];
+		  inStream.read(data);
+		  inStream.close();
+		  
+		  int count = nSize / 72;
+		  if(count > 0){
+			  int offset = 0;
+			  int online = 1;
+			  for (int i = 0; i < count; i++){
+				  long date = ByteArrayUtils.byteArray2long(data, offset, 4);
+				  Date gpsTime = analyTrackTime(date);
+				  
+				  long gpsSecond = gpsTime.getTime();
+				  Date dt = new Date();
+				  SimpleDateFormat matter = new SimpleDateFormat("yyyy-MM-dd");
+				  if(matter.format(dt) == matter.format(new Date(gpsSecond))){
+					  StandardDeviceTrack track = new StandardDeviceTrack();
+			            track.setTrackTime(gpsSecond);
+			            track.setVehiIdno(vehiIdno);
+			            track.setPlateType(gps.getPlateType());
+			            track.setDevIdno(gps.getDevIdno());
+			            track.setOnline(online);
+			            analyDeviceTrack(data, offset, track);
+			            if ((track.getStatus1().intValue() & 0x1) > 0)
+			            {
+			              GpsValue gpsValue = ConvertUtil.convert(track.getJingDu(), track.getWeiDu(), toMap);
+			              
+			              track.setMapJingDu(gpsValue.getMapJingDu());
+			              track.setMapWeiDu(gpsValue.getMapWeiDu());
+			            }
+			            gpstracks.add(track);
+				  }
+				  offset += 72;
+			  }
+		  }
+		  data = null;
+	  }catch (SQLException e){
+		  
+	      e.printStackTrace();
+	      
+	    }catch (IOException e){
+	    	
+	      e.printStackTrace();
+	    }
+  	}
 public void analyDeviceGps(StandardDeviceGps gps, String vehiIdno, long beginTime, long endTime, List<StandardDeviceTrack> gpstracks, String toMap)
   {
     try
@@ -534,7 +585,29 @@ public void analyDeviceGps(StandardDeviceGps gps, String vehiIdno, long beginTim
     }
     return strQuery.toString();
   }
-
+  private String getQueryTrackString(String devidno,Integer ID ){
+	  StringBuffer sql = new StringBuffer("SELECT VehiID DevIDNO GPSDate GPSData FROM jt808_vehicle_gps b ");
+	  Date dt = new Date();
+	  SimpleDateFormat matter = new SimpleDateFormat("yyyy-MM-dd");
+	  sql.append(String.format("where gpsdate = '%s'", new Object[]{ matter.format(dt) }));
+	  if(devidno != null){
+		  sql.append(String.format("and devIdno = '%s' ", new Object[]{ devidno }));
+	  }else{
+		  sql.append(String.format("and vehiId = '%s'", new Object[]{ ID }));
+	  }
+	return sql.toString();
+  }
+  
+  public static List<QueryScalar> getStandardDeviceTrackScalar(){
+	  List<QueryScalar> re = new ArrayList();
+	  re.add(new QueryScalar("VehiID", StandardBasicTypes.STRING));
+	  re.add(new QueryScalar("Online", StandardBasicTypes.INTEGER));
+	  re.add(new QueryScalar("DevIDNO", StandardBasicTypes.STRING));
+	  re.add(new QueryScalar("GPSDate", StandardBasicTypes.DATE));
+	  re.add(new QueryScalar("GPSData", StandardBasicTypes.BLOB));
+	return re;
+}
+  
   public static List<QueryScalar> getStandardDeviceGpsQueryScalar()
   {
     List<QueryScalar> scalars = new ArrayList();
@@ -557,7 +630,56 @@ public void analyDeviceGps(StandardDeviceGps gps, String vehiIdno, long beginTim
     scalars.add(new QueryScalar("transportData", StandardBasicTypes.BLOB));
     return scalars;
   }
-
+  
+  public AjaxDto<StandardDeviceTrack> queryDeviceindexTrack(Integer ID, int meter, int interval, int parkTime, int temperature, int number, Pagination pagination, String toMap,String devIdno)
+		  throws Exception{
+	  List<StandardDeviceTrack> gpstracks = new ArrayList();
+	  AjaxDto<StandardDeviceGps> ajaxDto = this.paginationDao.getExtraByNativeSqlEx(getQueryTrackString(devIdno,ID), null, getStandardDeviceTrackScalar(), StandardDeviceGps.class, null);
+	  if((ajaxDto.getPageList() != null) && (ajaxDto.getPageList().size() > 0)) {
+		  for (int i = 0; i < ajaxDto.getPageList().size(); i++){
+			  StandardDeviceGps gps = (StandardDeviceGps)ajaxDto.getPageList().get(i);
+			  if(gps.getGpsData() != null) {
+				  analyDeviceTrack(gps, devIdno, gpstracks, toMap);
+			  }
+		  }
+	  }
+	  AjaxDto<StandardDeviceTrack> ajaxTrack = new AjaxDto();
+	  List<StandardDeviceTrack> track = filterDeviceTrack(gpstracks, meter, interval, parkTime, temperature, number, ID);
+	  
+	  int totalRecord = 0;
+	    if (track != null)
+	    {
+	      totalRecord = track.size();
+	      if (pagination != null)
+	      {
+	        if (track.size() < (pagination.getCurrentPage() - 1) * pagination.getPageRecords()) {
+	          pagination.setCurrentPage(1);
+	        }
+	        int offset = (pagination.getCurrentPage() - 1) * pagination.getPageRecords();
+	        int endOffset = pagination.getCurrentPage() * pagination.getPageRecords();
+	        List<StandardDeviceTrack> retTracks = new ArrayList();
+	        for (int i = offset; (i < endOffset) && (i < track.size()); i++) {
+	          retTracks.add((StandardDeviceTrack)track.get(i));
+	        }
+	        ajaxTrack.setPageList(retTracks);
+	      }
+	      else
+	      {
+	        ajaxTrack.setPageList(track);
+	      }
+	    }
+	    else if (pagination != null)
+	    {
+	      pagination.setCurrentPage(1);
+	    }
+	    if (pagination != null)
+	    {
+	      Pagination pagin = new Pagination(pagination.getPageRecords(), pagination.getCurrentPage(), totalRecord, pagination.getSortParams());
+	      ajaxTrack.setPagination(pagin);
+	    }
+	    return ajaxTrack;
+	  }
+  
 public AjaxDto<StandardDeviceTrack> queryDeviceGps(String vehiIdno, Date begin, Date end, int meter, int interval, int limit, int parkTime, int temperature, int number, Pagination pagination, String toMap, String devIdno)
     throws Exception
   {

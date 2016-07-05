@@ -1,0 +1,217 @@
+@charset "UTF-8";
+
+/*轨迹回放*/
+.track_top{height: 38px;line-height: 38px;background-color: #efefef;box-shadow:0 2px 5px #a9a9a9;position: relative;z-index: 1;}
+.track_slide{z-index: 2;position: absolute;right: 8px;bottom:10px;height:268px;}
+.track_slide .shrink{position: absolute;z-index:9;right: 10px;bottom: 13px;background: url('../../images/track-ico2.png') no-repeat -23px -9px;width: 14px;height: 14px;}
+.track_slide .shrink.active{background-position: -44px -2px}
+.track_slide .track_slide_rows{
+	width:350px;
+	padding-top: 10px;
+	background:rgba(255, 255, 255, .8);
+	background:#fff\9;
+	filter:alpha(opacity=80);
+	padding-bottom: 18px;
+}
+.track_slide_txt{
+	display: none;
+	width: 90px;
+	height:40px;
+	background:rgba(255, 255, 255, .8);
+	background:#fff\9;
+	filter:alpha(opacity=80);
+	line-height:40px;
+	padding:0 10px;
+	position: absolute;
+	bottom:0px;
+	right: 0px;
+	}
+.track_slide .rows{padding:5px 0px 0 20px;color: #333;font-size: 14px;}
+.track_slide .rows .labels{width:90px;float: left;line-height:18px; text-align:right; padding-right:10px;}
+.track_slide .rows .labels_inp{float: left;width: 150px; line-height:18px;border:1px solid #999;}
+.track_slide .rows .labels_inp input,.track_slide .rows .labels_inp select{width:140px; padding:0px 5px;/*border:1px solid #999;*/ }
+.track_slide .rows .labels_inp select{line-height:18px; display:inline-block;}
+.track_slide .rows .labels_inp input{height:20px;width: 140px;border:none;}
+.track_slide .rows .labels_inp select{width: 152px;}
+.track_slide .rows .more_car{display: block;background: url('../../images/track-ico2.png') no-repeat -22px -2px;width: 18px;height: 4px;margin: 10px 5px 5px;float: left;cursor: pointer;}
+.Wdate{background:#fff url(../../images/datePicker.gif) no-repeat right;border:none;}
+.track_slide .rows.radio-check{padding-top:5px;}
+.track_slide .rows span{padding-right:10px;}
+.track_slide .rows span a{margin-right: 3px;height: 8px;width: 8px;border:1px solid #a8a8a8;position: relative;padding: 2px;display: inline-block;vertical-align: middle;}
+.track_slide .rows span a i{position: absolute;left: 2px;top:2px;width: 8px;height: 8px;background-color: #a8a8a8;display: none;}
+.track_slide .rows span.active a i{display: block;}
+.track_slide .rows.sear_btn{padding-top:8px;}
+.track_slide .rows.sear_btn a{width:96px;height:26px;line-height:26px;font-size: 14px;text-align: center;color: #0b83dc;margin: 0 auto;display: block; border:#0b83dc solid 1px; border-collapse:collapse;}
+.track_slide .rows.sear_btn a:hover{
+	background-color: #0b83dc;
+	border:#0b83dc solid 1px;
+	color:#fff;
+	text-decoration: none;
+}
+.track_slide .rows .select-search {padding: 0px; width: 150px;}
+.track_slide .rows .select-search .y-btn {border: 0px none; width: 145px; padding: 2px 0px 3px 5px;}
+.track_slide .rows .select-search .y-btn .search-input {padding: 0px; width: 130px;}
+.ui-menu .scroll-list .ui-menu-item i { display: inline; }
+
+/*.map{background: url(../images/map.jpg)}*/
+.play_part{
+	/*cursor: move;*/
+	display: block;
+	z-index: 9;
+	height: 20px;
+	padding: 10px;
+	background:rgba(255, 255, 255, .9);
+	background:#fff\9;
+	filter:alpha(opacity=90);
+	position: absolute;
+	right:365px;
+	bottom:10px; 
+}
+.play_part .close{position: absolute;background: url('../../images/ico2.png') no-repeat -82px -19px;width: 15px;height: 15px;right: 10px;top:5px;cursor: pointer;}
+.play_part .play{float: left;cursor: pointer;display: inline-block;background:url(../../images/icon_state.png) no-repeat -552px -142px;width: 13px;height: 14px;margin-top: 2px;}
+.play_part .play:hover{
+	background-position: -552px -170px;
+	}
+.play_part .pause{float: left;cursor: pointer;display: inline-block;background:url(../../images/icon_s.png) no-repeat -0px -213px;width: 13px;height: 12px;margin-top: 4px;}
+.play_part .pause:hover{
+	background-position:0px -234px;
+	}
+.play_part .stop{float: left;width: 12px;height: 12px;background-color: #afbfcf;display: inline-block;cursor: pointer;margin: 4px 5px 0 0;}
+.play_part .stop:hover{
+	background-color:#0071c6;
+	}
+.play_part .time{float: left;cursor: pointer;margin: 0 10px;display: inline-block;background:url(../../images/icon_s.png) no-repeat -100px -211px;width: 20px;height: 20px;}
+.play_part .time:hover{
+	background-position:-100px -232px;
+	}
+.play_part .del{float: left;cursor: pointer;display: inline-block;background:url(../../images/icon_s.png) no-repeat -74px -211px;width: 20px;height: 17px;}
+.play_part .del:hover{
+	background-position:-74px -232px;
+	}
+.play_part .row{float: left;width: 180px;height: 2px;background-color: #bebebe;margin: 9px 10px 9px 10px;position: relative;}
+.play_part .row span{position: absolute;width: 0;height: 2px;background-color: #0b8ae8;}
+.play_part .row em{display: inline-block;cursor: pointer;position: absolute;background: url('../../images/ico2.png') no-repeat -83px -3px;width: 12px;height: 12px;left: 10%;top:-5px;z-index: 2}
+.play_part .add_reduce{
+	position:absolute;
+	right: 16px;
+	bottom: 42px;
+	background:rgba(255, 255, 255, .9);
+	background:#fff\9;
+	filter:alpha(opacity=90);
+	padding: 3px 5px; 
+	display:none;
+}
+.play_part .add_reduce .reduce{width: 10px;height: 2px;background-color: #0b8ae8;margin: 8px auto;}
+.play_part .add_reduce em{display: block;color: #0b83dc;font-weight: bold;line-height: 20px;font-size: 22px;cursor: pointer;}
+.play_part .add_reduce .line{width: 2px;height: 50px;margin: 5px auto;position: relative;background-color: #0b8ae8;}
+.play_part .add_reduce .line .circle{position: absolute;width: 8px;height: 8px;background-color:#0b8ae8;left:-3px;bottom: 0;z-index: 2;border-radius: 50%; }
+.play_part .add_reduce .line span{position: absolute;width:2px;height: 0px;background-color: #bebebe;}
+.play_part .add_reduce .addReduce_img{position: relative;float: left;margin: 16px 10px;background: url('../../images/ico2.png') no-repeat -9px -126px;width: 69px;height: 8px;}
+.play_part .add_reduce .addReduce_img2{position: absolute;left: 0;top:0;background:url('../../images/ico2.png') no-repeat -9px -115px;width:50%;height: 8px;}
+
+/*轨迹滑动css*/
+#row {
+	float: left;
+}
+#row .ui-slider {
+	float: left;
+	width: 180px;
+	height: 2px;
+	background-color: #bebebe;
+	margin: 9px 10px 9px 10px;
+	position: relative;
+}
+#row .ui-slider-range {
+	height: 2px;
+	background-color: #0b8ae8;
+	display: inline-block;
+	position: absolute;
+}
+#row .ui-slider-handle {
+	background-color: #0b8ae8;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	display: inline-block;
+	position: absolute;
+	top: -5px;
+}
+.play_part .add_reduce .ui-slider {
+	width: 2px;
+	height: 50px;
+	margin: 5px auto;
+	position: relative;
+	background-color: #bebebe;
+}
+.play_part .add_reduce .ui-slider-range {
+	position: absolute;
+	width: 2px;
+	height: 0px;
+	background-color: #0b8ae8;
+	display: inline-block;
+	bottom: 0;
+}
+.play_part .add_reduce .line .ui-slider-handle {
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background-color: #0b8ae8;
+	left: -3px;
+	border-radius: 50%;
+	display: inline-block;
+}
+/*报表统计*/
+.pd_side{
+	padding-left:228px;
+	}
+.rep_cont{
+	width:100%;
+	height:800px;
+	padding-right:228px;
+	background-color:#f5f6f7;
+	}
+.rep_side{
+	width:228px;
+	height:800px;
+	border-right:#cdcdcd solid 1px;
+	position:fixed;
+	left:0;
+	top:0;
+	}
+#so_div_vehiList {
+	background-color: #fff;
+    left: 16px;
+    overflow: auto;
+    position: absolute;
+    top: 35px;
+}
+#so_div_vehiList ul {
+	border: 0 none;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 140px;
+}
+#so_div_vehiList li {
+	height: 22px;
+    line-height: 22px;
+    padding: 2px 10px;
+}
+#so_div_vehiList li:hover {
+	display:block;
+	background-color:#0b8ae8;
+	color:#fff;
+}
+.maplngLat {
+	color: #0077ff;
+	cursor: pointer;
+	padding: 0px;
+}
+.maplngLat:hover{
+    color: #FF0000;
+	text-decoration:underline;
+}
+.flexigrid div.pDiv input {
+	border: 1px solid #ddd;
+}
+/*轨迹回放 end*/

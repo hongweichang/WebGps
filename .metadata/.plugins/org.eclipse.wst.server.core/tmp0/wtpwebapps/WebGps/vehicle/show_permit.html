@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../system/css/public.css" rel="stylesheet" type="text/css" />
+<link href="../system/css/server.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/gps_common.js"></script>
+<script type="text/javascript" src="js/show_permit.js"></script>
+</head>
+<body style="background-color:#fff;">
+<div id="content" class="serverall" style="width:500px;height:500px;position:relative;overflow:hidden;">
+	<h3>
+		<span class="set"><a class="bluelink" href="javascript:delSelPermit();" id="hrefRemove"><span id="spanRemove" class="blue">&nbsp;</span></a></span>&nbsp;&nbsp;
+	</h3>
+	<table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="tableTop" >
+	    <tr class="heard">
+			<th class="tableft"><span></span></th>
+			<th class="checkbox"><input type="checkbox" name="selectDeviceAll" id="selectDeviceAll" onclick="onSelectedAll('selectDeviceIdList', 'selectDeviceAll')"/></th>
+			<th><span id="thOperator"></span></th>
+			<th><span id="thIndex">&nbsp;</span></th>
+			<th><span id="thName">&nbsp;</span></th>
+			<th><span id="thAccount">&nbsp;</span></th>
+			<th class="tabright"><span></span></th>
+		</tr>
+		<tr id="userTableTemplate" class="tabdata" style="display:none">
+			<td class="tableft">&nbsp;</td>
+			<td><input type="checkbox" id="selectDeviceIdList" name="selectDeviceIdList" onclick="onSelectedItem('selectDeviceIdList', 'selectDeviceAll')" value=""/></td>
+			<td class="set"><span id="tdOperator"></span></td>
+			<td><span id="tdIndex">&nbsp;</span></td>
+			<td><span id="tdName">&nbsp;</span></td>
+			<td><span id="tdAccount">&nbsp;</span></td>
+			<td class="tabright">&nbsp;</td>
+		</tr>
+	</table>
+   	<div id="pagination" class="pagination" style="margin:10px 10px 10px 10px;">&nbsp;</div>
+	<div style="float:left;padding-top:8px;padding-bottom:8px;">
+	</div>
+</div>
+</body>
+</html>

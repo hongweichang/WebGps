@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate������������������������ -->
+<hibernate-mapping package="com.gps808.model">
+	<class name="StandardFixedTts" table="jt808_fixedTts">
+		<!-- ����������������?? -->
+		<id	name="id" column="ID" type="integer" >
+			 <!--������������identity������������������  -->
+			<generator class="identity"/>
+		</id>
+	 	<property name="userId" column="UserId" type="java.lang.Integer"/>
+		<property name="content" column="Content" type="string" length="512"/>
+	</class>
+</hibernate-mapping>

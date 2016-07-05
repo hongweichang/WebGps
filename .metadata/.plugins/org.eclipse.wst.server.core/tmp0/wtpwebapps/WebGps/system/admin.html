@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/public.css?v150825" rel="stylesheet" type="text/css" />
+<link href="css/login.css?v150825" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js?v150825"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js?v150825"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js?v150825"></script>
+<script type="text/javascript" src="../js/public.js?v150825"></script>
+<script type="text/javascript" src="js/lang.js?v150825"></script>
+<script type="text/javascript" src="js/login.js?v150825"></script>
+</head>
+<body>
+<h1 id="logo"></h1>
+<div id="logincont">
+	<div class="language"><a id="changeChinese" href="javascript:void(0);" onclick="switchLanguage('zh')"><span id="chinese"></span></a>&nbsp;|&nbsp;<a id="changeEnglish" href="javascript:switchLanguage('en')"><span id="english"></span></a></div>
+  <div class="login">
+  	<h2 class="logtitle"><span id="gpsTitle"></span></h2>
+  	<div class="t"><span id="usrLogin"></span></div>
+   	<label><input name="userAccount" id="userAccount" type="text"  maxlength="16" style="ime-mode:disabled;" onkeydown="return specialChar(event);"/></label>
+    <label><input name="password" id="password" type="password" maxlength="16" style="ime-mode:disabled;"/></label>
+    <label><input id="verificationCode" maxlength="4" class="yzm" type="text" style="ime-mode:disabled;" onkeydown="onKeyDownDigit(event);"/><img id="rand" src="" title="" onclick="changeValidateCode(this)" /> </label>
+    <label class="btn"><button id="loginButton" onclick="login();"></button></label>
+  </div>
+</div>
+</body>
+</html>

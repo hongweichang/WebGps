@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/public.css?v150825" rel="stylesheet" type="text/css" />
+<link href="css/server.css?v150825" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js?v150825"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js?v150825"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js?v150825"></script>
+<script type="text/javascript" src="../js/myajax.js?v150825"></script>
+<script type="text/javascript" src="../js/public.js?v150825"></script>
+<script type="text/javascript" src="../js/date.js?v150825"></script>
+<script type="text/javascript" src="js/lang.js?v150825"></script>
+<script type="text/javascript" src="js/serverall.js?v150825"></script>
+<script type="text/javascript" src="js/serverlogin.js?v150825"></script>
+<script type="text/javascript" src="js/serverlist.js?v150825"></script>
+<script type="text/javascript" src="js/serverdownstation.js?v150825"></script>
+<script type="text/javascript" src="js/server.js?v150825"></script>
+</head>
+<body>
+<!--内容start-->
+<div class="comt">
+  <h2 class="title"> <span class="more"></span> <span class="icon icon3"></span> <span id="serverTitle">&nbsp;</span> > <span id="serverType">&nbsp;</span></h2>
+  <div class="cont">
+  	<div class="submenu">
+	    <ul>
+	      <li><a href="javascript::" name="svrMenuItem" onclick="javascript:switchServerPage('all','serverall.html')" class="befor"><span id="serverAll"></span></a></li>
+	      <li><a href="javascript::" name="svrMenuItem" onclick="javascript:switchServerPage('login','serverlogin.html')" ><span id="serverLogin"></span></a></li>
+		  <li><a href="javascript::" name="svrMenuItem" onclick="javascript:switchServerPage('gateway','serverlist.html')"><span id="serverGateway"></span></a></li>
+		  <li><a href="javascript::" name="svrMenuItem" onclick="javascript:switchServerPage('user','serverlist.html')"><span id="serverUser"></span></a></li>
+		  <li><a href="javascript::" name="svrMenuItem" onclick="javascript:switchServerPage('media','serverlist.html')"><span id="serverMedia"></span></a></li>
+		  <li><a href="javascript::" name="svrMenuItem" onclick="javascript:switchServerPage('storage','serverlist.html')" id="hrefStorageServer"><span id="serverStorage"></span></a></li>
+		  <li><a href="javascript::" name="svrMenuItem" onclick="javascript:switchServerPage('downStation','serverlist.html')" id="hrefDownStation"><span id="serverDownStation"></span></a></li>
+		  <li><a href="javascript::" name="svrMenuItem" onclick="javascript:switchServerPage('down','serverlist.html')" id="hrefDownServer"><span id="serverDown"></span></a></li>
+	    </ul>
+	</div>
+    <div class="contright">
+		<div id="page_server" class="serverall" style="display:none">
+		    <h3><span id="serverListName">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:" onclick="addServerInfo()" class="bluelink"><span id="btnAddServer" class="blue">&nbsp;</span></a></h3>
+		    <table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="tableTop">
+		    <tr class="heard">
+		        <th class="tableft"><span></span></th>
+		        <th id="thOperator">&nbsp;</th>
+		        <th id="thRelation">&nbsp;</th>
+		        <th id="thIndex">&nbsp;</th>
+		        <th id="thName">&nbsp;</th>
+		        <th id="thIDNO">&nbsp;</th>
+		        <th id="thStation">&nbsp;</th>
+		        <th id="thStatus">&nbsp;</th>
+		        <th id="thLanIp">&nbsp;</th>
+		        <th id="thDeviceIp">&nbsp;</th>
+		        <th id="thDeviceIp2">&nbsp;</th>
+		        <th id="thDevicePort">&nbsp;</th>
+		        <th id="thClientIp">&nbsp;</th>
+		        <th id="thClientIp2">&nbsp;</th>
+		        <th id="thClientPort">&nbsp;</th>
+		        <th class="tabright"><span></span></th>
+		     </tr>
+		     <tr id="tableTemplate" class="tabdata" style="display:none">
+		        <td class="tableft">&nbsp;</td>
+		        <td class="set" id="tdOperator"></td>
+		        <td class="set" id="tdRelation"></td>
+		        <td id="tdIndex">1</td>
+		        <td class="set" id="tdName"></td>
+		        <td class="set" id="tdIDNO"></td>
+		        <td id="tdStation"></td>
+		        <td id="tdStatus"></td>
+		        <td id="tdLanIp"></td>
+		        <td id="tdDeviceIp"></td>
+		        <td id="tdDeviceIp2"></td>
+		        <td id="tdDevicePort"></td>
+		        <td id="tdClientIp"></td>
+		        <td id="tdClientIp2"></td>
+		        <td id="tdClientPort"></td>
+		        <td class="tabright">&nbsp;</td>
+		    </tr>
+		    </table>
+		    <div id="pagination" class="pagination" style="margin:10px 10px 10px 10px;"></div>
+		</div>
+		<div id="page_login" class="serverall" style="display:none">
+			<h3><span id="loginServerTitle">&nbsp;</span></h3>
+			<dl class="setingbox">
+			  <dt><span id="lableServerStatus">&nbsp;</span></dt>
+			  <dd><span id="serverStatus"></span></dd>
+			  <dt><span id="lableLANAddr">&nbsp;</span></dt>
+			  <dd>
+			    <input id="lanAddress" name="lanAddress" type="text" class="text" value="" maxlength="32"/>
+			    <span id="lanAddressWrong" class="red"></span></dd>
+			  <dt><span id="lableWLANDevice">&nbsp;</span></dt>
+			  <dd>
+			    <input id="deviceIp" name="deviceIp" type="text" class="text" value="" maxlength="32"/>
+			    <span id="deviceIpWrong" class="red"></span>
+			  </dd>
+			  <dt><span id="lableWLANDevice2">&nbsp;</span></dt>
+			  <dd>
+			    <input id="deviceIp2" name="deviceIp2" type="text" class="text" value="" maxlength="32"/>
+			    <span id="deviceIp2Wrong" class="red"></span>
+			  </dd>
+			  <dt><span id="lablePortDevice">&nbsp;</span></dt>
+			  <dd>
+			    <input id="devicePort" name="devicePort" type="text" class="text" value="" maxlength="5" onkeydown="onKeyDownDigit(event)"/>
+			    <span id="devicePortWrong" class="red"></span>
+			  </dd>
+			  <dt><span id="lableWLANClient">&nbsp;</span></dt>
+			  <dd>
+			    <input id="clientIp" name="clientIp" type="text" class="text" maxlength="32"/>
+			    <span id="clientIpWrong" class="red"></span>
+			  </dd>
+			  <dt><span id="lableWLANClient2">&nbsp;</span></dt>
+			  <dd>
+			    <input id="clientIp2" name="clientIp2" type="text" class="text" maxlength="32"/>
+			    <span id="clientIp2Wrong" class="red"></span>
+			  </dd>
+			  <dt><span id="lablePortClient">&nbsp;</span></dt>
+			  <dd>
+			    <input id="clientPort" name="clientPort" type="text" class="text" maxlength="5" onkeydown="onKeyDownDigit(event)"/>
+			  	<span id="clientPortWrong" class="red"></span>
+			  </dd>
+			  <dt></dt>
+			  <dd>
+			    <label class="searchbtn">
+			      <button id="save" type="submit" onclick="ajaxSaveLogin()">&nbsp;</button>
+			    </label>
+			  </dd>
+			</dl>
+		</div>
+		 <div id="page_all" class="serverall">
+			<h3><a href="javascript:" onclick="switchServerPage('login','serverlogin.html')" class="more"><span id="view">&nbsp;</span></a><span id="loginServer">&nbsp;</span></h3>
+			<p class="serverinfo"><span id="loginStatus">&nbsp;</span></p>
+			<h3><a href="javascript:" onclick="switchServerPage('gateway','serverinfo.html')" class="more"><span id="allGateway">&nbsp;</span></a><span id="gatewayServer">&nbsp;</span></h3>
+			<p class="serverinfo">
+				<span id="totalGateway">&nbsp;</span>:&nbsp;<span id="totalGatewayCount">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;
+				<span id="gatewayOnline">&nbsp;</span>:&nbsp;<span id="totalGatewayOnline">&nbsp;</span>
+			</p>
+			<h3><a href="javascript:" onclick="switchServerPage('user','serverinfo.html')" class="more"><span id="allUser">&nbsp;</span></a><span id="userServer">&nbsp;</span></h3>
+			<p class="serverinfo">
+				<span id="totalUser">&nbsp;</span>:&nbsp;<span id="totalUserCount">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;
+				<span id="userOnline">&nbsp;</span>:&nbsp;<span id="totalUserOnline">&nbsp;</span>
+			</p>
+			<h3><a href="javascript:" onclick="switchServerPage('media','serverinfo.html')" class="more"><span id="allMedia">&nbsp;</span></a><span id="mediaServer">&nbsp;</span></h3>
+			<p class="serverinfo">
+				<span id="totalMedia">&nbsp;</span>:&nbsp;<span id="totalMediaCount">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;
+				<span id="mediaOnline">&nbsp;</span>:&nbsp;<span id="totalMediaOnline">&nbsp;</span>
+			</p>
+			<h3 id = "hServerStorage"><a href="javascript:" onclick="switchServerPage('storage','serverinfo.html')" class="more"><span id="allStorage">&nbsp;</span></a><span id="storageServer">&nbsp;</span></h3>
+			<p class="serverinfo" id = "pServerStorage">
+				<span id="totalStorage">&nbsp;</span>:&nbsp;<span id="totalStorageCount">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;
+				<span id="storageOnline">&nbsp;</span>:&nbsp;<span id="totalStorageOnline">&nbsp;</span>
+			</p>
+			<h3 id = "hServerDownload"><a href="javascript:" onclick="switchServerPage('down','serverinfo.html')" class="more"><span id="allDownload">&nbsp;</span></a><span id="downloadServer">&nbsp;</span></h3>
+			<p class="serverinfo" id = "pServerDownload">
+				<span id="totalDownload">&nbsp;</span>:&nbsp;<span id="totalDownloadCount">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;
+				<span id="downloadOnline">&nbsp;</span>:&nbsp;<span id="totalDownloadOnline">&nbsp;</span>
+			</p>
+		</div>
+		<div id="page_downStation" class="serverall" style="display:none">
+		    <h3><span id="downStationName">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:" onclick="addDownStation()" class="bluelink"><span id="btnAddDownStation" class="blue">&nbsp;</span></a></h3>
+		    <table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="stationTableTop">
+		    <tr class="heard">
+		        <th class="tableft"><span></span></th>
+		        <th><span id="thStationIndex">&nbsp;</span></th>
+		        <th><span id="thStationName">&nbsp;</span></th>
+		        <th><span id="thStationSsid">&nbsp;</span></th>
+		        <th><span id="thStationOperator">&nbsp;</span></th>
+		        <th class="tabright"><span></span></th>
+		     </tr>
+		     <tr id="stationTableTemplate" class="tabdata" style="display:none">
+		        <td class="tableft">&nbsp;</td>
+		        <td id="tdStationIndex">1</td>
+		        <td class="set" id="tdStationName"></td>
+		        <td id="tdStationSsid"></td>
+		        <td class="set" id="tdStationOperator"></td>
+		        <td class="tabright">&nbsp;</td>
+		    </tr>
+		    </table>
+		    <div id="stationPagination" class="pagination" style="margin:10px 10px 10px 10px;"></div>
+		</div>
+	 </div>
+  </div>
+</div>
+</body>
+</html>

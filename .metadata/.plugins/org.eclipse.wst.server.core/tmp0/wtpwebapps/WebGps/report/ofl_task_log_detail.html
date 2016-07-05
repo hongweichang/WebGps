@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/report.css" rel="stylesheet" type="text/css" />
+<link href="../js/editselect/jquery.editable-select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/editselect/jquery.editable-select.js"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="../js/myajax.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/WdatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/gps_common.js"></script>
+<script type="text/javascript" src="js/search_option.js"></script>
+<script type="text/javascript" src="js/ofl_task_log_detail.js"></script>
+<link rel="stylesheet" type="text/css" href="../js/flexigrid/flexigrid.css"></link>
+<script type="text/javascript" src="../js/flexigrid/flexigrid.js"></script>
+</head>
+<body>
+<div id = "sysuserLogDate" class="setdate">
+<form method="post" name="reportForm" action="">
+	<h2 class="righttitile1"><span id="reportTitle">&nbsp;</span></h2>
+    <div class="slinput">
+    	<div class="inputdis">
+	    	<span id="labelBegintime" class="setdatetext">&nbsp;</span>
+	    		<input type="text" id="begintime" name="begintime" size="15" readonly class="Wdate" style="width:160px;"/>
+	    	<span id="labelEndtime" class="setdatetext">&nbsp;</span>
+	    		<input type="text" id="endtime" name="endtime" size="15" readonly class="Wdate" style="width:160px;"/>
+			<span id="labelMarker" class="setdatetext">&nbsp;</span>
+				<select style="display: inline;" name="nTaskStatus" id="nTaskStatus"></select>
+			<span id="labelDevVerNum" class="setdatetext">&nbsp;</span>
+				<input type="text" id="devVerNum" name="devVerNum" style="ime-mode:disabled;width:100px;"/>
+	    </div>
+    </div>
+    <div class="slinput">
+    	<div class="inputdis">
+    		<span id="labelSelectVehicle" class="setdatetext">&nbsp;</span>
+	    	<select class="editable-select" id="deviceList" name="deviceList"></select>
+	    	<input type="text" style="display:none" id="devIdnos" name="devIdnos" value=""/>
+<!-- 	    	<input type="text" style="display:none" id="sortname" name="sortname" value=""/> -->
+<!-- 	    	<input type="text" style="display:none" id="sortorder" name="sortorder" value=""/> -->
+	    </div>
+    	<a href="#" id="btnSelVehicle" class="pinbtn"><span id="spanBtnSelVehicle">&nbsp;</span></a>
+    	<a href="#" id="btnQuery" class="pinbtn"><span id="spanBtnQuery">&nbsp;</span></a>
+		<a href="#" id="btnExport" class="pinbtn"><span id="spanBtnExport">&nbsp;</span></a>		
+		<a href="#" id="btnExportCsv" class="pinbtn"><span id="spanBtnExportCsv">&nbsp;</span></a>
+		<a href="#" id="btnExportPdf" class="pinbtn"><span id="spanBtnExportPdf">&nbsp;</span></a>
+    </div>
+</form>
+</div>
+<table id="oflTaskLogDetailTable" style="display:none;"></table>
+</body>
+</html>

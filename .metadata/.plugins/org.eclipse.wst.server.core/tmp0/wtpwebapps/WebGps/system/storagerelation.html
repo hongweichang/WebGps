@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/public.css?v150825" rel="stylesheet" type="text/css" />
+<link href="css/server.css?v150825" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/json2.js?v150825"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js?v150825"></script>
+<script type="text/javascript" src="../js/lhgdialog.min.js?v150825"></script>
+<script type="text/javascript" src="../js/myajax.js?v150825"></script>
+<script type="text/javascript" src="../js/public.js?v150825"></script>
+<script type="text/javascript" src="../js/date.js?v150825"></script>
+<script type="text/javascript" src="../js/gps_common.js?v150825"></script>
+<script type="text/javascript" src="js/storagerelation.js?v150825"></script>
+</head>
+<body style="background-color:#fff;">
+<div id="content" class="serverall" style="width:700px;height:500px;position:relative;overflow:hidden;">
+	<div style="overflow:hidden;">
+		<br/>
+		<label class="searchinput">
+	      <input id="devicesearch" name="devicesearch" type="text" value="" maxlength="32"/>
+	    </label>
+	    <label class="searchbtn">
+	      <button id="btnSearchDevice" name="btnSearchDevice" type="submit" onclick="queryRelationInfo()"></button>
+	    </label>
+	    <br/>
+    </div>
+    <div>
+		<h3>
+			<span class="set"><a class="bluelink" href="javascript:delSelRelation();" id="hrefRemove"><span id="spanRemove" class="blue">&nbsp;</span></a></span>&nbsp;&nbsp;
+			<span id="labelStorageServer" style="padding-left:10px;font-weight:bold">&nbsp;</span>&nbsp;<span id="spanStorageServer" class="blue"></span>&nbsp;&nbsp;
+			<span id="labelRelationCount" style="padding-left:10px;font-weight:bold">&nbsp;</span>&nbsp;<span id="spanRelationCount" class="blue"></span>
+		</h3>
+	</div>
+	<table width="99%" border="0" cellspacing="0" cellpadding="0" class="devicetable" id="tableTop" >
+	    <tr class="heard">
+	        <th class="tableft"><span></span></th>
+	        <th class="checkbox"><input type="checkbox" name="selectDeviceAll" id="selectDeviceAll" onclick="onSelectedAll('selectDeviceIdList', 'selectDeviceAll')"/></th>
+	        <th><span id="thOperator">&nbsp;</span></th>
+	        <th><span id="thIndex">&nbsp;</span></th>
+	        <th><span id="thName">&nbsp;</span></th>
+	        <th><span id="thIDNO">&nbsp;</span></th>
+	        <th><span id="thType">&nbsp;</span></th>
+	        <th><span id="thClient">&nbsp;</span></th>
+	        <th class="tabright"><span></span></th>
+	     </tr>
+	     <tr id="tableTemplate" class="tabdata" style="display:none">
+	        <td class="tableft">&nbsp;</td>
+	        <td><input type="checkbox" id="selectDeviceIdList" name="selectDeviceIdList" onclick="onSelectedItem('selectDeviceIdList', 'selectDeviceAll')" value=""/></td>
+	        <td class="set"><span id="tdOperator"></span></td>
+	        <td><span id="tdIndex">1</span></td>
+	        <td><span id="tdName"></span></td>
+	        <td><span id="tdIDNO"></span></td>
+	        <td><span id="tdDevType"></span></td>
+	        <td><span id="tdClient"></span></td>		        
+	        <td class="tabright">&nbsp;</td>
+	    </tr>
+	</table>
+   	<div id="pagination" class="pagination" style="margin:10px 10px 10px 10px;">&nbsp;</div>
+	<div style="float:left;padding-top:8px;padding-bottom:8px;">
+	</div>
+</div>
+</body>
+</html>
