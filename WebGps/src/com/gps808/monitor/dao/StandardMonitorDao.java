@@ -2,6 +2,7 @@ package com.gps808.monitor.dao;
 
 import com.gps.model.DeviceStatusLite;
 import com.gps808.model.StandardAlarmMotion;
+import com.gps808.model.StandardDeviceGps;
 import com.gps808.model.StandardFixedTts;
 import java.util.List;
 import java.util.Map;
@@ -17,4 +18,5 @@ public abstract interface StandardMonitorDao
   public abstract Map<Integer, StandardAlarmMotion> findAlarmMotion(Integer paramInteger, String paramString);
   
   public abstract List<DeviceStatusLite> getDeviceStatusLite(String[] paramArrayOfString);
+
 }
